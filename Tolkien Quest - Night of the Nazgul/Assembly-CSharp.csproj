@@ -62,8 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\CharacterManager.cs" />
     <Compile Include="Assets\_Scripts\ScriptableObjects\TileScriptable.cs" />
     <Compile Include="Assets\_Scripts\TileStats.cs" />
+    <Compile Include="Assets\CreationSceneManager.cs" />
+    <Compile Include="Assets\CreationSkillManager.cs" />
+    <Compile Include="Assets\CreationSpellManager.cs" />
+    <Compile Include="Assets\CreationStatManager.cs" />
+    <Compile Include="Assets\DragAndDrop.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Master/Documents/Git Repositories/Unity Projects/TolkienQuest-NotN/Tolkien Quest - Night of the Nazgul/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
