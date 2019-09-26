@@ -27,6 +27,8 @@ public class CreationSkillManager : MonoBehaviour {
 	[SerializeField] Text PerceptionSkillBonusText;
 	[SerializeField] Text MagicalSkillBonusText;
 
+	//
+
 
 	void Start() {
 		SetupInitialSkillValues();
@@ -183,8 +185,14 @@ public class CreationSkillManager : MonoBehaviour {
 
 			CharacterManager.allSkillsSet = true;
 
-			GetComponent<CreationSceneManager>().TotalAllSkills();
+			if (CharacterManager.allSpellsSet) {
 			GetComponent<CreationSceneManager>().CloseNewUIWindow(skillsEditorBG);
+			}
+			else {
+				Debug.Log("You still have spells to assign");
+			}
+
+			GetComponent<CreationSceneManager>().TotalAllSkills();
 		}
 		else {
 			Debug.Log("You still have skill points to assign");
@@ -194,7 +202,5 @@ public class CreationSkillManager : MonoBehaviour {
 
 	public void CancelSkillValues() {
 		GetComponent<CreationSceneManager>().CloseNewUIWindow(skillsEditorBG);
-		
 	}
-
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileStats : MonoBehaviour {
 
-	TileScriptable myTileScriptable;
+	MapTileScriptable myTileScriptable;
 
 	[SerializeField] string myLocationID;
 

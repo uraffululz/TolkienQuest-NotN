@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05fd5f9fec551d94d8ad707f1a4cb6c4, type: 3}
+  m_Name: RaceHobbit
+  m_EditorClassIdentifier: 
+  raceName: Hobbit
+  FullRaceDescriptionFromBook: 'Increase your Trickery bonus by 2. Decrease your Melee
+    OB by 2. Ignore disadvantage #1 and #3 under the "Moving at Night" rules. Hobbits
+    may not learn spells #3, #5, #7, #11, and #15.'
+  AdjustMeleeOB: -2
+  AdjustRunning: 0
+  AdjustGeneral: 0
+  AdjustTrickery: 2
+  AdjustWhenUndergroundGeneral: 0
+  AdjustWhenUndergroundPerception: 0
+  AdjustWhenUndergroundMagical: 0
+  AdjustWhenOutdoorsPerception: 0
+  AdjustWhenOutdoorsMagical: 0
+  ignoreNightRule1: 1
+  ignoreNightRule2: 0
+  ignoreNightRule3: 1

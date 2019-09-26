@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileScriptable : ScriptableObject {
+[CreateAssetMenu(fileName = "NewMapTileScriptable", menuName = "ScriptableObjects/MapTileScriptable", order = 0)]
+public class MapTileScriptable : ScriptableObject {
 
 	string locationID;
 	bool encounterHere;

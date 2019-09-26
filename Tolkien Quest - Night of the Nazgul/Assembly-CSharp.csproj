@@ -63,13 +63,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\CharacterManager.cs" />
-    <Compile Include="Assets\_Scripts\ScriptableObjects\TileScriptable.cs" />
+    <Compile Include="Assets\_Scripts\CreationRaceManager.cs" />
+    <Compile Include="Assets\_Scripts\CreationSceneManager.cs" />
+    <Compile Include="Assets\_Scripts\CreationSkillManager.cs" />
+    <Compile Include="Assets\_Scripts\CreationSpellManager.cs" />
+    <Compile Include="Assets\_Scripts\CreationStatManager.cs" />
+    <Compile Include="Assets\_Scripts\DragAndDrop.cs" />
+    <Compile Include="Assets\_Scripts\ScriptableObjects\MapTileScriptable.cs" />
+    <Compile Include="Assets\_Scripts\ScriptableObjects\RaceScriptableObjects\RaceScriptable.cs" />
+    <Compile Include="Assets\_Scripts\ScriptableObjects\SpellScriptableObjects\SpellScriptable.cs" />
+    <Compile Include="Assets\_Scripts\ScriptableRaceReader.cs" />
+    <Compile Include="Assets\_Scripts\ScriptableSpellReader.cs" />
     <Compile Include="Assets\_Scripts\TileStats.cs" />
-    <Compile Include="Assets\CreationSceneManager.cs" />
-    <Compile Include="Assets\CreationSkillManager.cs" />
-    <Compile Include="Assets\CreationSpellManager.cs" />
-    <Compile Include="Assets\CreationStatManager.cs" />
-    <Compile Include="Assets\DragAndDrop.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Master/Documents/Git Repositories/Unity Projects/TolkienQuest-NotN/Tolkien Quest - Night of the Nazgul/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

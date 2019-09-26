@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee506d3921fc34428ef02d33471af1f, type: 3}
+  m_Name: Spell15Telekinesis
+  m_EditorClassIdentifier: 
+  mySpellName: Telekinesis
+  spellIndex: 14
+  playerDamage: 5
+  fullSpellDescriptionFromBook: You may cast this spell when faced with an opponent
+    who is unaware of you. Make a STEAL & TAKE action (see action table), adding your
+    Magical bonus rather than your Trickery bonus. If you are unsuccessful (a result
+    of 8 or less), your opponent is aware of you and you must TAKE AN ACTION.
+  notForDwarves: 1
+  notForHobbits: 1

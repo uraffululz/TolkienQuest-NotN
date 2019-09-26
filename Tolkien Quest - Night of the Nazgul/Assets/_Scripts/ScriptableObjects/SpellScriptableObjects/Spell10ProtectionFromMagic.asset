@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee506d3921fc34428ef02d33471af1f, type: 3}
+  m_Name: Spell10ProtectionFromMagic
+  m_EditorClassIdentifier: 
+  mySpellName: Protection From Magic
+  spellIndex: 9
+  playerDamage: 4
+  fullSpellDescriptionFromBook: When the text indicates that an opponent is casting
+    a spell, you may cast this spell. The number picked to resolve the spell will
+    be decreased by your Magical bonus.
+  notForDwarves: 0
+  notForHobbits: 0

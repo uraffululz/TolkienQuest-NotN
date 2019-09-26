@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee506d3921fc34428ef02d33471af1f, type: 3}
+  m_Name: Spell7FireBolt
+  m_EditorClassIdentifier: 
+  mySpellName: Fire Bolt
+  spellIndex: 6
+  playerDamage: 6
+  fullSpellDescriptionFromBook: This spell may be used during combat when you would
+    normally make a missile attack. PICK A NUMBER twice and add the two results plus
+    double your Magical bonus; this result is the amount of damage taken by your opponent.
+  notForDwarves: 1
+  notForHobbits: 1

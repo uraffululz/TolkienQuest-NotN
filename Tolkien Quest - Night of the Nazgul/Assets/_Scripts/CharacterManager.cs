@@ -11,8 +11,8 @@ public static class CharacterManager {
 	//TODO Make this an enum (not possible as a static), or something else?
 	//Race
 	public static bool raceSet;
-	enum Races {Default, Dwarf, Elf, Hobbit, Man};
-	static Races myRace;
+	public enum Races {Default, Dwarf, Elf, Hobbit, Human};
+	public static Races myRace;
 
 	//Stats
 	public static bool allStatsSet;
@@ -69,4 +69,9 @@ public static class CharacterManager {
 	public static int mySkillMagicalSkillBonus;
 	public static int mySkillMagicalStatBonus;
 	public static int mySkillMagicalSpecialBonuses;
+
+	//Spell Slot Variables
+	public static bool allSpellsSet;
+
+	public static string[] assignedSpells = new string[7] {"","","","","","",""};
 }
