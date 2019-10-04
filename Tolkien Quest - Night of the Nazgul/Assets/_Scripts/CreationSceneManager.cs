@@ -103,7 +103,7 @@ public class CreationSceneManager : MonoBehaviour {
 		//When the playerr clicks the "Continue" button to move on to the main game
 		Debug.Log("Character creation complete. Continuing to the game's Prologue");
 
-		SceneManager.LoadScene("MapScene");
+		SceneManager.LoadScene("PrologueScene");
 	}
 
 }

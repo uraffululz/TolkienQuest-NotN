@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DraggableUI
   - DraggableUIParent
+  - MapTile
   layers:
   - Default
   - TransparentFX

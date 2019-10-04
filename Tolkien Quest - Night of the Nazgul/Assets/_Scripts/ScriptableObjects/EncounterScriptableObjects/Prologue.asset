@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Prologue
+  m_EditorClassIdentifier: 
+  encounterIndex: 1
+  encounterText:
+  - 'You have just finished your evening chores in the stables of the Prancing Pony
+    Inn when a middle-aged Hobbit approaches from the shadows.
+
+    "Come with me, young friend," he whispers, a finger to his lips, "if you would
+    help save the Shire."
+
+    You want to ask questions -- <i>Who are you? What do you want? Why <b>me</b></i>?
+    -- but he insists that you follow him silently.'
+  - 'The Hobbit leads you on tiptoes through the courtyard of the three-storied inn
+    and into the kitchen. You hear voices raised in song, and the merry sound heartens
+    you, although the troubling mystery of your little mission lingers. You sneak
+    by the surly cook and peek into the parlor before entering the smoky room, a log
+    fire blazing in the hearth, and wait. The Hobbit points to a far corner of the
+    room.
+
+    "Go and take a seat. Trust me."
+
+    Puzzled but concerned, you follow the hairy-footed fellow''s advice.'
+  - Familiar faces fill the room. Long-bearded Dwarves gather on one bench near the
+    fire, a husky bunch of Bree-landers drink ale in a corner, and a trio of Hobbits
+    trade tall tales on stools near the door. At first you think they are the only
+    folk in the room. Then your eyes adjust to the dim, grey light and you see several
+    strangers sitting alone, some of them looking at you.
+  - '"Finished your chores?" Barliman Butterbur inquires from behind you.
+
+    You turn to face the stocky, bald man and nod.
+
+    "Then run along! Don''t scare off the customers with that look of yours!"
+
+    You turn and enter the parlor, taking a seat by yourself in one corner of the
+    room.
+
+'
+  - 'Suddenly a heavy hand falls on your shoulder. You look up and see a tall stranger
+    wearing a rough cloak and muddy leather boots.
+
+    "Come. Let''s talk."
+
+    Something in the man''s speech leads you to trust him.'
+  - 'The lean, clean-shaven stranger motions you to an empty bench near the fire and
+    asks if you''ll have some refreshment. Thirsty but a bit frightened, you shake
+    your head.
+
+    "I sent for you because I am told you can be trusted to undertake a journey of
+    the utmost importance," he says confidentially. "The mission is dangerous and
+    you must not fail. The very existence of the Shire may be at stake. Will you accept
+    this burden, to do or die?"'
+  - '"I will."
+
+    The ease with which the words escape your mouth surprises even you.
+
+    The stranger relaxes, stretching his long legs before him.
+
+    "Good!"
+
+    From his cloak he produces a long-stemmed pipe and a pouch of pipeweed. Lighting
+    the pipe with a glowing twig from the fire, he puffs and surveys the room, the
+    distinctive odor of nicotiana filling the air.'
+  - '"I am an old friend of the Hobbits of the Shire, who along with others call me
+    Strider. I am a Ranger; the woods are my home."
+
+    Wide-eyed, you nod, having heard tales of the wood-wise and good Rangers.
+
+    Strider leans forward to speak confidentially.'
+  - "\"Young friend, Black Riders are abroad. Have you heard of them? They were once
+    great men whose lust for power enslaved them. They are now very powerful and deeply
+    evil spirits, nine in number. They threaten the very existence of the Shire. That
+    is why I have called for \nyou.\"\nYou feel your heart pounding in your chest
+    -- is it from excitement or fear?"
+  - 'Strider goes on, taking a moment to glance around the room.
+
+    "You have a quick mind and a brave heart, I am told. You will need both. What
+    you must do is leave tomorrow at daybreak to warn the Shire of the coming of the
+    Dark Riders. The Hobbits must prepare themselves for the worst. I would go myself
+    but I must wait here for the arrival of a very important visitor."'
+  - 'The Ranger pauses again, sizing up a bearded, swarthy stranger who slips into
+    the seat near you and orders ale in a gruff, foreign voice before asking for Bill
+    Ferny.
+
+    "Foremost, ride to warn Hobbiton," Strider whispers, eyeing the man nearby, who
+    has also lighted a pipe, with suspicion.'
+  - '"Warn Buckland, the Marish, and the Bridge-fields if you can; let them know in
+    all the Farthings of the Shire that the Riders are on their way. Do not worry
+    about those good folk east of the Brandywine; Rangers are warning them even as
+    we talk. Travel as far as you can, as fast as you can, however your wits will
+    carry you. Find a messenger at Tuckborough who can be trusted to get the word
+    to the Hobbits of Sackville and Michel Delving.'
+  - '"You can trust the Shirriffs of each Farthing to help you, if you convince them
+    to believe you. You will know the Shirriffs by the feathers in their caps. Leave
+    at dawn -- there''s not another moment to waste. Here."
+
+    He hands you a small scroll and a pouch; you begin to open it, but Strider stops
+    you.'
+  - '"Open the pouch in the privacy of your room, with the door bolted. You will find
+    refreshment and nedicinal herbs inside. The scroll is a map of the area. Study
+    it before you leave Bree. Take this!"
+
+    He hands you a gleaming silver dagger in a sheath that hangs neatly from your
+    belt.
+
+'
+  - '"It will protect you and tell my friends that you are indeed my messenger. Do
+    not lose it! And remember: avoid crossing openly at the bridge -- a Black Rider
+    watches it at all hours. You cannot match his power. Agents of the Dark Forces
+    watch the main roads too, and the ferries both north and south. They may know
+    of you already."'
+  - 'As Strider pauses, again casting his steely gaze around the room, your blood
+    runs cold: they''re after me already, you think.
+
+    "Beware the roads and the woods," Strider goes on. "Bandits and evil things prowl
+    them in search of the likes of you. Servants of Sauron have stirred up the beasts
+    and beings in the region."'
+  - '"Be on guard in the Barrow-downs; great treasure lies entombed there, in the
+    heart of that haunted land, but grave danger lurks there also. If you take that
+    path, cross the downs as quickly as you can. If possible, I will send a Ranger
+    to watch over you part of the way. You will know him by the silver star on his
+    cloak. Tom Bombadil in the Old Forest and Gildor''s Elves in the Green Hill Country
+    may help you. But for the most part, you are on your own."'
+  - 'You tuck the scroll inside your tunic, put the dagger and sheath on your belt,
+    and tie the pouch to it.
+
+    "There is one more matter," Strider adds in a whisper. "When you return to your
+    quarters, look under your bed. You will see a large sack. Take from the sack only
+    one weapon or take the chain mail; I can spare nothing else, and your journey
+    requires that you travel light. Now go!" the Ranger urges you. "I will see that
+    no one follows."'
+  - 'You leave the haze and warmth of the Prancing Pony''s parlor tingling with excitement
+    and exit into the cool, clear air of a starry night. You check the courtyard,
+    seeing no one, and cross to the stables where your room is. Inside the stables
+    the Hobbit courier waits for you.
+
+    "Don''t fail us!" he pleads. "Be very careful; trust no man unknown to you."
+
+    The Hobbit leaves without making a sound, disappearing into the shadows.'
+  - 'Inside your room, you bolt the door, light a candle and quickly scan th emap.
+    You see that your journey will take you twelve leagues west to the Brandywine
+    River -- by the most direct route -- and another twelve to Hobbiton, if you make
+    it that far in time. It seems impossible, but you must try!
+
+    On the floor beneath your be lie an empty backpack and a bag. You untie the string
+    and open it; inside you find a sword, a bow with ten arrows, a mace and a suit
+    of light chain armor.'
