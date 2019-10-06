@@ -15,7 +15,6 @@ MonoBehaviour:
   locationID: 3D
   locationText:
   - 
-  - 
   encounterText1: 
   encounterIndex1: 0
   encounterText2: 
@@ -25,6 +24,19 @@ MonoBehaviour:
   canExploreHere: 0
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
+  exploreHasMultipleRanges: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}

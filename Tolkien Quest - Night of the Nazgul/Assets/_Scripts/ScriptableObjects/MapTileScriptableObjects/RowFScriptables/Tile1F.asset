@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile1F
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 1F
   locationText:
-  - 
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - The grassy Northway snakes north and south before you, no longer the majestic
+    route it once was. The low bare ridges that are the Barrow-downs seem to surround
+    you, the sounds of an approaching wagon heading south on the road.
+  encounterText1: Observe the wagon
+  encounterIndex1: 215
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
@@ -25,8 +26,10 @@ MonoBehaviour:
   canExploreHere: 0
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 0
-  canMoveOn: 0
-  timeTaken: 0
-  timeTakenSecondary: 0
+  myMerchantScriptable: {fileID: 0}
+  canMoveOn: 1
+  timeTaken: 90
+  timeTakenSecondary: 45

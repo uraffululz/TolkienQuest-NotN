@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
+  m_Name: Tile3A
+  m_EditorClassIdentifier: 
+  locationID: 3A
+  locationText:
+  - The rugged, open land rolls on beforee you. Will I ever see the brandywine, you
+    wonder. A hundred feet in front of you a small stand of woods looms. The shade
+    and shelter from the brisk wind would be welcome, but you know that you should
+    hurry on. Just then you see a tall shadow dart from behind one tree trunk to another.
+    Was it friend or foe -- or just your imagination?
+  encounterText1: Explore
+  encounterIndex1: 195
+  encounterText2: 
+  encounterIndex2: 0
+  encounterText3: 
+  encounterIndex3: 0
+  canExploreHere: 1
+  exploreRequiresRoll: 0
+  exploreMinLimit: 0
+  exploreSecondaryIndex: 0
+  combatHere: 0
+  merchantHere: 0
+  myMerchantScriptable: {fileID: 0}
+  canMoveOn: 0
+  timeTaken: 60
+  timeTakenSecondary: 0

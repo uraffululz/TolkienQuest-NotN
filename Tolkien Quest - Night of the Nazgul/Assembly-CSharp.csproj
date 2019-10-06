@@ -72,8 +72,8 @@
     <Compile Include="Assets\_Scripts\EncounterManager.cs" />
     <Compile Include="Assets\_Scripts\InventoryManager.cs" />
     <Compile Include="Assets\_Scripts\MapSceneManager.cs" />
-    <Compile Include="Assets\_Scripts\ScriptableObjects\EncounterMerchantScriptable.cs" />
     <Compile Include="Assets\_Scripts\ScriptableObjects\EncounterScriptableObjects\EncounterScriptable.cs" />
+    <Compile Include="Assets\_Scripts\ScriptableObjects\EncounterScriptableObjects\MerchantScriptableObjects\EncounterMerchantScriptable.cs" />
     <Compile Include="Assets\_Scripts\ScriptableObjects\InventoryScriptableObjects\InventoryArmorScriptable.cs" />
     <Compile Include="Assets\_Scripts\ScriptableObjects\InventoryScriptableObjects\InventoryItemScriptable.cs" />
     <Compile Include="Assets\_Scripts\ScriptableObjects\InventoryScriptableObjects\InventoryWeaponScriptable.cs" />

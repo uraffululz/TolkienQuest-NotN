@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
+  m_Name: Tile2H
+  m_EditorClassIdentifier: 
+  locationID: 2H
+  locationText:
+  - Walking around and by the barrows troubles you. It's daytime -- what could happen
+    to me if I did a little exploring? Besides, what about all those stories of gold
+    and gems and magic swords buried with Cardolan's ancient royalty, kings and princes
+    whose bones lie beneath the rounded earthen domes so nearby? Yet your mission
+    requires you to hurry on.
+  encounterText1: Explore the barrow
+  encounterIndex1: 190
+  encounterText2: 
+  encounterIndex2: 0
+  encounterText3: 
+  encounterIndex3: 0
+  canExploreHere: 1
+  exploreRequiresRoll: 0
+  exploreMinLimit: 0
+  exploreSecondaryIndex: 0
+  combatHere: 0
+  merchantHere: 0
+  myMerchantScriptable: {fileID: 0}
+  canMoveOn: 1
+  timeTaken: 90
+  timeTakenSecondary: 0

@@ -74,4 +74,7 @@ public static class CharacterManager {
 	public static bool allSpellsSet;
 
 	public static string[] assignedSpells = new string[7] {"","","","","","",""};
+
+	public static int totalTimeTaken;
+	public static int totalXP;
 }

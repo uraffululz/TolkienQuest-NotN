@@ -14,9 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterIndex: 446
   encounterText:
-  - You travel to the nearest merchant
+  - 'The General Store carries food, drink, weapons and accessories; a hand-lettered
+    sign posted on the far wall of the crammed establishment tells all you need to
+    know.
+
+    The brusk proprietor quickly gathers what you want and takes your money without
+    exchanging a word.'
   isCombat: 0
   isMerchant: 1
-  itemsForSale: []
-  itemPrice: 
-  coinType: 0
+  canMoveOn: 1
+  furtherEncounterOption1Text: 
+  furtherEncounterOption1Index: 0
+  furtherEncounterOption2Text: 
+  furtherEncounterOption2Index: 0
+  furtherEncounterOption3Text: 
+  furtherEncounterOption3Index: 0
+  timeTaken: 30
+  XPGained: 0

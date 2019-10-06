@@ -14,19 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 1B
   locationText:
-  - 
-  - 
-  encounterText1: 235
-  encounterIndex1: 0
-  encounterText2: 0
+  - You face a natural crossroads. On one side looms a stand of tall trees; on the
+    other, rolling grassy hills stretch westward as far as the eye can see.
+  encounterText1: Explore the area
+  encounterIndex1: 235
+  encounterText2: 
   encounterIndex2: 0
-  encounterText3: 0
+  encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
+  canExploreHere: 1
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 0
-  canMoveOn: 0
+  myMerchantScriptable: {fileID: 0}
+  canMoveOn: 1
   timeTaken: 120
   timeTakenSecondary: 45

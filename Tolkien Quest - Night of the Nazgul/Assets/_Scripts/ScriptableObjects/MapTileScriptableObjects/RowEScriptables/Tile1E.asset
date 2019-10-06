@@ -14,17 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 1E
   locationText:
-  - Tile Location Text
-  - 
+  - You stand at the northern edge of the Barrow-downs; seemingly endless ridges stretch
+    before you as far as the eye can see. All the childhood horror stories your grandparents
+    told you about the haunted ruins run through your mind, and the sun seems to accompany
+    you. You spy in the distance --perhaps a mile to the South -- the ruins of a small
+    castle atop a hillock.
   encounterText1: Explore the castle
   encounterIndex1: 160
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
+  canExploreHere: 1
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}

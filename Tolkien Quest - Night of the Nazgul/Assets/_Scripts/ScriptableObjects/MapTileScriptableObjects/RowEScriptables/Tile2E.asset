@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 2E
   locationText:
-  - Tile Location Text
-  - 
+  - You cross the silent, overgrown Northway and continue making your way  through
+    the barren, windswept Barrow-downs. No sign of life comforts or alarms you, yet
+    you cannot relax, for here on the downs, the Undead dwell! A half-mile ahead rises
+    a ringed mound, a large barrrow, from which a strange, plaintive cry emerges.
   encounterText1: Explore the barrow
   encounterIndex1: 107
   encounterText2: 
@@ -25,6 +27,7 @@ MonoBehaviour:
   canExploreHere: 1
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}

@@ -14,19 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 1A
   locationText:
-  - 
-  - 
-  encounterText1: Explore
+  - Tall oaks and elms stretch unbroken before you. The haunting cries of strange
+    birds echo overhead. Underfoot, dark twisting vines seem to grab at your ankles.
+  encounterText1: Explore the area
   encounterIndex1: 152
-  encounterText2: Explore
-  encounterIndex2: 170
-  encounterText3: 0
+  encounterText2: 
+  encounterIndex2: 0
+  encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 6
+  canExploreHere: 1
+  exploreRequiresRoll: 1
+  exploreMinLimit: 7
+  exploreSecondaryIndex: 170
   combatHere: 0
   merchantHere: 0
+  myMerchantScriptable: {fileID: 0}
   canMoveOn: 1
   timeTaken: 120
   timeTakenSecondary: 0

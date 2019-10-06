@@ -21,6 +21,20 @@ public class MapTileScriptable : ScriptableObject {
 	public bool canExploreHere;
 	public bool exploreRequiresRoll;
 	public int exploreMinLimit;
+	public int exploreSecondaryIndex;
+
+	public bool exploreHasMultipleRanges;
+	public int howManyRanges;
+	public int range1Min;
+	public int range1Length;
+	public int range1FurtherIndex;
+	public int range2Min;
+	public int range2Length;
+	public int range2FurtherIndex;
+	public int range3Min;
+	public int range3Length;
+	public int range3FurtherIndex;
+	public bool rangeFailMeansMoveOn;
 
 	
 	public bool combatHere;

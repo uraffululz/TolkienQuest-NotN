@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile1G
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 1G
   locationText:
-  - 
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - The Barrow-downs  seem to prowl the rolling land on either side of the Northway,
+    whcih is now quiet. You hear a cricket chirping nearby, as if urging you to hurry.
+  encounterText1: Wait for a ride
+  encounterIndex1: 244
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
@@ -25,8 +25,10 @@ MonoBehaviour:
   canExploreHere: 0
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 0
-  canMoveOn: 0
-  timeTaken: 0
+  myMerchantScriptable: {fileID: 0}
+  canMoveOn: 1
+  timeTaken: 90
   timeTakenSecondary: 0

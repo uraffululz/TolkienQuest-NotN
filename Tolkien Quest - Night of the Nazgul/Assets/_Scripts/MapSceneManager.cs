@@ -19,6 +19,8 @@ public class MapSceneManager : MonoBehaviour {
 	bool allowedToClickMapTile = true;
 
 	[SerializeField] GameObject locationTextBG;
+	[SerializeField] Text locationTimeText;
+	[SerializeField] Text locationXPText;
 	int currentLocationTextIndex;
 	[SerializeField] GameObject locationEncounterButton1;
 	[SerializeField] GameObject locationEncounterButton2;
@@ -54,14 +56,23 @@ public class MapSceneManager : MonoBehaviour {
 
 		if (Physics.Raycast(tileRay, out tileRayHit) && allowedToClickMapTile) {
 			if (tileRayHit.collider.gameObject.tag == "MapTile") {
-				print("You clicked on a Map Tile");
+				//print("You clicked on a Map Tile");
 
 				//TODO Make sure the tileRay can only hit ADJACENT tiles
 				if (adjacentTiles.Contains(tileRayHit.collider.gameObject)) {
-					print("You clicked on an ADJACENT map tile");
+					//print("You clicked on an ADJACENT map tile");
 					currentLocation = tileRayHit.collider.gameObject;
 					player.transform.position = currentLocation.transform.position + (Vector3.back * .3f);
 					adjacentTiles.Clear();
+
+					locationTimeText.text = "Time: " + currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken.ToString();
+					locationXPText.text = "Experience: " + currentLocation.GetComponent<ScriptableMapTileReader>().XPGained.ToString();
+
+					CharacterManager.totalTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
+					CharacterManager.totalXP += currentLocation.GetComponent<ScriptableMapTileReader>().XPGained;
+
+					print("Total time: " + CharacterManager.totalTimeTaken);
+					print("Total XP: " + CharacterManager.totalXP);
 
 					allowedToClickMapTile = false;
 					currentLocationTextIndex = 0;
@@ -120,7 +131,7 @@ public class MapSceneManager : MonoBehaviour {
 																						"Silver: " + InventoryManager.silverCarried + "\n" +
 																						"Copper: " + InventoryManager.copperCarried;
 
-				openMerchantUIButton.SetActive(true);
+				//openMerchantUIButton.SetActive(true);
 			}
 
 			//If the current location has COMBAT
@@ -157,6 +168,8 @@ public class MapSceneManager : MonoBehaviour {
 
 
 	public void MoveOn () {
+		//CharacterManager.totalTimeTaken += locationTimeOrEncounterTime;
+
 		allowedToClickMapTile = true;
 
 		foreach (GameObject mapTile in mapTiles) {
@@ -173,7 +186,7 @@ public class MapSceneManager : MonoBehaviour {
 //TOMAYBEDO I might not need to reset all this crap
 		//currentLocationTextIndex = 0;
 		progressLocationTextButton.SetActive(false);
-		openMerchantUIButton.SetActive(false);
+		//openMerchantUIButton.SetActive(false);
 		moveOnButton.SetActive(false);
 	}
 }

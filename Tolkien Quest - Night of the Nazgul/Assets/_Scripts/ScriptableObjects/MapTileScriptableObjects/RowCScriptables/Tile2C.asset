@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 2C
   locationText:
-  - Tile Location Text
-  - 
+  - You bend to check for Troll tracks in the heather and low grass that cover the
+    rocky, rolling hills but spot nothing. Mounds of barrows stretch westward; the
+    wind snaps at your ears.
   encounterText1: 
   encounterIndex1: 0
   encounterText2: 
@@ -25,9 +26,10 @@ MonoBehaviour:
   canExploreHere: 0
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
-  timeTakenSecondary: 0
+  canMoveOn: 1
+  timeTaken: 90
+  timeTakenSecondary: 45

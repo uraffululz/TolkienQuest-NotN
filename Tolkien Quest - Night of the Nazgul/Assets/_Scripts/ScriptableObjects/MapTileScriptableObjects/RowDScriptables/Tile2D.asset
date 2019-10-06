@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 2D
   locationText:
-  - Tile Location Text
-  - 
+  - The Great East Road appears less travelled than you had thought; maybe all those
+    stories you heard as a child about bandits and wandering magicians and merchants
+    bustling along the route were just tales. With your home village of Bree a few
+    miles behind, you begin to feel a homesickness and a sense of helplessness. You
+    have been asked to do too much! Then your hand grasps for the silver dagger at
+    your belt and you again feel brave and able.
   encounterText1: 
   encounterIndex1: 0
   encounterText2: 
@@ -25,6 +29,7 @@ MonoBehaviour:
   canExploreHere: 0
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}

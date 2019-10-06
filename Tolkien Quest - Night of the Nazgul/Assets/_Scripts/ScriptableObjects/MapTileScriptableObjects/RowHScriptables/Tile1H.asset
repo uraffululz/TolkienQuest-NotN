@@ -12,21 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile1H
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 1H
   locationText:
-  - 
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - You stand near the crumbling ruins of a watchtower just off the overgrown track
+    that is the Northway, long ago the road of Kings. There appears to be no sign
+    of life other than a common green snake slithering behind a stone as you approach.
+  encounterText1: Explore the ruins
+  encounterIndex1: 155
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
+  canExploreHere: 1
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 0
-  canMoveOn: 0
-  timeTaken: 0
-  timeTakenSecondary: 0
+  myMerchantScriptable: {fileID: 0}
+  canMoveOn: 1
+  timeTaken: 90
+  timeTakenSecondary: 45

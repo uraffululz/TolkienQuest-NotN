@@ -14,17 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 1C
   locationText:
-  - WELCOME TO ARCHET!
-  - 
+  - WELCOME TO ARCHET, reads a weatherbeaten sign standing by the road. You see a
+    smattering of small stone houses and smaller smials set into the fertile rolling
+    hills of Bree-land. Deep woods stretch far beyond the settled edge of the small
+    village.
   encounterText1: Explore Archet
   encounterIndex1: 278
-  encounterText2: Buy Provisions
+  encounterText2: Buy provisions
   encounterIndex2: 446
   encounterText3: 
   encounterIndex3: 0
   canExploreHere: 0
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 1
   myMerchantScriptable: {fileID: 11400000, guid: 94ffef68a53ed794cb8fdd7043724d7b,

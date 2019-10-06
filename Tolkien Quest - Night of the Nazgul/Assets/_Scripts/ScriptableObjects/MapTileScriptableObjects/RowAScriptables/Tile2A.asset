@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 2A
   locationText:
-  - 
-  - 
+  - The tall trees of the Chetwood stand behind you. To the north and south the ancient
+    Northway runs like a rocky, dried-up river bed. You feel a little afraid to leave
+    behind the familiar road but know that your mission draws you west, and that you
+    must follow the path of the sun. The stories that you've heard about Trolls roaming
+    the wild hills west of the Northway keep you alert.
   encounterText1: 
   encounterIndex1: 0
   encounterText2: 
@@ -25,8 +28,10 @@ MonoBehaviour:
   canExploreHere: 0
   exploreRequiresRoll: 0
   exploreMinLimit: 0
+  exploreSecondaryIndex: 0
   combatHere: 0
   merchantHere: 0
+  myMerchantScriptable: {fileID: 0}
   canMoveOn: 1
   timeTaken: 60
   timeTakenSecondary: 45
