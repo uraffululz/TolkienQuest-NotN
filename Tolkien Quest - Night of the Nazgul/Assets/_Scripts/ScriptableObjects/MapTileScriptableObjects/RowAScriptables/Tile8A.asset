@@ -12,22 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile8A
   m_EditorClassIdentifier: 
-  locationID: 6A
+  locationID: 8A
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - A stretch of woods stands before you. You hear a bellow unlike that of any man.
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
+  exploreHasMultipleRanges: 1
+  howManyRanges: 2
+  range1Min: 2
+  range1Length: 5
+  range1FurtherIndex: 180
+  range2Min: 8
+  range2Length: 999
+  range2FurtherIndex: 403
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 120
   timeTakenSecondary: 0

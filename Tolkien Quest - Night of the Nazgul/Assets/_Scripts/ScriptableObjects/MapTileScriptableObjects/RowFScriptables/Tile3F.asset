@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile3F
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 3F
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - The rounded mounds that hold the bones and the special items of teh honored dead
+    seem to beckon for exploration, but you know you should hurry on . Just in front
+    of you rises a large burial mound.
+  encounterText1: Explore the barrow
+  encounterIndex1: 107
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
@@ -40,6 +42,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 90
   timeTakenSecondary: 0

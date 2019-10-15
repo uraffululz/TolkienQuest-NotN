@@ -12,18 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile6E
   m_EditorClassIdentifier: 
-  locationID: 
-  locationText: []
-  encounterText1: 
-  encounterIndex1: 0
+  locationID: 6E
+  locationText:
+  - You never dreamed so many princes had ever lived and that their royal bones could
+    occupy so many tombs. Only the constant wind and an eerie wail from the east break
+    the ominous silence of the downs. Before you, one barrow stands on a rise.
+  encounterText1: Investigate the tomb
+  encounterIndex1: 190
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -39,6 +42,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 90
   timeTakenSecondary: 0

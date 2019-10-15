@@ -12,19 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile7F
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 7F
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - How many more barrows must I pass, you wonder, eager to leave the rugged, windswept
+    downs behind you. You look all around; the frightening sensation of being watched
+    sends a ripple of fear through you. Yet you see nothing but burial mounds and
+    grass and the clear sky.
+  encounterText1: Continue
+  encounterIndex1: 421
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -41,5 +44,5 @@ MonoBehaviour:
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 90
   timeTakenSecondary: 0

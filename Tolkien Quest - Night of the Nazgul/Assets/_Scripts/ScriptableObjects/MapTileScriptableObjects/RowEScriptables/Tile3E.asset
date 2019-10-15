@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile3E
   m_EditorClassIdentifier: 
-  locationID: 
-  locationText: []
-  encounterText1: 
-  encounterIndex1: 0
+  locationID: 3E
+  locationText:
+  - More barren barrows and hillocks stretch before you as far as the eye can see.
+    You have never seen such an eerie lonesome place. The broken hedge wall and withering
+    trees that stand south of a Road add to your sense of foreboding. But your weapon
+    and your mission give you courage. The prominent burial mound just ahead looks
+    promising -- maybe it holds a great treasure. But can you spare the time?
+  encounterText1: Explore the barrow
+  encounterIndex1: 190
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
@@ -39,6 +44,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 90
   timeTakenSecondary: 0

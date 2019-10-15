@@ -12,23 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile14G
   m_EditorClassIdentifier: 
-  locationID: 2G
+  locationID: 14G
   locationText:
-  - You begin to wonder if crossing the Barrow-downs was such a good idea after all.
-    From within some of the tombs come eerie whistles and moans. It's just the wind,
-    you say to yourself. but what about all the stories of hauntings and guarded treasures
-    you heard about as a child? You come to a little grassy valley between two good-sized
-    barrows. A small creature scurries from one.
-  encounterText1: Explore the barrow
-  encounterIndex1: 103
-  encounterText2: 
-  encounterIndex2: 0
-  encounterText3: 
-  encounterIndex3: 0
-  canExploreHere: 1
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  - 'The woods give way to a small Hobbit village, Newbury. There, a friendly Halfling
+    points the way to the ferry. He listens to your warnings about Black Riders, adding
+    that he has heard such tales before.
+
+    You pass through Bucklebury, where Hobbits hide behind locked doors as you pass,
+    watching you closely. Skirting Buck Hill, you pass the gate at Brandy Hall, where
+    a proud Hobbit named "Something-Unintelligible Buck" spins a long tale of his
+    great heritage.
+
+    The land flattens as you near the river. Ahead you spot a flat-bottomed ferry,
+    apparently unattended.'
+  encounterText1: Steal the Ferry
+  encounterIndex1: 209
+  encounterText2: Observe the Situation
+  encounterIndex2: 183
+  encounterText3: Swim Across the River
+  encounterIndex3: 339
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -40,10 +46,17 @@ MonoBehaviour:
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
+  moveInRandomDirection: 0
+  randomDirectionRangeMin: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 1
-  timeTaken: 90
-  timeTakenSecondary: 45
+  timeTaken: 75
+  timeTakenSecondary: 0
+  experience: 0

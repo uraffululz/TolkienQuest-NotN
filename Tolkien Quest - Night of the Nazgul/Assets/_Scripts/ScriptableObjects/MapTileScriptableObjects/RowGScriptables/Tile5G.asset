@@ -12,23 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile5G
   m_EditorClassIdentifier: 
-  locationID: 2G
+  locationID: 5G
   locationText:
-  - You begin to wonder if crossing the Barrow-downs was such a good idea after all.
-    From within some of the tombs come eerie whistles and moans. It's just the wind,
-    you say to yourself. but what about all the stories of hauntings and guarded treasures
-    you heard about as a child? You come to a little grassy valley between two good-sized
-    barrows. A small creature scurries from one.
-  encounterText1: Explore the barrow
-  encounterIndex1: 103
+  - The eerie singing has ceased; now only the wind taunts you. Endless burial mounds
+    loom before you like islands in a stark sea. Nearby a domed barrow stands. There
+    could be treasure inside -- or a living skeleton!
+  encounterText1: Explore the tomb
+  encounterIndex1: 190
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 1
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -46,4 +44,4 @@ MonoBehaviour:
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 1
   timeTaken: 90
-  timeTakenSecondary: 45
+  timeTakenSecondary: 0

@@ -14,20 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 4A
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - The rocky, rugged, hilly land before you stretches unbroken toward the horizon.
+    Fighting the west wind, you press on, ever-vigilant for a wandering Troll or a
+    roaming pack of hungry wolves.
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
+  exploreHasMultipleRanges: 1
+  howManyRanges: 1
+  range1Min: 2
+  range1Length: 3
+  range1FurtherIndex: 327
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  rangeFailMeansMoveOn: 1
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 60
   timeTakenSecondary: 0

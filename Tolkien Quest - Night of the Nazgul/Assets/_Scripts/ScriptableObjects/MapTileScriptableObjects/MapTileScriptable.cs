@@ -18,10 +18,12 @@ public class MapTileScriptable : ScriptableObject {
 	public int encounterIndex3;
 
 	[Header("Exploration Text Variables")]
-	public bool canExploreHere;
-	public bool exploreRequiresRoll;
-	public int exploreMinLimit;
-	public int exploreSecondaryIndex;
+	//public bool canExploreHere;
+	public bool actionRequiresRoll;
+	public enum actionSkill {No, General, Trickery, Perception};
+	public actionSkill actionAddsSkill;
+	public int actionMinLimit;
+	public int actionSecondaryIndex;
 
 	public bool exploreHasMultipleRanges;
 	public int howManyRanges;
@@ -34,9 +36,15 @@ public class MapTileScriptable : ScriptableObject {
 	public int range3Min;
 	public int range3Length;
 	public int range3FurtherIndex;
+	public int range4Min;
+	public int range4Length;
+	public int range4FurtherIndex;
 	public bool rangeFailMeansMoveOn;
+	public bool moveInRandomDirection;
+	public int randomDirectionRangeMin;
+	public int randomDirectionRangeMax;
 
-	
+
 	public bool combatHere;
 	public bool merchantHere;
 	public EncounterMerchantScriptable myMerchantScriptable;
@@ -46,4 +54,7 @@ public class MapTileScriptable : ScriptableObject {
 	[Header("Time Variables")]
 	public int timeTaken;
 	public int timeTakenSecondary;
+
+	[Header("Experience Point Variables")]
+	public int experience;
 }

@@ -12,34 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile9F
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 9F
   locationText:
-  - 
-  encounterText1: 
+  - You come upon the tall leafy trees os a wood, leaving behind the barren Barrow-downs;
+    a rough trail cuts through the woods to the southwest.
+  encounterText1: Continue
   encounterIndex1: 0
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
-  exploreHasMultipleRanges: 0
-  howManyRanges: 0
-  range1Min: 0
-  range1Length: 0
-  range1FurtherIndex: 0
-  range2Min: 0
-  range2Length: 0
-  range2FurtherIndex: 0
-  range3Min: 0
-  range3Length: 0
-  range3FurtherIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
+  exploreHasMultipleRanges: 1
+  howManyRanges: 4
+  range1Min: 2
+  range1Length: 3
+  range1FurtherIndex: 370
+  range2Min: 6
+  range2Length: 1
+  range2FurtherIndex: 104
+  range3Min: 8
+  range3Length: 3
+  range3FurtherIndex: 432
+  range4Min: 12
+  range4Length: 999
+  range4FurtherIndex: 128
   rangeFailMeansMoveOn: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 90
   timeTakenSecondary: 0
+  experience: 1

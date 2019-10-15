@@ -12,19 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile7H
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 7H
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - It seems you have been wandering through the Barrow-downs for days, and yet more
+    ancient mounds loom before you. The urge to explore one is overtaken by the urgency
+    of your mission, and you trudge westward, toward the River beyond your sight and
+    smell, the River you must reach soon if you are to alert the Shire.
+  encounterText1: Explore a barrow
+  encounterIndex1: 121
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -40,6 +43,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 90
   timeTakenSecondary: 0

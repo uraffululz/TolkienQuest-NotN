@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile8E
   m_EditorClassIdentifier: 
-  locationID: 
-  locationText: []
-  encounterText1: 
-  encounterIndex1: 0
+  locationID: 8E
+  locationText:
+  - Downs stretch before you like ugly knuckles of earth. The wind bints at your face
+    as you approach a rounded burial mound, its heavy oak door locked and barred.
+  encounterText1: Explore the Tomb
+  encounterIndex1: 190
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -35,10 +37,14 @@ MonoBehaviour:
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 90
   timeTakenSecondary: 0
+  experience: 0

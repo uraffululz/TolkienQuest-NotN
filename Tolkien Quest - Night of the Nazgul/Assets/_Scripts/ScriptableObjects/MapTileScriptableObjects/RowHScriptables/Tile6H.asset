@@ -12,19 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile6H
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 6H
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - More domed burial mounds rise before you, like rough atolls in a stark sea of
+    earth. You notice with a start that the heavy oaken door to the tomb just fifty
+    feet ahead seems to stand ajar. Perhaps you can squeeze in and seize a treasure
+    of the First Age or a magic item to speed you along! But will such a treasure
+    stand unguarded?
+  encounterText1: Continue
+  encounterIndex1: 421
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -41,5 +45,5 @@ MonoBehaviour:
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 90
   timeTakenSecondary: 0

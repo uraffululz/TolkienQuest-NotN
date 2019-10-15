@@ -26,5 +26,6 @@ public class EncounterScriptable : ScriptableObject {
 	[Header("Misc. Variables", order = 1)]
 	public int timeTaken;
 
+	[Header("Experience Point Variables")]
 	public int XPGained;
 }

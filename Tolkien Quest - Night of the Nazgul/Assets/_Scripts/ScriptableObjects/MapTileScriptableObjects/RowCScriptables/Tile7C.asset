@@ -12,34 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile7C
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 7C
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - You come to a rise and look south toward the Road, which lies quiet and still
+    a few miles away. Tales of Orcs and Trolls and roaming bandits hurry you along
+    the rocky, rolling hills.
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
-  exploreHasMultipleRanges: 0
-  howManyRanges: 0
-  range1Min: 0
-  range1Length: 0
-  range1FurtherIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
+  exploreHasMultipleRanges: 1
+  howManyRanges: 1
+  range1Min: 2
+  range1Length: 3
+  range1FurtherIndex: 327
   range2Min: 0
   range2Length: 0
   range2FurtherIndex: 0
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
-  rangeFailMeansMoveOn: 0
+  rangeFailMeansMoveOn: 1
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 60
   timeTakenSecondary: 0

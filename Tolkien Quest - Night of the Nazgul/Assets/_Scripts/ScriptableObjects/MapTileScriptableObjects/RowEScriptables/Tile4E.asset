@@ -12,18 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile4E
   m_EditorClassIdentifier: 
-  locationID: 
-  locationText: []
-  encounterText1: 
-  encounterIndex1: 0
+  locationID: 4E
+  locationText:
+  - In the wailing wind that stalks the Barrow-downs, you hear a strange sound, a
+    haunting cry. Is it a beckoning or a warning? Suddenly the sound dies, and you
+    are left alone, crossing the haunted hills as quickly as you can. A domed tomb
+    stands fifty feet ahead of you.
+  encounterText1: Continue
+  encounterIndex1: 421
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -40,5 +44,5 @@ MonoBehaviour:
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 90
   timeTakenSecondary: 0

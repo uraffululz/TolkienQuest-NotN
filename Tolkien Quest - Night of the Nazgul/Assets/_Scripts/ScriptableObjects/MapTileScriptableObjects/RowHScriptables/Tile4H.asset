@@ -12,19 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile4H
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 4H
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - After crossing another small ridge encircling an ancient tomb, you decide to rest.
+    Just as you close your eyes and lean back against the smooth sides of the barrow,
+    an idcy hand grabs at your sleeve. You jump, reaching for your weapon, but there
+    is nothing to be seen.
+  encounterText1: Search the tomb
+  encounterIndex1: 103
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -40,6 +43,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 90
   timeTakenSecondary: 0

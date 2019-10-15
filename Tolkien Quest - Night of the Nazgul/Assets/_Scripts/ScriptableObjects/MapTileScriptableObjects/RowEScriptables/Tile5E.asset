@@ -12,18 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile5E
   m_EditorClassIdentifier: 
-  locationID: 
-  locationText: []
-  encounterText1: 
-  encounterIndex1: 0
+  locationID: 5E
+  locationText:
+  - The hedge wall running south of the Road is broken in places; the line of trees
+    that once marked it as a great route is ragged too. Decay surrounds you. Suddenly
+    an eerie wail carries in the west wind, chiling you to the bone. Yet your mission
+    and everything you know about the haunted barrows tells you that you must go on.
+  encounterText1: Explore the barrow
+  encounterIndex1: 107
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -39,6 +43,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 90
   timeTakenSecondary: 0

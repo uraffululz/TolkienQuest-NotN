@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile3C
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 3C
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - The northern knuckles of the Barrow-downs break up, and for a while you face a
+    clear (though up and down) path west toward the River. A few birds fly by, but
+    otherwise only the wind breaks the silence. From a small hilltop, you can make
+    out the Great East Road a few miles south of you. Below and beyond you, a wagon
+    slowly makes its way west along the road.
+  encounterText1: Observe the wagon
+  encounterIndex1: 137
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
@@ -40,6 +44,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 75
   timeTakenSecondary: 0

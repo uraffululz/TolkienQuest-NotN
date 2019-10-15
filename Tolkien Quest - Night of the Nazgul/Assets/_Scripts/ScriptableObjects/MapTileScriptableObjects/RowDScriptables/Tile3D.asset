@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 3D
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - The wide dirt path that is the Great East Road seems to stretch on endlessly before
+    you; only a solitary wagon ambling west moves through your field of vision. You
+    wish for a companion to talk to. Stories of the bandits who prowl the road lead
+    you to keep an eye out for cover as you continue.
+  encounterText1: Observe the wagon
+  encounterIndex1: 270
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
@@ -40,6 +43,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
-  timeTakenSecondary: 0
+  canMoveOn: 1
+  timeTaken: 75
+  timeTakenSecondary: 45

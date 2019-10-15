@@ -12,34 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile15H
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 15H
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - The marshes suck at your feet with each step. You must get out of this muck or
+    you will never warn the Shire in time.
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
-  exploreHasMultipleRanges: 0
-  howManyRanges: 0
-  range1Min: 0
-  range1Length: 0
-  range1FurtherIndex: 0
-  range2Min: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 1
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
+  exploreHasMultipleRanges: 1
+  howManyRanges: 2
+  range1Min: 2
+  range1Length: 4
+  range1FurtherIndex: 334
+  range2Min: 7
   range2Length: 0
-  range2FurtherIndex: 0
+  range2FurtherIndex: 370
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
-  rangeFailMeansMoveOn: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 1
+  moveInRandomDirection: 0
+  randomDirectionRangeMin: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 150
   timeTakenSecondary: 0
+  experience: 0

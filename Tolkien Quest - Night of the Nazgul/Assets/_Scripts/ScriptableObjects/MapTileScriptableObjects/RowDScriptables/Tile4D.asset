@@ -12,19 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile4D
   m_EditorClassIdentifier: 
-  locationID: 3D
+  locationID: 4D
   locationText:
-  - 
+  - The road rises and falls with the rugged land, the wind ever-whistling in your
+    ears. before you, the road runs on like a tattered brown ribbon. The ruins of
+    an abandoned watchtower and the earthen burial domes of the downs are the only
+    breaks in the landscape. You look east and west but see no one and nothing approaching.
+    The immensity of your task weighs on you, but its importance lightens your step
+    and you hurry on.
   encounterText1: 
   encounterIndex1: 0
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -40,6 +45,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
-  timeTakenSecondary: 0
+  canMoveOn: 1
+  timeTaken: 75
+  timeTakenSecondary: 45

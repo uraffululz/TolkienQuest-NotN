@@ -12,27 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile6D
   m_EditorClassIdentifier: 
-  locationID: 3D
+  locationID: 6D
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - You hear horses galloping toward you, their hooves pounding on the road.
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
-  exploreHasMultipleRanges: 0
-  howManyRanges: 0
-  range1Min: 0
-  range1Length: 0
-  range1FurtherIndex: 0
-  range2Min: 0
-  range2Length: 0
-  range2FurtherIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 2
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
+  exploreHasMultipleRanges: 1
+  howManyRanges: 2
+  range1Min: 2
+  range1Length: 5
+  range1FurtherIndex: 373
+  range2Min: 8
+  range2Length: 999
+  range2FurtherIndex: 363
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0

@@ -17,15 +17,27 @@ MonoBehaviour:
   - Tall oaks and elms stretch unbroken before you. The haunting cries of strange
     birds echo overhead. Underfoot, dark twisting vines seem to grab at your ankles.
   encounterText1: Explore the area
-  encounterIndex1: 152
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 1
-  exploreRequiresRoll: 1
-  exploreMinLimit: 7
-  exploreSecondaryIndex: 170
+  actionRequiresRoll: 0
+  actionAddsSkill: 1
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
+  exploreHasMultipleRanges: 1
+  howManyRanges: 2
+  range1Min: 2
+  range1Length: 4
+  range1FurtherIndex: 152
+  range2Min: 7
+  range2Length: 5
+  range2FurtherIndex: 170
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  rangeFailMeansMoveOn: 1
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}

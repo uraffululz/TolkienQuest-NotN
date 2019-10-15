@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile21H
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 21H
   locationText:
-  - 
+  - At the edge of the forest near the Southfarthing, you see Hobbit farmers resting
+    in the shade and wave to them.
   encounterText1: 
   encounterIndex1: 0
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -36,10 +37,17 @@ MonoBehaviour:
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
+  moveInRandomDirection: 0
+  randomDirectionRangeMin: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 120
   timeTakenSecondary: 0
+  experience: 0

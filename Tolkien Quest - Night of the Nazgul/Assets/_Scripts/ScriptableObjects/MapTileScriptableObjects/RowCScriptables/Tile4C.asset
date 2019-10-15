@@ -12,19 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile4C
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 4C
   locationText:
-  - 
+  - The stark, rocky land rolls on before you, undulating toward the horizon. From
+    atop a hillock, you spy the wide road running east and west just a few miles south
+    of where you are. You could travel faster along the road -- maybe even hitch a
+    ride with someone -- but you might also meet the bandits who prey on the likes
+    of you, a callow youth so far from home.
   encounterText1: 
   encounterIndex1: 0
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -40,6 +44,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 60
   timeTakenSecondary: 0

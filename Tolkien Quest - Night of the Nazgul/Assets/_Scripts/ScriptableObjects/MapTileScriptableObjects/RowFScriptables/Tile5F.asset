@@ -12,19 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile5F
   m_EditorClassIdentifier: 
-  locationID: 
+  locationID: 5F
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - An unearthly, blood-chilling cry stops you in your tracks. You come upon a great
+    barrow with a standing ring of earth surrounding it. Could this be the burial
+    tomb of a First Age Prince? What great treasures might it hold? Perhaps you might
+    claim some magic item to speed you on your mission. You approach warily, sneaking
+    up to the entrance. Your heart races in your chest as the wail rises again, raising
+    a ghastly warning against all intruders.
+  encounterText1: Continue
+  encounterIndex1: 421
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -41,5 +46,5 @@ MonoBehaviour:
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 90
   timeTakenSecondary: 0

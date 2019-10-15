@@ -14,20 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 5A
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - You have heard that this region, with its rolling hills and small stands of trees,
+    is home to several families of Orcs, so you remind yourself to keepa  sharp eye.
+  encounterText1: Explore
+  encounterIndex1: 249
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
+  exploreHasMultipleRanges: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 0
-  timeTaken: 0
+  canMoveOn: 1
+  timeTaken: 120
   timeTakenSecondary: 0

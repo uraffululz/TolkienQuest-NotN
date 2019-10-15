@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterIndex: 242
   encounterText:
-  - 
+  - The bird circles, coming quite low, and calls out to his circling companions;
+    you dive for cover. Is he a spy for Sauron? You hold your breath. Finally, he
+    flies off -- but did he spot you?
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
@@ -24,5 +26,5 @@ MonoBehaviour:
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
   furtherEncounter3Index: 0
-  timeTaken: 0
-  XPGained: 0
+  timeTaken: 20
+  XPGained: 1

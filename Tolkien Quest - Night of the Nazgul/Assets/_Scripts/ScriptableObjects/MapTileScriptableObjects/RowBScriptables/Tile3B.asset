@@ -23,10 +23,10 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 1
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 1
   howManyRanges: 1
   range1Min: 2
@@ -42,6 +42,6 @@ MonoBehaviour:
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 1
+  canMoveOn: 0
   timeTaken: 60
   timeTakenSecondary: 0

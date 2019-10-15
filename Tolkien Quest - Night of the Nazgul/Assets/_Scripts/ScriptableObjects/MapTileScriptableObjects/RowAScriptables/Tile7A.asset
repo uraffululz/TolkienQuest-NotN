@@ -12,22 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile7A
   m_EditorClassIdentifier: 
-  locationID: 6A
+  locationID: 7A
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - 'Through the trees you get a glimpse of the most terrifying of sights in the hills
+    of Bree-land: a deep, gloomy, and lived-in cave ideal for Orcs. You approach warily,
+    although you know from gruesome childhood stories that Orcs rarely appear in daylight.'
+  encounterText1: Continue
+  encounterIndex1: 100
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
+  exploreHasMultipleRanges: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
+  timeTaken: 120
   timeTakenSecondary: 0

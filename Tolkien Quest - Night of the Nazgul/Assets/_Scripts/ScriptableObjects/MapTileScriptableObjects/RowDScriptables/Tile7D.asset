@@ -12,19 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile7D
   m_EditorClassIdentifier: 
-  locationID: 3D
+  locationID: 7D
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - Your tiresome journey continues. Suddenly you see a tall, dark-haired man on horseback
+    emerge from a stand of trees along the highway.
+  encounterText1: Continue
+  encounterIndex1: 441
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 0
+  actionAddsSkill: 0
+  actionMinLimit: 0
+  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -41,5 +42,5 @@ MonoBehaviour:
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
-  timeTakenSecondary: 0
+  timeTaken: 90
+  timeTakenSecondary: 45

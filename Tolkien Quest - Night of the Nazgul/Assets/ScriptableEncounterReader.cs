@@ -50,15 +50,27 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 	public void UpdateEncounterBG (int encounterButtonClicked, int encounterIndex) {
 		//If the player is able to explore the area
-		if (encounterButtonClicked == 1 && MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().exploreRequiresRoll) {
+		if (encounterButtonClicked == 1 && MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().actionRequiresRoll) {
 			int exploreSuccessRoll = Random.Range(2, 13);
-			exploreSuccessRoll += CharacterManager.mySkillGeneralTotal;
+
+			if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.General) {
+				exploreSuccessRoll += CharacterManager.mySkillGeneralTotal;
+				print("Adding General skill bonus");
+			}
+			else if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.Trickery) {
+				exploreSuccessRoll += CharacterManager.mySkillTrickeryTotal;
+				print("Adding Trickery skill bonus");
+			}
+			else if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.Perception) {
+				exploreSuccessRoll += CharacterManager.mySkillPerceptionTotal;
+				print("Adding Perception skill bonus");
+			}
 
 			print("Explore Roll: " + exploreSuccessRoll);
 
 			//If the player succeeds in exploring the area
-			if (exploreSuccessRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().exploreMinLimit) {
-				encounterIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().exploreIndex;
+			if (exploreSuccessRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().actionMinLimit) {
+				encounterIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().actionIndex;
 			}
 		}
 
@@ -66,7 +78,20 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			int exploreRoll = Random.Range(2, 13);
 			bool rolledWithinRanges = false;
 
-			print(exploreRoll);
+			if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.General) {
+				exploreRoll += CharacterManager.mySkillGeneralTotal;
+				print("Adding General skill bonus");
+			}
+			else if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.Trickery) {
+				exploreRoll += CharacterManager.mySkillTrickeryTotal;
+				print("Adding Trickery skill bonus");
+			}
+			else if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.Perception) {
+				exploreRoll += CharacterManager.mySkillPerceptionTotal;
+				print("Adding Perception skill bonus");
+			}
+
+			print("Explore roll: " + exploreRoll);
 
 			if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().howManyRanges > 0) {
 				//print(MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().exploreRange1.end);
@@ -94,21 +119,45 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			}
 
 			if (rolledWithinRanges == false) {
+				//If the number chosen doesn't belong to any of the other "Ranges"
 				if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().rangeFailMeansMoveOn) {
+					//If the player is meant to move on when rolling out of range
 					print("Failed to roll within exploration ranges. Moving on");
-					mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
+					if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().moveRandomDirection) {
+						//If the player is then meant to move in a random direction
+						int randomRoll = Random.Range(2, 13);
+						randomRoll += CharacterManager.mySkillGeneralTotal;
+
+						if (randomRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMin &&
+							randomRoll <= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMax) {
+							print("Moving on in a random direction");
+							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
+							mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
+						}
+						else {
+							print("Moving on in the direction of your choice");
+							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
+							mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
+						}
+					}
+					else {
+						mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
+						mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
+
+					}
 				}
 			}
 		}
 
 		print(encounterIndex);
 
-		if (encounterIndex >= 100 && encounterIndex <= 454) {
+		if (encounterIndex != 0 && encounterIndex != 1 && encounterIndex >= 100 && encounterIndex <= 454) {
 			myEncounterScriptable = mapSceneManager.GetComponent<EncounterManager>().encounterTextScriptables[encounterIndex];
 
 			GetComponentInChildren<Text>().text = myEncounterScriptable.encounterText[0];
 
 			encounterTimeText.text = "Time: " + myEncounterScriptable.timeTaken.ToString();
+
 			encounterXPText.text = "Experience: " + myEncounterScriptable.XPGained.ToString();
 
 			//Re-calculate the player's TOTAL TIME TAKEN & TOTAL XP EARNED

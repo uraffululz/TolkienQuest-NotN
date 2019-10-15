@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3a045e2c0bf74439aa8a7c43f9bb84, type: 3}
   m_Name: Tile13D
   m_EditorClassIdentifier: 
-  locationID: 3D
+  locationID: 13D
   locationText:
-  - 
-  encounterText1: 
-  encounterIndex1: 0
+  - You are so near the river you can smell it! Flush with excitement, you creep through
+    the heather and shrubs, careful to keep a constant watch on the Bridge. There's
+    no one in sight.
+  encounterText1: Continue
+  encounterIndex1: 246
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  canExploreHere: 0
-  exploreRequiresRoll: 0
-  exploreMinLimit: 0
-  exploreSecondaryIndex: 0
+  actionRequiresRoll: 1
+  actionAddsSkill: 3
+  actionMinLimit: 8
+  actionSecondaryIndex: 282
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -36,10 +38,17 @@ MonoBehaviour:
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
+  moveInRandomDirection: 0
+  randomDirectionRangeMin: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
-  timeTaken: 0
-  timeTakenSecondary: 0
+  timeTaken: 60
+  timeTakenSecondary: 45
+  experience: 0

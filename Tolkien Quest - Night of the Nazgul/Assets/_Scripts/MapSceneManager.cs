@@ -16,7 +16,6 @@ public class MapSceneManager : MonoBehaviour {
 
 	public static GameObject currentLocation;
 	public static ScriptableEncounterReader currentEncounter;
-	bool allowedToClickMapTile = true;
 
 	[SerializeField] GameObject locationTextBG;
 	[SerializeField] Text locationTimeText;
@@ -31,6 +30,7 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject progressLocationTextButton;
 	[SerializeField] GameObject openMerchantUIButton;
 	[SerializeField] GameObject moveOnButton;
+	public bool moveOnInRandomDirection;
 
  
 	void Awake () {
@@ -41,6 +41,7 @@ public class MapSceneManager : MonoBehaviour {
 	void Start() {
 		currentLocation = GameObject.Find("1D");
         //ArriveAtLocation(currentLocation);
+		MoveOn();
     }
 
 
@@ -54,29 +55,33 @@ public class MapSceneManager : MonoBehaviour {
 		Ray tileRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit tileRayHit;
 
-		if (Physics.Raycast(tileRay, out tileRayHit) && allowedToClickMapTile) {
+		if (Physics.Raycast(tileRay, out tileRayHit)) {
 			if (tileRayHit.collider.gameObject.tag == "MapTile") {
 				//print("You clicked on a Map Tile");
 
-				//TODO Make sure the tileRay can only hit ADJACENT tiles
+
+				//The tileRay can only hit ADJACENT tiles (if allowed)
 				if (adjacentTiles.Contains(tileRayHit.collider.gameObject)) {
-					//print("You clicked on an ADJACENT map tile");
-					currentLocation = tileRayHit.collider.gameObject;
-					player.transform.position = currentLocation.transform.position + (Vector3.back * .3f);
-					adjacentTiles.Clear();
+					print("You clicked on an ADJACENT map tile");
 
-					locationTimeText.text = "Time: " + currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken.ToString();
-					locationXPText.text = "Experience: " + currentLocation.GetComponent<ScriptableMapTileReader>().XPGained.ToString();
+					if (tileRayHit.collider.gameObject.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile) {
+						currentLocation = tileRayHit.collider.gameObject;
+						player.transform.position = currentLocation.transform.position + (Vector3.back * .3f);
+						adjacentTiles.Clear();
 
-					CharacterManager.totalTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
-					CharacterManager.totalXP += currentLocation.GetComponent<ScriptableMapTileReader>().XPGained;
+						locationTimeText.text = "Time: " + currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken.ToString();
+						locationXPText.text = "Experience: " + currentLocation.GetComponent<ScriptableMapTileReader>().XPGained.ToString();
 
-					print("Total time: " + CharacterManager.totalTimeTaken);
-					print("Total XP: " + CharacterManager.totalXP);
+						CharacterManager.totalTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
+						CharacterManager.totalXP += currentLocation.GetComponent<ScriptableMapTileReader>().XPGained;
 
-					allowedToClickMapTile = false;
-					currentLocationTextIndex = 0;
-					UpdateLocationBG();
+						print("Total time: " + CharacterManager.totalTimeTaken);
+						print("Total XP: " + CharacterManager.totalXP);
+
+						tileRayHit.collider.gameObject.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = false;
+						currentLocationTextIndex = 0;
+						UpdateLocationBG();
+					}
 				}
 			}
 		}
@@ -170,18 +175,32 @@ public class MapSceneManager : MonoBehaviour {
 	public void MoveOn () {
 		//CharacterManager.totalTimeTaken += locationTimeOrEncounterTime;
 
-		allowedToClickMapTile = true;
+		//moveOnInRandomDirection = true;
 
 		foreach (GameObject mapTile in mapTiles) {
 			//adjacentTiles.Clear();
-			if (currentLocation.GetComponent<Collider>().bounds.Intersects(mapTile.GetComponent<Collider>().bounds)) {
+			//if (currentLocation.GetComponent<Collider>().bounds.Intersects(mapTile.GetComponent<Collider>().bounds)) {
 				adjacentTiles.Add(mapTile);
-				mapTile.GetComponent<MeshRenderer>().material.color = Color.red;
-			}
-			else {
+			//}
+			//else {
+				mapTile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = false;
 				mapTile.GetComponent<MeshRenderer>().material = tileBaseMat;
+			//}
+		}
+
+		if (moveOnInRandomDirection) {
+			GameObject randomTile = adjacentTiles[Random.Range(0, adjacentTiles.Count)];
+			randomTile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = true;
+			randomTile.GetComponent<MeshRenderer>().material.color = Color.red;
+		}
+		else {
+			foreach (GameObject tile in adjacentTiles) {
+				tile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = true;
+				tile.GetComponent<MeshRenderer>().material.color = Color.red;
 			}
 		}
+
+		moveOnInRandomDirection = false;
 
 //TOMAYBEDO I might not need to reset all this crap
 		//currentLocationTextIndex = 0;
