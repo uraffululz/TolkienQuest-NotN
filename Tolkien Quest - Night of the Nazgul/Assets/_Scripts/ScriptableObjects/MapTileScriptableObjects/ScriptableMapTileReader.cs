@@ -8,7 +8,7 @@ public class ScriptableMapTileReader : MonoBehaviour {
 
 	//[SerializeField] GameObject MerchantUI;
 
-	[SerializeField] string myLocationID;
+	public string myLocationID;
 	public bool allowedToClickMapTile;
 
 	[TextArea(3, 10, order = 0)] public string[] locationText;
@@ -20,35 +20,24 @@ public class ScriptableMapTileReader : MonoBehaviour {
 	public int encounterOptionIndex2;
 	public string encounterOptionText3;
 	public int encounterOptionIndex3;
+	public string encounterOptionText4;
+	public int encounterOptionIndex4;
 
 	[Header("Exploration Variables")]
-	//public bool canExploreHere;
-	public bool actionRequiresRoll;
 	public MapTileScriptable.actionSkill addSkillToAction;
-	public int actionMinLimit;
-	public int actionIndex;
 
 	public bool exploreHasMultipleRanges;
 	public int howManyRanges;
 	public RangeInt exploreRange1;
-	//public int range1Min;
-	//public int range1Max;
 	public int range1FurtherIndex;
 	public RangeInt exploreRange2;
-	//public int range2Min;
-	//public int range2Max;
 	public int range2FurtherIndex;
 	public RangeInt exploreRange3;
-	//public int range3Min;
-	//public int range3Max;
 	public int range3FurtherIndex;
 	public RangeInt exploreRange4;
-	//public int range3Min;
-	//public int range3Max;
 	public int range4FurtherIndex;
 	public bool rangeFailMeansMoveOn;
-	public bool moveRandomDirection;
-	public int randomDirectionChoiceMin;
+	public bool canGetLost;
 	public int randomDirectionChoiceMax;
 
 	[SerializeField] bool hasCombat;
@@ -62,9 +51,27 @@ public class ScriptableMapTileReader : MonoBehaviour {
 	[Header("Misc. Variables")]
 	public int timeTaken;
 	public int secondaryTimeTaken;
+	public bool canRestAtNight;
+	public bool timeLocked;
+	public int daysLimit1;
+	public int timeLimit1;
+	public int limit1Index;
+	public int daysLimit2;
+	public int timeLimit2;
+	public int limit2Index;
+	public int overTimeIndex;
 
 	[Header("Experience Point Variables")]
 	public int XPGained;
+
+	[Header("Unique Tile Rule Variables")]
+	public bool changesPlayerLocation;
+	public string changedLocationID;
+
+	public bool previousLocationsConsidered;
+	public string[] locationsConsidered;
+	public int locationBasedEncounter;
+	public int alternateLocationEncounter;
 
 
 	void Awake() {
@@ -77,13 +84,9 @@ public class ScriptableMapTileReader : MonoBehaviour {
 			encounterOptionIndex2 = myTileScriptable.encounterIndex2;
 			encounterOptionText3 = myTileScriptable.encounterText3;
 			encounterOptionIndex3 = myTileScriptable.encounterIndex3;
-			
-			if (/*myTileScriptable.canExploreHere*/myTileScriptable.actionRequiresRoll) {
-				actionRequiresRoll = myTileScriptable.actionRequiresRoll;
-				addSkillToAction = myTileScriptable.actionAddsSkill;
-				actionMinLimit = myTileScriptable.actionMinLimit;
-				actionIndex = myTileScriptable.actionSecondaryIndex;
-			}
+			encounterOptionText4 = myTileScriptable.encounterText4;
+			encounterOptionIndex4 = myTileScriptable.encounterIndex4;
+			addSkillToAction = myTileScriptable.actionAddsSkill;
 
 			if (myTileScriptable.exploreHasMultipleRanges) {
 				exploreHasMultipleRanges = myTileScriptable.exploreHasMultipleRanges;
@@ -109,9 +112,8 @@ public class ScriptableMapTileReader : MonoBehaviour {
 				}
 
 				rangeFailMeansMoveOn = myTileScriptable.rangeFailMeansMoveOn;
-				moveRandomDirection = myTileScriptable.moveInRandomDirection;
-				randomDirectionChoiceMin = myTileScriptable.randomDirectionRangeMin;
-				randomDirectionChoiceMin = myTileScriptable.randomDirectionRangeMax;
+				canGetLost = myTileScriptable.canGetLost;
+				randomDirectionChoiceMax = myTileScriptable.randomDirectionRangeMax;
 
 			}
 
@@ -125,8 +127,26 @@ public class ScriptableMapTileReader : MonoBehaviour {
 
 			timeTaken = myTileScriptable.timeTaken;
 			secondaryTimeTaken = myTileScriptable.timeTakenSecondary;
+			canRestAtNight = myTileScriptable.canRestAtNight;
+
+			timeLocked = myTileScriptable.timeLocked;
+			daysLimit1 = myTileScriptable.daysLimit1;
+			timeLimit1 = myTileScriptable.timeLimit1;
+			limit1Index = myTileScriptable.limit1Index;
+			daysLimit2 = myTileScriptable.daysLimit2;
+			timeLimit2 = myTileScriptable.timeLimit2;
+			limit2Index = myTileScriptable.limit2Index;
+			overTimeIndex = myTileScriptable.overTimeIndex;
 
 			XPGained = myTileScriptable.experience;
+
+			changesPlayerLocation = myTileScriptable.changesPlayerLocation;
+			changedLocationID = myTileScriptable.changedLocationID;
+
+			previousLocationsConsidered = myTileScriptable.previousLocationsConsidered;
+			locationsConsidered = myTileScriptable.locationsConsidered;
+			locationBasedEncounter = myTileScriptable.locationBasedEncounter;
+			alternateLocationEncounter = myTileScriptable.alternateLocationEncounter;
 		}
 	}
 }

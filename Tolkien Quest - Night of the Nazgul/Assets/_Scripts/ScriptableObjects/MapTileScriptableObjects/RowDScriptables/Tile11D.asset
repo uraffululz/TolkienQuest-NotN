@@ -16,8 +16,8 @@ MonoBehaviour:
   locationText:
   - You sense the land growing flatter as you near the river. The East Road appears
     strangely quiet, too quiet.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
@@ -40,14 +40,14 @@ MonoBehaviour:
   range4Min: 0
   range4Length: 0
   range4FurtherIndex: 0
-  rangeFailMeansMoveOn: 0
+  rangeFailMeansMoveOn: 1
   moveInRandomDirection: 0
   randomDirectionRangeMin: 0
   randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
-  canMoveOn: 1
+  canMoveOn: 0
   timeTaken: 120
   timeTakenSecondary: 45
   experience: 0

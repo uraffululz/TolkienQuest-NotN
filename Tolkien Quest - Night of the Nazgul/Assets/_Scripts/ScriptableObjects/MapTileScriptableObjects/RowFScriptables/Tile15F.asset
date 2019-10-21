@@ -17,16 +17,13 @@ MonoBehaviour:
   - Numerous ponds and hedgerows color the landscape. Surrounded by fertile, marshy
     fields and nestled near the stream called Stockbrook is Stock, chief town of the
     Northern Marish.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  actionRequiresRoll: 0
   actionAddsSkill: 0
-  actionMinLimit: 0
-  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -42,8 +39,7 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
-  moveInRandomDirection: 0
-  randomDirectionRangeMin: 0
+  canGetLost: 0
   randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
@@ -51,4 +47,13 @@ MonoBehaviour:
   canMoveOn: 0
   timeTaken: 60
   timeTakenSecondary: 45
+  canRestAtNight: 0
+  timeLocked: 1
+  daysLimit1: 2
+  timeLimit1: 40
+  limit1Index: 439
+  daysLimit2: 2
+  timeLimit2: 340
+  limit2Index: 410
+  overTimeIndex: 431
   experience: 0

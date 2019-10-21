@@ -25,7 +25,7 @@ MonoBehaviour:
   actionAddsSkill: 0
   actionMinLimit: 0
   actionSecondaryIndex: 0
-  exploreHasMultipleRanges: 0
+  exploreHasMultipleRanges: 1
   howManyRanges: 1
   range1Min: 2
   range1Length: 3
@@ -40,6 +40,9 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 1
+  moveInRandomDirection: 0
+  randomDirectionRangeMin: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter282
+  m_EditorClassIdentifier: 
+  encounterIndex: 282
+  encounterText:
+  - From your hiding place beside the road, you peer up at the Bridge, which seems
+    deserted. Then the clop-clop of a horse's hooves alerts you. You duck into a small
+    hollow and lie flat as the sound of the hourse comes nearer. Through the grass
+    and above the tangled roots of a tree, you see a large black horse approaching;
+    atop it sits a broad man's figure wrapped in a black hood and cloak, his shiny
+    black boots visible in the stirrups. The hood covers the man's face completely
+    -- if he is a man.
+  - You freeze, a chill coursing through you. The horse stops at the eastern end of
+    the Bridge; you see the rider bow his head, as if listening for the slightest
+    sound. You hold yourbreath. Then from inside the hood a sniffing sound everges
+    -- the 'man' is trying to catch your scent, you realize. Perspiration makes you
+    shiver with fear.
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 0
+  moveToSpecificTile: 
+  furtherEncounter1Text: Sneak Away
+  furtherEncounter1Index: 256
+  furtherEncounter2Text: Sneak Past to Bridge
+  furtherEncounter2Index: 313
+  furtherEncounter3Text: Talk to the Rider
+  furtherEncounter3Index: 267
+  furtherEncounter4Text: Attack the Rider
+  furtherEncounter4Index: 295
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 0
+  obtainsItems: 0
+  timeTaken: 15
+  canRestAtNight: 0
+  XPGained: 3

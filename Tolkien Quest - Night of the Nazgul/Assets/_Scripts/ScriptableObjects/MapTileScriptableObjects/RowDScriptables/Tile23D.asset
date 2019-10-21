@@ -17,8 +17,8 @@ MonoBehaviour:
   - The Great East Road is free of travellers -- are you too late to warn Hobbiton?
     The Water flows North of the Road; the stream is easily crossed at numerous footbridges
     and fords.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

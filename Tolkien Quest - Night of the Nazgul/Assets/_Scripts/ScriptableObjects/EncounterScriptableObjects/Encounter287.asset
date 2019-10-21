@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter287
+  m_EditorClassIdentifier: 
+  encounterIndex: 287
+  encounterText:
+  - Your legs grow weary; your eyes fill with tears of guilt. You ahve stolen from
+    Tom zbombadil! You stumble and fall, hurting your knee. When you look up, there
+    stands Tom bombadil, hands on hips.
+  - '"What a young fool you are!" he says cooly. "I will have what is mine."
+
+    You return what yoyu stole with no thought of fighting or challengin him.
+
+    "You had betterr learn how to treat your friends," Tom says, "or you will have
+    none."
+
+    <i>You are lost and alone. You are in space 10G.</i>'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 1
+  moveToSpecificTile: 
+  furtherEncounter1Text: 
+  furtherEncounter1Index: 0
+  furtherEncounter2Text: 
+  furtherEncounter2Index: 0
+  furtherEncounter3Text: 
+  furtherEncounter3Index: 0
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 1
+  obtainsItems: 0
+  timeTaken: 60
+  canRestAtNight: 0
+  XPGained: 1

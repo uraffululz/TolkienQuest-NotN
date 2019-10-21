@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter297
+  m_EditorClassIdentifier: 
+  encounterIndex: 297
+  encounterText:
+  - You struggle to keep up with the silent, quick-moving, long-legged Elves as they
+    hasten down a grassy land in the woods. The path descends between two rolling
+    hills, hazel crowding their slopes on either side. Ahead, the Elves leave the
+    path and cut through thickets that tear at your eyes and clothe, yet they seem
+    unmarred and unbothered. You huff and gasp for air to keep up as they bothered.
+    You huff and gasp for air to keep up as they march up the slopes to the top of
+    a hill above the river valley.
+  - 'Suddenly trees open up on one side and you stand in a wide, grassy area; to the
+    east, the ground falls off sharply and you see (above the sloping tree line) lowlands
+    and in the distance, a small village quiet as a toy model.
+
+    The Elves gather together to talk, seated comfortably on the grass their weapons
+    on the ground behind them. <i>You are in space 22G</i>'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 0
+  moveToSpecificTile: 
+  furtherEncounter1Text: Steal a Weapon
+  furtherEncounter1Index: 261
+  furtherEncounter2Text: Continue
+  furtherEncounter2Index: 263
+  furtherEncounter3Text: 
+  furtherEncounter3Index: 0
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 0
+  obtainsItems: 0
+  timeTaken: 15
+  canRestAtNight: 0
+  XPGained: 0

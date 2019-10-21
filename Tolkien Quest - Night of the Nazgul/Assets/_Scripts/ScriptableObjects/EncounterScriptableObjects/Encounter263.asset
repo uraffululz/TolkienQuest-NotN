@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter263
+  m_EditorClassIdentifier: 
+  encounterIndex: 263
+  encounterText:
+  - After another song that lulls you into a peaceful mood, an Elf asks you to join
+    them for a meal. With the overhanging boughs of tall trees acting as a roof, you
+    enter the outdoor "dining hall" and join a small party of Elves seated on tree
+    trunks, enjoying food and drink. You are served a nourishing light bread, berries
+    thath invigorate you and a cup full of a cool, golden liquid.
+  - 'You rest briefly and stir, startled to find Gildor standing above you.
+
+    "Even the gentle animals of these woods have been aroused by the Evil around us,"
+    he says in a matter-of-fact way. "Come, you must leave now," he says, leading
+    you toward the path.'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 1
+  moveToSpecificTile: 
+  furtherEncounter1Text: Follow Gildor
+  furtherEncounter1Index: 452
+  furtherEncounter2Text: 
+  furtherEncounter2Index: 0
+  furtherEncounter3Text: 
+  furtherEncounter3Index: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 0
+  obtainsItems: 0
+  timeTaken: 60
+  canRestAtNight: 1
+  XPGained: 1

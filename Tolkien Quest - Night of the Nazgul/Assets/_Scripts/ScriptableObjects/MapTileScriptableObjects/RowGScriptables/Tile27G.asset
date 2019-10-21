@@ -16,8 +16,8 @@ MonoBehaviour:
   locationText:
   - Just North of Tuckborough, the woods stand tall and foreboding. A road leads Northwest
     toward Hobbiton and Southwest towards Tuckborough.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

@@ -16,8 +16,8 @@ MonoBehaviour:
   locationText:
   - For the gentle Shire, the hills and fields here are wild; you pause to rest under
     the shade of an oak.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

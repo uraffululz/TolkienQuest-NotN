@@ -15,8 +15,8 @@ MonoBehaviour:
   locationID: 23E
   locationText:
   - South of the Road, the land is rugged and stark.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

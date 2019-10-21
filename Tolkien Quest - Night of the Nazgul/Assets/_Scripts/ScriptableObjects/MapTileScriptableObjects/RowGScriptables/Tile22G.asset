@@ -16,8 +16,8 @@ MonoBehaviour:
   locationText:
   - The woods are deep and gloomy here. After passing a small river, you pause to
     catch your breath near a path leading East and West.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

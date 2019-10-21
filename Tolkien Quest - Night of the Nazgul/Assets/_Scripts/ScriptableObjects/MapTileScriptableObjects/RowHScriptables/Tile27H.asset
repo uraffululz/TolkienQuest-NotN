@@ -15,16 +15,13 @@ MonoBehaviour:
   locationID: 27H
   locationText:
   - As you round a quiet bend in the wood, you see Tuckborough.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  actionRequiresRoll: 0
   actionAddsSkill: 0
-  actionMinLimit: 0
-  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -40,8 +37,7 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
-  moveInRandomDirection: 0
-  randomDirectionRangeMin: 0
+  canGetLost: 0
   randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
@@ -49,4 +45,13 @@ MonoBehaviour:
   canMoveOn: 0
   timeTaken: 90
   timeTakenSecondary: 45
+  canRestAtNight: 0
+  timeLocked: 1
+  daysLimit1: 2
+  timeLimit1: 460
+  limit1Index: 233
+  daysLimit2: 3
+  timeLimit2: 280
+  limit2Index: 175
+  overTimeIndex: 299
   experience: 0

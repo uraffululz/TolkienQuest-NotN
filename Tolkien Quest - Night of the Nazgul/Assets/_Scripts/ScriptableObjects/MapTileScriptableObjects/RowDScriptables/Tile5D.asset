@@ -33,15 +33,22 @@ MonoBehaviour:
   range1Length: 7
   range1FurtherIndex: 214
   range2Min: 10
-  range2Length: 999
+  range2Length: 99
   range2FurtherIndex: 363
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
+  moveInRandomDirection: 0
+  randomDirectionRangeMin: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
   timeTaken: 90
   timeTakenSecondary: 45
+  experience: 0

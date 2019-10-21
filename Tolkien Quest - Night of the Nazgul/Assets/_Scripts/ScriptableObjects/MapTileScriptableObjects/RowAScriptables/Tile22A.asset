@@ -15,8 +15,8 @@ MonoBehaviour:
   locationID: 22A
   locationText:
   - 'The Northern route wearies you: so many hills, so little to see.'
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

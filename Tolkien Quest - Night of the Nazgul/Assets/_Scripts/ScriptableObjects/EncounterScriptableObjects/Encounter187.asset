@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter187
+  m_EditorClassIdentifier: 
+  encounterIndex: 187
+  encounterText:
+  - 'You call to the driver, "Halt, please! I would have a word with you!"
+
+    The man reins in and eyes you suspiciously.
+
+    "Might you be headed west?" you ask. "I am visiting friends who own a farm just
+    ahead," you add, blushing at your lie.'
+  - 'The man nods and motions for you to climb aboard. As you step up, you notice
+    a dagger hilt sticking out of the top of the man''s boot.
+
+    "What are you carrying?" he asks you, watching you from the side of his eye.
+
+    Is he a robber or a spy or just nosey, you wonder.'
+  - '"Nothing much, just provisions," you lie, ready to jump off the wagon in an instant.
+
+    Before you can blink, the man reaches for the dagger in his boot, cursing you.
+    You leap off the wagon.'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 0
+  furtherEncounter1Text: Run Away
+  furtherEncounter1Index: 236
+  furtherEncounter2Text: Fight the Man
+  furtherEncounter2Index: 148
+  furtherEncounter3Text: 
+  furtherEncounter3Index: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 0
+  obtainsItems: 0
+  timeTaken: 15
+  canRestAtNight: 0
+  XPGained: 12

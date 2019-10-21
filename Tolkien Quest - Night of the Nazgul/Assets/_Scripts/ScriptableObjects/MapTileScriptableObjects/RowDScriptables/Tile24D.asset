@@ -18,8 +18,8 @@ MonoBehaviour:
     footbridges and fords.) Travelling the Great East Road, one can sometimes make
     faster time than imagined. Hobbit merchants and farmers wave "hello" warily but
     refuse to give you a ride or any information about the Shirriff.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

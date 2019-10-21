@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter305
+  m_EditorClassIdentifier: 
+  encounterIndex: 305
+  encounterText:
+  - 'In a daze you follow a stone-bordered path over a knoll and see a two-storied
+    housd built under the overhanging shoulder of a hill; falls bubble down beside
+    it. (<i>You are in space 10G.</i>)
+
+    You feel regreshed and eager to arrive. Tom Bombadil''s singing, ehich has magically
+    led you here, continues:'
+  - 'In a daze you follow a stone-bordered path over a knoll and see a two-storied
+    housd built under the overhanging shoulder of a hill; falls bubble down beside
+    it. (<i>You are in space 10G.</i>)
+
+    You feel regreshed and eager to arrive. Tom Bombadil''s singing, ehich has magically
+    led you here, continues:'
+  - '<i>Hey! Come derry doil! Hop along, my hearty!
+
+    Young adventurer, come, let''s have a party!
+
+    Now let the fun begin! Let''s sing a song together!</i>
+
+    An answering voice -- a woman''s -- sweet and clear as the water of the brook,
+    but ancient as the hills replies:'
+  - '<i>Now let the song begin! Let us sing together!
+
+    Of sun, stars, moon and mist, rain and cloudy weather,
+
+    Light on the budding leaf, dew on the feather,
+
+    Wind on the open hill, bells on the ehather,
+
+    Reeds by the shady pool, lillies on the water:
+
+    Old Tom Bombadil and the River-daughter!</i>'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 1
+  moveToSpecificTile: 
+  furtherEncounter1Text: Enter Tom's House
+  furtherEncounter1Index: 273
+  furtherEncounter2Text: 
+  furtherEncounter2Index: 0
+  furtherEncounter3Text: 
+  furtherEncounter3Index: 0
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 1
+  obtainsItems: 0
+  timeTaken: 45
+  canRestAtNight: 0
+  XPGained: 1

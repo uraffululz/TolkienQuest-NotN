@@ -14,15 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterIndex: 190
   encounterText:
-  - 
+  - The tomb is dark and only six feet high. You wait for your eyes to adjust to the
+    dark, then you feel your way around, finding useless, rusted knives and shortswords
+    but nothing of note. You turn to leave when you're caught in a huge, thick spider
+    web that gags you.
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
-  furtherEncounter1Text: 
-  furtherEncounter1Index: 0
+  furtherEncounter1Text: Continue
+  furtherEncounter1Index: 1
   furtherEncounter2Text: 
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
   furtherEncounter3Index: 0
-  timeTaken: 0
-  XPGained: 0
+  exploreHasMultipleRanges: 1
+  actionAddsSkill: 0
+  howManyRanges: 2
+  range1Min: 3
+  range1Length: 224
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 1
+  moveOnRandomly: 0
+  obtainsItems: 0
+  timeTaken: 30
+  canRestAtNight: 0
+  XPGained: 1

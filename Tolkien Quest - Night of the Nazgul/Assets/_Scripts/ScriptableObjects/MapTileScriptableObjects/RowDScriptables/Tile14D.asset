@@ -18,8 +18,8 @@ MonoBehaviour:
     The Great East Road stretches before you; the gentle stream known as The Water
     flows North of the Road. (The Water is easily crossable at numerous footbridges
     and fords.)
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

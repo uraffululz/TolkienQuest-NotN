@@ -17,7 +17,7 @@ MonoBehaviour:
   - You come upon the tall leafy trees os a wood, leaving behind the barren Barrow-downs;
     a rough trail cuts through the woods to the southwest.
   encounterText1: Continue
-  encounterIndex1: 0
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
@@ -41,6 +41,9 @@ MonoBehaviour:
   range4Length: 999
   range4FurtherIndex: 128
   rangeFailMeansMoveOn: 0
+  moveInRandomDirection: 0
+  randomDirectionRangeMin: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}

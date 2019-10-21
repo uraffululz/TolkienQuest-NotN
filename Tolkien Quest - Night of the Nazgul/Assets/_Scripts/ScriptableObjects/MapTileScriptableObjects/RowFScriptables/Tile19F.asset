@@ -16,8 +16,8 @@ MonoBehaviour:
   locationText:
   - In the Green Hill Country, you wander through the solemn woods, thinking that
     maybe you'll meet some of the Elves that are sometimes seen in this area.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

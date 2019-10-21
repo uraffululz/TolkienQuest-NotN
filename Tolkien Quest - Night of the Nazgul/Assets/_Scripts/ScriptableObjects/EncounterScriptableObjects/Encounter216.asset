@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter216
+  m_EditorClassIdentifier: 
+  encounterIndex: 216
+  encounterText:
+  - 'The outskirts of Scary are rough. People in the street eye you suspiciously.
+    Passing an alleyway, you are grabbed from behind and whirled around to face two
+    tough-looking men with knives.
+
+    "Give us your money and weapons!" one demands.'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 0
+  furtherEncounter1Text: Fight
+  furtherEncounter1Index: 156
+  furtherEncounter2Text: 
+  furtherEncounter2Index: 0
+  furtherEncounter3Text: 
+  furtherEncounter3Index: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 0
+  obtainsItems: 0
+  timeTaken: 15
+  canRestAtNight: 0
+  XPGained: 0

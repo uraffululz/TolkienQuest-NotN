@@ -16,8 +16,8 @@ MonoBehaviour:
   locationText:
   - In the deep green woods, birds and squirrels seem to mock your speed. A narrow
     road running East and West cuts neatly through the stands of tall trees.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

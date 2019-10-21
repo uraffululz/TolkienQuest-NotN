@@ -18,13 +18,13 @@ MonoBehaviour:
     offer protection. You enter and bend to drink just a  baby brown bear aporoaches.
     sniffing your knapsack. You bend to shoo it away just as an enraged bear six feet
     tall appoears from behind a berry bush.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  actionRequiresRoll: 1
+  actionRequiresRoll: 0
   actionAddsSkill: 1
   actionMinLimit: 0
   actionSecondaryIndex: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
   range1Length: 5
   range1FurtherIndex: 180
   range2Min: 8
-  range2Length: 999
+  range2Length: 99
   range2FurtherIndex: 207
   range3Min: 0
   range3Length: 0
@@ -43,6 +43,9 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
+  moveInRandomDirection: 0
+  randomDirectionRangeMin: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}

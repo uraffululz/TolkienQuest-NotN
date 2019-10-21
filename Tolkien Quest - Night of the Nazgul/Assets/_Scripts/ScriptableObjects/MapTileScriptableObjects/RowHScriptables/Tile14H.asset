@@ -16,8 +16,8 @@ MonoBehaviour:
   locationText:
   - The marshes stretch on, sheltering wildlife and if rumors be true, pools of quicksand
     and many strange creatures.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

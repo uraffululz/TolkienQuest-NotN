@@ -16,8 +16,8 @@ MonoBehaviour:
   locationText:
   - The marshes and tended fields of the East Farthing seem to grab at you to slow
     you down.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
@@ -27,7 +27,7 @@ MonoBehaviour:
   actionMinLimit: 0
   actionSecondaryIndex: 0
   exploreHasMultipleRanges: 1
-  howManyRanges: 3
+  howManyRanges: 2
   range1Min: 2
   range1Length: 3
   range1FurtherIndex: 412

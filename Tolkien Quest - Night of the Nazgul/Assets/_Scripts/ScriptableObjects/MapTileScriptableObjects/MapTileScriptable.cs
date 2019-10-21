@@ -16,14 +16,20 @@ public class MapTileScriptable : ScriptableObject {
 	public int encounterIndex2;
 	public string encounterText3;
 	public int encounterIndex3;
+	public string encounterText4;
+	public int encounterIndex4;
+
+	//[Header("Exploration Text Variables")]
+	//public bool canExploreHere;
+	//public bool actionRequiresRoll;
+
+	public enum actionSkill {No, General, Trickery, Perception};
 
 	[Header("Exploration Text Variables")]
-	//public bool canExploreHere;
-	public bool actionRequiresRoll;
-	public enum actionSkill {No, General, Trickery, Perception};
+
 	public actionSkill actionAddsSkill;
-	public int actionMinLimit;
-	public int actionSecondaryIndex;
+	//public int actionMinLimit;
+	//public int actionSecondaryIndex;
 
 	public bool exploreHasMultipleRanges;
 	public int howManyRanges;
@@ -40,8 +46,8 @@ public class MapTileScriptable : ScriptableObject {
 	public int range4Length;
 	public int range4FurtherIndex;
 	public bool rangeFailMeansMoveOn;
-	public bool moveInRandomDirection;
-	public int randomDirectionRangeMin;
+	public bool canGetLost;
+	//public int randomDirectionRangeMin;
 	public int randomDirectionRangeMax;
 
 
@@ -54,7 +60,25 @@ public class MapTileScriptable : ScriptableObject {
 	[Header("Time Variables")]
 	public int timeTaken;
 	public int timeTakenSecondary;
+	public bool canRestAtNight;
+	public bool timeLocked;
+	public int daysLimit1;
+	public int timeLimit1;
+	public int limit1Index;
+	public int daysLimit2;
+	public int timeLimit2;
+	public int limit2Index;
+	public int overTimeIndex;
 
 	[Header("Experience Point Variables")]
 	public int experience;
+
+	[Header("Unique Tile Rule Variables")]
+	public bool changesPlayerLocation;
+	public string changedLocationID;
+
+	public bool previousLocationsConsidered;
+	public string[] locationsConsidered;
+	public int locationBasedEncounter;
+	public int alternateLocationEncounter;
 }

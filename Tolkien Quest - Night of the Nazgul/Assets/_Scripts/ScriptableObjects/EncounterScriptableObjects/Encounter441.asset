@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter441
+  m_EditorClassIdentifier: 
+  encounterIndex: 441
+  encounterText:
+  - 'The man wears muddy leather boots and a grey cloak, carries a sword, a bow, and
+    a silver dagger at his side. He slows as he nears and calls out in a friendly
+    way.
+
+    "Hello there! no need to be afraid. Name is Pock. I''m just a roving minstrel."
+
+    You see a lyre strapped to the man''s back. His long legs and leather boots catch
+    your eye; he reminds you of Strider.
+
+    "Let me offer you food and drink," he says. You watch as he reaches into his knapsack
+    and produces a bottle and a loaf of bread. "The bread is no fresher than me, I''m
+    afraid," he says with a hearty laugh.'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 0
+  moveToSpecificTile: 
+  furtherEncounter1Text: Talk With the Man
+  furtherEncounter1Index: 218
+  furtherEncounter2Text: Run Away
+  furtherEncounter2Index: 166
+  furtherEncounter3Text: Fight the Man
+  furtherEncounter3Index: 321
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 0
+  obtainsItems: 0
+  timeTaken: 10
+  canRestAtNight: 0
+  XPGained: 1

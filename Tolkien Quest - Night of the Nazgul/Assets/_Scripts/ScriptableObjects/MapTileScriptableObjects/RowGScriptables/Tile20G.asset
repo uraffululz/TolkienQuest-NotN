@@ -15,8 +15,8 @@ MonoBehaviour:
   locationID: 20G
   locationText:
   - A road leading Northeast and West cuts through the heart of the woods.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 

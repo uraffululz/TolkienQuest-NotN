@@ -15,9 +15,9 @@ MonoBehaviour:
   locationID: 23G
   locationText:
   - A road running East and West cuts neatly through the woods like a wound.
-  encounterText1: 
-  encounterIndex1: 5
-  encounterText2: 447
+  encounterText1: Continue
+  encounterIndex1: 1
+  encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0

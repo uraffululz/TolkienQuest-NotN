@@ -22,10 +22,7 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  actionRequiresRoll: 0
   actionAddsSkill: 0
-  actionMinLimit: 0
-  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -41,8 +38,7 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
-  moveInRandomDirection: 0
-  randomDirectionRangeMin: 0
+  canGetLost: 0
   randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
@@ -50,4 +46,13 @@ MonoBehaviour:
   canMoveOn: 0
   timeTaken: 90
   timeTakenSecondary: 45
+  canRestAtNight: 0
+  timeLocked: 1
+  daysLimit1: 2
+  timeLimit1: 240
+  limit1Index: 442
+  daysLimit2: 2
+  timeLimit2: 640
+  limit2Index: 405
+  overTimeIndex: 422
   experience: 0

@@ -12,17 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
   m_Name: Encounter152
   m_EditorClassIdentifier: 
-  encounterIndex: 0
+  encounterIndex: 152
   encounterText:
-  - 
+  - Tall trees seem to close ranks behind you as you stumble on through the underbrush.
+    The eyes of some forest breast glint at you from beneath an overhanging rock.
+    You whirl around and face -- nothing! You are lost and frightened.
   isCombat: 0
   isMerchant: 0
-  canMoveOn: 0
+  canMoveOn: 1
   furtherEncounter1Text: 
   furtherEncounter1Index: 0
   furtherEncounter2Text: 
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
   furtherEncounter3Index: 0
-  timeTaken: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 1
+  obtainsItems: 0
+  timeTaken: 30
+  canRestAtNight: 0
   XPGained: 0

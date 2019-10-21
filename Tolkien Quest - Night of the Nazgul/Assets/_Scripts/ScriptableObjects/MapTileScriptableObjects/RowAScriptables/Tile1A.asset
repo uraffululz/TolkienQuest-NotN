@@ -22,25 +22,37 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  actionRequiresRoll: 0
   actionAddsSkill: 1
-  actionMinLimit: 0
-  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 1
   howManyRanges: 2
   range1Min: 2
   range1Length: 4
   range1FurtherIndex: 152
   range2Min: 7
-  range2Length: 5
+  range2Length: 99
   range2FurtherIndex: 170
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
-  rangeFailMeansMoveOn: 1
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  canGetLost: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 1
   timeTaken: 120
   timeTakenSecondary: 0
+  canRestAtNight: 1
+  timeLocked: 0
+  daysLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  daysLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  experience: 0

@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter198
+  m_EditorClassIdentifier: 
+  encounterIndex: 198
+  encounterText:
+  - You hear the high-pitched cry of the wild and freeze with fear. A small pack of
+    four-legged beasts races toward you from over the hill; the wolves rush at you,
+    crazed and drooling. You hold your ground and draw a weapon.
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 0
+  furtherEncounter1Text: Continue
+  furtherEncounter1Index: 1
+  furtherEncounter2Text: 
+  furtherEncounter2Index: 0
+  furtherEncounter3Text: 
+  furtherEncounter3Index: 0
+  exploreHasMultipleRanges: 1
+  actionAddsSkill: 0
+  howManyRanges: 3
+  range1Min: 2
+  range1Length: 3
+  range1FurtherIndex: 159
+  range2Min: 6
+  range2Length: 2
+  range2FurtherIndex: 181
+  range3Min: 9
+  range3Length: 3
+  range3FurtherIndex: 193
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  moveOnRandomly: 0
+  obtainsItems: 0
+  timeTaken: 10
+  canRestAtNight: 0
+  XPGained: 1

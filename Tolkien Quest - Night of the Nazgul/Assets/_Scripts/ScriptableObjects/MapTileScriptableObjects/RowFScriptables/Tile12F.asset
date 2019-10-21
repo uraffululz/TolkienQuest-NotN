@@ -22,10 +22,7 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  actionRequiresRoll: 0
   actionAddsSkill: 0
-  actionMinLimit: 0
-  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 1
   howManyRanges: 3
   range1Min: 2
@@ -41,8 +38,7 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 1
-  moveInRandomDirection: 1
-  randomDirectionRangeMin: 2
+  canGetLost: 1
   randomDirectionRangeMax: 7
   combatHere: 0
   merchantHere: 0

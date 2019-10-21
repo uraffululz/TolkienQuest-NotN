@@ -16,33 +16,29 @@ MonoBehaviour:
   locationText:
   - The up and down travel through the meadows of the Bridgefields area slows you
     down -- is this the wisest route, you wonder?
-  encounterText1: Warn the Bridgefields Area
-  encounterIndex1: 413
-  encounterText2: 
-  encounterIndex2: 0
+  encounterText1: Continue
+  encounterIndex1: 1
+  encounterText2: Warn the Bridgefields Area
+  encounterIndex2: 413
   encounterText3: 
   encounterIndex3: 0
-  actionRequiresRoll: 0
   actionAddsSkill: 0
-  actionMinLimit: 0
-  actionSecondaryIndex: 0
-  exploreHasMultipleRanges: 0
-  howManyRanges: 1
+  exploreHasMultipleRanges: 1
+  howManyRanges: 2
   range1Min: 2
   range1Length: 4
   range1FurtherIndex: 382
-  range2Min: 0
-  range2Length: 0
-  range2FurtherIndex: 0
+  range2Min: 7
+  range2Length: 5
+  range2FurtherIndex: 461
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
   range4Min: 0
   range4Length: 0
   range4FurtherIndex: 0
-  rangeFailMeansMoveOn: 1
-  moveInRandomDirection: 0
-  randomDirectionRangeMin: 0
+  rangeFailMeansMoveOn: 0
+  canGetLost: 0
   randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
@@ -50,4 +46,13 @@ MonoBehaviour:
   canMoveOn: 0
   timeTaken: 60
   timeTakenSecondary: 0
+  canRestAtNight: 0
+  timeLocked: 0
+  daysLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  daysLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
   experience: 0

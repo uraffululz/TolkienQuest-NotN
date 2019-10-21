@@ -21,10 +21,7 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  actionRequiresRoll: 0
   actionAddsSkill: 0
-  actionMinLimit: 0
-  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
   range1Min: 0
@@ -40,10 +37,23 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
+  canGetLost: 0
+  randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 1
   timeTaken: 90
   timeTakenSecondary: 0
+  canRestAtNight: 0
+  timeLocked: 0
+  daysLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  daysLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
   experience: 0
+  changesPlayerLocation: 1
+  changedLocationID: 10D

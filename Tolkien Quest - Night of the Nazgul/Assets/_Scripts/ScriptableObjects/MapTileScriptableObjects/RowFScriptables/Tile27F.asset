@@ -16,8 +16,8 @@ MonoBehaviour:
   locationText:
   - You walk through deep woods of the Green Hill Country in a hurry. To the East,
     a road cuts through the woods to the Northeast and to the Southeast.
-  encounterText1: 
-  encounterIndex1: 0
+  encounterText1: Continue
+  encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
