@@ -12,6 +12,9 @@ public class EncounterScriptable : ScriptableObject {
 	public bool isCombat;
 	public bool isMerchant;
 	public bool canMoveOn;
+	public bool moveOnRandomly;
+	public int rollHowToMoveOnMax;
+
 	public string moveToSpecificTile;
 
 	[Header("Further Encounter Options", order = 0)]
@@ -37,18 +40,23 @@ public class EncounterScriptable : ScriptableObject {
 	public int howManyRanges;
 	public int range1Min;
 	public int range1Length;
+	public RangeInt exploreRange1;
 	public int range1FurtherIndex;
 	public int range2Min;
 	public int range2Length;
+	public RangeInt exploreRange2;
 	public int range2FurtherIndex;
 	public int range3Min;
 	public int range3Length;
+	public RangeInt exploreRange3;
 	public int range3FurtherIndex;
 	public int range4Min;
 	public int range4Length;
+	public RangeInt exploreRange4;
 	public int range4FurtherIndex;
 	public bool rangeFailMeansMoveOn;
-	public bool moveOnRandomly;
+
+	public bool rangeFailMeansGameOver;
 
 	[Header("Inventory Adjustment Variables", order = 1)]
 	public bool obtainsItems;
@@ -59,4 +67,9 @@ public class EncounterScriptable : ScriptableObject {
 
 	[Header("Experience Point Variables")]
 	public int XPGained;
+
+	[Header("Misc. Variables")]
+	public bool autoGameOver;
+	public bool autoWin;
+	
 }

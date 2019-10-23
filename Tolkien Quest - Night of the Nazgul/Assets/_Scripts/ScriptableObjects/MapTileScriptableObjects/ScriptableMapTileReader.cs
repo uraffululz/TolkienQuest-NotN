@@ -39,6 +39,7 @@ public class ScriptableMapTileReader : MonoBehaviour {
 	public bool rangeFailMeansMoveOn;
 	public bool canGetLost;
 	public int randomDirectionChoiceMax;
+	//public bool rangeFailMeansDie;
 
 	[SerializeField] bool hasCombat;
 
@@ -114,6 +115,8 @@ public class ScriptableMapTileReader : MonoBehaviour {
 				rangeFailMeansMoveOn = myTileScriptable.rangeFailMeansMoveOn;
 				canGetLost = myTileScriptable.canGetLost;
 				randomDirectionChoiceMax = myTileScriptable.randomDirectionRangeMax;
+
+				//rangeFailMeansDie = myTileScriptable.rangeFailMeansGameOver;
 
 			}
 

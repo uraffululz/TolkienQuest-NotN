@@ -22,7 +22,7 @@ MonoBehaviour:
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
-  moveToSpecificTile: 
+  moveToSpecificTile: 14D
   furtherEncounter1Text: 
   furtherEncounter1Index: 0
   furtherEncounter2Text: 
@@ -48,7 +48,10 @@ MonoBehaviour:
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 30
   canRestAtNight: 1
   XPGained: 8
+  autoGameOver: 0
+  autoWin: 0

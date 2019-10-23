@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterIndex: 379
   encounterText:
-  - Attempt to stay alert!
+  - Attempt to resist falling into an eternal sleep!
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -29,10 +29,10 @@ MonoBehaviour:
   furtherEncounter4Index: 0
   exploreHasMultipleRanges: 1
   actionAddsSkill: 5
-  howManyRanges: 0
-  range1Min: 0
-  range1Length: 0
-  range1FurtherIndex: 0
+  howManyRanges: 1
+  range1Min: 7
+  range1Length: 99
+  range1FurtherIndex: 128
   range2Min: 0
   range2Length: 0
   range2FurtherIndex: 0
@@ -44,6 +44,7 @@ MonoBehaviour:
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 1
   obtainsItems: 0
   timeTaken: 5
   canRestAtNight: 0

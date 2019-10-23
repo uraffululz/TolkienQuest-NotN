@@ -47,9 +47,9 @@ public class MapTileScriptable : ScriptableObject {
 	public int range4FurtherIndex;
 	public bool rangeFailMeansMoveOn;
 	public bool canGetLost;
+	//public bool rangeFailMeansGameOver;
 	//public int randomDirectionRangeMin;
 	public int randomDirectionRangeMax;
-
 
 	public bool combatHere;
 	public bool merchantHere;

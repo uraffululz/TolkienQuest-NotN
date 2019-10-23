@@ -38,11 +38,17 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject MerchantUI;
 
 	[SerializeField] GameObject progressLocationTextButton;
+	[SerializeField] GameObject progressEncounterTextButton;
 	[SerializeField] GameObject openMerchantUIButton;
 	[SerializeField] GameObject restButton;
 	[SerializeField] GameObject moveOnButton;
+	[SerializeField] GameObject moveOnEncounterButton;
 	public bool moveOnInRandomDirection;
 	public bool moveOnToSpecificTile;
+
+	[SerializeField] GameObject WinUIBG;
+
+	[SerializeField] GameObject LoseUIBG;
 
 	void Awake () {
 		mapTiles = GameObject.FindGameObjectsWithTag("MapTile");
@@ -170,6 +176,7 @@ public class MapSceneManager : MonoBehaviour {
 		}
 		else {
 			progressLocationTextButton.SetActive(true);
+			moveOnButton.SetActive(false);
 		}
 	}
 
@@ -177,7 +184,8 @@ public class MapSceneManager : MonoBehaviour {
 	public void UpdateEncounterBG () {
 		encounterTextBG.GetComponentInChildren<Text>().text = currentEncounter.myEncounterScriptable.encounterText[currentEncounterTextIndex];
 		if (currentEncounterTextIndex == currentEncounter.myEncounterScriptable.encounterText.Length - 1) {
-			progressLocationTextButton.SetActive(false);
+			currentEncounterTextIndex = 0;
+			progressEncounterTextButton.SetActive(false);
 
 			//If the current location has an ENCOUNTER
 			if (currentEncounter.myEncounterScriptable.furtherEncounter1Index == 0) {
@@ -205,22 +213,66 @@ public class MapSceneManager : MonoBehaviour {
 				furtherEncounterButton3.SetActive(true);
 				furtherEncounterButton3.GetComponentInChildren<Text>().text = currentEncounter.myEncounterScriptable.furtherEncounter3Text;
 			}
+
+			if (currentEncounter.myEncounterScriptable.canMoveOn) {
+				moveOnEncounterButton.SetActive(true);
+
+				if (currentEncounter.myEncounterScriptable.rollHowToMoveOnMax != 0) {
+					int moveRoll = Random.Range(2, 13);
+
+					if (moveRoll <= currentEncounter.myEncounterScriptable.rollHowToMoveOnMax) {
+						moveOnInRandomDirection = true;
+					}
+				}
+
+				if (currentEncounter.myEncounterScriptable.moveOnRandomly) {
+					moveOnInRandomDirection = true;
+				}
+			}
+
+			//Move the player/currentLocation to a specific tile, as directed by the currentEncounter
+			if (currentEncounter.myEncounterScriptable.moveToSpecificTile != "") {
+				currentEncounter.GetComponent<ScriptableEncounterReader>().MoveToSpecificLocation(currentEncounter.myEncounterScriptable.moveToSpecificTile);
+				print("You should be in space " + currentEncounter.myEncounterScriptable.moveToSpecificTile);
+
+				//If the Location Text for the "specific tile" is meant to be read, rather than just moving on
+				if (!currentEncounter.myEncounterScriptable.canMoveOn) {
+					//Open the LocationTextBG
+					currentLocationTextIndex = 0;
+					UpdateLocationBG();
+				}
+
+				if (currentEncounter.myEncounterScriptable.moveOnRandomly) {
+					moveOnInRandomDirection = true;
+				}
+
+				//TODO Be sure to close the EncounterBG (and any other UI which might be in the way)
+			}
+			
+
+
+		}
+		else {
+			progressEncounterTextButton.SetActive(true);
+			moveOnEncounterButton.SetActive(false);
 		}
 	}
 
 
 	public void ProgressThroughLocationText () {
 		currentLocationTextIndex++;
-		locationTextBG.GetComponentInChildren<Text>().text = currentLocation.GetComponent<ScriptableMapTileReader>().locationText[currentLocationTextIndex];
+		//locationTextBG.GetComponentInChildren<Text>().text = currentLocation.GetComponent<ScriptableMapTileReader>().locationText[currentLocationTextIndex];
 		UpdateLocationBG();
+	}
+
+	public void ProgressThroughEncounterText () {
+		currentEncounterTextIndex++;
+		//encounterTextBG.GetComponentInChildren<Text>().text = currentEncounter.myEncounterScriptable.encounterText[currentEncounterTextIndex];
+		UpdateEncounterBG();
 	}
 
 
 	public void MoveOn () {
-		//CharacterManager.totalTimeTaken += locationTimeOrEncounterTime;
-
-		//moveOnInRandomDirection = true;
-
 		foreach (GameObject mapTile in mapTiles) {
 			//KEEP THIS adjacentTiles.Clear();
 			//KEEP if (currentLocation.GetComponent<Collider>().bounds.Intersects(mapTile.GetComponent<Collider>().bounds)) {
@@ -240,9 +292,9 @@ public class MapSceneManager : MonoBehaviour {
 			CharacterManager.currentDayTimeTaken += (currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken * 2);
 			CharacterManager.totalTimeTaken += (currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken * 2);
 		}
-		else if (moveOnToSpecificTile) {
-			//GameObject.chosenTile = adj
-		}
+		//else if (moveOnToSpecificTile) {
+		//	//GameObject.chosenTile = adj
+		//}
 		else {
 			foreach (GameObject tile in adjacentTiles) {
 				tile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = true;
@@ -281,5 +333,23 @@ public class MapSceneManager : MonoBehaviour {
 		moveOnButton.SetActive(true);
 
 		UpdateLocationBG();
+	}
+
+
+	public void Win () {
+		WinUIBG.GetComponent<Animator>().SetBool("slideTopUIOpen", true);
+//TODO Close all other "UI backgrounds" (except maybe for the one that led here)
+//That is, if any Locations DO lead to a game over, which I don't think occurs. Just keep it in mind.
+
+//TODO Display relevant stats (Time taken, XP earned, settlements warned, etc.)
+		print("YOU WIN");
+	}
+
+
+	public void GameOver () {
+		LoseUIBG.GetComponent<Animator>().SetBool("SlideBottomUIOpen", true);
+//TODO Close all other "UI backgrounds" (except maybe for the one that led here)
+//Display what fault the player made to lead them here ("You failed to..."/"You were defeated by..."/etc.)
+		print("GAME OVER!");
 	}
 }

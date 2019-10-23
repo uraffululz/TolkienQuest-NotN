@@ -17,7 +17,7 @@ MonoBehaviour:
   - You leap into the swirling, muddy waters just as the blade of the rider whizzes
     overhead. You have heard that the Undead cannot abide moving water, and you suree
     hope that this one can't. The River whirls you and carries you swiftly downstream,
-    but you struggle to keep afloat and make your way to the far sie.
+    but you struggle to keep afloat and make your way to the far side.
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -32,21 +32,22 @@ MonoBehaviour:
   furtherEncounter4Index: 0
   exploreHasMultipleRanges: 1
   actionAddsSkill: 1
-  howManyRanges: 3
-  range1Min: 2
-  range1Length: 1
-  range1FurtherIndex: 9999
-  range2Min: 4
-  range2Length: 6
-  range2FurtherIndex: 316
-  range3Min: 11
-  range3Length: 99
-  range3FurtherIndex: 280
+  howManyRanges: 2
+  range1Min: 4
+  range1Length: 6
+  range1FurtherIndex: 316
+  range2Min: 11
+  range2Length: 99
+  range2FurtherIndex: 280
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
   range4Min: 0
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 1
   obtainsItems: 0
   timeTaken: 15
   canRestAtNight: 0

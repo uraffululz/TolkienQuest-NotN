@@ -21,18 +21,21 @@ MonoBehaviour:
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
+  moveToSpecificTile: 
   furtherEncounter1Text: Continue
   furtherEncounter1Index: 1
   furtherEncounter2Text: 
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
   furtherEncounter3Index: 0
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
   exploreHasMultipleRanges: 1
   actionAddsSkill: 0
-  howManyRanges: 2
-  range1Min: 3
-  range1Length: 224
-  range1FurtherIndex: 0
+  howManyRanges: 1
+  range1Min: 2
+  range1Length: 3
+  range1FurtherIndex: 224
   range2Min: 0
   range2Length: 0
   range2FurtherIndex: 0
@@ -44,7 +47,10 @@ MonoBehaviour:
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 1
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 30
   canRestAtNight: 0
   XPGained: 1
+  autoGameOver: 0
+  autoWin: 0

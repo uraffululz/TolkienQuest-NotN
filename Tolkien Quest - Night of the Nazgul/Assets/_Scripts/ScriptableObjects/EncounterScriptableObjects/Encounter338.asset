@@ -47,7 +47,10 @@ MonoBehaviour:
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 0
+  autoGameOver: 1
+  autoWin: 0

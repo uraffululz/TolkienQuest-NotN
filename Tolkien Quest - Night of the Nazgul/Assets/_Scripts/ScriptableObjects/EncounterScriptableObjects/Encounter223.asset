@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterIndex: 223
   encounterText:
-  - You aree dead; your mission has ended abruptly!
+  - You are dead; your mission has ended abruptly!
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -25,6 +25,8 @@ MonoBehaviour:
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
   furtherEncounter3Index: 0
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
   exploreHasMultipleRanges: 0
   actionAddsSkill: 0
   howManyRanges: 0
@@ -42,7 +44,10 @@ MonoBehaviour:
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 0
+  autoGameOver: 1
+  autoWin: 0

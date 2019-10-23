@@ -21,8 +21,10 @@ MonoBehaviour:
     "Go now, and take this."
 
     He hands you to doses of a healing herb, Athelas.'
-  - 'You ask for advice, but Gildor shakes his noble head. Advice is a dangerous creature,
-    young one. Too much is as bad as too little. Rely upon yourself, that is my advice."
+  - 'You ask for advice, but Gildor shakes his noble head.
+
+    "Advice is a dangerous creature, young one. Too much is as bad as too little.
+    Rely upon yourself, that is my advice."
 
     He disappears into the woods in the wink of an eye.
 
@@ -30,7 +32,7 @@ MonoBehaviour:
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
-  moveToSpecificTile: 
+  moveToSpecificTile: 24F
   furtherEncounter1Text: 
   furtherEncounter1Index: 0
   furtherEncounter2Text: 
@@ -56,7 +58,10 @@ MonoBehaviour:
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 30
   canRestAtNight: 1
   XPGained: 0
+  autoGameOver: 0
+  autoWin: 0

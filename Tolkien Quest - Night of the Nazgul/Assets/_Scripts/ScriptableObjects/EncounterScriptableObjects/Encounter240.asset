@@ -14,12 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterIndex: 240
   encounterText:
-  - 'As the dawn breaks, a man rides up to camp. He dismounts and talks to your captors
+  - As the dawn breaks, a man rides up to camp. He dismounts and talks to your captors
     for a while. Afer a while, he walks over to you and draws his dagger, "You have
     been a little bit too successful. Our orders are to kill you." As his knife falls,
-    you realize that
-
-    <i>YOUR QUEST IS OVER!</i>'
+    you realize that <i>YOUR QUEST IS OVER!</i>
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -30,6 +28,8 @@ MonoBehaviour:
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
   furtherEncounter3Index: 0
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
   exploreHasMultipleRanges: 0
   actionAddsSkill: 0
   howManyRanges: 0
@@ -47,7 +47,10 @@ MonoBehaviour:
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 30
   canRestAtNight: 0
   XPGained: 0
+  autoGameOver: 1
+  autoWin: 0

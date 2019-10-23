@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterIndex: 277
   encounterText:
-  - Your cries are unheard; your last sight is the "mouth of the great willow closing
+  - Your cries are unheard; your last sight is the "mouth" of the great willow closing
     with you trapped in darkness within, struggling and crying out.
   isCombat: 0
   isMerchant: 0
@@ -45,7 +45,10 @@ MonoBehaviour:
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 15
   canRestAtNight: 0
   XPGained: 0
+  autoGameOver: 1
+  autoWin: 0

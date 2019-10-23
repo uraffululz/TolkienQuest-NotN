@@ -45,6 +45,7 @@ MonoBehaviour:
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
   moveOnRandomly: 0
+  rangeFailMeansGameOver: 1
   obtainsItems: 0
   timeTaken: 180
   canRestAtNight: 0
