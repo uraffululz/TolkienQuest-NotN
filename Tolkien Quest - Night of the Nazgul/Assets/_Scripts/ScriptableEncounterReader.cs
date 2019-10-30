@@ -9,21 +9,12 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 	[SerializeField] GameObject mapSceneManager;
 
-	[SerializeField] Text encounterTimeText;
-	[SerializeField] Text encounterXPText;
+	public bool movesTwoSpaces;
+
+	//[SerializeField] Text encounterTimeText;
+	//[SerializeField] Text encounterXPText;
 
 	[SerializeField] GameObject merchantUI;
-
-
-
-	void Awake () {
-		//SelectScriptable();
-    }
-
-
-    void Update() {
-        
-    }
 
 
 	public void ChooseLocationBGEncounter (int whichTileEncounterVariable) {
@@ -46,32 +37,6 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 
 	public void DetermineEncounterBGFromLocation (int encounterButtonClicked, int encounterIndex) {
-		//If the player is able to explore the area
-		//if (encounterButtonClicked == 1 && MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().actionRequiresRoll) {
-		//	int exploreSuccessRoll = Random.Range(2, 13);
-
-		//	if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.General) {
-		//		exploreSuccessRoll += CharacterManager.mySkillGeneralTotal;
-		//		print("Adding General skill bonus");
-		//	}
-		//	else if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.Trickery) {
-		//		exploreSuccessRoll += CharacterManager.mySkillTrickeryTotal;
-		//		print("Adding Trickery skill bonus");
-		//	}
-		//	else if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.Perception) {
-		//		exploreSuccessRoll += CharacterManager.mySkillPerceptionTotal;
-		//		print("Adding Perception skill bonus");
-		//	}
-
-		//	print("Explore Roll: " + exploreSuccessRoll);
-
-		//	//If the player succeeds in exploring the area
-		//	if (exploreSuccessRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().actionMinLimit) {
-		//		encounterIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().actionIndex;
-		//	}
-		//}
-
-
 		//If the next MapSceneManager 's next currentLocation is chosen from the "Encounter Buttons" assigned by the 
 		if (encounterButtonClicked == 1 && MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().exploreHasMultipleRanges) {
 			int exploreRoll = Random.Range(2, 13);
@@ -137,21 +102,20 @@ public class ScriptableEncounterReader : MonoBehaviour {
 						int randomRoll = Random.Range(2, 13);
 						randomRoll += CharacterManager.mySkillGeneralTotal;
 
-						if (/*randomRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMin &&*/
-							randomRoll <= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMax) {
+						if (randomRoll <= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMax) {
 							print("You are lost. Moving on in a random direction");
 							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
-							mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
+							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
 						}
 						else {
 							print("Moving on in the direction of your choice");
 							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
-							mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
+							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
 						}
 					}
 					else {
 						mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
-						mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
+						mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
 
 					}
 				}
@@ -203,19 +167,20 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			}
 		}
 
-//TODO These are for TESTING PURPOSES ONLY
-		//Directly assign the Encounter Index, to bring it up "for inspection"
-		Debug.Log("In case you were wondering, you're directly assigning the Encounter Index right here!");
-		encounterIndex = 108;
+		////TODO These are for TESTING PURPOSES ONLY
+		//		//Directly assign the Encounter Index, to bring it up "for inspection"
+		//Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
+		encounterIndex = 264;
 
-		
+
 		print("Encounter index: " + encounterIndex);
 
 		UpdateEncounter(encounterIndex);
 
-		//TOREFACTOR Merge this with the above ^ if-statement by passing in the relevant "Tile" to all further functionality
+//TOREFACTOR Merge this with the above ^ if-statement by passing in the relevant "Tile" to all further functionality
+//Actually, it's basically the same as DetermineEncounterFromBGEncounter's "moveToSpecificTile" process. Maybe they can be merged?
 		if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().changesPlayerLocation) {
-			MoveToSpecificLocation(MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().changedLocationID);
+			mapSceneManager.GetComponent<MapSceneManager>().MoveToSpecificLocation(MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().changedLocationID);
 			print("You should be in space " + MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().changedLocationID);
 		}
 	}
@@ -233,7 +198,27 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			currentEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.furtherEncounter3Index;
 		}
 		else if (whichEncounterButtonSelected == 4) {
-			currentEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.furtherEncounter4Index;
+			//Unique Rule for Encounters 319 & 267
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.canJumpInRiver) {
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.jumpInRiverRequiresRoll) {
+					int jumpRoll = Random.Range(2, 13);
+					jumpRoll += CharacterManager.mySkillGeneralTotal;
+					print("JumpRoll: " + jumpRoll);
+
+					if (jumpRoll >= 9) {
+						currentEncounterIndex = 290;
+					}
+					else {
+						currentEncounterIndex = 295;
+					}
+				}
+				else {
+					currentEncounterIndex = 290;
+				}
+			}
+			else{
+				currentEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.furtherEncounter4Index;
+			}
 		}
 
 		DetermineEncounterBGFromEncounter(whichEncounterButtonSelected, currentEncounterIndex);
@@ -241,7 +226,8 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 
 	void DetermineEncounterBGFromEncounter (int furtherEncounterButton, int furtherEncounterIndex) {
-		if (furtherEncounterButton == 1 && MapSceneManager.currentEncounter.myEncounterScriptable.exploreHasMultipleRanges) {
+		if (MapSceneManager.currentEncounter.myEncounterScriptable != null) {
+			if (furtherEncounterButton == 1 && MapSceneManager.currentEncounter.myEncounterScriptable.exploreHasMultipleRanges) {
 			int exploreRoll = Random.Range(2, 13);
 			bool rolledWithinRanges = false;
 
@@ -313,28 +299,29 @@ public class ScriptableEncounterReader : MonoBehaviour {
 				if (MapSceneManager.currentEncounter.myEncounterScriptable.rangeFailMeansMoveOn) {
 					//If the player is meant to move on when rolling out of range
 					print("Failed to roll within exploration ranges. Moving on");
-					//if MapSceneManager.currentEncounter.GetComponent<EncounterScriptable>().canGetLost) {
-					//	//If the player is then meant to move in a random direction
-					//	int randomRoll = Random.Range(2, 13);
-					//	randomRoll += CharacterManager.mySkillGeneralTotal;
+					if (MapSceneManager.currentEncounter.myEncounterScriptable.canGetLost) {
+						//	//If the player is then meant to move in a random direction
+						int randomRoll = Random.Range(2, 13);
+						randomRoll += CharacterManager.mySkillGeneralTotal;
 
-					//	if (/*randomRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMin &&*/
-					//		randomRoll <= MapSceneManager.currentEncounter.GetComponent<EncounterScriptable>().randomDirectionChoiceMax) {
-					//		print("You are lost. Moving on in a random direction");
-					//		mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
-					//		mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
-					//	}
-					//	else {
-					//		print("Moving on in the direction of your choice");
-					//		mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
-					//		mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
-					//	}
-					//}
-					//else {
-					mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
-					mapSceneManager.GetComponent<MapSceneManager>().MoveOn();
+						print("Lost Chance Roll: " + randomRoll);
 
-					//}
+						if (/*randomRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMin &&*/
+							randomRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.randomDirectionChoiceMax) {
+							print("You are lost. Moving on in a random direction");
+							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
+							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+						}
+						else {
+							print("Moving on in the direction of your choice");
+							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
+							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+						}
+					}
+					else {
+						mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
+						mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+					}
 				}
 
 				if (MapSceneManager.currentEncounter.myEncounterScriptable.rangeFailMeansGameOver) {
@@ -344,73 +331,233 @@ public class ScriptableEncounterReader : MonoBehaviour {
 				}
 			}
 		}
-
-		if (MapSceneManager.currentEncounter.myEncounterScriptable.autoWin) {
-			mapSceneManager.GetComponent<MapSceneManager>().Win();
-		}
-
-		if (MapSceneManager.currentEncounter.myEncounterScriptable.autoGameOver) {
-			mapSceneManager.GetComponent<MapSceneManager>().GameOver();
-
-		}
-
-
-
-
 		
+		
+		MapSceneManager.currentEncounter.movesTwoSpaces = MapSceneManager.currentEncounter.myEncounterScriptable.movesOnTwoSpaces;
 
 		UpdateEncounter(furtherEncounterIndex);
-
-
+		}
 	}
 
 
-	void UpdateEncounter (int encounterIndex) {
+	public void UpdateEncounter (int encounterIndex) {
+		//THIS is the place to test variables on the EncounterScriptable
 		if (encounterIndex >= 100 && encounterIndex < 500) {
 			myEncounterScriptable = mapSceneManager.GetComponent<EncounterManager>().encounterTextScriptables[encounterIndex];
 			mapSceneManager.GetComponent<MapSceneManager>().encounterTextBG.GetComponent<ScriptableEncounterReader>().myEncounterScriptable = mapSceneManager.GetComponent<EncounterManager>().encounterTextScriptables[encounterIndex];
 
 			print(myEncounterScriptable.name);
-			
+
 			MapSceneManager.currentEncounter = mapSceneManager.GetComponent<MapSceneManager>().encounterTextBG.GetComponent<ScriptableEncounterReader>();
-
-
-
-			GetComponentInChildren<Text>().text = myEncounterScriptable.encounterText[0];
-			encounterTimeText.text = "Time: " + myEncounterScriptable.timeTaken.ToString();
-			encounterXPText.text = "Experience: " + myEncounterScriptable.XPGained.ToString();
+			//MapSceneManager.currentEncounter.movesTwoSpaces = myEncounterScriptable.movesOnTwoSpaces;
 
 			if (myEncounterScriptable.isMerchant) {
 				OpenMerchantUI();
 			}
 
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.canMoveOn) {
+				//print("You can move on");
+				mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.SetActive(true);
+
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.moveOnRandomly) {
+					mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
+				}
+
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.rollHowToMoveOnMax != 0) {
+					int moveRoll = Random.Range(2, 13);
+					moveRoll += CharacterManager.mySkillPerceptionTotal;
+
+					print("Lost Roll: " + moveRoll);
+
+					if (moveRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.rollHowToMoveOnMax) {
+						print("Moving in a random direction");
+						mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
+					}
+					else {
+						print("Moving in your specified direction");
+						mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
+					}
+				}
+			}
+
+			//Move the player/currentLocation to a specific tile, as directed by the currentEncounter
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.moveToSpecificTile != "") {
+				mapSceneManager.GetComponent<MapSceneManager>().MoveToSpecificLocation(MapSceneManager.currentEncounter.myEncounterScriptable.moveToSpecificTile);
+				print("You should be in space " + MapSceneManager.currentEncounter.myEncounterScriptable.moveToSpecificTile);
+
+				//If the Location Text for the "specific tile" is meant to be read, rather than just moving on
+				if (!MapSceneManager.currentEncounter.myEncounterScriptable.canMoveOn) {
+					//Open the LocationTextBG
+					mapSceneManager.GetComponent<MapSceneManager>().currentLocationTextIndex = 0;
+					mapSceneManager.GetComponent<MapSceneManager>().UpdateLocationBG();
+				}
+
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.moveOnRandomly) {
+					mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
+				}
+//TODO Be sure to close the EncounterBG (and any other UI which might be in the way)
+			}
+
+
+			if (myEncounterScriptable.floatsDownstream) {
+				string downstreamTileIndex = null;
+
+				if (myEncounterScriptable.hasDownstreamRanges) {
+					int downstreamRoll = Random.Range(2, 13);
+
+					if (downstreamRoll <= 6) {
+						if (myEncounterScriptable.landsOnOtherRiverSide) {
+							if (myEncounterScriptable.lowerValueFloats1Space) {
+								downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamOtherSideTile1ID;
+							}
+							else {
+								downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamOtherSideTile2ID;
+							}
+						}
+						else {
+							if (myEncounterScriptable.lowerValueFloats1Space) {
+								downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamSameSideTile1ID;
+							}
+							else {
+								downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamSameSideTile2ID;
+							}
+						}
+					}
+					else {
+						if (myEncounterScriptable.landsOnOtherRiverSide) {
+							if (myEncounterScriptable.lowerValueFloats1Space) {
+								downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamOtherSideTile2ID;
+							}
+							else {
+								downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamOtherSideTile1ID;
+							}
+						}
+						else {
+							if (myEncounterScriptable.lowerValueFloats1Space) {
+								downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamSameSideTile2ID;
+							}
+							else {
+								downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamSameSideTile1ID;
+							}
+						}
+					}
+				}
+				else {
+					if (myEncounterScriptable.landsOnOtherRiverSide) {
+						if (myEncounterScriptable.lowerValueFloats1Space) {
+							downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamOtherSideTile1ID;
+						}
+						else {
+							downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamOtherSideTile2ID;
+						}
+					}
+					else {
+						if (myEncounterScriptable.lowerValueFloats1Space) {
+							downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamSameSideTile1ID;
+						}
+						else {
+							downstreamTileIndex = MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().downstreamSameSideTile2ID;
+						}
+					}
+				}
+
+				if (downstreamTileIndex != null) {
+					mapSceneManager.GetComponent<MapSceneManager>().MoveToSpecificLocation(downstreamTileIndex);
+				}
+
+				else {
+					print("Couldn't find a downstreamTile");
+				}
+			}
+		
+
+			if (myEncounterScriptable.damageAlteredAmount != 0) {
+				if (myEncounterScriptable.dealsRandomDirectDamage) {
+					mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(Random.Range(2, 13));
+				}
+				else if (myEncounterScriptable.hasDamageRanges) {
+					//Only applies to Encounter 118
+					int damageRangeRoll = Random.Range(2, 13);
+					print(damageRangeRoll);
+
+					if (damageRangeRoll <= 4) {
+						mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(6);
+					}
+					else if (damageRangeRoll >= 5 && damageRangeRoll <= 7) {
+						mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(3);
+					}
+				}
+				else if (myEncounterScriptable.deals50PercentDamage) {
+					CharacterManager.damageTaken = CharacterManager.enduranceTotal / 2;
+				}
+				else {
+					mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(MapSceneManager.currentEncounter.myEncounterScriptable.damageAlteredAmount);
+				}
+
+
+				print ("Damage taken: " + CharacterManager.damageTaken + "/ " + CharacterManager.enduranceTotal);
+			}
+
+			if (CharacterManager.statusDiseased) {
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.curesDisease) {
+					CharacterManager.statusDiseased = false;
+					CharacterManager.diseaseTimer = 0;
+				}
+				else {
+					CharacterManager.diseaseTimer += myEncounterScriptable.timeTaken;
+					if (CharacterManager.diseaseTimer >= 60) {
+						mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(1);
+					}
+				}
+			}
 
 
 
+
+
+
+
+
+
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.meetTom) {
+				CharacterManager.metTom = true;
+			}
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.meetGildor) {
+				CharacterManager.metGildor = true;
+			}
+
+			//Unique Encounter Rule on Encounter 128
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.checkIfMetTom) {
+				if (CharacterManager.metTom) {
+					mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+				}
+				else {
+					MapSceneManager.currentEncounter.UpdateEncounter(122);
+				}
+			}
+			//Unique Encounter Rule on Encounter 304
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.checkIfMetGildor) {
+				if (CharacterManager.metGildor) {
+					mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+				}
+				else {
+					MapSceneManager.currentEncounter.UpdateEncounter(283);
+				}
+			}
+
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.autoWin) {
+				mapSceneManager.GetComponent<MapSceneManager>().Win();
+			}
+
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.autoGameOver) {
+				mapSceneManager.GetComponent<MapSceneManager>().GameOver();
+
+			}
 
 			mapSceneManager.GetComponent<MapSceneManager>().UpdateEncounterBG();
 		}
 		else {
 			Debug.Log("Unable to retrieve encounter " + encounterIndex + " because it doesn't exist.");
-		}
-	}
-
-
-	public void MoveToSpecificLocation (string nextMapTile) {
-		foreach (GameObject tile in mapSceneManager.GetComponent<MapSceneManager>().mapTiles) {
-			if (tile.GetComponent<ScriptableMapTileReader>().myLocationID == nextMapTile) {
-
-				//Update player GameObject location
-				//TODO Animate/Lerp the player GameObject to the new MapSceneManager.currentLocation.
-				mapSceneManager.GetComponent<MapSceneManager>().player.transform.position = tile.transform.position + (Vector3.back * .3f);
-
-				//Update MapSceneManager.currentLocation
-				MapSceneManager.previousLocation = MapSceneManager.currentLocation;
-				MapSceneManager.currentLocation = tile;
-
-				//Initialize tile's LocationText
-				mapSceneManager.GetComponent<MapSceneManager>().UpdateLocationBG();
-			}
 		}
 	}
 

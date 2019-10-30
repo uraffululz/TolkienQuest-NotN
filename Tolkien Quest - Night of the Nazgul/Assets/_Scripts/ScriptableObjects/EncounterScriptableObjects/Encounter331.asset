@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: Encounter331
   m_EditorClassIdentifier: 
   encounterIndex: 331
+  miscNotes: []
   encounterText:
   - You wriggle free one arm and laying your body out upon the quicksand, manage to
     grasp a fingertip-hold of a protruding root. You pull yourselff out of the pool.
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
+  moveOnRandomly: 1
+  rollHowToMoveOnMax: 0
+  movesOnTwoSpaces: 0
   moveToSpecificTile: 
   furtherEncounter1Text: 
   furtherEncounter1Index: 0
@@ -44,8 +48,26 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
-  moveOnRandomly: 1
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 15
   canRestAtNight: 1
   XPGained: 2
+  damageAlteredAmount: 1
+  dealsRandomDirectDamage: 1
+  hasDamageRanges: 0
+  deals50PercentDamage: 0
+  curesDisease: 0
+  autoGameOver: 0
+  autoWin: 0
+  meetTom: 0
+  checkIfMetTom: 0
+  meetGildor: 0
+  checkIfMetGildor: 0
+  canJumpInRiver: 0
+  jumpInRiverRequiresRoll: 0
+  floatsDownstream: 0
+  hasDownstreamRanges: 0
+  landsOnOtherRiverSide: 0

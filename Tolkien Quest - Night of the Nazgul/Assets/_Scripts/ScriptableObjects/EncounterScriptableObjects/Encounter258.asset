@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Encounter258
   m_EditorClassIdentifier: 
   encounterIndex: 258
+  miscNotes: []
   encounterText:
   - 'You grasp the hilt of the sword and turn to creep away when a lean hand on your
     shoulder whirls you around. It is Gildor, angry and towering above you.
@@ -24,6 +25,9 @@ MonoBehaviour:
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
+  moveOnRandomly: 1
+  rollHowToMoveOnMax: 0
+  movesOnTwoSpaces: 0
   moveToSpecificTile: 
   furtherEncounter1Text: 
   furtherEncounter1Index: 0
@@ -31,6 +35,8 @@ MonoBehaviour:
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
   furtherEncounter3Index: 0
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
   exploreHasMultipleRanges: 0
   actionAddsSkill: 0
   howManyRanges: 0
@@ -47,8 +53,16 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
-  moveOnRandomly: 1
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 5
   canRestAtNight: 1
   XPGained: 1
+  autoGameOver: 0
+  autoWin: 0
+  meetTom: 0
+  checkIfMetTom: 0
+  meetGildor: 1
+  checkIfMetGildor: 0

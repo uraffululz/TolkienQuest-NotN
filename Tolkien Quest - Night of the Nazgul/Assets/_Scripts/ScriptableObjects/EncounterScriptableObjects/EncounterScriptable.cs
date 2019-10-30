@@ -7,13 +7,17 @@ public class EncounterScriptable : ScriptableObject {
 
 	public int encounterIndex;
 
+	[TextArea(4, 10, order = 0)] public string[] miscNotes;
+
 	[TextArea(4, 10, order = 0)] public string[] encounterText;
 
 	public bool isCombat;
 	public bool isMerchant;
 	public bool canMoveOn;
 	public bool moveOnRandomly;
+//TODO Probably get rid of the rollHowToMoveOnMax. I can't see where it's actually used, as none of the EncounterScriptables seem to have it assigned
 	public int rollHowToMoveOnMax;
+	public bool movesOnTwoSpaces;
 
 	public string moveToSpecificTile;
 
@@ -55,6 +59,8 @@ public class EncounterScriptable : ScriptableObject {
 	public RangeInt exploreRange4;
 	public int range4FurtherIndex;
 	public bool rangeFailMeansMoveOn;
+	public bool canGetLost;
+	public int randomDirectionChoiceMax;
 
 	public bool rangeFailMeansGameOver;
 
@@ -69,7 +75,25 @@ public class EncounterScriptable : ScriptableObject {
 	public int XPGained;
 
 	[Header("Misc. Variables")]
+	public int damageAlteredAmount;
+	public bool dealsRandomDirectDamage;
+	public bool hasDamageRanges;
+	public bool deals50PercentDamage;
+	public bool curesDisease;
+	[Space]
 	public bool autoGameOver;
 	public bool autoWin;
-	
+	[Space]
+	public bool meetTom;
+	public bool checkIfMetTom;
+	public bool meetGildor;
+	public bool checkIfMetGildor;
+	[Space]
+	public bool canJumpInRiver;
+	public bool jumpInRiverRequiresRoll;
+	[Space]
+	public bool floatsDownstream;
+	public bool hasDownstreamRanges;
+	public bool landsOnOtherRiverSide;
+	public bool lowerValueFloats1Space;
 }

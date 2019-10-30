@@ -191,8 +191,8 @@ public class CreationStatManager : MonoBehaviour {
 
 	void CalculateEndurance() {
 		//Calculate the player's endurance and apply the value (as text) to the EnduranceTotal UI text object
-		CharacterManager.myEndurance = 20 + (2 * CharacterManager.myStatStrength);
-		enduranceText.text = CharacterManager.myEndurance.ToString();
+		CharacterManager.enduranceTotal = 20 + (2 * CharacterManager.myStatStrength);
+		enduranceText.text = CharacterManager.enduranceTotal.ToString();
 	}
 
 

@@ -74,8 +74,13 @@ public class ScriptableMapTileReader : MonoBehaviour {
 	public int locationBasedEncounter;
 	public int alternateLocationEncounter;
 
+	public string downstreamSameSideTile1ID;
+	public string downstreamSameSideTile2ID;
+	public string downstreamOtherSideTile1ID;
+	public string downstreamOtherSideTile2ID;
 
-	void Awake() {
+
+	void Awake () {
 		if (myTileScriptable != null) {
 			myLocationID = myTileScriptable.locationID;
 			locationText = myTileScriptable.locationText;
@@ -150,6 +155,11 @@ public class ScriptableMapTileReader : MonoBehaviour {
 			locationsConsidered = myTileScriptable.locationsConsidered;
 			locationBasedEncounter = myTileScriptable.locationBasedEncounter;
 			alternateLocationEncounter = myTileScriptable.alternateLocationEncounter;
+
+			downstreamSameSideTile1ID = myTileScriptable.riverSameSideTile1ID;
+			downstreamSameSideTile2ID = myTileScriptable.riverSameSideTile2ID;
+			downstreamOtherSideTile1ID = myTileScriptable.riverOtherSideTile1ID;
+			downstreamOtherSideTile2ID = myTileScriptable.riverOtherSideTile2ID;
 		}
 	}
 }

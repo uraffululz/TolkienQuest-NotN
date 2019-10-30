@@ -267,6 +267,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &4845217
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +618,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &29800371
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +848,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &41352293
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,11 +884,11 @@ RectTransform:
   m_Children:
   - {fileID: 54975337}
   m_Father: {fileID: 431653013}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -60}
+  m_AnchoredPosition: {x: 410, y: -100}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41352295
@@ -924,14 +936,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 230702025}
         m_MethodName: MoveOn
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -1251,6 +1263,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &54778898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1414,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &54975336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,6 +1644,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &69621323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,6 +1874,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &70448637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,6 +2025,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &73127464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,6 +2176,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &76306115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,6 +2406,129 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
+--- !u!1001 &79839917
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 546550790}
+    m_Modifications:
+    - target: {fileID: 5835316516418169863, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_Name
+      value: CharacterSheetBGForMapScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2009
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 708450bd17410dd4bba95a4fce8ffd2d, type: 3}
 --- !u!1 &92523732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,6 +2676,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &98406793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,12 +2710,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403195864}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: 20}
-  m_SizeDelta: {x: 800, y: 120}
+  m_AnchoredPosition: {x: -50, y: 0}
+  m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &98406795
 MonoBehaviour:
@@ -2576,10 +2739,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -2743,6 +2906,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &136594634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,6 +3136,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &146989192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3116,6 +3287,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &158979319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3263,6 +3438,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &159703241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,6 +3589,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &169019357
 GameObject:
   m_ObjectHideFlags: 0
@@ -3557,6 +3740,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &172430178
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,6 +3970,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &178627559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,6 +4121,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &187643421
 GameObject:
   m_ObjectHideFlags: 0
@@ -4156,6 +4351,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &192404000
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,6 +4502,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &197869673
 GameObject:
   m_ObjectHideFlags: 0
@@ -4450,6 +4653,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &227110739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,6 +4804,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &230702024
 GameObject:
   m_ObjectHideFlags: 0
@@ -4630,19 +4841,35 @@ MonoBehaviour:
   player: {fileID: 1506586441}
   mapTiles: []
   adjacentTiles: []
+  riversideTiles:
+  - {fileID: 169019357}
+  - {fileID: 505233573}
+  - {fileID: 1611750069}
+  - {fileID: 146989192}
+  - {fileID: 545385688}
+  - {fileID: 70448637}
+  - {fileID: 1002478483}
+  - {fileID: 192404000}
+  - {fileID: 530795211}
   tileBaseMat: {fileID: 2100000, guid: 4f5e5424737a0ae4b955830ddc5447ec, type: 2}
   locationTextBG: {fileID: 431653012}
+  locationIndexText: {fileID: 663616856}
+  locationText: {fileID: 338824918}
   locationTimeText: {fileID: 1341798577}
   locationXPText: {fileID: 693811297}
+  currentLocationTextIndex: 0
   locationEncounterButton1: {fileID: 1032691780}
   locationEncounterButton2: {fileID: 905866610}
   locationEncounterButton3: {fileID: 575516307}
   encounterTextBG: {fileID: 403195863}
+  encounterIndexText: {fileID: 788972920}
+  encounterText: {fileID: 98406795}
   encounterTimeText: {fileID: 1339785709}
-  enounterXPText: {fileID: 875686775}
+  encounterXPText: {fileID: 875686775}
   furtherEncounterButton1: {fileID: 1028258219}
   furtherEncounterButton2: {fileID: 1544343668}
   furtherEncounterButton3: {fileID: 1846723241}
+  furtherEncounterButton4: {fileID: 1341810387}
   MerchantUI: {fileID: 1223552384}
   progressLocationTextButton: {fileID: 1531566343}
   progressEncounterTextButton: {fileID: 242309118}
@@ -5328,6 +5555,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &236492741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5475,6 +5706,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &242309118
 GameObject:
   m_ObjectHideFlags: 0
@@ -5507,11 +5742,11 @@ RectTransform:
   m_Children:
   - {fileID: 172430179}
   m_Father: {fileID: 403195864}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: 0}
+  m_AnchoredPosition: {x: 410, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &242309120
@@ -5811,6 +6046,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &262122440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5958,6 +6197,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &264820486
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,6 +6348,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &280294729
 GameObject:
   m_ObjectHideFlags: 0
@@ -6252,6 +6499,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &285537151
 GameObject:
   m_ObjectHideFlags: 0
@@ -6399,6 +6650,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &294942595
 GameObject:
   m_ObjectHideFlags: 0
@@ -6546,6 +6801,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &303783123
 GameObject:
   m_ObjectHideFlags: 0
@@ -6693,6 +6952,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &309365762
 GameObject:
   m_ObjectHideFlags: 0
@@ -6919,6 +7182,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &312157324
 GameObject:
   m_ObjectHideFlags: 0
@@ -7145,6 +7412,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &331516436
 GameObject:
   m_ObjectHideFlags: 0
@@ -7292,6 +7563,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &336834737
 GameObject:
   m_ObjectHideFlags: 0
@@ -7379,12 +7654,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 431653013}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: 21.375}
-  m_SizeDelta: {x: 800, y: 130}
+  m_AnchoredPosition: {x: -50, y: 0}
+  m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338824918
 MonoBehaviour:
@@ -7654,6 +7929,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &375454865
 GameObject:
   m_ObjectHideFlags: 0
@@ -7779,11 +8058,11 @@ RectTransform:
   m_Children:
   - {fileID: 703994946}
   m_Father: {fileID: 431653013}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -60}
+  m_AnchoredPosition: {x: 410, y: -60}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &382680270
@@ -7933,6 +8212,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &393253978
 GameObject:
   m_ObjectHideFlags: 0
@@ -8080,6 +8363,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &403195863
 GameObject:
   m_ObjectHideFlags: 0
@@ -8111,6 +8398,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 788972921}
   - {fileID: 98406794}
   - {fileID: 242309119}
   - {fileID: 1028258220}
@@ -8126,8 +8414,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -377.9}
-  m_SizeDelta: {x: 1000, y: 200}
+  m_AnchoredPosition: {x: 0, y: -400}
+  m_SizeDelta: {x: 1000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &403195865
 Animator:
@@ -8199,8 +8487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myEncounterScriptable: {fileID: 0}
   mapSceneManager: {fileID: 230702024}
-  encounterTimeText: {fileID: 1339785709}
-  encounterXPText: {fileID: 875686775}
+  movesTwoSpaces: 0
   merchantUI: {fileID: 1223552384}
 --- !u!1 &418400029
 GameObject:
@@ -8349,6 +8636,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &421675480
 GameObject:
   m_ObjectHideFlags: 0
@@ -8496,6 +8787,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &423435229
 GameObject:
   m_ObjectHideFlags: 0
@@ -8528,11 +8823,11 @@ RectTransform:
   m_Children:
   - {fileID: 574826958}
   m_Father: {fileID: 431653013}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -60}
+  m_AnchoredPosition: {x: 200, y: -100}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &423435231
@@ -8658,6 +8953,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 663616857}
   - {fileID: 338824917}
   - {fileID: 1531566344}
   - {fileID: 1032691781}
@@ -8665,16 +8961,16 @@ RectTransform:
   - {fileID: 575516311}
   - {fileID: 423435230}
   - {fileID: 41352294}
-  - {fileID: 375454869}
   - {fileID: 1341798576}
   - {fileID: 693811296}
+  - {fileID: 375454869}
   m_Father: {fileID: 546550790}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 392}
-  m_SizeDelta: {x: 1000, y: 200}
+  m_AnchoredPosition: {x: 0, y: 400}
+  m_SizeDelta: {x: 1000, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431653014
 MonoBehaviour:
@@ -8879,6 +9175,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &454331748
 GameObject:
   m_ObjectHideFlags: 0
@@ -9026,6 +9326,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &458803733
 GameObject:
   m_ObjectHideFlags: 0
@@ -9173,6 +9477,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &485852590
 GameObject:
   m_ObjectHideFlags: 0
@@ -9320,6 +9628,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &487744371
 GameObject:
   m_ObjectHideFlags: 0
@@ -9467,6 +9779,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &489052594
 GameObject:
   m_ObjectHideFlags: 0
@@ -9693,6 +10009,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &494386951
 GameObject:
   m_ObjectHideFlags: 0
@@ -9840,6 +10160,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &498754471
 GameObject:
   m_ObjectHideFlags: 0
@@ -9987,6 +10311,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &499251691
 GameObject:
   m_ObjectHideFlags: 0
@@ -10134,6 +10462,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &505233573
 GameObject:
   m_ObjectHideFlags: 0
@@ -10281,6 +10613,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &510234591
 GameObject:
   m_ObjectHideFlags: 0
@@ -10313,11 +10649,11 @@ RectTransform:
   m_Children:
   - {fileID: 1928140841}
   m_Father: {fileID: 403195864}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -60}
+  m_AnchoredPosition: {x: 410, y: -100}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &510234593
@@ -10365,14 +10701,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 230702025}
         m_MethodName: MoveOn
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -10560,6 +10896,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &514687321
 GameObject:
   m_ObjectHideFlags: 0
@@ -10707,6 +11047,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -10937,6 +11281,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &537844558
 GameObject:
   m_ObjectHideFlags: 0
@@ -11163,6 +11511,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &546550786
 GameObject:
   m_ObjectHideFlags: 0
@@ -11256,9 +11608,11 @@ RectTransform:
   - {fileID: 431653013}
   - {fileID: 403195864}
   - {fileID: 1223552385}
+  - {fileID: 1052846025}
   - {fileID: 745786140}
   - {fileID: 1978697350}
   - {fileID: 605718845}
+  - {fileID: 1700695583}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11414,6 +11768,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &567052865
 GameObject:
   m_ObjectHideFlags: 0
@@ -11561,6 +11919,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &572826939
 GameObject:
   m_ObjectHideFlags: 0
@@ -11708,6 +12070,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &574826957
 GameObject:
   m_ObjectHideFlags: 0
@@ -11912,11 +12278,11 @@ RectTransform:
   m_Children:
   - {fileID: 1046730910}
   m_Father: {fileID: 431653013}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -60}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &581376918
@@ -12066,6 +12432,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &589552605
 GameObject:
   m_ObjectHideFlags: 0
@@ -12213,6 +12583,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &604564230
 GameObject:
   m_ObjectHideFlags: 0
@@ -12360,6 +12734,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &604850333
 GameObject:
   m_ObjectHideFlags: 0
@@ -12507,6 +12885,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &604923222
 GameObject:
   m_ObjectHideFlags: 0
@@ -12654,6 +13036,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &605718844
 GameObject:
   m_ObjectHideFlags: 0
@@ -12688,7 +13074,7 @@ RectTransform:
   - {fileID: 1718726704}
   - {fileID: 4845218}
   m_Father: {fileID: 546550790}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12898,6 +13284,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &631499076
 GameObject:
   m_ObjectHideFlags: 0
@@ -13045,6 +13435,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &636867837
 GameObject:
   m_ObjectHideFlags: 0
@@ -13192,6 +13586,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &654958431
 GameObject:
   m_ObjectHideFlags: 0
@@ -13271,6 +13669,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654958431}
   m_CullTransparentMesh: 0
+--- !u!1 &663616856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663616857}
+  - component: {fileID: 663616859}
+  - component: {fileID: 663616858}
+  m_Layer: 5
+  m_Name: LocationIndexText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &663616857
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663616856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 431653013}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -390, y: 100}
+  m_SizeDelta: {x: 120, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &663616858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663616856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Location:'
+--- !u!222 &663616859
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663616856}
+  m_CullTransparentMesh: 0
 --- !u!1 &693811295
 GameObject:
   m_ObjectHideFlags: 0
@@ -13305,7 +13782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 420, y: 50}
+  m_AnchoredPosition: {x: 420, y: 70}
   m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693811297
@@ -13734,6 +14211,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &732311067
 GameObject:
   m_ObjectHideFlags: 0
@@ -14094,6 +14575,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &745786139
 GameObject:
   m_ObjectHideFlags: 0
@@ -14125,7 +14610,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 546550790}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14416,6 +14901,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &766769313
 GameObject:
   m_ObjectHideFlags: 0
@@ -14563,6 +15052,89 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
+--- !u!1 &788972920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 788972921}
+  - component: {fileID: 788972923}
+  - component: {fileID: 788972922}
+  m_Layer: 5
+  m_Name: EncounterIndexText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &788972921
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788972920}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 403195864}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -390, y: 100}
+  m_SizeDelta: {x: 120, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &788972922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788972920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Encounter:'
+--- !u!222 &788972923
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788972920}
+  m_CullTransparentMesh: 0
 --- !u!1 &791695225
 GameObject:
   m_ObjectHideFlags: 0
@@ -14710,6 +15282,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &796887773
 GameObject:
   m_ObjectHideFlags: 0
@@ -14989,6 +15565,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &803202741
 GameObject:
   m_ObjectHideFlags: 0
@@ -15136,6 +15716,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &809939962
 GameObject:
   m_ObjectHideFlags: 0
@@ -15168,11 +15752,11 @@ RectTransform:
   m_Children:
   - {fileID: 1133039206}
   m_Father: {fileID: 403195864}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: -60}
+  m_AnchoredPosition: {x: 410, y: -60}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &809939964
@@ -15547,6 +16131,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &825369626
 GameObject:
   m_ObjectHideFlags: 0
@@ -15694,6 +16282,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &841897040
 GameObject:
   m_ObjectHideFlags: 0
@@ -15841,6 +16433,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &847598222
 GameObject:
   m_ObjectHideFlags: 0
@@ -16045,6 +16641,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &859945520
 GameObject:
   m_ObjectHideFlags: 0
@@ -16192,6 +16792,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &874973912
 GameObject:
   m_ObjectHideFlags: 0
@@ -16339,6 +16943,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &875686773
 GameObject:
   m_ObjectHideFlags: 0
@@ -16369,11 +16977,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403195864}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 420, y: 50}
+  m_AnchoredPosition: {x: 420, y: 70}
   m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &875686775
@@ -16398,10 +17006,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -16609,6 +17217,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &891601368
 GameObject:
   m_ObjectHideFlags: 0
@@ -16756,6 +17368,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &900155687
 GameObject:
   m_ObjectHideFlags: 0
@@ -16871,11 +17487,11 @@ RectTransform:
   m_Children:
   - {fileID: 2009677804}
   m_Father: {fileID: 431653013}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60}
+  m_AnchoredPosition: {x: -150, y: -100}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &905866612
@@ -17118,6 +17734,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &908767341
 GameObject:
   m_ObjectHideFlags: 0
@@ -17439,6 +18059,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &929218200
 GameObject:
   m_ObjectHideFlags: 0
@@ -17744,6 +18368,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &942013098
 GameObject:
   m_ObjectHideFlags: 0
@@ -18114,6 +18742,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &955294176
 GameObject:
   m_ObjectHideFlags: 0
@@ -18261,6 +18893,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &957813189
 GameObject:
   m_ObjectHideFlags: 0
@@ -18408,6 +19044,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &963520589
 GameObject:
   m_ObjectHideFlags: 0
@@ -18555,6 +19195,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &971951506
 GameObject:
   m_ObjectHideFlags: 0
@@ -18702,6 +19346,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &980685042
 GameObject:
   m_ObjectHideFlags: 0
@@ -18849,6 +19497,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &995788988
 GameObject:
   m_ObjectHideFlags: 0
@@ -19077,6 +19729,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1008249319
 GameObject:
   m_ObjectHideFlags: 0
@@ -19224,6 +19880,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1012922021
 GameObject:
   m_ObjectHideFlags: 0
@@ -19371,6 +20031,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1013972532
 GameObject:
   m_ObjectHideFlags: 0
@@ -19518,6 +20182,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1017258903
 GameObject:
   m_ObjectHideFlags: 0
@@ -19665,6 +20333,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1018872193
 GameObject:
   m_ObjectHideFlags: 0
@@ -19812,6 +20484,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1020258671
 GameObject:
   m_ObjectHideFlags: 0
@@ -19959,6 +20635,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1028258219
 GameObject:
   m_ObjectHideFlags: 0
@@ -19991,11 +20671,11 @@ RectTransform:
   m_Children:
   - {fileID: 1207487101}
   m_Father: {fileID: 403195864}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: -60}
+  m_AnchoredPosition: {x: -300, y: -100}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028258221
@@ -20123,11 +20803,11 @@ RectTransform:
   m_Children:
   - {fileID: 930126295}
   m_Father: {fileID: 431653013}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -200, y: -60}
+  m_AnchoredPosition: {x: -300, y: -100}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032691782
@@ -20370,6 +21050,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1040154444
 GameObject:
   m_ObjectHideFlags: 0
@@ -20596,6 +21280,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1046730909
 GameObject:
   m_ObjectHideFlags: 0
@@ -20822,6 +21510,104 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
+--- !u!1 &1052846024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1052846025}
+  - component: {fileID: 1052846028}
+  - component: {fileID: 1052846027}
+  - component: {fileID: 1052846026}
+  m_Layer: 5
+  m_Name: ItemListBG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1052846025
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052846024}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 546550790}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3000, y: 0}
+  m_SizeDelta: {x: 500, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1052846026
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052846024}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ccd008e4f95ecbe419690f6a864a63dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1052846027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052846024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: f18f04aac99df0349a3365606931ab6f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1052846028
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052846024}
+  m_CullTransparentMesh: 0
 --- !u!1 &1058563059
 GameObject:
   m_ObjectHideFlags: 0
@@ -21048,6 +21834,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1068314453
 GameObject:
   m_ObjectHideFlags: 0
@@ -21195,6 +21985,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1071130678
 GameObject:
   m_ObjectHideFlags: 0
@@ -21342,6 +22136,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1087748050
 GameObject:
   m_ObjectHideFlags: 0
@@ -21489,6 +22287,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1091894330
 GameObject:
   m_ObjectHideFlags: 0
@@ -21636,6 +22438,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1099092234
 GameObject:
   m_ObjectHideFlags: 0
@@ -21862,6 +22668,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1120623575
 GameObject:
   m_ObjectHideFlags: 0
@@ -22009,6 +22819,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1121199321
 GameObject:
   m_ObjectHideFlags: 0
@@ -22235,6 +23049,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1133039205
 GameObject:
   m_ObjectHideFlags: 0
@@ -22461,6 +23279,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1190033842
 GameObject:
   m_ObjectHideFlags: 0
@@ -22608,6 +23430,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1202641976
 GameObject:
   m_ObjectHideFlags: 0
@@ -23054,6 +23880,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1224925851
 GameObject:
   m_ObjectHideFlags: 0
@@ -23201,6 +24031,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1225295471
 GameObject:
   m_ObjectHideFlags: 0
@@ -23348,6 +24182,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1229358930
 GameObject:
   m_ObjectHideFlags: 0
@@ -23495,6 +24333,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1236144166
 GameObject:
   m_ObjectHideFlags: 0
@@ -23642,6 +24484,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1241456035
 GameObject:
   m_ObjectHideFlags: 0
@@ -24002,6 +24848,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1259598124
 GameObject:
   m_ObjectHideFlags: 0
@@ -24149,6 +24999,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1260864538
 GameObject:
   m_ObjectHideFlags: 0
@@ -24296,6 +25150,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1262727322
 GameObject:
   m_ObjectHideFlags: 0
@@ -24500,6 +25358,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1273832941
 GameObject:
   m_ObjectHideFlags: 0
@@ -24647,6 +25509,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1276587876
 GameObject:
   m_ObjectHideFlags: 0
@@ -24794,6 +25660,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1279348102
 GameObject:
   m_ObjectHideFlags: 0
@@ -25103,6 +25973,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1297027657
 GameObject:
   m_ObjectHideFlags: 0
@@ -25250,6 +26124,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1297780991
 GameObject:
   m_ObjectHideFlags: 0
@@ -25397,6 +26275,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1300609753
 GameObject:
   m_ObjectHideFlags: 0
@@ -25544,6 +26426,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1301089831
 GameObject:
   m_ObjectHideFlags: 0
@@ -25691,6 +26577,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1301771865
 GameObject:
   m_ObjectHideFlags: 0
@@ -25895,6 +26785,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1307804940
 GameObject:
   m_ObjectHideFlags: 0
@@ -26042,6 +26936,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1326244601
 GameObject:
   m_ObjectHideFlags: 0
@@ -26189,6 +27087,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1328154945
 GameObject:
   m_ObjectHideFlags: 0
@@ -26336,6 +27238,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1339785707
 GameObject:
   m_ObjectHideFlags: 0
@@ -26366,11 +27272,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403195864}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 410, y: 70}
+  m_AnchoredPosition: {x: 410, y: 100}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1339785709
@@ -26395,10 +27301,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -26449,7 +27355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 410, y: 70}
+  m_AnchoredPosition: {x: 410, y: 100}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341798577
@@ -26526,11 +27432,11 @@ RectTransform:
   m_Children:
   - {fileID: 919167583}
   m_Father: {fileID: 403195864}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -60}
+  m_AnchoredPosition: {x: 200, y: -100}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1341810389
@@ -26773,6 +27679,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1362529922
 GameObject:
   m_ObjectHideFlags: 0
@@ -26920,6 +27830,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1362804808
 GameObject:
   m_ObjectHideFlags: 0
@@ -27148,6 +28062,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1380454099
 GameObject:
   m_ObjectHideFlags: 0
@@ -27295,6 +28213,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1393694167
 GameObject:
   m_ObjectHideFlags: 0
@@ -27442,6 +28364,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1395493809
 GameObject:
   m_ObjectHideFlags: 0
@@ -27668,6 +28594,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1418612573
 GameObject:
   m_ObjectHideFlags: 0
@@ -27815,6 +28745,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1419601749
 GameObject:
   m_ObjectHideFlags: 0
@@ -27962,6 +28896,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1446711833
 GameObject:
   m_ObjectHideFlags: 0
@@ -28109,6 +29047,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1452342881
 GameObject:
   m_ObjectHideFlags: 0
@@ -28256,6 +29198,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1473123334
 GameObject:
   m_ObjectHideFlags: 0
@@ -28403,6 +29349,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1474521897
 GameObject:
   m_ObjectHideFlags: 0
@@ -28550,6 +29500,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1479098660
 GameObject:
   m_ObjectHideFlags: 0
@@ -28697,6 +29651,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1487265698
 GameObject:
   m_ObjectHideFlags: 0
@@ -28844,6 +29802,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1506586441
 GameObject:
   m_ObjectHideFlags: 0
@@ -29100,6 +30062,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1508064791
 GameObject:
   m_ObjectHideFlags: 0
@@ -29247,6 +30213,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1515730546
 GameObject:
   m_ObjectHideFlags: 0
@@ -29526,6 +30496,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1531566343
 GameObject:
   m_ObjectHideFlags: 0
@@ -29558,11 +30532,11 @@ RectTransform:
   m_Children:
   - {fileID: 29800372}
   m_Father: {fileID: 431653013}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: 0}
+  m_AnchoredPosition: {x: 410, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1531566345
@@ -29747,11 +30721,11 @@ RectTransform:
   m_Children:
   - {fileID: 1709071357}
   m_Father: {fileID: 403195864}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60}
+  m_AnchoredPosition: {x: -150, y: -100}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1544343670
@@ -30073,6 +31047,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1561387375
 GameObject:
   m_ObjectHideFlags: 0
@@ -30220,6 +31198,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1576376831
 GameObject:
   m_ObjectHideFlags: 0
@@ -30367,6 +31349,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1577666531
 GameObject:
   m_ObjectHideFlags: 0
@@ -30514,6 +31500,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1586006678
 GameObject:
   m_ObjectHideFlags: 0
@@ -30661,6 +31651,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1594185886
 GameObject:
   m_ObjectHideFlags: 0
@@ -30808,6 +31802,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1597871876
 GameObject:
   m_ObjectHideFlags: 0
@@ -30955,6 +31953,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1600450722
 GameObject:
   m_ObjectHideFlags: 0
@@ -31102,6 +32104,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1607823681
 GameObject:
   m_ObjectHideFlags: 0
@@ -31249,6 +32255,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1611750069
 GameObject:
   m_ObjectHideFlags: 0
@@ -31396,6 +32406,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1633626578
 GameObject:
   m_ObjectHideFlags: 0
@@ -31543,6 +32557,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1637349824
 GameObject:
   m_ObjectHideFlags: 0
@@ -31690,6 +32708,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1644193711
 GameObject:
   m_ObjectHideFlags: 0
@@ -31916,6 +32938,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1673706450
 GameObject:
   m_ObjectHideFlags: 0
@@ -32063,6 +33089,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1674499572
 GameObject:
   m_ObjectHideFlags: 0
@@ -32210,6 +33240,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1677102063
 GameObject:
   m_ObjectHideFlags: 0
@@ -32495,6 +33529,16 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
+--- !u!224 &1700695583 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5835316516418169860, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 79839917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1707594530
 GameObject:
   m_ObjectHideFlags: 0
@@ -32642,6 +33686,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1708683671
 GameObject:
   m_ObjectHideFlags: 0
@@ -32789,6 +33837,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1709071356
 GameObject:
   m_ObjectHideFlags: 0
@@ -33096,6 +34148,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1728411036
 GameObject:
   m_ObjectHideFlags: 0
@@ -33243,6 +34299,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1730900859
 GameObject:
   m_ObjectHideFlags: 0
@@ -33535,6 +34595,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1755016606
 GameObject:
   m_ObjectHideFlags: 0
@@ -33682,6 +34746,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1767439007
 GameObject:
   m_ObjectHideFlags: 0
@@ -33829,6 +34897,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1771706801
 GameObject:
   m_ObjectHideFlags: 0
@@ -33976,6 +35048,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1779808789
 GameObject:
   m_ObjectHideFlags: 0
@@ -34123,6 +35199,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1780572232
 GameObject:
   m_ObjectHideFlags: 0
@@ -34270,6 +35350,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1784096812
 GameObject:
   m_ObjectHideFlags: 0
@@ -34496,6 +35580,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1801820923
 GameObject:
   m_ObjectHideFlags: 0
@@ -34643,6 +35731,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1802461818
 GameObject:
   m_ObjectHideFlags: 0
@@ -34790,6 +35882,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1819160217
 GameObject:
   m_ObjectHideFlags: 0
@@ -34937,6 +36033,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1827264259
 GameObject:
   m_ObjectHideFlags: 0
@@ -35163,6 +36263,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1837159030
 GameObject:
   m_ObjectHideFlags: 0
@@ -35310,6 +36414,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1843828660
 GameObject:
   m_ObjectHideFlags: 0
@@ -35457,6 +36565,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1846723241
 GameObject:
   m_ObjectHideFlags: 0
@@ -35489,11 +36601,11 @@ RectTransform:
   m_Children:
   - {fileID: 2088747752}
   m_Father: {fileID: 403195864}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -60}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 150, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1846723243
@@ -35736,6 +36848,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1884544111
 GameObject:
   m_ObjectHideFlags: 0
@@ -35883,6 +36999,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1884894033
 GameObject:
   m_ObjectHideFlags: 0
@@ -36030,6 +37150,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1899069538
 GameObject:
   m_ObjectHideFlags: 0
@@ -36177,6 +37301,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1906225331
 GameObject:
   m_ObjectHideFlags: 0
@@ -36324,6 +37452,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1915465634
 GameObject:
   m_ObjectHideFlags: 0
@@ -36471,6 +37603,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1917502195
 GameObject:
   m_ObjectHideFlags: 0
@@ -36618,6 +37754,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1921796788
 GameObject:
   m_ObjectHideFlags: 0
@@ -36765,6 +37905,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1922730230
 GameObject:
   m_ObjectHideFlags: 0
@@ -37176,6 +38320,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1928140840
 GameObject:
   m_ObjectHideFlags: 0
@@ -37402,6 +38550,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1931638061
 GameObject:
   m_ObjectHideFlags: 0
@@ -37549,6 +38701,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1943498418
 GameObject:
   m_ObjectHideFlags: 0
@@ -37729,6 +38885,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1946253684
 GameObject:
   m_ObjectHideFlags: 0
@@ -37876,6 +39036,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1963937382
 GameObject:
   m_ObjectHideFlags: 0
@@ -37990,7 +39154,7 @@ RectTransform:
   - {fileID: 1202641977}
   - {fileID: 1963937383}
   m_Father: {fileID: 546550790}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -38200,6 +39364,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1987777922
 GameObject:
   m_ObjectHideFlags: 0
@@ -38347,6 +39515,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &1998186532
 GameObject:
   m_ObjectHideFlags: 0
@@ -38494,6 +39666,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2001938202
 GameObject:
   m_ObjectHideFlags: 0
@@ -38641,6 +39817,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2006558451
 GameObject:
   m_ObjectHideFlags: 0
@@ -38867,6 +40047,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2009677803
 GameObject:
   m_ObjectHideFlags: 0
@@ -39093,6 +40277,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2031715773
 GameObject:
   m_ObjectHideFlags: 0
@@ -39321,6 +40509,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2037373358
 GameObject:
   m_ObjectHideFlags: 0
@@ -39468,6 +40660,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2060953104
 GameObject:
   m_ObjectHideFlags: 0
@@ -39615,6 +40811,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2062056491
 GameObject:
   m_ObjectHideFlags: 0
@@ -39762,6 +40962,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2069947510
 GameObject:
   m_ObjectHideFlags: 0
@@ -39909,6 +41113,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2070367646
 GameObject:
   m_ObjectHideFlags: 0
@@ -40056,6 +41264,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2071868167
 GameObject:
   m_ObjectHideFlags: 0
@@ -40203,6 +41415,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2073052825
 GameObject:
   m_ObjectHideFlags: 0
@@ -40350,6 +41566,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2087384157
 GameObject:
   m_ObjectHideFlags: 0
@@ -40497,6 +41717,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2088747751
 GameObject:
   m_ObjectHideFlags: 0
@@ -40723,6 +41947,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2097387923
 GameObject:
   m_ObjectHideFlags: 0
@@ -40870,6 +42098,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2100190827
 GameObject:
   m_ObjectHideFlags: 0
@@ -41017,6 +42249,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2104033854
 GameObject:
   m_ObjectHideFlags: 0
@@ -41164,6 +42400,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2115072000
 GameObject:
   m_ObjectHideFlags: 0
@@ -41311,6 +42551,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2117542984
 GameObject:
   m_ObjectHideFlags: 0
@@ -41458,6 +42702,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2119074663
 GameObject:
   m_ObjectHideFlags: 0
@@ -41737,6 +42985,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2131638103
 GameObject:
   m_ObjectHideFlags: 0
@@ -41884,6 +43136,10 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 
 --- !u!1 &2143782216
 GameObject:
   m_ObjectHideFlags: 0
@@ -42031,3 +43287,7 @@ MonoBehaviour:
   locationsConsidered: []
   locationBasedEncounter: 0
   alternateLocationEncounter: 0
+  downstreamSameSideTile1ID: 
+  downstreamSameSideTile2ID: 
+  downstreamOtherSideTile1ID: 
+  downstreamOtherSideTile2ID: 

@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Encounter432
   m_EditorClassIdentifier: 
   encounterIndex: 432
+  miscNotes: []
   encounterText:
-  - You may continue to travel by using th etrail or by making your own way through
+  - You may continue to travel by using the trail or by making your own way through
     the woods.
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
+  moveOnRandomly: 0
+  rollHowToMoveOnMax: 0
   moveToSpecificTile: 
   furtherEncounter1Text: Make Your Own Way
   furtherEncounter1Index: 1
@@ -29,11 +32,11 @@ MonoBehaviour:
   furtherEncounter4Text: 
   furtherEncounter4Index: 0
   exploreHasMultipleRanges: 1
-  actionAddsSkill: 1
+  actionAddsSkill: 0
   howManyRanges: 1
-  range1Min: 0
+  range1Min: 1
   range1Length: 0
-  range1FurtherIndex: 0
+  range1FurtherIndex: 1
   range2Min: 0
   range2Length: 0
   range2FurtherIndex: 0
@@ -44,8 +47,12 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 1
-  moveOnRandomly: 0
+  canGetLost: 1
+  randomDirectionChoiceMax: 7
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 0
+  autoGameOver: 0
+  autoWin: 0

@@ -81,4 +81,9 @@ public class MapTileScriptable : ScriptableObject {
 	public string[] locationsConsidered;
 	public int locationBasedEncounter;
 	public int alternateLocationEncounter;
+
+	public string riverSameSideTile1ID;
+	public string riverSameSideTile2ID;
+	public string riverOtherSideTile1ID;
+	public string riverOtherSideTile2ID;
 }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Encounter287
   m_EditorClassIdentifier: 
   encounterIndex: 287
+  miscNotes: []
   encounterText:
   - Your legs grow weary; your eyes fill with tears of guilt. You have stolen from
     Tom Bombadil! You stumble and fall, hurting your knee. When you look up, there
@@ -28,6 +29,9 @@ MonoBehaviour:
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
+  moveOnRandomly: 1
+  rollHowToMoveOnMax: 0
+  movesOnTwoSpaces: 0
   moveToSpecificTile: 10G
   furtherEncounter1Text: 
   furtherEncounter1Index: 0
@@ -53,7 +57,8 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
-  moveOnRandomly: 1
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 60
@@ -61,3 +66,7 @@ MonoBehaviour:
   XPGained: 1
   autoGameOver: 0
   autoWin: 0
+  meetTom: 1
+  checkIfMetTom: 0
+  meetGildor: 0
+  checkIfMetGildor: 0

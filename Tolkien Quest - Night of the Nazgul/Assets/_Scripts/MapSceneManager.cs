@@ -12,28 +12,35 @@ public class MapSceneManager : MonoBehaviour {
 	public GameObject[] mapTiles;
 	[SerializeField] List<GameObject> adjacentTiles;
 //TODO Make a List<GameObject> for "tilesVisited", and use it to show the character's path across the map
+	[SerializeField] List<GameObject> riversideTiles;
 	[SerializeField] Material tileBaseMat;
 
 	public static GameObject currentLocation;
 	public static GameObject previousLocation;
 
 	public static ScriptableEncounterReader currentEncounter;
+	public static EncounterScriptable previousEncounterScriptable;
 
 	[SerializeField] GameObject locationTextBG;
+	[SerializeField] GameObject locationIndexText;
+	[SerializeField] Text locationText;
 	[SerializeField] Text locationTimeText;
 	[SerializeField] Text locationXPText;
-	int currentLocationTextIndex;
+	public int currentLocationTextIndex;
 	[SerializeField] GameObject locationEncounterButton1;
 	[SerializeField] GameObject locationEncounterButton2;
 	[SerializeField] GameObject locationEncounterButton3;
 
 	public GameObject encounterTextBG;
+	[SerializeField] GameObject encounterIndexText;
+	[SerializeField] Text encounterText;
 	[SerializeField] Text encounterTimeText;
-	[SerializeField] Text enounterXPText;
+	[SerializeField] Text encounterXPText;
 	int currentEncounterTextIndex;
 	[SerializeField] GameObject furtherEncounterButton1;
 	[SerializeField] GameObject furtherEncounterButton2;
 	[SerializeField] GameObject furtherEncounterButton3;
+	[SerializeField] GameObject furtherEncounterButton4;
 
 	[SerializeField] GameObject MerchantUI;
 
@@ -42,7 +49,7 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject openMerchantUIButton;
 	[SerializeField] GameObject restButton;
 	[SerializeField] GameObject moveOnButton;
-	[SerializeField] GameObject moveOnEncounterButton;
+	public GameObject moveOnEncounterButton;
 	public bool moveOnInRandomDirection;
 	public bool moveOnToSpecificTile;
 
@@ -58,10 +65,15 @@ public class MapSceneManager : MonoBehaviour {
 	void Start() {
 
 //TODO For testing purposes, update this to whicever tile you need to start at
-		currentLocation = GameObject.Find("1D");
-        //ArriveAtLocation(currentLocation);
-		MoveOn();
-    }
+		currentLocation = GameObject.Find("13B");
+		UpdateLocationBG();
+
+		//currentEncounter.myEncounterScriptable = gameObject.GetComponent<EncounterManager>().encounterTextScriptables[298];
+
+
+		//ArriveAtLocation(currentLocation);
+		//MoveOn();
+	}
 
 
     void Update() {
@@ -84,25 +96,62 @@ public class MapSceneManager : MonoBehaviour {
 					//print("You clicked on an ADJACENT map tile");
 
 					if (tileRayHit.collider.gameObject.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile) {
-						previousLocation = currentLocation;
-						currentLocation = tileRayHit.collider.gameObject;
-						player.transform.position = currentLocation.transform.position + (Vector3.back * .3f);
-						adjacentTiles.Clear();
+						UpdateLocation(tileRayHit.collider.gameObject);
 
-						locationTimeText.text = "Time: " + currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken.ToString();
-						locationXPText.text = "Experience: " + currentLocation.GetComponent<ScriptableMapTileReader>().XPGained.ToString();
+						if (currentEncounter != null && currentEncounter.movesTwoSpaces) {
+							//print("YOU CAN MOVE TWO FUCKING SPACES!");
+							MoveOn(false);
+							currentEncounter.movesTwoSpaces = false;
+						}
+						else {
+							adjacentTiles.Clear();
 
-						tileRayHit.collider.gameObject.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = false;
-						currentLocationTextIndex = 0;
-						UpdateLocationBG();
+							tileRayHit.collider.gameObject.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = false;
+						}
+
+						
 					}
 				}
 			}
 		}
 	}
 
+
+	public void MoveToSpecificLocation (string nextMapTile) {
+		foreach (GameObject tile in mapTiles) {
+			if (tile.GetComponent<ScriptableMapTileReader>().myLocationID == nextMapTile) {
+				UpdateLocation(tile);
+			}
+		}
+	}
+
+
+	void UpdateLocation (GameObject newLocationTile) {
+		//Update player GameObject location
+		//TODO Animate/Lerp the player GameObject to the new MapSceneManager.currentLocation.
+		player.transform.position = newLocationTile.transform.position + (Vector3.back * .3f);
+
+		//Update MapSceneManager.currentLocation
+		previousLocation = currentLocation;
+		currentLocation = newLocationTile;
+		//adjacentTiles.Clear();
+
+		currentLocationTextIndex = 0;
+		UpdateLocationBG();
+	}
+
+
 	public void UpdateLocationBG () {
-		locationTextBG.GetComponentInChildren<Text>().text = currentLocation.GetComponent<ScriptableMapTileReader>().locationText[currentLocationTextIndex];
+		locationIndexText.GetComponentInChildren<Text>().text = ("Location: " + currentLocation.GetComponent<ScriptableMapTileReader>().myLocationID.ToString());
+		locationText.text = currentLocation.GetComponent<ScriptableMapTileReader>().locationText[currentLocationTextIndex];
+		locationTimeText.text = "Time: " + currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken.ToString();
+		locationXPText.text = "Experience: " + currentLocation.GetComponent<ScriptableMapTileReader>().XPGained.ToString();
+
+		if (currentEncounter != null) {
+			//If movesTwoSpaces wasn't already false (most of the time it will be), do it now
+			//currentEncounter.movesTwoSpaces = false;
+		}
+
 		if (currentLocationTextIndex == currentLocation.GetComponent<ScriptableMapTileReader>().locationText.Length -1) {
 			progressLocationTextButton.SetActive(false);
 
@@ -182,7 +231,11 @@ public class MapSceneManager : MonoBehaviour {
 
 
 	public void UpdateEncounterBG () {
-		encounterTextBG.GetComponentInChildren<Text>().text = currentEncounter.myEncounterScriptable.encounterText[currentEncounterTextIndex];
+		encounterIndexText.GetComponentInChildren<Text>().text = ("Encounter: " + currentEncounter.myEncounterScriptable.encounterIndex.ToString());
+		encounterText.text = currentEncounter.myEncounterScriptable.encounterText[currentEncounterTextIndex];
+		encounterTimeText.text = "Time: " + currentEncounter.myEncounterScriptable.timeTaken.ToString();
+		encounterXPText.text = "Experience: " + currentEncounter.myEncounterScriptable.XPGained.ToString();
+
 		if (currentEncounterTextIndex == currentEncounter.myEncounterScriptable.encounterText.Length - 1) {
 			currentEncounterTextIndex = 0;
 			progressEncounterTextButton.SetActive(false);
@@ -213,42 +266,22 @@ public class MapSceneManager : MonoBehaviour {
 				furtherEncounterButton3.SetActive(true);
 				furtherEncounterButton3.GetComponentInChildren<Text>().text = currentEncounter.myEncounterScriptable.furtherEncounter3Text;
 			}
-
-			if (currentEncounter.myEncounterScriptable.canMoveOn) {
-				moveOnEncounterButton.SetActive(true);
-
-				if (currentEncounter.myEncounterScriptable.rollHowToMoveOnMax != 0) {
-					int moveRoll = Random.Range(2, 13);
-
-					if (moveRoll <= currentEncounter.myEncounterScriptable.rollHowToMoveOnMax) {
-						moveOnInRandomDirection = true;
-					}
-				}
-
-				if (currentEncounter.myEncounterScriptable.moveOnRandomly) {
-					moveOnInRandomDirection = true;
-				}
+			//If the current location has a FOURTH ENCOUNTER
+			if (currentEncounter.myEncounterScriptable.furtherEncounter4Index == 0) {
+				furtherEncounterButton4.SetActive(false);
+			}
+			else {
+				furtherEncounterButton4.SetActive(true);
+				furtherEncounterButton4.GetComponentInChildren<Text>().text = currentEncounter.myEncounterScriptable.furtherEncounter4Text;
+			}
+			if (riversideTiles.Contains(currentLocation) && currentEncounter.myEncounterScriptable.canJumpInRiver) {
+				furtherEncounterButton4.SetActive(true);
+				furtherEncounterButton4.GetComponentInChildren<Text>().text = "Jump in the River";
 			}
 
-			//Move the player/currentLocation to a specific tile, as directed by the currentEncounter
-			if (currentEncounter.myEncounterScriptable.moveToSpecificTile != "") {
-				currentEncounter.GetComponent<ScriptableEncounterReader>().MoveToSpecificLocation(currentEncounter.myEncounterScriptable.moveToSpecificTile);
-				print("You should be in space " + currentEncounter.myEncounterScriptable.moveToSpecificTile);
 
-				//If the Location Text for the "specific tile" is meant to be read, rather than just moving on
-				if (!currentEncounter.myEncounterScriptable.canMoveOn) {
-					//Open the LocationTextBG
-					currentLocationTextIndex = 0;
-					UpdateLocationBG();
-				}
 
-				if (currentEncounter.myEncounterScriptable.moveOnRandomly) {
-					moveOnInRandomDirection = true;
-				}
 
-				//TODO Be sure to close the EncounterBG (and any other UI which might be in the way)
-			}
-			
 
 
 		}
@@ -272,17 +305,23 @@ public class MapSceneManager : MonoBehaviour {
 	}
 
 
-	public void MoveOn () {
+	public void MoveOn (bool initiatedByButton) { //Not using this bool at the moment, BTW
+		//if (initiatedByButton) {
+		//	currentEncounter.movesTwoSpaces = false;
+		//}
+
 		foreach (GameObject mapTile in mapTiles) {
-			//KEEP THIS adjacentTiles.Clear();
-			//KEEP if (currentLocation.GetComponent<Collider>().bounds.Intersects(mapTile.GetComponent<Collider>().bounds)) {
+			/*KEEP THIS*/ //adjacentTiles.Clear();
+			/*KEEP if (currentLocation.GetComponent<Collider>().bounds.Intersects(mapTile.GetComponent<Collider>().bounds)) {*/
 				adjacentTiles.Add(mapTile);
-			//KEEP}
-			//KEEP else {
+			/*KEEP}*/
+			/*KEEP else {*/
 				mapTile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = false;
 				mapTile.GetComponent<MeshRenderer>().material = tileBaseMat;
-			//KEEP}
+			/*KEEP}*/
 		}
+
+		//print(adjacentTiles.Count);
 
 		if (moveOnInRandomDirection) {
 			GameObject randomTile = adjacentTiles[Random.Range(0, adjacentTiles.Count)];
@@ -313,12 +352,16 @@ public class MapSceneManager : MonoBehaviour {
 
 		moveOnInRandomDirection = false;
 
-//TOMAYBEDO I might not need to reset all this crap
+		//TOMAYBEDO I might not need to reset all this crap
 		//currentLocationTextIndex = 0;
 		//progressLocationTextButton.SetActive(false);
 		//openMerchantUIButton.SetActive(false);
 		//moveOnButton.SetActive(false);
+
+		currentLocation.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = false;
+		currentLocation.GetComponent<MeshRenderer>().material = tileBaseMat;
 	}
+
 
 
 	public void Rest() {
@@ -333,6 +376,25 @@ public class MapSceneManager : MonoBehaviour {
 		moveOnButton.SetActive(true);
 
 		UpdateLocationBG();
+	}
+
+
+	public void AlterDamage(int newDamage) {
+		CharacterManager.damageTaken += newDamage;
+
+		if (CharacterManager.damageTaken >= CharacterManager.enduranceTotal) {
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.encounterIndex == 357) {
+				//Proceed to Encounter 337
+				print ("<b>You should proceed to Encounter 337</b>");
+			}
+			else {
+				GameOver();
+			}
+		}
+		else if (CharacterManager.damageTaken < 0) {
+			print ("You are fully healed");
+			CharacterManager.damageTaken = 0;
+		}
 	}
 
 

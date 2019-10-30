@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: Encounter389
   m_EditorClassIdentifier: 
   encounterIndex: 389
+  miscNotes: []
   encounterText:
   - You have made it across the River! To see where you climb out of the water on
     the western bank.
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
+  moveOnRandomly: 0
+  rollHowToMoveOnMax: 0
+  movesOnTwoSpaces: 0
   moveToSpecificTile: 
   furtherEncounter1Text: 
   furtherEncounter1Index: 0
@@ -44,8 +48,27 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
-  moveOnRandomly: 0
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 45
   canRestAtNight: 0
   XPGained: 4
+  damageAlteredAmount: 0
+  dealsRandomDirectDamage: 0
+  hasDamageRanges: 0
+  deals50PercentDamage: 0
+  curesDisease: 0
+  autoGameOver: 0
+  autoWin: 0
+  meetTom: 0
+  checkIfMetTom: 0
+  meetGildor: 0
+  checkIfMetGildor: 0
+  canJumpInRiver: 0
+  jumpInRiverRequiresRoll: 0
+  floatsDownstream: 1
+  hasDownstreamRanges: 1
+  landsOnOtherRiverSide: 1
+  lowerValueFloats1Space: 1

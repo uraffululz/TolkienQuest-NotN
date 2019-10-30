@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Encounter323
   m_EditorClassIdentifier: 
   encounterIndex: 323
+  miscNotes: []
   encounterText:
   - You hear an answering call! A tall, woodsy-looking man approaches, whistling a
     merry tun. After a quick glance at your silver dagger, he tends to your wound
@@ -22,6 +23,9 @@ MonoBehaviour:
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
+  moveOnRandomly: 0
+  rollHowToMoveOnMax: 0
+  movesOnTwoSpaces: 0
   moveToSpecificTile: 
   furtherEncounter1Text: Continue
   furtherEncounter1Index: 218
@@ -47,8 +51,26 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
-  moveOnRandomly: 0
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 90
   canRestAtNight: 0
   XPGained: 1
+  damageAlteredAmount: -99
+  dealsRandomDirectDamage: 0
+  hasDamageRanges: 0
+  deals50PercentDamage: 0
+  curesDisease: 0
+  autoGameOver: 0
+  autoWin: 0
+  meetTom: 0
+  checkIfMetTom: 0
+  meetGildor: 0
+  checkIfMetGildor: 0
+  canJumpInRiver: 0
+  jumpInRiverRequiresRoll: 0
+  floatsDownstream: 0
+  hasDownstreamRanges: 0
+  landsOnOtherRiverSide: 0

@@ -22,6 +22,8 @@ MonoBehaviour:
   encounterIndex2: 339
   encounterText3: 
   encounterIndex3: 0
+  encounterText4: 
+  encounterIndex4: 0
   actionAddsSkill: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
@@ -56,3 +58,13 @@ MonoBehaviour:
   limit2Index: 0
   overTimeIndex: 0
   experience: 0
+  changesPlayerLocation: 0
+  changedLocationID: 
+  previousLocationsConsidered: 0
+  locationsConsidered: []
+  locationBasedEncounter: 0
+  alternateLocationEncounter: 0
+  riverSameSideTile1ID: 13B
+  riverSameSideTile2ID: 14C
+  riverOtherSideTile1ID: 14B
+  riverOtherSideTile2ID: 15C

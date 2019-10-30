@@ -13,33 +13,35 @@ MonoBehaviour:
   m_Name: Encounter239
   m_EditorClassIdentifier: 
   encounterIndex: 239
+  miscNotes:
+  - Random roll decides whether you Move On, or Move On Randomly
   encounterText:
   - A throbbing in your skull brings you to consciousness. Your vision is clouded,
-    your limbs are so weary that you can barely rise to your feet. With a start, ou
+    your limbs are so weary that you can barely rise to your feet. With a start, you
     realize that you've been beaten, robbed and left for dead. You have nothing left
     but your clothesand your wits.
   - All around you stand tall trees blocking your way out. Nothing looks familiar.
     You are lost.
   isCombat: 0
   isMerchant: 0
-  canMoveOn: 0
+  canMoveOn: 1
   moveOnRandomly: 0
   rollHowToMoveOnMax: 8
   moveToSpecificTile: 
-  furtherEncounter1Text: Reorient Yourself
-  furtherEncounter1Index: 1
+  furtherEncounter1Text: 
+  furtherEncounter1Index: 0
   furtherEncounter2Text: 
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
   furtherEncounter3Index: 0
   furtherEncounter4Text: 
   furtherEncounter4Index: 0
-  exploreHasMultipleRanges: 1
-  actionAddsSkill: 3
-  howManyRanges: 0
-  range1Min: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 1
+  range1Min: 1
   range1Length: 0
-  range1FurtherIndex: 0
+  range1FurtherIndex: 1
   range2Min: 0
   range2Length: 0
   range2FurtherIndex: 0
@@ -50,6 +52,8 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 90

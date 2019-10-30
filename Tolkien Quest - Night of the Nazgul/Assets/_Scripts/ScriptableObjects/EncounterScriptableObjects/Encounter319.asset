@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: Encounter319
   m_EditorClassIdentifier: 
   encounterIndex: 319
+  miscNotes: []
   encounterText:
   - The rider spies you and calls out. "You there! Come here!" His voice is at once
     bodiless and bold.
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
+  moveOnRandomly: 0
+  rollHowToMoveOnMax: 0
+  movesOnTwoSpaces: 0
   moveToSpecificTile: 
   furtherEncounter1Text: Talk to the Man
   furtherEncounter1Index: 267
@@ -44,8 +48,18 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 0
-  moveOnRandomly: 0
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
+  rangeFailMeansGameOver: 0
   obtainsItems: 0
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 1
+  autoGameOver: 0
+  autoWin: 0
+  meetTom: 0
+  checkIfMetTom: 0
+  meetGildor: 0
+  checkIfMetGildor: 0
+  canJumpInRiver: 1
+  jumpInRiverRequiresRoll: 0

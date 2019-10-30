@@ -24,10 +24,9 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
-  actionRequiresRoll: 0
+  encounterText4: 
+  encounterIndex4: 0
   actionAddsSkill: 3
-  actionMinLimit: 0
-  actionSecondaryIndex: 0
   exploreHasMultipleRanges: 1
   howManyRanges: 1
   range1Min: 2
@@ -43,8 +42,7 @@ MonoBehaviour:
   range4Length: 0
   range4FurtherIndex: 0
   rangeFailMeansMoveOn: 1
-  moveInRandomDirection: 0
-  randomDirectionRangeMin: 0
+  canGetLost: 0
   randomDirectionRangeMax: 0
   combatHere: 0
   merchantHere: 0
@@ -52,4 +50,23 @@ MonoBehaviour:
   canMoveOn: 0
   timeTaken: 75
   timeTakenSecondary: 45
+  canRestAtNight: 0
+  timeLocked: 0
+  daysLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  daysLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
   experience: 0
+  changesPlayerLocation: 0
+  changedLocationID: 
+  previousLocationsConsidered: 0
+  locationsConsidered: []
+  locationBasedEncounter: 0
+  alternateLocationEncounter: 0
+  riverSameSideTile1ID: 15E
+  riverSameSideTile2ID: 14F
+  riverOtherSideTile1ID: 14E
+  riverOtherSideTile2ID: 13F

@@ -25,7 +25,11 @@ public static class CharacterManager {
 	public static int myStatAgilityBonus;
 	public static int myStatIntelligenceBonus;
 
-	public static int myEndurance;
+	public static int enduranceTotal;
+	public static int damageTaken;
+
+	public static bool statusDiseased;
+	public static int diseaseTimer;
 
 	//Skills
 	public static bool allSkillsSet;
@@ -80,4 +84,8 @@ public static class CharacterManager {
 	public static int daysTaken;
 
 	public static int totalXP;
+
+
+	public static bool metTom;
+	public static bool metGildor;
 }
