@@ -9,5 +9,13 @@ public class InventoryItemScriptable : ScriptableObject {
 
 	public int itemIndex;
 
+	[Space]
+
 	public int itemQuantity;
+	public bool isInfinite;
+
+	[Space]
+
+	public bool isAMeal;
+	public bool isACure;
 }

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter126
+  m_EditorClassIdentifier: 
+  encounterIndex: 126
+  miscNotes: []
+  encounterText:
+  - Your voice grows weary with calling out. Will no one ever come, you wonder, panicked.
+    Your heart races; you prowl the trap like a beast.
+  - After three hours of captivity, the sound of approaching boots rap across the
+    floor above you. "Huh! What have we here?" a gruff voice calls out. You look up
+    at the large, hairy head of a man twice your size. "Who are you?" he roars. "What
+    do you want?"
+  - You make up a name and give it to him. You say, "I am just a traveller without
+    work or home. I got lost and my greed for gold led me to this trap."
+  - '"Have you money?" he shouts. You nod. "How much?"
+
+    "Just two silver pieces," you lie.
+
+    The man scratches his whiskers, considering the deal.
+
+    "All right. I will get you out. Toss up the silver."
+
+    You shake your head. "You pull me up first. Then I''ll pay you."'
+  - 'The man growls but relents, tossing down a rope. You wonder if this is how he
+    makes a living. You grab the rope and pull yourself up.
+
+    "Now pay up!" he demands, grabbing you by the shoulders. He appears unarmed.'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 0
+  moveOnRandomly: 0
+  rollHowToMoveOnMax: 0
+  movesOnTwoSpaces: 0
+  moveToSpecificTile: 
+  furtherEncounter1Text: Pay the Money
+  furtherEncounter1Index: 291
+  furtherEncounter2Text: Fight the Man
+  furtherEncounter2Index: 115
+  furtherEncounter3Text: Run Away
+  furtherEncounter3Index: 109
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
+  exploreHasMultipleRanges: 0
+  actionAddsSkill: 0
+  howManyRanges: 0
+  range1Min: 0
+  range1Length: 0
+  range1FurtherIndex: 0
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
+  rangeFailMeansGameOver: 0
+  obtainsItems: 0
+  obtainedItemList: {fileID: 0}
+  timeTaken: 190
+  canRestAtNight: 0
+  XPGained: 4
+  damageAlteredAmount: 0
+  dealsRandomDirectDamage: 0
+  hasDamageRanges: 0
+  deals50PercentDamage: 0
+  curesDisease: 0
+  autoGameOver: 0
+  autoWin: 0
+  meetTom: 0
+  checkIfMetTom: 0
+  meetGildor: 0
+  checkIfMetGildor: 0
+  canJumpInRiver: 0
+  jumpInRiverRequiresRoll: 0
+  floatsDownstream: 0
+  hasDownstreamRanges: 0
+  landsOnOtherRiverSide: 0
+  lowerValueFloats1Space: 0

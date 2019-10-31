@@ -42,6 +42,13 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject furtherEncounterButton3;
 	[SerializeField] GameObject furtherEncounterButton4;
 
+	[SerializeField] GameObject itemListBG;
+	[SerializeField] EncounterObtainedItemList currentItemList;
+	[SerializeField] Text itemHost;
+	//[SerializeField] InventoryItemScriptable currentItemTypeItem;
+	//[SerializeField] InventoryWeaponScriptable currentItemTypeWeapon;
+	//[SerializeField] InventoryArmorScriptable currentItemTypeArmor;
+
 	[SerializeField] GameObject MerchantUI;
 
 	[SerializeField] GameObject progressLocationTextButton;
@@ -279,7 +286,9 @@ public class MapSceneManager : MonoBehaviour {
 				furtherEncounterButton4.GetComponentInChildren<Text>().text = "Jump in the River";
 			}
 
-
+			if (currentEncounter.myEncounterScriptable.obtainsItems) {
+				UpdateItemListBG();
+			}
 
 
 
@@ -288,6 +297,84 @@ public class MapSceneManager : MonoBehaviour {
 		else {
 			progressEncounterTextButton.SetActive(true);
 			moveOnEncounterButton.SetActive(false);
+		}
+	}
+
+
+	void UpdateItemListBG() {
+		currentItemList = currentEncounter.myEncounterScriptable.obtainedItemList;
+
+		for (int i = 0; i < currentItemList.myItemList.Length; i++) {
+			Text newItemHost = Instantiate(itemHost, itemListBG.GetComponent<ObtainedItemListReader>().positionParentList[i].transform.position, Quaternion.identity,
+			itemListBG.GetComponent<ObtainedItemListReader>().positionParentList[i].transform);
+
+			newItemHost.GetComponent<InventoryScriptableReader>().objectScript = currentItemList.myItemList[i];
+			newItemHost.GetComponent<InventoryScriptableReader>().SetMyObjectType();
+
+			if (currentItemList.myItemList[i].GetType() == typeof(InventoryItemScriptable)) {
+				print("This object is an ITEM");
+				//currentItemTypeItem = currentItemList.myItemList[i] as InventoryItemScriptable;
+
+				//currentItemTypeItem = currentItemList.myItem1;
+				//currentItemList.myItem1.Equals(typeof(InventoryItemScriptable));
+
+				/* override object.Equals
+
+					public override bool Equals (object obj) {
+						//       
+						// See the full list of guidelines at
+						//   http://go.microsoft.com/fwlink/?LinkID=85237  
+						// and also the guidance for operator== at
+						//   http://go.microsoft.com/fwlink/?LinkId=85238
+						//
+
+						if (obj == null || GetType() != obj.GetType()) {
+							return false;
+						}
+
+						// TODO: write your implementation of Equals() here
+						throw new System.NotImplementedException();
+						return base.Equals(obj);
+					}
+
+					// override object.GetHashCode
+					public override int GetHashCode () {
+						// TODO: write your implementation of GetHashCode() here
+						throw new System.NotImplementedException();
+						return base.GetHashCode();
+					}
+				*/
+				newItemHost.text = newItemHost.GetComponent<InventoryScriptableReader>().itemScript.itemName;
+
+			}
+			else if (currentItemList.myItemList[i].GetType() == typeof(InventoryWeaponScriptable)) {
+				print("This object is a WEAPON");
+				//currentItemTypeWeapon = currentItemList.myItemList[i] as InventoryWeaponScriptable;
+				newItemHost.text = newItemHost.GetComponent<InventoryScriptableReader>().weaponScript.itemName;
+			}
+			else if (currentItemList.myItemList[i].GetType() == typeof(InventoryArmorScriptable)) {
+				print("This object is an ARMOR");
+				//currentItemTypeArmor = currentItemList.myItemList[i] as InventoryArmorScriptable;
+				newItemHost.text = newItemHost.GetComponent<InventoryScriptableReader>().armorScript.itemName;
+			}
+		}
+
+		
+	}
+
+
+	public void ClearItemListBG() {
+		//When clicking the ItemListBG's "Done" button
+//TODO "Close" the ItemListBG window and the Character Sheet
+
+		//Destroy any unwanted items
+		foreach (Image itemParent in itemListBG.GetComponent<ObtainedItemListReader>().positionParentList) {
+			if (itemParent.transform.childCount != 0) {
+				print("Item parent child count: " + itemParent.transform.childCount);
+				for (int x = itemParent.transform.childCount-1; x >= 0 ; x--) {
+					Destroy(itemParent.transform.GetChild(x).gameObject);
+				}
+			}
 		}
 	}
 

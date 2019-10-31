@@ -169,8 +169,8 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 		////TODO These are for TESTING PURPOSES ONLY
 		//		//Directly assign the Encounter Index, to bring it up "for inspection"
-		//Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 264;
+		Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
+		encounterIndex = 158;
 
 
 		print("Encounter index: " + encounterIndex);
@@ -351,10 +351,6 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			MapSceneManager.currentEncounter = mapSceneManager.GetComponent<MapSceneManager>().encounterTextBG.GetComponent<ScriptableEncounterReader>();
 			//MapSceneManager.currentEncounter.movesTwoSpaces = myEncounterScriptable.movesOnTwoSpaces;
 
-			if (myEncounterScriptable.isMerchant) {
-				OpenMerchantUI();
-			}
-
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.canMoveOn) {
 				//print("You can move on");
 				mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.SetActive(true);
@@ -469,7 +465,10 @@ public class ScriptableEncounterReader : MonoBehaviour {
 					print("Couldn't find a downstreamTile");
 				}
 			}
-		
+
+			if (myEncounterScriptable.isMerchant) {
+				OpenMerchantUI();
+			}
 
 			if (myEncounterScriptable.damageAlteredAmount != 0) {
 				if (myEncounterScriptable.dealsRandomDirectDamage) {
@@ -510,13 +509,6 @@ public class ScriptableEncounterReader : MonoBehaviour {
 					}
 				}
 			}
-
-
-
-
-
-
-
 
 
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.meetTom) {

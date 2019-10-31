@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf13db3ec76faca4dbc329163d213ea5, type: 3}
+  m_Name: Encounter213ItemList
+  m_EditorClassIdentifier: 
+  silverEarned: 3
+  copperEarned: 0
+  myItemList:
+  - {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
+  - {fileID: 11400000, guid: c82511c7f0bfab140860cdf55067af49, type: 2}
+  - {fileID: 11400000, guid: 89755c38d94aa9e44802c41ac8bcb2d7, type: 2}
+  - {fileID: 11400000, guid: 138f7af94d0492a4e9d1e5969446067a, type: 2}
+  myItem1: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
+  myItem2: {fileID: 11400000, guid: c82511c7f0bfab140860cdf55067af49, type: 2}
+  myItem3: {fileID: 11400000, guid: 89755c38d94aa9e44802c41ac8bcb2d7, type: 2}
+  myItem4: {fileID: 11400000, guid: 138f7af94d0492a4e9d1e5969446067a, type: 2}
+  itemQuantity1: 4
+  itemQuantity2: 1
+  itemQuantity3: 1
+  itemQuantity4: 1
+  gainDaggerIfYouHaveNoWeapon: 0
+  dagger: {fileID: 0}

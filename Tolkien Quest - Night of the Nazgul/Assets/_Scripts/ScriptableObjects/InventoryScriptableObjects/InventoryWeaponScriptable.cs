@@ -8,4 +8,20 @@ public class InventoryWeaponScriptable : ScriptableObject {
 	public string itemName;
 
 	public int itemIndex;
+
+	[Space]
+
+	public int additionalDamage;
+	public bool requiresEnemyInChainOrPlateArmor;
+
+	[Space]
+
+	public int MeleeOBAdjustment;
+	public bool canBeUsedAsMissileAttack;
+	public int MissileOBAdjustment;
+
+	[Space]
+	
+	public bool onlyMissileAttacks;
+	
 }

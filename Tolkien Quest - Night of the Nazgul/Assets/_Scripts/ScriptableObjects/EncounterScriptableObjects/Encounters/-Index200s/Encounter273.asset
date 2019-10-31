@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter273
+  m_EditorClassIdentifier: 
+  encounterIndex: 273
+  miscNotes: []
+  encounterText:
+  - 'You find yourself on the stone threshold of an ancient, illuminated house natural
+    as the woods surrounding it and sturdy as a structure can be. The place seems
+    timeless.
+
+    "Come in," says Tom, "meet Fair Lady Goldberry!"'
+  - In the long, low-ceilinged room you see Goldberry, the River-daughter -- a golden-haired
+    maiden in a long green gown shot through with silver like dew -- smiling to greet
+    you. She appears to be wearing living flowers. Stunned, you cannot manage to speak
+    a word.
+  - '"Fear nothing," says Goldberry, taking your hand. "You are under the roof of
+    Old Tom Bombadil now."
+
+    She leads you to a long table laden with pitchers of cream and bowls of honeycomb,
+    thick bread and yellow butter, milk, cheese, green herbs and ripe red berries.
+    Your mouth waters.'
+  - '"First wash the weariness off, young friend," Tom cries, just as you sit down
+    to attack the bread and butter. Tom leads you out a doorway, down a short passage
+    and, after a sharp turn, to a low room with a sloping roof. The walls are stone,
+    smooth and old, and covered with mats and curtains; the floor is of flagstone.
+    In one corner lies a pile of mattresses.'
+  - 'Tom points to a basin of water, leaving you to wash off the grime of your journey.
+    On top of one mattress you spy three small items: a wand carved from hazelwood,
+    an empty wooden bowl and a simple flute.'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 0
+  moveOnRandomly: 0
+  rollHowToMoveOnMax: 0
+  movesOnTwoSpaces: 0
+  moveToSpecificTile: 
+  furtherEncounter1Text: Steal an Item
+  furtherEncounter1Index: 1
+  furtherEncounter2Text: Join Tom and Goldberry
+  furtherEncounter2Index: 265
+  furtherEncounter3Text: 
+  furtherEncounter3Index: 0
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
+  exploreHasMultipleRanges: 1
+  actionAddsSkill: 2
+  howManyRanges: 2
+  range1Min: 2
+  range1Length: 7
+  range1FurtherIndex: 281
+  range2Min: 10
+  range2Length: 99
+  range2FurtherIndex: 314
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 0
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
+  rangeFailMeansGameOver: 0
+  obtainsItems: 0
+  obtainedItemList: {fileID: 0}
+  timeTaken: 0
+  canRestAtNight: 0
+  XPGained: 2
+  damageAlteredAmount: 0
+  dealsRandomDirectDamage: 0
+  hasDamageRanges: 0
+  deals50PercentDamage: 0
+  curesDisease: 0
+  autoGameOver: 0
+  autoWin: 0
+  meetTom: 0
+  checkIfMetTom: 0
+  meetGildor: 0
+  checkIfMetGildor: 0
+  canJumpInRiver: 0
+  jumpInRiverRequiresRoll: 0
+  floatsDownstream: 0
+  hasDownstreamRanges: 0
+  landsOnOtherRiverSide: 0
+  lowerValueFloats1Space: 0

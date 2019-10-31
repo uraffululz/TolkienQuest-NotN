@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
+  m_Name: Encounter230
+  m_EditorClassIdentifier: 
+  encounterIndex: 230
+  miscNotes: []
+  encounterText:
+  - 'Four Orcs are gathered around a circle of weapons and other booty, fighting over
+    a trinket. One turns suddenly and spots you.
+
+    "Slash him! Bite him! Beat him! Crush him!" they scream, giving chase. "Carry
+    him off to the snake pit!" another cries, brandishing his scimitar.'
+  isCombat: 0
+  isMerchant: 0
+  canMoveOn: 0
+  moveOnRandomly: 0
+  rollHowToMoveOnMax: 0
+  movesOnTwoSpaces: 0
+  moveToSpecificTile: 
+  furtherEncounter1Text: Run Away
+  furtherEncounter1Index: 1
+  furtherEncounter2Text: 
+  furtherEncounter2Index: 0
+  furtherEncounter3Text: 
+  furtherEncounter3Index: 0
+  furtherEncounter4Text: 
+  furtherEncounter4Index: 0
+  exploreHasMultipleRanges: 1
+  actionAddsSkill: 4
+  howManyRanges: 1
+  range1Min: 2
+  range1Length: 4
+  range1FurtherIndex: 245
+  range2Min: 0
+  range2Length: 0
+  range2FurtherIndex: 0
+  range3Min: 0
+  range3Length: 0
+  range3FurtherIndex: 0
+  range4Min: 0
+  range4Length: 0
+  range4FurtherIndex: 0
+  rangeFailMeansMoveOn: 1
+  canGetLost: 0
+  randomDirectionChoiceMax: 0
+  rangeFailMeansGameOver: 0
+  obtainsItems: 0
+  obtainedItemList: {fileID: 0}
+  timeTaken: 10
+  canRestAtNight: 0
+  XPGained: 1
+  damageAlteredAmount: 0
+  dealsRandomDirectDamage: 0
+  hasDamageRanges: 0
+  deals50PercentDamage: 0
+  curesDisease: 0
+  autoGameOver: 0
+  autoWin: 0
+  meetTom: 0
+  checkIfMetTom: 0
+  meetGildor: 0
+  checkIfMetGildor: 0
+  canJumpInRiver: 0
+  jumpInRiverRequiresRoll: 0
+  floatsDownstream: 0
+  hasDownstreamRanges: 0
+  landsOnOtherRiverSide: 0
+  lowerValueFloats1Space: 0

@@ -66,6 +66,7 @@ public class EncounterScriptable : ScriptableObject {
 
 	[Header("Inventory Adjustment Variables", order = 1)]
 	public bool obtainsItems;
+	public EncounterObtainedItemList obtainedItemList;
 
 	[Header("Misc. Variables", order = 1)]
 	public int timeTaken;
