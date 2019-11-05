@@ -12,18 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf13db3ec76faca4dbc329163d213ea5, type: 3}
   m_Name: Encounter158ItemList
   m_EditorClassIdentifier: 
-  silverEarned: 0
-  copperEarned: 0
+  silverEarned: 10
+  copperEarned: 3
   myItemList:
   - {fileID: 11400000, guid: 89755c38d94aa9e44802c41ac8bcb2d7, type: 2}
-  - {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
+  - {fileID: 11400000, guid: b8215f4c2d9961644b8a0dae7308663e, type: 2}
   myItem1: {fileID: 11400000, guid: 89755c38d94aa9e44802c41ac8bcb2d7, type: 2}
-  myItem2: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
+  myItem2: {fileID: 11400000, guid: b8215f4c2d9961644b8a0dae7308663e, type: 2}
   myItem3: {fileID: 0}
   myItem4: {fileID: 0}
-  itemQuantity1: 1
-  itemQuantity2: 2
-  itemQuantity3: 0
-  itemQuantity4: 0
+  hasItemRanges: 0
+  itemRange1Min: 0
+  itemRange1Max: 0
+  range1MultipleItems: 0
+  range1Items: []
+  itemRange2Min: 0
+  itemRange2Max: 0
+  range2MultipleItems: 0
+  range2Items: []
+  itemRange3Min: 0
+  itemRange3Max: 0
+  range3MultipleItems: 0
+  range3Items: []
+  itemRange4Min: 0
+  itemRange4Max: 0
+  range4MultipleItems: 0
+  range4Items: []
+  outOfRangeMovesToEncounter: 0
+  encounterIndex: 0
   gainDaggerIfYouHaveNoWeapon: 0
   dagger: {fileID: 0}

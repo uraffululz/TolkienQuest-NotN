@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf13db3ec76faca4dbc329163d213ea5, type: 3}
+  m_Name: Encounter120ItemList
+  m_EditorClassIdentifier: 
+  silverEarned: 0
+  copperEarned: 0
+  myItemList:
+  - {fileID: 11400000, guid: 4b5ac4f1aceaab0438796baf432d65f9, type: 2}
+  - {fileID: 11400000, guid: 2b3e66c586bc6dc49bd6333674a898ec, type: 2}
+  - {fileID: 11400000, guid: fcfea780df10a8d49a25fe4040747038, type: 2}
+  - {fileID: 11400000, guid: 3c8197a74f21b4e4bae4ba1517db3b6e, type: 2}
+  myItem1: {fileID: 11400000, guid: 4b5ac4f1aceaab0438796baf432d65f9, type: 2}
+  myItem2: {fileID: 11400000, guid: 2b3e66c586bc6dc49bd6333674a898ec, type: 2}
+  myItem3: {fileID: 11400000, guid: fcfea780df10a8d49a25fe4040747038, type: 2}
+  myItem4: {fileID: 11400000, guid: 3c8197a74f21b4e4bae4ba1517db3b6e, type: 2}
+  hasItemRanges: 1
+  itemRange1Min: 2
+  itemRange1Max: 4
+  itemRange2Min: 5
+  itemRange2Max: 6
+  itemRange3Min: 7
+  itemRange3Max: 9
+  itemRange4Min: 10
+  itemRange4Max: 12
+  outOfRangeMovesToEncounter: 0
+  encounterIndex: 0
+  itemQuantity1: 1
+  itemQuantity2: 1
+  itemQuantity3: 1
+  itemQuantity4: 1
+  gainDaggerIfYouHaveNoWeapon: 0
+  dagger: {fileID: 0}

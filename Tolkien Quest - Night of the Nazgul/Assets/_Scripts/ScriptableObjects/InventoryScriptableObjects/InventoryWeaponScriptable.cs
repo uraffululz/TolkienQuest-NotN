@@ -11,6 +11,10 @@ public class InventoryWeaponScriptable : ScriptableObject {
 
 	[Space]
 
+	public int weaponQuantity;
+
+	[Space]
+
 	public int additionalDamage;
 	public bool requiresEnemyInChainOrPlateArmor;
 
@@ -18,10 +22,14 @@ public class InventoryWeaponScriptable : ScriptableObject {
 
 	public int MeleeOBAdjustment;
 	public bool canBeUsedAsMissileAttack;
-	public int MissileOBAdjustment;
 
 	[Space]
-	
+
+	public int MissileOBAdjustment;	
 	public bool onlyMissileAttacks;
+
+	[Space]
+
+	public bool autoKillsOrcs;
 	
 }

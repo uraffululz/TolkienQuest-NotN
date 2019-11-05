@@ -20,8 +20,10 @@ public class PrologueSceneManager : MonoBehaviour{
 	[SerializeField] GameObject takeBowButton;
 	[SerializeField] GameObject takeArmorButton;
 
+	[SerializeField] GameObject itemHost;
+
 	[SerializeField] InventoryWeaponScriptable silverDagger;
-	[SerializeField] InventoryItemScriptable mapItem;
+	//[SerializeField] InventoryItemScriptable mapItem;
 	[SerializeField] InventoryItemScriptable healingHerbs;
 	[SerializeField] InventoryItemScriptable lembasBread;
 
@@ -51,13 +53,26 @@ public class PrologueSceneManager : MonoBehaviour{
 	}
 
 	public void TakeItem (ScriptableObject itemTaken) {
-		InventoryManager.startingItemTaken = itemTaken;
-		InventoryManager.silverCarried = 3;
+		//InventoryManager.startingItemTaken = itemTaken;
 
-		InventoryManager.daggerWorn = silverDagger;
-		InventoryManager.slot1Item = mapItem;
-		InventoryManager.slot2Item = healingHerbs;
-		InventoryManager.slot3Item = lembasBread;
+		//InventoryManager.silverCarried = 3;
+
+		InventoryManager.daggerWorn = Instantiate(itemHost);
+		InventoryManager.daggerWornScriptable = silverDagger as ScriptableObject;
+		InventoryManager.daggerWorn.GetComponent<InventoryScriptableReader>().objectScript = silverDagger as ScriptableObject;
+
+		//InventoryManager.slot1Item = Instantiate(itemHost);
+		//InventoryManager.slot1Scriptable = mapItem as ScriptableObject;
+		//InventoryManager.slot1Item.GetComponent<InventoryScriptableReader>().objectScript = mapItem as ScriptableObject;
+
+		InventoryManager.slot1Item = Instantiate(itemHost);
+		InventoryManager.slot1Scriptable = healingHerbs as ScriptableObject;
+		InventoryManager.slot1Item.GetComponent<InventoryScriptableReader>().objectScript = healingHerbs as ScriptableObject;
+
+		InventoryManager.slot2Item = Instantiate(itemHost);
+		InventoryManager.slot2Scriptable = lembasBread as ScriptableObject;
+		InventoryManager.slot2Item.GetComponent<InventoryScriptableReader>().objectScript = lembasBread as ScriptableObject;
+		
 
 
 		if (itemTaken.GetType() == typeof(InventoryWeaponScriptable)) {
@@ -70,21 +85,48 @@ public class PrologueSceneManager : MonoBehaviour{
 
 
 	void TookAWeapon (InventoryWeaponScriptable weaponTaken) {
-		print("You took a weapon");
-		InventoryManager.slot4Item = weaponTaken;
+		InventoryManager.slot3Item = Instantiate(itemHost);
+		InventoryManager.slot3Scriptable = weaponTaken as ScriptableObject;
+		InventoryManager.slot3Item.GetComponent<InventoryScriptableReader>().objectScript = weaponTaken as ScriptableObject;
+
 		if (weaponTaken.itemIndex == 103) {
 			InventoryManager.arrowsCarried = 10;
 		}
+
+		print("You took a weapon");
+
+		//CompileInventoryItemList();
 	}
 
 
 	void TookArmor (InventoryArmorScriptable armorTaken) {
+		InventoryManager.armorWorn = Instantiate(itemHost);
+		InventoryManager.armorWornScriptable = armorTaken as ScriptableObject;
+		InventoryManager.armorWorn.GetComponent<InventoryScriptableReader>().objectScript = armorTaken as ScriptableObject;
 		print("You took the armor");
-		InventoryManager.armorWorn = armorTaken;
+
+		//CompileInventoryItemList();
+
+		print(InventoryManager.armorWorn.GetComponent<InventoryScriptableReader>().objectScript.name);
+	}
+
+
+	void CompileInventoryItemList() {
+		InventoryManager.inventoryItems = new GameObject[] {InventoryManager.slot1Item, InventoryManager.slot2Item, InventoryManager.slot3Item,
+			InventoryManager.slot4Item,InventoryManager.slot5Item,InventoryManager.slot6Item,InventoryManager.slot7Item,InventoryManager.slot8Item,
+			InventoryManager.slot9Item,InventoryManager.slot10Item,InventoryManager.slot11Item,InventoryManager.slot12Item,};
+
+		foreach (GameObject obj in InventoryManager.inventoryItems) {
+			if (obj != null) {
+				print(obj.GetComponent<InventoryScriptableReader>().objectScript.name);
+			}
+		}
 	}
 
 
 	public void ProceedToMapScene () {
+		InventoryManager.silverCarried += 3;
+
 		//Load the MapScene
 		SceneManager.LoadScene("MapScene");
 

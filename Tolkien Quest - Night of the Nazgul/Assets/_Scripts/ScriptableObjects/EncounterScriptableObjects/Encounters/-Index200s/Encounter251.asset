@@ -51,8 +51,8 @@ MonoBehaviour:
   canGetLost: 0
   randomDirectionChoiceMax: 0
   rangeFailMeansGameOver: 0
-  obtainsItems: 0
-  obtainedItemList: {fileID: 0}
+  obtainsItems: 1
+  obtainedItemList: {fileID: 11400000, guid: 7e0a9bceac9eb4549a62d385f76fc5da, type: 2}
   timeTaken: 10
   canRestAtNight: 1
   XPGained: 0

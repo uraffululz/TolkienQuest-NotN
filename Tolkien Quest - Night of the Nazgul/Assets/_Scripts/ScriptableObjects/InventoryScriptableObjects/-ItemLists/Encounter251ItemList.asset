@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf13db3ec76faca4dbc329163d213ea5, type: 3}
+  m_Name: Encounter251ItemList
+  m_EditorClassIdentifier: 
+  silverEarned: 5
+  copperEarned: 0
+  myItemList:
+  - {fileID: 11400000, guid: 340cc6413913be745b20e81b9a1eeeaf, type: 2}
+  - {fileID: 11400000, guid: ee52262212410a542964dca3eaac43d5, type: 2}
+  myItem1: {fileID: 11400000, guid: 340cc6413913be745b20e81b9a1eeeaf, type: 2}
+  myItem2: {fileID: 11400000, guid: ee52262212410a542964dca3eaac43d5, type: 2}
+  myItem3: {fileID: 0}
+  myItem4: {fileID: 0}
+  hasItemRanges: 0
+  itemRange1Min: 0
+  itemRange1Max: 0
+  range1MultipleItems: 0
+  range1Items: []
+  itemRange2Min: 0
+  itemRange2Max: 0
+  range2MultipleItems: 0
+  range2Items: []
+  itemRange3Min: 0
+  itemRange3Max: 0
+  range3MultipleItems: 0
+  range3Items: []
+  itemRange4Min: 0
+  itemRange4Max: 0
+  range4MultipleItems: 0
+  range4Items: []
+  outOfRangeMovesToEncounter: 0
+  encounterIndex: 0
+  gainDaggerIfYouHaveNoWeapon: 0
+  dagger: {fileID: 0}

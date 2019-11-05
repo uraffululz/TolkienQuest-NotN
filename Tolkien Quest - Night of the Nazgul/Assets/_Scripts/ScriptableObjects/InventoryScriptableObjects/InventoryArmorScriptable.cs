@@ -8,4 +8,14 @@ public class InventoryArmorScriptable : ScriptableObject {
 	public string itemName;
 
 	public int itemIndex;
+
+	[Space]
+
+	public int armorQuantity;
+
+	[Space]
+
+	public bool noTrickeryPenalty;
+	public enum skillIncrease {None, General, Trickery };
+	public skillIncrease mySkillIncrease;
 }

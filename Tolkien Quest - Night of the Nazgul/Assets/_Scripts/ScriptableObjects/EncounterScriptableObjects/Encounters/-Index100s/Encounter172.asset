@@ -55,8 +55,14 @@ MonoBehaviour:
   canGetLost: 0
   randomDirectionChoiceMax: 0
   rangeFailMeansGameOver: 0
-  obtainsItems: 0
+  obtainsItems: 1
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  checksForSpecificItem: 0
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 15
   canRestAtNight: 0
   XPGained: 1

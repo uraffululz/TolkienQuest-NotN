@@ -8,6 +8,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 	public EncounterScriptable myEncounterScriptable;
 
 	[SerializeField] GameObject mapSceneManager;
+	[SerializeField] GameObject mapSceneInventoryManager;
 
 	public bool movesTwoSpaces;
 
@@ -15,7 +16,6 @@ public class ScriptableEncounterReader : MonoBehaviour {
 	//[SerializeField] Text encounterXPText;
 
 	[SerializeField] GameObject merchantUI;
-
 
 	public void ChooseLocationBGEncounter (int whichTileEncounterVariable) {
 		int currentEncounterIndex = 0;
@@ -170,7 +170,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		////TODO These are for TESTING PURPOSES ONLY
 		//		//Directly assign the Encounter Index, to bring it up "for inspection"
 		Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 158;
+		encounterIndex = 356;
 
 
 		print("Encounter index: " + encounterIndex);
@@ -267,6 +267,12 @@ public class ScriptableEncounterReader : MonoBehaviour {
 					furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range2FurtherIndex;
 					print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.start + " - " +
 							MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.end);
+
+					//For now this only applies to Encounter 354
+					if (myEncounterScriptable.exploreRangeDeterminesItems) {
+						InventoryManager.silverCarried += 5;
+						print("You stole 5 silver from the troll. Current Silver: " + InventoryManager.silverCarried);
+					}
 				}
 			}
 
@@ -393,6 +399,124 @@ public class ScriptableEncounterReader : MonoBehaviour {
 				}
 //TODO Be sure to close the EncounterBG (and any other UI which might be in the way)
 			}
+
+			if (myEncounterScriptable.obtainsItems) {
+				bool obtainedItems = false;
+				List<ScriptableObject> itemsInList = new List<ScriptableObject>();
+
+				//TODO Implement Ranges for obtaining random items.
+				if (myEncounterScriptable.obtainedItemList.hasItemRanges) {
+					int ObtainedObjectRoll = Random.Range(2, 13);
+
+					if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange1Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange1Max) {
+						if (myEncounterScriptable.obtainedItemList.range1MultipleItems) {
+							foreach (ScriptableObject itemFound in myEncounterScriptable.obtainedItemList.range1Items) {
+								itemsInList.Add(itemFound);
+							}
+						}
+						else {
+							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[0]);
+						}
+						obtainedItems = true;
+					}
+					else if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange2Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange2Max) {
+						if (myEncounterScriptable.obtainedItemList.range2MultipleItems) {
+							foreach (ScriptableObject itemFound in myEncounterScriptable.obtainedItemList.range2Items) {
+								itemsInList.Add(itemFound);
+							}
+						}
+						else {
+							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[1]);
+						}
+						obtainedItems = true;
+
+					}
+					else if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange3Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange3Max) {
+						if (myEncounterScriptable.obtainedItemList.range3MultipleItems) {
+							foreach (ScriptableObject itemFound in myEncounterScriptable.obtainedItemList.range3Items) {
+								itemsInList.Add(itemFound);
+							}
+						}
+						else {
+							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[2]);
+						}
+						obtainedItems = true;
+					}
+					else if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange4Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange4Max) {
+						if (myEncounterScriptable.obtainedItemList.range4MultipleItems) {
+							foreach (ScriptableObject itemFound in myEncounterScriptable.obtainedItemList.range4Items) {
+								itemsInList.Add(itemFound);
+							}
+						}
+						else {
+							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[3]);
+						}
+						obtainedItems = true;
+					}
+					else {
+						print("Rolled out of item ranges");
+						if (myEncounterScriptable.obtainedItemList.outOfRangeMovesToEncounter) {
+							UpdateEncounter(myEncounterScriptable.obtainedItemList.encounterIndex);
+						}
+					}
+				}
+				else {
+					for (int i = 0; i < myEncounterScriptable.obtainedItemList.myItemList.Length; i++) {
+						if (myEncounterScriptable.obtainedItemList.myItemList[i] != null) {
+							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[i]);
+							obtainedItems = true;
+						}
+					}
+				}
+
+				if (myEncounterScriptable.obtainedItemList.itemChecked != null) {
+					bool itemFound = false;
+					bool itemUsed = false;
+					int itemQuantityTotal = 0;
+
+					//Check for relevant item(s) in the player's inventory
+					foreach (GameObject item in mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents) {
+						if (item.transform.childCount != 0) {
+							if (item.GetComponentInChildren<InventoryScriptableReader>().objectScript == myEncounterScriptable.obtainedItemList.itemChecked) {
+								itemFound = true;
+								print("Found the item you're looking for in your inventory");
+
+								if (!itemUsed && myEncounterScriptable.obtainedItemList.useItem && !item.GetComponentInChildren<InventoryScriptableReader>().isInfinite) {
+									item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity--;
+									item.GetComponentInChildren<InventoryScriptableReader>().InitializeItem();
+									print ("Used the item. Item Quantity: " + item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
+									itemUsed = true;
+								}
+								else {
+									print ("Couldn't use the item. bool itemUsed = " + itemUsed + " || Encounter Uses Item = " + myEncounterScriptable.obtainedItemList.useItem);
+								}
+
+								itemQuantityTotal += item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity;
+							}
+							//else {
+							//	print("Couldn't find the item you're looking for in your inventory.");
+							//}
+						}
+						
+					}
+
+					//Check the quantity
+					if (itemFound && myEncounterScriptable.obtainedItemList.checksItemQuantityMax != 0) {
+						if (itemQuantityTotal >= myEncounterScriptable.obtainedItemList.checksItemQuantityMin &&
+						itemQuantityTotal <= myEncounterScriptable.obtainedItemList.checksItemQuantityMax) {
+
+						}
+					}
+
+
+				}
+
+				if (obtainedItems) {
+					mapSceneManager.GetComponent<MapSceneManager>().UpdateItemListBG(itemsInList);
+				}
+			}
+
+			
 
 
 			if (myEncounterScriptable.floatsDownstream) {

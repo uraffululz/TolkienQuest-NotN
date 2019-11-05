@@ -71,6 +71,9 @@
     <Compile Include="Assets\_Scripts\DragAndDrop.cs" />
     <Compile Include="Assets\_Scripts\EncounterManager.cs" />
     <Compile Include="Assets\_Scripts\InventoryManager.cs" />
+    <Compile Include="Assets\_Scripts\InventoryScriptableReader.cs" />
+    <Compile Include="Assets\_Scripts\ItemListBGScript.cs" />
+    <Compile Include="Assets\_Scripts\MapSceneInventoryManager.cs" />
     <Compile Include="Assets\_Scripts\MapSceneManager.cs" />
     <Compile Include="Assets\_Scripts\MerchantUIManager.cs" />
     <Compile Include="Assets\_Scripts\PrologueSceneManager.cs" />
@@ -87,8 +90,6 @@
     <Compile Include="Assets\_Scripts\ScriptableObjects\RaceScriptableObjects\ScriptableRaceReader.cs" />
     <Compile Include="Assets\_Scripts\ScriptableObjects\SpellScriptableObjects\ScriptableSpellReader.cs" />
     <Compile Include="Assets\_Scripts\ScriptableObjects\SpellScriptableObjects\SpellScriptable.cs" />
-    <Compile Include="Assets\InventoryScriptableReader.cs" />
-    <Compile Include="Assets\ObtainedItemListReader.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Master/Documents/Git Repositories/Unity Projects/TolkienQuest-NotN/Tolkien Quest - Night of the Nazgul/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

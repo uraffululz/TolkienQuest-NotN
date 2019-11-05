@@ -52,7 +52,13 @@ MonoBehaviour:
   randomDirectionChoiceMax: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 1
-  obtainedItemList: {fileID: 0}
+  obtainedItemList: {fileID: 11400000, guid: 707329c9c6411b548aef572ee59d29c9, type: 2}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  checksForSpecificItem: 0
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 134
   canRestAtNight: 0
   XPGained: 4

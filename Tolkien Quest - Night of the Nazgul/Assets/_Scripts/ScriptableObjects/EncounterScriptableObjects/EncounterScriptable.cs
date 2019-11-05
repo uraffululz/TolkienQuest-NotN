@@ -67,6 +67,19 @@ public class EncounterScriptable : ScriptableObject {
 	[Header("Inventory Adjustment Variables", order = 1)]
 	public bool obtainsItems;
 	public EncounterObtainedItemList obtainedItemList;
+	//public EncounterObtainedItemList alternateItemList;
+	public bool exploreRangeDeterminesItems;
+
+	public bool loseItems;
+	public bool loseAllItems;
+
+	public bool checksForSpecificItem;
+	public bool checksItemQuantity;
+	public InventoryItemScriptable useSpecificItem;
+	public bool lackingItemMeansDiseased;
+	public bool lackingItemMeansPoisoned;
+
+
 
 	[Header("Misc. Variables", order = 1)]
 	public int timeTaken;

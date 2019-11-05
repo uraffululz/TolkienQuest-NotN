@@ -13,9 +13,22 @@ public class InventoryItemScriptable : ScriptableObject {
 
 	public int itemQuantity;
 	public bool isInfinite;
+	public bool usableOncePerDay;
+	public bool usableTwicePerDay;
+
+	[Space]
+
+	public bool isMoney;
 
 	[Space]
 
 	public bool isAMeal;
 	public bool isACure;
+
+	[Space]
+
+	public bool autoDefeatsWights;
+
+	public enum skillIncrease {None, General, Trickery};
+	public skillIncrease mySkillIncrease;
 }

@@ -918,7 +918,7 @@ GameObject:
   - component: {fileID: 5835316514944225315}
   m_Layer: 5
   m_Name: StoredEquipment8
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1236,7 +1236,7 @@ GameObject:
   - component: {fileID: 5835316514992123410}
   m_Layer: 5
   m_Name: StoredEquipment5
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2130,7 +2130,7 @@ GameObject:
   - component: {fileID: 5835316515191431091}
   m_Layer: 5
   m_Name: StoredEquipment9
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2211,7 +2211,7 @@ GameObject:
   - component: {fileID: 5835316515213382026}
   m_Layer: 5
   m_Name: StoredEquipment2
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2687,7 +2687,7 @@ GameObject:
   - component: {fileID: 5835316515358592995}
   m_Layer: 5
   m_Name: StoredEquipment7
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3163,7 +3163,7 @@ GameObject:
   - component: {fileID: 5835316515514647793}
   m_Layer: 5
   m_Name: StoredEquipment10
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3244,7 +3244,7 @@ GameObject:
   - component: {fileID: 5835316515565377765}
   m_Layer: 5
   m_Name: StoredEquipment1
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3683,7 +3683,7 @@ GameObject:
   - component: {fileID: 5835316515816084141}
   m_Layer: 5
   m_Name: StoredEquipment12
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3843,7 +3843,7 @@ GameObject:
   - component: {fileID: 5835316515939239743}
   m_Layer: 5
   m_Name: StoredEquipment4
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4112,7 +4112,7 @@ GameObject:
   - component: {fileID: 5835316516128495076}
   m_Layer: 5
   m_Name: StoredEquipment11
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5024,6 +5024,7 @@ GameObject:
   - component: {fileID: 5835316516418169860}
   - component: {fileID: 5835316516418169858}
   - component: {fileID: 5835316516418169861}
+  - component: {fileID: 315764336512286166}
   m_Layer: 5
   m_Name: CharacterSheetBGForMapScene
   m_TagString: Untagged
@@ -5081,7 +5082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5096,6 +5097,25 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!95 &315764336512286166
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835316516418169863}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9dddc5657efc5264ab1efde9fc6f026d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5835316516439707055
 GameObject:
   m_ObjectHideFlags: 0
@@ -5309,7 +5329,7 @@ GameObject:
   - component: {fileID: 5835316516494515342}
   m_Layer: 5
   m_Name: StoredEquipment3
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5548,7 +5568,7 @@ GameObject:
   - component: {fileID: 5835316516587447575}
   m_Layer: 5
   m_Name: StoredEquipment6
-  m_TagString: Untagged
+  m_TagString: DraggableUIParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

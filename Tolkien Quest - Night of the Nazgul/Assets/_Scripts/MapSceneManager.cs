@@ -43,11 +43,13 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject furtherEncounterButton4;
 
 	[SerializeField] GameObject itemListBG;
-	[SerializeField] EncounterObtainedItemList currentItemList;
+	//[SerializeField] EncounterObtainedItemList currentItemList;
 	[SerializeField] Text itemHost;
 	//[SerializeField] InventoryItemScriptable currentItemTypeItem;
 	//[SerializeField] InventoryWeaponScriptable currentItemTypeWeapon;
 	//[SerializeField] InventoryArmorScriptable currentItemTypeArmor;
+
+	[SerializeField] GameObject inventoryBG;
 
 	[SerializeField] GameObject MerchantUI;
 
@@ -86,6 +88,15 @@ public class MapSceneManager : MonoBehaviour {
     void Update() {
 		if (Input.GetMouseButtonDown(0)) {
 			ChooseNewLocationTile();
+		}
+
+		if (Input.GetKeyDown(KeyCode.I)) {
+			if (inventoryBG.GetComponent<Animator>().GetBool("openInventory") == false) {
+				OpenItemListUI();
+			}
+			else {
+				CloseItemListUI();
+			}
 		}
 	}
 
@@ -285,13 +296,7 @@ public class MapSceneManager : MonoBehaviour {
 				furtherEncounterButton4.SetActive(true);
 				furtherEncounterButton4.GetComponentInChildren<Text>().text = "Jump in the River";
 			}
-
-			if (currentEncounter.myEncounterScriptable.obtainsItems) {
-				UpdateItemListBG();
-			}
-
-
-
+			
 
 		}
 		else {
@@ -301,17 +306,20 @@ public class MapSceneManager : MonoBehaviour {
 	}
 
 
-	void UpdateItemListBG() {
-		currentItemList = currentEncounter.myEncounterScriptable.obtainedItemList;
+	public void UpdateItemListBG(List<ScriptableObject> myListedItems) {
+		EncounterObtainedItemList currentItemList = currentEncounter.myEncounterScriptable.obtainedItemList;
 
-		for (int i = 0; i < currentItemList.myItemList.Length; i++) {
-			Text newItemHost = Instantiate(itemHost, itemListBG.GetComponent<ObtainedItemListReader>().positionParentList[i].transform.position, Quaternion.identity,
-			itemListBG.GetComponent<ObtainedItemListReader>().positionParentList[i].transform);
+		int additionalSilverEarned = 0;
 
-			newItemHost.GetComponent<InventoryScriptableReader>().objectScript = currentItemList.myItemList[i];
+		for (int i = 0; i < myListedItems.Count; i++) {
+			
+			Text newItemHost = Instantiate(itemHost, itemListBG.GetComponent<ItemListBGScript>().positionParentList[i].transform.position, Quaternion.identity,
+			itemListBG.GetComponent<ItemListBGScript>().positionParentList[i].transform);
+
+			newItemHost.GetComponent<InventoryScriptableReader>().objectScript = myListedItems[i];
 			newItemHost.GetComponent<InventoryScriptableReader>().SetMyObjectType();
 
-			if (currentItemList.myItemList[i].GetType() == typeof(InventoryItemScriptable)) {
+			if (myListedItems[i].GetType() == typeof(InventoryItemScriptable)) {
 				print("This object is an ITEM");
 				//currentItemTypeItem = currentItemList.myItemList[i] as InventoryItemScriptable;
 
@@ -344,22 +352,33 @@ public class MapSceneManager : MonoBehaviour {
 						return base.GetHashCode();
 					}
 				*/
-				newItemHost.text = newItemHost.GetComponent<InventoryScriptableReader>().itemScript.itemName;
+				//newItemHost.text = newItemHost.GetComponent<InventoryScriptableReader>().itemScript.itemName;
 
+				if (newItemHost.GetComponent<InventoryScriptableReader>().itemScript.isMoney) {
+					additionalSilverEarned = newItemHost.GetComponent<InventoryScriptableReader>().itemScript.itemQuantity;
+					Destroy(newItemHost);
+				}
 			}
-			else if (currentItemList.myItemList[i].GetType() == typeof(InventoryWeaponScriptable)) {
+			else if (myListedItems[i].GetType() == typeof(InventoryWeaponScriptable)) {
 				print("This object is a WEAPON");
 				//currentItemTypeWeapon = currentItemList.myItemList[i] as InventoryWeaponScriptable;
 				newItemHost.text = newItemHost.GetComponent<InventoryScriptableReader>().weaponScript.itemName;
 			}
-			else if (currentItemList.myItemList[i].GetType() == typeof(InventoryArmorScriptable)) {
+			else if (myListedItems[i].GetType() == typeof(InventoryArmorScriptable)) {
 				print("This object is an ARMOR");
 				//currentItemTypeArmor = currentItemList.myItemList[i] as InventoryArmorScriptable;
 				newItemHost.text = newItemHost.GetComponent<InventoryScriptableReader>().armorScript.itemName;
 			}
 		}
 
-		
+		InventoryManager.silverCarried += (currentItemList.silverEarned + additionalSilverEarned);
+		itemListBG.GetComponent<ItemListBGScript>().silverText.text = ("Silver: " + (currentItemList.silverEarned + additionalSilverEarned).ToString());
+		InventoryManager.copperCarried += currentItemList.copperEarned;
+		itemListBG.GetComponent<ItemListBGScript>().copperText.text = ("Silver: " + currentItemList.copperEarned.ToString());
+
+		print("Current Silver: " + InventoryManager.silverCarried + "|| " + "Current Copper: " + InventoryManager.copperCarried);
+
+		OpenItemListUI();
 	}
 
 
@@ -368,7 +387,7 @@ public class MapSceneManager : MonoBehaviour {
 //TODO "Close" the ItemListBG window and the Character Sheet
 
 		//Destroy any unwanted items
-		foreach (Image itemParent in itemListBG.GetComponent<ObtainedItemListReader>().positionParentList) {
+		foreach (Image itemParent in itemListBG.GetComponent<ItemListBGScript>().positionParentList) {
 			if (itemParent.transform.childCount != 0) {
 				print("Item parent child count: " + itemParent.transform.childCount);
 				for (int x = itemParent.transform.childCount-1; x >= 0 ; x--) {
@@ -376,6 +395,21 @@ public class MapSceneManager : MonoBehaviour {
 				}
 			}
 		}
+
+		CloseItemListUI();
+	}
+
+
+	public void OpenItemListUI () {
+		inventoryBG.GetComponent<Animator>().SetBool("openInventory", true);
+		itemListBG.GetComponent<Animator>().SetBool("openItemList", true);
+	}
+
+
+	public void CloseItemListUI () {
+		inventoryBG.GetComponent<Animator>().SetBool("openInventory", false);
+		itemListBG.GetComponent<Animator>().SetBool("openItemList", false);
+
 	}
 
 

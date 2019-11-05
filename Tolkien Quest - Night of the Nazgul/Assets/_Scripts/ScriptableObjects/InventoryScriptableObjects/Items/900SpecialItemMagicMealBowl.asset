@@ -16,5 +16,8 @@ MonoBehaviour:
   itemIndex: 900
   itemQuantity: 1
   isInfinite: 1
+  usableOncePerDay: 1
+  isMoney: 0
   isAMeal: 1
   isACure: 0
+  autoDefeatsWights: 0
