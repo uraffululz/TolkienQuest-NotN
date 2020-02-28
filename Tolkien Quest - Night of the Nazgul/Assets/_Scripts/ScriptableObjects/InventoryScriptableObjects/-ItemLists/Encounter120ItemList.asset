@@ -20,23 +20,42 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fcfea780df10a8d49a25fe4040747038, type: 2}
   - {fileID: 11400000, guid: 3c8197a74f21b4e4bae4ba1517db3b6e, type: 2}
   myItem1: {fileID: 11400000, guid: 4b5ac4f1aceaab0438796baf432d65f9, type: 2}
+  myItem1Quantity: 1
   myItem2: {fileID: 11400000, guid: 2b3e66c586bc6dc49bd6333674a898ec, type: 2}
+  myItem2Quantity: 1
   myItem3: {fileID: 11400000, guid: fcfea780df10a8d49a25fe4040747038, type: 2}
+  myItem3Quantity: 1
   myItem4: {fileID: 11400000, guid: 3c8197a74f21b4e4bae4ba1517db3b6e, type: 2}
+  myItem4Quantity: 1
   hasItemRanges: 1
   itemRange1Min: 2
   itemRange1Max: 4
+  range1MultipleItems: 0
+  range1Items: []
+  range1ItemQuantities: 
   itemRange2Min: 5
   itemRange2Max: 6
+  range2MultipleItems: 0
+  range2Items: []
+  range2ItemQuantities: 
   itemRange3Min: 7
   itemRange3Max: 9
+  range3MultipleItems: 0
+  range3Items: []
+  range3ItemQuantities: 
   itemRange4Min: 10
   itemRange4Max: 12
+  range4MultipleItems: 0
+  range4Items: []
+  range4ItemQuantities: 
   outOfRangeMovesToEncounter: 0
   encounterIndex: 0
-  itemQuantity1: 1
-  itemQuantity2: 1
-  itemQuantity3: 1
-  itemQuantity4: 1
+  itemChecked: {fileID: 0}
+  checksItemQuantityMin: 0
+  checksItemQuantityMax: 0
+  itemsGainedViaQuantity: {fileID: 0}
+  useItem: 0
+  lackingItemMeansDiseased: 0
+  lackingItemMeansPoisoned: 0
   gainDaggerIfYouHaveNoWeapon: 0
   dagger: {fileID: 0}

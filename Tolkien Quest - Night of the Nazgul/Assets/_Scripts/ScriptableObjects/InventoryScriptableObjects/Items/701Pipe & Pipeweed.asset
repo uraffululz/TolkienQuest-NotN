@@ -16,5 +16,11 @@ MonoBehaviour:
   itemIndex: 701
   itemQuantity: 1
   isInfinite: 1
+  isStackable: 1
+  usableOncePerDay: 0
+  usableTwicePerDay: 0
+  isMoney: 0
   isAMeal: 0
   isACure: 0
+  autoDefeatsWights: 0
+  mySkillIncrease: 0

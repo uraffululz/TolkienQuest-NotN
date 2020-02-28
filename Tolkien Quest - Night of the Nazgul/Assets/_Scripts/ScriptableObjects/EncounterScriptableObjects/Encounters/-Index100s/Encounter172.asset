@@ -56,10 +56,12 @@ MonoBehaviour:
   randomDirectionChoiceMax: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 1
-  obtainedItemList: {fileID: 0}
+  obtainedItemList: {fileID: 11400000, guid: 9d78a0e4d82cd1448b64dd401b94dead, type: 2}
   exploreRangeDeterminesItems: 0
   loseItems: 0
   loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   checksForSpecificItem: 0
   checksItemQuantity: 0
   useSpecificItem: {fileID: 0}

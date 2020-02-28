@@ -72,12 +72,12 @@ public class EncounterScriptable : ScriptableObject {
 
 	public bool loseItems;
 	public bool loseAllItems;
+	public bool loseWeaponsAndArmor;
+	public InventoryWeaponScriptable keepSilverDagger;
 
-	public bool checksForSpecificItem;
+	public ScriptableObject checksForSpecificItem;
 	public bool checksItemQuantity;
 	public InventoryItemScriptable useSpecificItem;
-	public bool lackingItemMeansDiseased;
-	public bool lackingItemMeansPoisoned;
 
 
 

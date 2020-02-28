@@ -66,13 +66,17 @@ public class PrologueSceneManager : MonoBehaviour{
 		//InventoryManager.slot1Item.GetComponent<InventoryScriptableReader>().objectScript = mapItem as ScriptableObject;
 
 		InventoryManager.slot1Item = Instantiate(itemHost);
+		healingHerbs.itemQuantity = 3;
 		InventoryManager.slot1Scriptable = healingHerbs as ScriptableObject;
 		InventoryManager.slot1Item.GetComponent<InventoryScriptableReader>().objectScript = healingHerbs as ScriptableObject;
+		//InventoryManager.slot1Item.GetComponent<InventoryScriptableReader>().itemQuantity = 3;
 
 		InventoryManager.slot2Item = Instantiate(itemHost);
+		lembasBread.itemQuantity = 7;
 		InventoryManager.slot2Scriptable = lembasBread as ScriptableObject;
 		InventoryManager.slot2Item.GetComponent<InventoryScriptableReader>().objectScript = lembasBread as ScriptableObject;
-		
+		//InventoryManager.slot2Item.GetComponent<InventoryScriptableReader>().itemQuantity = 7;
+
 
 
 		if (itemTaken.GetType() == typeof(InventoryWeaponScriptable)) {

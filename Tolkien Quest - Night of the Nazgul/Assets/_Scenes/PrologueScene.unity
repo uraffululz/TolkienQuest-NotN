@@ -1746,9 +1746,8 @@ MonoBehaviour:
   itemHost: {fileID: 3801016423963266585, guid: 8f4439c54597bd040afdd6317f55ec2c,
     type: 3}
   silverDagger: {fileID: 11400000, guid: 3f8cbb3de185f0c4db2ff81def802cdc, type: 2}
-  mapItem: {fileID: 11400000, guid: bdbf86845741f544a90878e63578b877, type: 2}
   healingHerbs: {fileID: 11400000, guid: 8fe2e7d91fea15543a25fe508ddf4d7a, type: 2}
-  lembasBread: {fileID: 11400000, guid: 75fb9fe7bd248e94b8e8a1f0b0361d05, type: 2}
+  lembasBread: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
 --- !u!4 &2071614728
 Transform:
   m_ObjectHideFlags: 0

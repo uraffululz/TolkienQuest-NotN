@@ -43,5 +43,7 @@ MonoBehaviour:
   checksItemQuantityMax: 0
   itemsGainedViaQuantity: {fileID: 0}
   useItem: 1
+  lackingItemMeansDiseased: 1
+  lackingItemMeansPoisoned: 0
   gainDaggerIfYouHaveNoWeapon: 0
   dagger: {fileID: 0}

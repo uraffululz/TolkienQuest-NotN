@@ -170,7 +170,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		////TODO These are for TESTING PURPOSES ONLY
 		//		//Directly assign the Encounter Index, to bring it up "for inspection"
 		Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 356;
+		encounterIndex = 385;//222;//158;
 
 
 		print("Encounter index: " + encounterIndex);
@@ -403,6 +403,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			if (myEncounterScriptable.obtainsItems) {
 				bool obtainedItems = false;
 				List<ScriptableObject> itemsInList = new List<ScriptableObject>();
+				List<int> itemQuantitiesList = new List<int>();
 
 				//TODO Implement Ranges for obtaining random items.
 				if (myEncounterScriptable.obtainedItemList.hasItemRanges) {
@@ -410,46 +411,53 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 					if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange1Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange1Max) {
 						if (myEncounterScriptable.obtainedItemList.range1MultipleItems) {
-							foreach (ScriptableObject itemFound in myEncounterScriptable.obtainedItemList.range1Items) {
-								itemsInList.Add(itemFound);
+							for (int i = 0; i < myEncounterScriptable.obtainedItemList.range1Items.Length; i++) {
+								itemsInList.Add(myEncounterScriptable.obtainedItemList.range1Items[i]);
+								itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.range1ItemQuantities[i]);
 							}
 						}
 						else {
 							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[0]);
+							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem1Quantity);
 						}
 						obtainedItems = true;
 					}
 					else if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange2Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange2Max) {
 						if (myEncounterScriptable.obtainedItemList.range2MultipleItems) {
-							foreach (ScriptableObject itemFound in myEncounterScriptable.obtainedItemList.range2Items) {
-								itemsInList.Add(itemFound);
+							for (int i = 0; i < myEncounterScriptable.obtainedItemList.range2Items.Length; i++) {
+								itemsInList.Add(myEncounterScriptable.obtainedItemList.range2Items[i]);
+								itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.range2ItemQuantities[i]);
 							}
 						}
 						else {
 							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[1]);
+							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem2Quantity);
 						}
 						obtainedItems = true;
-
 					}
 					else if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange3Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange3Max) {
 						if (myEncounterScriptable.obtainedItemList.range3MultipleItems) {
-							foreach (ScriptableObject itemFound in myEncounterScriptable.obtainedItemList.range3Items) {
-								itemsInList.Add(itemFound);
+							for (int i = 0; i < myEncounterScriptable.obtainedItemList.range3Items.Length; i++) {
+								itemsInList.Add(myEncounterScriptable.obtainedItemList.range3Items[i]);
+								itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.range3ItemQuantities[i]);
 							}
 						}
 						else {
 							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[2]);
+							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem3Quantity);
 						}
 						obtainedItems = true;
 					}
 					else if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange4Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange4Max) {
 						if (myEncounterScriptable.obtainedItemList.range4MultipleItems) {
-							foreach (ScriptableObject itemFound in myEncounterScriptable.obtainedItemList.range4Items) {
-								itemsInList.Add(itemFound);
+							for (int i = 0; i < myEncounterScriptable.obtainedItemList.range4Items.Length; i++) {
+								itemsInList.Add(myEncounterScriptable.obtainedItemList.range4Items[i]);
+								itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.range4ItemQuantities[i]);
 							}
 						}
 						else {
 							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[3]);
+							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem4Quantity);
 						}
 						obtainedItems = true;
 					}
@@ -467,6 +475,12 @@ public class ScriptableEncounterReader : MonoBehaviour {
 							obtainedItems = true;
 						}
 					}
+//TODO Make an array for these quantities, just like with "myEncounterScriptable.obtainedItemList.myItemList[i]", because this MIGHT NOT WORK
+					itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem1Quantity);
+					itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem2Quantity);
+					itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem3Quantity);
+					itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem4Quantity);
+
 				}
 
 				if (myEncounterScriptable.obtainedItemList.itemChecked != null) {
@@ -487,32 +501,90 @@ public class ScriptableEncounterReader : MonoBehaviour {
 									print ("Used the item. Item Quantity: " + item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
 									itemUsed = true;
 								}
-								else {
-									print ("Couldn't use the item. bool itemUsed = " + itemUsed + " || Encounter Uses Item = " + myEncounterScriptable.obtainedItemList.useItem);
-								}
 
 								itemQuantityTotal += item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity;
+
+								
 							}
-							//else {
-							//	print("Couldn't find the item you're looking for in your inventory.");
-							//}
+							else {
+								//print("Couldn't use the item. bool itemUsed = " + itemUsed + " || Encounter Uses Item = " + myEncounterScriptable.obtainedItemList.useItem);
+							}
 						}
-						
+
+						//Check the quantity
+						if (itemFound && myEncounterScriptable.obtainedItemList.checksItemQuantityMax != 0) {
+							if (itemQuantityTotal >= myEncounterScriptable.obtainedItemList.checksItemQuantityMin &&
+								itemQuantityTotal <= myEncounterScriptable.obtainedItemList.checksItemQuantityMax) {
+
+							}
+						}
 					}
 
-					//Check the quantity
-					if (itemFound && myEncounterScriptable.obtainedItemList.checksItemQuantityMax != 0) {
-						if (itemQuantityTotal >= myEncounterScriptable.obtainedItemList.checksItemQuantityMin &&
-						itemQuantityTotal <= myEncounterScriptable.obtainedItemList.checksItemQuantityMax) {
+					if (itemFound) {
+						if (myEncounterScriptable.obtainedItemList.hasItemMovesToEncounter != 0) {
+							print("Item detected in inventory. Moving on");
+							UpdateEncounter(myEncounterScriptable.obtainedItemList.hasItemMovesToEncounter);
+							return;
+						}
+					}
+					else {
+						if (myEncounterScriptable.obtainedItemList.lacksItemMovesToEncounter != 0) {
+							print("Item not detected in inventory. Moving on");
+							UpdateEncounter(myEncounterScriptable.obtainedItemList.lacksItemMovesToEncounter);
+							return;
+						}
+					}
+					
+					if (!itemUsed) {
+						//print(CharacterManager.statusDiseased);
+						if (myEncounterScriptable.obtainedItemList.lackingItemMeansDiseased) {
+							CharacterManager.statusDiseased = true;
+						}
 
+						//Unique rule for encounter 385
+						if (myEncounterScriptable.obtainedItemList.lackingItemMeansPoisoned) {
+							print("Failed to heal your poisoning");
+							UpdateEncounter(357);
+							return;
 						}
 					}
 
+					
+				}
 
+				if (myEncounterScriptable.obtainedItemList.gainDaggerIfYouHaveNoWeapon) {
+					bool hasWeapon = false;
+					foreach (GameObject itemParent in mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents) {
+						if (itemParent.transform.childCount != 0) {
+							if (itemParent.GetComponentInChildren<InventoryScriptableReader>().myObjectType == InventoryScriptableReader.objectType.weapon) {
+								hasWeapon = true;
+							}
+						}
+					}
+
+					if (!hasWeapon) {
+						itemsInList.Add(myEncounterScriptable.obtainedItemList.dagger);
+						obtainedItems = true;
+					}
 				}
 
 				if (obtainedItems) {
-					mapSceneManager.GetComponent<MapSceneManager>().UpdateItemListBG(itemsInList);
+					mapSceneManager.GetComponent<MapSceneManager>().UpdateItemListBG(itemsInList, itemQuantitiesList);
+				}
+
+				if (myEncounterScriptable.loseWeaponsAndArmor) {
+					foreach (GameObject itemParent in mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents) {
+						if (itemParent.transform.childCount != 0) {
+							if (itemParent.GetComponentInChildren<InventoryScriptableReader>().objectScript != myEncounterScriptable.keepSilverDagger) {
+								if (itemParent.GetComponentInChildren<InventoryScriptableReader>().myObjectType == InventoryScriptableReader.objectType.weapon ||
+									itemParent.GetComponentInChildren<InventoryScriptableReader>().myObjectType == InventoryScriptableReader.objectType.armor) {
+									Destroy(itemParent.transform.GetChild(0));
+									//Alternately, just DISABLE the object rather than DESTROYING it
+									//itemParent.transform.GetChild(0).gameObject.SetActive(false);
+								}
+							}
+						}
+					}
 				}
 			}
 
@@ -616,9 +688,6 @@ public class ScriptableEncounterReader : MonoBehaviour {
 				else {
 					mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(MapSceneManager.currentEncounter.myEncounterScriptable.damageAlteredAmount);
 				}
-
-
-				print ("Damage taken: " + CharacterManager.damageTaken + "/ " + CharacterManager.enduranceTotal);
 			}
 
 			if (CharacterManager.statusDiseased) {

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventoryScriptableReader : MonoBehaviour {
 
 	public ScriptableObject objectScript;
+	public string objectName;
 	public InventoryItemScriptable itemScript;
 	public InventoryWeaponScriptable weaponScript;
 	public InventoryArmorScriptable armorScript;
@@ -35,20 +36,28 @@ public class InventoryScriptableReader : MonoBehaviour {
 			if (objectScript.GetType() == typeof(InventoryItemScriptable)) {
 				itemScript = objectScript as InventoryItemScriptable;
 				myObjectType = objectType.item;
+				objectName = itemScript.itemName;
 				
 				InitializeItem();
 			}
 			else if (objectScript.GetType() == typeof(InventoryWeaponScriptable)) {
 				weaponScript = objectScript as InventoryWeaponScriptable;
 				myObjectType = objectType.weapon;
+				objectName = weaponScript.itemName;
+				
 
 				//itemQuantity = weaponScript.weaponQuantity;
+
+				if (weaponScript.MyWeaponType == InventoryWeaponScriptable.weaponTypes.Dagger) {
+
+				}
 
 				InitializeWeapon();
 			}
 			else if (objectScript.GetType() == typeof(InventoryArmorScriptable)) {
 				armorScript = objectScript as InventoryArmorScriptable;
 				myObjectType = objectType.armor;
+				objectName = armorScript.itemName;
 
 				//itemQuantity = armorScript.armorQuantity;
 
@@ -61,7 +70,9 @@ public class InventoryScriptableReader : MonoBehaviour {
 	public void InitializeItem() {
 		//gameObject.GetComponent<Text>().text = itemScript.itemName;
 		if (!itemAlreadyInitialized) {
-			itemQuantity = itemScript.itemQuantity;
+			if (itemQuantity == 0) {
+				itemQuantity = itemScript.itemQuantity;
+			}
 			isInfinite = itemScript.isInfinite;
 
 			isAMeal = itemScript.isAMeal;

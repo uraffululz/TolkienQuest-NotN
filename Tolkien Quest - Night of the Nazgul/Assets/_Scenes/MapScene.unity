@@ -5532,7 +5532,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 11400000, guid: b0f07cf1762a7354e9d6f4f063334b33, type: 2}
   - {fileID: 11400000, guid: 93e3d7acb83f3d6478dc83ac97eaf604, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: dc005fc390e0c9a438b057e09d4630c7, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -12047,6 +12047,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02c26976eaebfa4b931f7f26e93b8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneManager: {fileID: 230702024}
+  inventoryManager1: {fileID: 79839919}
+  inventoryManager2: {fileID: 3892543412012229741}
+  inventoryManager2ArmorSlot: {fileID: 1910746952}
+  inventoryManager2CloakSlot: {fileID: 157973060}
+  inventoryManager2DaggerSlot: {fileID: 875397937}
 --- !u!1 &566896578
 GameObject:
   m_ObjectHideFlags: 0
@@ -44406,6 +44412,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterSheetInventory
       objectReference: {fileID: 0}
+    - target: {fileID: 4416822802410984317, guid: 71f9c595efa57e94fbc79be937452dc0,
+        type: 3}
+      propertyPath: m_TagString
+      value: DraggableUIParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1425725120736643383, guid: 71f9c595efa57e94fbc79be937452dc0,
+        type: 3}
+      propertyPath: m_TagString
+      value: DraggableUIParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083931465430074842, guid: 71f9c595efa57e94fbc79be937452dc0,
+        type: 3}
+      propertyPath: m_TagString
+      value: DraggableUIParent
+      objectReference: {fileID: 0}
     - target: {fileID: 7935841135533322026, guid: 71f9c595efa57e94fbc79be937452dc0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44999,22 +45020,7 @@ PrefabInstance:
     - target: {fileID: 6718148558332418621, guid: 71f9c595efa57e94fbc79be937452dc0,
         type: 3}
       propertyPath: m_TagString
-      value: DraggableUIParent
-      objectReference: {fileID: 0}
-    - target: {fileID: 1425725120736643383, guid: 71f9c595efa57e94fbc79be937452dc0,
-        type: 3}
-      propertyPath: m_TagString
-      value: DraggableUIParent
-      objectReference: {fileID: 0}
-    - target: {fileID: 4416822802410984317, guid: 71f9c595efa57e94fbc79be937452dc0,
-        type: 3}
-      propertyPath: m_TagString
-      value: DraggableUIParent
-      objectReference: {fileID: 0}
-    - target: {fileID: 5083931465430074842, guid: 71f9c595efa57e94fbc79be937452dc0,
-        type: 3}
-      propertyPath: m_TagString
-      value: DraggableUIParent
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f9c595efa57e94fbc79be937452dc0, type: 3}

@@ -27,7 +27,6 @@ public class MapSceneInventoryManager : MonoBehaviour {
 			InventoryManager.slot11Scriptable, InventoryManager.slot12Scriptable};
 
 		for (int i = 0; i < inventoryScriptables.Length; i++) {
-
 			if (inventoryScriptables[i] != null) {
 				GameObject newItemHost = Instantiate(itemHost, inventoryParents[i].transform.position, Quaternion.identity, inventoryParents[i].transform);
 

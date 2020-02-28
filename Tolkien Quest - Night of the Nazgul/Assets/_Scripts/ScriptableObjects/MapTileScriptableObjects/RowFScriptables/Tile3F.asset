@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 3F
   locationText:
-  - The rounded mounds that hold the bones and the special items of teh honored dead
-    seem to beckon for exploration, but you know you should hurry on . Just in front
+  - The rounded mounds that hold the bones and the special items of the honored dead
+    seem to beckon for exploration, but you know you should hurry on. Just in front
     of you rises a large burial mound.
   encounterText1: Explore the barrow
   encounterIndex1: 107
@@ -23,6 +23,8 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
+  encounterText4: 
+  encounterIndex4: 0
   actionAddsSkill: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
@@ -57,3 +59,13 @@ MonoBehaviour:
   limit2Index: 0
   overTimeIndex: 0
   experience: 0
+  changesPlayerLocation: 0
+  changedLocationID: 
+  previousLocationsConsidered: 0
+  locationsConsidered: []
+  locationBasedEncounter: 0
+  alternateLocationEncounter: 0
+  riverSameSideTile1ID: 
+  riverSameSideTile2ID: 
+  riverOtherSideTile1ID: 
+  riverOtherSideTile2ID: 

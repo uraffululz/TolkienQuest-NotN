@@ -25,7 +25,7 @@ public static class CharacterManager {
 	public static int myStatAgilityBonus;
 	public static int myStatIntelligenceBonus;
 
-	public static int enduranceTotal;
+	public static int enduranceTotal = 10;
 	public static int damageTaken;
 
 	public static bool statusDiseased;

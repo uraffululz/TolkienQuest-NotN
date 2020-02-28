@@ -1,0 +1,2 @@
+C:\Users\Master\Documents\Git Repositories\Unity Projects\TolkienQuest-NotN\Tolkien Quest - Night of the Nazgul\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\Master\Documents\Git Repositories\Unity Projects\TolkienQuest-NotN\Tolkien Quest - Night of the Nazgul\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

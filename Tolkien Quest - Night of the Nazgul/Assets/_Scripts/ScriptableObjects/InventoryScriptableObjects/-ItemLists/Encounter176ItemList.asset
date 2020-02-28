@@ -16,9 +16,13 @@ MonoBehaviour:
   copperEarned: 0
   myItemList: []
   myItem1: {fileID: 0}
+  myItem1Quantity: 0
   myItem2: {fileID: 0}
+  myItem2Quantity: 0
   myItem3: {fileID: 0}
+  myItem3Quantity: 0
   myItem4: {fileID: 0}
+  myItem4Quantity: 0
   hasItemRanges: 1
   itemRange1Min: 2
   itemRange1Max: 4
@@ -26,6 +30,7 @@ MonoBehaviour:
   range1Items:
   - {fileID: 11400000, guid: 340cc6413913be745b20e81b9a1eeeaf, type: 2}
   - {fileID: 11400000, guid: ee52262212410a542964dca3eaac43d5, type: 2}
+  range1ItemQuantities: 0100000001000000
   itemRange2Min: 5
   itemRange2Max: 8
   range2MultipleItems: 1
@@ -33,19 +38,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 340cc6413913be745b20e81b9a1eeeaf, type: 2}
   - {fileID: 11400000, guid: ee52262212410a542964dca3eaac43d5, type: 2}
   - {fileID: 11400000, guid: 19f61be290be0ce4da6965be4fb9924d, type: 2}
+  range2ItemQuantities: 010000000100000005000000
   itemRange3Min: 0
   itemRange3Max: 0
   range3MultipleItems: 0
   range3Items: []
+  range3ItemQuantities: 
   itemRange4Min: 0
   itemRange4Max: 0
   range4MultipleItems: 0
   range4Items: []
+  range4ItemQuantities: 
   outOfRangeMovesToEncounter: 1
   encounterIndex: 251
-  itemQuantity1: 0
-  itemQuantity2: 0
-  itemQuantity3: 0
-  itemQuantity4: 0
+  itemChecked: {fileID: 0}
+  checksItemQuantityMin: 0
+  checksItemQuantityMax: 0
+  itemsGainedViaQuantity: {fileID: 0}
+  useItem: 0
+  lackingItemMeansDiseased: 0
+  lackingItemMeansPoisoned: 0
   gainDaggerIfYouHaveNoWeapon: 0
   dagger: {fileID: 0}

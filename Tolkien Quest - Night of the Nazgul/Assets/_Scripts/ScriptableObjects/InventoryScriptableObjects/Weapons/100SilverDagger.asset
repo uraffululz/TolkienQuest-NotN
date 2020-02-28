@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Silver Dagger
   itemIndex: 100
+  MyWeaponType: 5
+  weaponQuantity: 0
   additionalDamage: -1
   requiresEnemyInChainOrPlateArmor: 0
   MeleeOBAdjustment: 0
   canBeUsedAsMissileAttack: 1
   MissileOBAdjustment: -1
   onlyMissileAttacks: 0
+  autoKillsOrcs: 0

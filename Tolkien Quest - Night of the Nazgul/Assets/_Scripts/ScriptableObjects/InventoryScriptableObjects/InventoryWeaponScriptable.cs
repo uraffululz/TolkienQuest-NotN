@@ -9,6 +9,9 @@ public class InventoryWeaponScriptable : ScriptableObject {
 
 	public int itemIndex;
 
+	public enum weaponTypes {Default, BareHanded, BattleAxe, Bow, Club, Dagger, Mace, Spear, Sword, WarHammer};
+	public weaponTypes MyWeaponType;
+
 	[Space]
 
 	public int weaponQuantity;

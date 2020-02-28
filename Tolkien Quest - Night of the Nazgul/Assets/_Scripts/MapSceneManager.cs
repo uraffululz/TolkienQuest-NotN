@@ -306,7 +306,7 @@ public class MapSceneManager : MonoBehaviour {
 	}
 
 
-	public void UpdateItemListBG(List<ScriptableObject> myListedItems) {
+	public void UpdateItemListBG(List<ScriptableObject> myListedItems, List<int> myListedItemQuantities) {
 		EncounterObtainedItemList currentItemList = currentEncounter.myEncounterScriptable.obtainedItemList;
 
 		int additionalSilverEarned = 0;
@@ -317,6 +317,7 @@ public class MapSceneManager : MonoBehaviour {
 			itemListBG.GetComponent<ItemListBGScript>().positionParentList[i].transform);
 
 			newItemHost.GetComponent<InventoryScriptableReader>().objectScript = myListedItems[i];
+			newItemHost.GetComponent<InventoryScriptableReader>().itemQuantity = myListedItemQuantities[i];
 			newItemHost.GetComponent<InventoryScriptableReader>().SetMyObjectType();
 
 			if (myListedItems[i].GetType() == typeof(InventoryItemScriptable)) {
@@ -502,20 +503,44 @@ public class MapSceneManager : MonoBehaviour {
 
 	public void AlterDamage(int newDamage) {
 		CharacterManager.damageTaken += newDamage;
+		print("You took " + newDamage + " more damage.");
 
 		if (CharacterManager.damageTaken >= CharacterManager.enduranceTotal) {
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.encounterIndex == 357) {
 				//Proceed to Encounter 337
-				print ("<b>You should proceed to Encounter 337</b>");
+				print("The snake's poison killed you");
+				currentEncounter.UpdateEncounter(337);
 			}
 			else {
 				GameOver();
 			}
 		}
-		else if (CharacterManager.damageTaken < 0) {
-			print ("You are fully healed");
-			CharacterManager.damageTaken = 0;
+		else {
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.encounterIndex == 357) {
+				int thisRoll = Random.Range(2, 13);
+				if (thisRoll <= 8) {
+					print("Taking 3 more poison damage");
+					print("Current HP:" + CharacterManager.damageTaken + "/" + CharacterManager.enduranceTotal);
+
+					currentEncounter.UpdateEncounter(357);
+				}
+				else {
+					print ("Tom Bombadil saved your ass!");
+					print("Current HP:" + CharacterManager.damageTaken + "/" + CharacterManager.enduranceTotal);
+
+					currentEncounter.UpdateEncounter(323);
+				}
+			}
 		}
+		
+		if (CharacterManager.damageTaken < 0) {
+			print ("You are fully healed");
+
+			CharacterManager.damageTaken = 0;
+			//print("Damage taken: " + CharacterManager.damageTaken + "/ " + CharacterManager.enduranceTotal);
+
+		}
+
 	}
 
 

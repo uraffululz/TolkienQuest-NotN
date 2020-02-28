@@ -3,7 +3,19 @@ guid: d2727ff0d6fc7d345af2392aed3eb9e7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - prologueScriptable: {instanceID: 0}
+  - dialogueText: {instanceID: 0}
+  - continueDialogueButton: {instanceID: 0}
+  - striderImage: {instanceID: 0}
+  - takeSwordButton: {instanceID: 0}
+  - takeMaceButton: {instanceID: 0}
+  - takeBowButton: {instanceID: 0}
+  - takeArmorButton: {instanceID: 0}
+  - itemHost: {instanceID: 0}
+  - silverDagger: {instanceID: 0}
+  - healingHerbs: {instanceID: 0}
+  - lembasBread: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -13,6 +13,7 @@ public class InventoryItemScriptable : ScriptableObject {
 
 	public int itemQuantity;
 	public bool isInfinite;
+	public bool isStackable;
 	public bool usableOncePerDay;
 	public bool usableTwicePerDay;
 

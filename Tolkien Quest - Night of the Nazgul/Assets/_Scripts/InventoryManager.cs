@@ -11,7 +11,6 @@ public static class InventoryManager {
 	public static GameObject daggerWorn;
 	public static GameObject armorWorn;
 	public static GameObject cloakWorn;
-
 	public static GameObject slot1Item;
 	public static GameObject slot2Item;
 	public static GameObject slot3Item;
@@ -50,4 +49,15 @@ public static class InventoryManager {
 
 
 	//public static GameObject startingItemTaken;
+
+		public static void CompileInventoryItemList() {
+		inventoryItems = new GameObject[15] {cloakWorn, armorWorn, daggerWorn, slot1Item, slot2Item, slot3Item,
+		slot4Item, slot5Item, slot6Item, slot7Item, slot8Item, slot9Item, slot10Item, slot11Item, slot12Item};
+	}
+
+
+	public static void CompileInventoryScriptableList() {
+		inventoryItemScriptables = new ScriptableObject[] {cloakWornScriptable, armorWornScriptable, daggerWornScriptable, slot11Scriptable, slot2Scriptable,
+		slot3Scriptable, slot4Scriptable, slot5Scriptable, slot6Scriptable, slot7Scriptable, slot8Scriptable, slot9Scriptable, slot10Scriptable, slot11Scriptable, slot12Scriptable};
+	}
 }
