@@ -16,10 +16,10 @@ MonoBehaviour:
   miscNotes: []
   encounterText:
   - You hear an answering call! A tall, woodsy-looking man approaches, whistling a
-    merry tun. After a quick glance at your silver dagger, he tends to your wound
+    merry tune. After a quick glance at your silver dagger, he tends to your wound
     with a knife and a healing salve. Just after thanking him, you pass out.
   - When you awaken, the fever and pain are gone. <i>The man has taken none of your
-    equipment. Reduce your damage taken to zero.</i>
+    equipment. Reduce your damage taken to zero. You are no longer poisoned.</i>
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -53,9 +53,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 90
   canRestAtNight: 0
   XPGained: 1

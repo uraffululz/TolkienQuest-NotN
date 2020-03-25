@@ -15,7 +15,7 @@ MonoBehaviour:
   encounterIndex: 218
   miscNotes: []
   encounterText:
-  - 'You stand, carefully wathing the man''s every move. He offers you the bottle
+  - 'You stand, carefully watching the man''s every move. He offers you the bottle
     he holds.
 
     "It''s good Dorwinion wine," he says with a smile. "Go on, it''s safe. Drink while
@@ -61,6 +61,14 @@ MonoBehaviour:
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 15
   canRestAtNight: 0
   XPGained: 0

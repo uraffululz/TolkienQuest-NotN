@@ -48,9 +48,9 @@ public class InventoryScriptableReader : MonoBehaviour {
 
 				//itemQuantity = weaponScript.weaponQuantity;
 
-				if (weaponScript.MyWeaponType == InventoryWeaponScriptable.weaponTypes.Dagger) {
+				//if (weaponScript.MyWeaponType == InventoryWeaponScriptable.weaponTypes.Dagger) {
 
-				}
+				//}
 
 				InitializeWeapon();
 			}
@@ -93,11 +93,39 @@ public class InventoryScriptableReader : MonoBehaviour {
 
 
 	void InitializeWeapon() {
+		if (!itemAlreadyInitialized) {
+			if (itemQuantity == 0) {
+				itemQuantity = weaponScript.weaponQuantity;
+			}
 
+			itemAlreadyInitialized = true;
+		}
+
+		if (itemQuantity > 0) {
+			gameObject.GetComponent<Text>().text = weaponScript.itemName;
+		}
+		else {
+			//Destroy this gameObject
+			Destroy(gameObject);
+		}
 	}
 
 
 	void InitializeArmor() {
+		if (!itemAlreadyInitialized) {
+			if (itemQuantity == 0) {
+				itemQuantity = armorScript.armorQuantity;
+			}
 
+			itemAlreadyInitialized = true;
+		}
+
+		if (itemQuantity > 0) {
+			gameObject.GetComponent<Text>().text = armorScript.itemName;
+		}
+		else {
+			//Destroy this gameObject
+			Destroy(gameObject);
+		}
 	}
 }

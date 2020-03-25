@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Dagger
   itemIndex: 105
   MyWeaponType: 5
-  weaponQuantity: 0
+  weaponQuantity: 1
   additionalDamage: -1
   requiresEnemyInChainOrPlateArmor: 0
   MeleeOBAdjustment: 0

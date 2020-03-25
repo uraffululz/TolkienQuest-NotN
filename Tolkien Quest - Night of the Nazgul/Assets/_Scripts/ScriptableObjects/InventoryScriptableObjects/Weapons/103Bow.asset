@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Bow
   itemIndex: 103
+  MyWeaponType: 0
+  weaponQuantity: 1
   additionalDamage: 0
   requiresEnemyInChainOrPlateArmor: 0
   MeleeOBAdjustment: 0
   canBeUsedAsMissileAttack: 0
   MissileOBAdjustment: 0
   onlyMissileAttacks: 1
+  autoKillsOrcs: 0

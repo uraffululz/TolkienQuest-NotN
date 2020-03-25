@@ -34,14 +34,14 @@ MonoBehaviour:
   furtherEncounter4Text: 
   furtherEncounter4Index: 0
   exploreHasMultipleRanges: 1
-  actionAddsSkill: 0
-  howManyRanges: 1
-  range1Min: 290
-  range1Length: 0
-  range1FurtherIndex: 0
-  range2Min: 0
-  range2Length: 0
-  range2FurtherIndex: 0
+  actionAddsSkill: 4
+  howManyRanges: 2
+  range1Min: 2
+  range1Length: 5
+  range1FurtherIndex: 1
+  range2Min: 7
+  range2Length: 99
+  range2FurtherIndex: 290
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
@@ -51,9 +51,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 1
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 2

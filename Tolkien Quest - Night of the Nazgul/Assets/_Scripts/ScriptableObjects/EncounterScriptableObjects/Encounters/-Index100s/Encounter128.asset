@@ -23,8 +23,8 @@ MonoBehaviour:
   rollHowToMoveOnMax: 0
   movesOnTwoSpaces: 0
   moveToSpecificTile: 
-  furtherEncounter1Text: 
-  furtherEncounter1Index: 0
+  furtherEncounter1Text: Meet Tom
+  furtherEncounter1Index: 122
   furtherEncounter2Text: 
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
@@ -49,9 +49,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 15
   canRestAtNight: 0
   XPGained: 0

@@ -58,6 +58,7 @@ public class PrologueSceneManager : MonoBehaviour{
 		//InventoryManager.silverCarried = 3;
 
 		InventoryManager.daggerWorn = Instantiate(itemHost);
+		InventoryManager.daggerQuantity = 1;
 		InventoryManager.daggerWornScriptable = silverDagger as ScriptableObject;
 		InventoryManager.daggerWorn.GetComponent<InventoryScriptableReader>().objectScript = silverDagger as ScriptableObject;
 
@@ -90,6 +91,7 @@ public class PrologueSceneManager : MonoBehaviour{
 
 	void TookAWeapon (InventoryWeaponScriptable weaponTaken) {
 		InventoryManager.slot3Item = Instantiate(itemHost);
+		//weaponTaken.weaponQuantity = 1;
 		InventoryManager.slot3Scriptable = weaponTaken as ScriptableObject;
 		InventoryManager.slot3Item.GetComponent<InventoryScriptableReader>().objectScript = weaponTaken as ScriptableObject;
 
@@ -105,6 +107,7 @@ public class PrologueSceneManager : MonoBehaviour{
 
 	void TookArmor (InventoryArmorScriptable armorTaken) {
 		InventoryManager.armorWorn = Instantiate(itemHost);
+		InventoryManager.armorQuantity = 1;
 		InventoryManager.armorWornScriptable = armorTaken as ScriptableObject;
 		InventoryManager.armorWorn.GetComponent<InventoryScriptableReader>().objectScript = armorTaken as ScriptableObject;
 		print("You took the armor");

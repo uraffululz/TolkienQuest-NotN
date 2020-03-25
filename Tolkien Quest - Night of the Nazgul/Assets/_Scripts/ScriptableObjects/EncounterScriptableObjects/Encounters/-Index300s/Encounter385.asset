@@ -23,8 +23,8 @@ MonoBehaviour:
   rollHowToMoveOnMax: 0
   movesOnTwoSpaces: 0
   moveToSpecificTile: 
-  furtherEncounter1Text: 
-  furtherEncounter1Index: 0
+  furtherEncounter1Text: Continue
+  furtherEncounter1Index: 357
   furtherEncounter2Text: 
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
@@ -49,6 +49,8 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 1
   obtainedItemList: {fileID: 11400000, guid: aeb96e05e5d11464395394e420b19c5f, type: 2}

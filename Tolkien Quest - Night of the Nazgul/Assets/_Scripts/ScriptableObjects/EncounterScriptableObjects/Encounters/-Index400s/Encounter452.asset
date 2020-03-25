@@ -21,7 +21,7 @@ MonoBehaviour:
     "Hobbiton lies three leagues in that direction," he says, pointing west and north.
     "Go now, and take this."
 
-    He hands you to doses of a healing herb, Athelas.'
+    He hands you two doses of a healing herb, Athelas.'
   - 'You ask for advice, but Gildor shakes his noble head.
 
     "Advice is a dangerous creature, young one. Too much is as bad as too little.
@@ -64,8 +64,16 @@ MonoBehaviour:
   canGetLost: 0
   randomDirectionChoiceMax: 0
   rangeFailMeansGameOver: 0
-  obtainsItems: 0
-  obtainedItemList: {fileID: 0}
+  obtainsItems: 1
+  obtainedItemList: {fileID: 11400000, guid: 6246850da51da804c9bf89c15a27288b, type: 2}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 30
   canRestAtNight: 1
   XPGained: 0

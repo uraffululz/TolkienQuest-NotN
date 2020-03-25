@@ -59,7 +59,7 @@ MonoBehaviour:
   loseAllItems: 0
   loseWeaponsAndArmor: 1
   keepSilverDagger: {fileID: 11400000, guid: 3f8cbb3de185f0c4db2ff81def802cdc, type: 2}
-  checksForSpecificItem: 0
+  checksForSpecificItem: {fileID: 0}
   checksItemQuantity: 0
   useSpecificItem: {fileID: 0}
   timeTaken: 30

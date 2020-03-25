@@ -55,6 +55,14 @@ MonoBehaviour:
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 1
+  loseAllItems: 1
+  loseWeaponsAndArmor: 1
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 90
   canRestAtNight: 0
   XPGained: 5

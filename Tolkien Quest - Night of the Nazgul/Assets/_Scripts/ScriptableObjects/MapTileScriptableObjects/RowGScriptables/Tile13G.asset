@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationID: 13G
   locationText:
-  - The dark, foggy woods lull you; you ache to rest.
+  - The dark, foggy woods lull you. You ache to rest.
   encounterText1: Continue
   encounterIndex1: 1
   encounterText2: 
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
+  encounterText4: 
+  encounterIndex4: 0
   actionAddsSkill: 0
   exploreHasMultipleRanges: 1
   howManyRanges: 3
@@ -45,4 +47,23 @@ MonoBehaviour:
   canMoveOn: 0
   timeTaken: 120
   timeTakenSecondary: 0
+  canRestAtNight: 0
+  timeLocked: 0
+  daysLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  daysLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
   experience: 0
+  changesPlayerLocation: 0
+  changedLocationID: 
+  previousLocationsConsidered: 0
+  locationsConsidered: []
+  locationBasedEncounter: 0
+  alternateLocationEncounter: 0
+  riverSameSideTile1ID: 
+  riverSameSideTile2ID: 
+  riverOtherSideTile1ID: 
+  riverOtherSideTile2ID: 

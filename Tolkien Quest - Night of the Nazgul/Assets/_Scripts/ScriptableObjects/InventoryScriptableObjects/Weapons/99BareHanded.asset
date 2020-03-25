@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Bare-Handed
   itemIndex: 99
+  MyWeaponType: 0
+  weaponQuantity: 1
   additionalDamage: -3
   requiresEnemyInChainOrPlateArmor: 0
   MeleeOBAdjustment: -2
   canBeUsedAsMissileAttack: 0
   MissileOBAdjustment: 0
   onlyMissileAttacks: 0
+  autoKillsOrcs: 0

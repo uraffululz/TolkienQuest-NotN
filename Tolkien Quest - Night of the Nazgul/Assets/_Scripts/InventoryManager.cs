@@ -45,19 +45,35 @@ public static class InventoryManager {
 	public static ScriptableObject slot12Scriptable;
 	public static ScriptableObject[] inventoryItemScriptables = new ScriptableObject[] {cloakWornScriptable, armorWornScriptable, daggerWornScriptable, slot11Scriptable, slot2Scriptable,
 		slot3Scriptable, slot4Scriptable, slot5Scriptable, slot6Scriptable, slot7Scriptable, slot8Scriptable, slot9Scriptable, slot10Scriptable, slot11Scriptable, slot12Scriptable};
-	
+
+	public static int daggerQuantity;
+	public static int armorQuantity;
+	public static int cloakQuantity;
+	public static int slot1Quantity;
+	public static int slot2Quantity;
+	public static int slot3Quantity;
+	public static int slot4Quantity;
+	public static int slot5Quantity;
+	public static int slot6Quantity;
+	public static int slot7Quantity;
+	public static int slot8Quantity;
+	public static int slot9Quantity;
+	public static int slot10Quantity;
+	public static int slot11Quantity;
+	public static int slot12Quantity;
+
 
 
 	//public static GameObject startingItemTaken;
 
-		public static void CompileInventoryItemList() {
-		inventoryItems = new GameObject[15] {cloakWorn, armorWorn, daggerWorn, slot1Item, slot2Item, slot3Item,
-		slot4Item, slot5Item, slot6Item, slot7Item, slot8Item, slot9Item, slot10Item, slot11Item, slot12Item};
-	}
+	/*		public static void CompileInventoryItemList() {
+			inventoryItems = new GameObject[15] {cloakWorn, armorWorn, daggerWorn, slot1Item, slot2Item, slot3Item,
+			slot4Item, slot5Item, slot6Item, slot7Item, slot8Item, slot9Item, slot10Item, slot11Item, slot12Item};
+		}
 
 
-	public static void CompileInventoryScriptableList() {
-		inventoryItemScriptables = new ScriptableObject[] {cloakWornScriptable, armorWornScriptable, daggerWornScriptable, slot11Scriptable, slot2Scriptable,
-		slot3Scriptable, slot4Scriptable, slot5Scriptable, slot6Scriptable, slot7Scriptable, slot8Scriptable, slot9Scriptable, slot10Scriptable, slot11Scriptable, slot12Scriptable};
-	}
+		public static void CompileInventoryScriptableList() {
+			inventoryItemScriptables = new ScriptableObject[] {cloakWornScriptable, armorWornScriptable, daggerWornScriptable, slot11Scriptable, slot2Scriptable,
+			slot3Scriptable, slot4Scriptable, slot5Scriptable, slot6Scriptable, slot7Scriptable, slot8Scriptable, slot9Scriptable, slot10Scriptable, slot11Scriptable, slot12Scriptable};
+		}*/
 }

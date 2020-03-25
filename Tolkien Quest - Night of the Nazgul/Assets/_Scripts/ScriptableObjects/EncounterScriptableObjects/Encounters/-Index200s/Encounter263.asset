@@ -24,7 +24,8 @@ MonoBehaviour:
 
     "Even the gentle animals of these woods have been aroused by the Evil around us,"
     he says in a matter-of-fact way. "Come, you must leave now," he says, leading
-    you toward the path.
+    you toward the path.'
+  - 'Reduce your damage taken to 0, and any special diseases or injuries are healed.
 
     <i>You are in space 22G.</i>'
   isCombat: 0
@@ -60,9 +61,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 1
   obtainedItemList: {fileID: 11400000, guid: c29e3fae80c60cf41a1b7834c8a6a2d2, type: 2}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 60
   canRestAtNight: 1
   XPGained: 1

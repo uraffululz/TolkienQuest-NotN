@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c7427b8e8062543b671826d199497d, type: 3}
+  m_Name: 416Merchant
+  m_EditorClassIdentifier: 
+  notes:
+  - 'Location: 15F'
+  itemsForSale:
+  - Meal
+  - Dagger
+  - Shield
+  - Spear
+  - Backpack
+  - Rope
+  - Torches(6)
+  - Waterskin
+  - Pipeweed(Bag)
+  itemScripts:
+  - {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
+  - {fileID: 11400000, guid: 89755c38d94aa9e44802c41ac8bcb2d7, type: 2}
+  - {fileID: 11400000, guid: 983d5cea9858b1f48bbef8eccfd51ff4, type: 2}
+  - {fileID: 11400000, guid: d67637ed21cb24b449d91dd40c028330, type: 2}
+  - {fileID: 11400000, guid: 554461e90d93ae24f84b4cd002fe5b7d, type: 2}
+  - {fileID: 11400000, guid: 59a979f8037cc7249a21d9063aac72b4, type: 2}
+  - {fileID: 11400000, guid: 58a54b0bb62976e4c934195de6d98e62, type: 2}
+  - {fileID: 11400000, guid: d3e7070c20802984fb5248fded317470, type: 2}
+  - {fileID: 11400000, guid: d0cb1b8ab7a65a148825b7f9686b648d, type: 2}
+  itemPrices: 01000000040000000600000006000000140000001e000000020000000100000001000000
+  coinType: 010000000000000000000000000000000100000001000000010000000100000001000000

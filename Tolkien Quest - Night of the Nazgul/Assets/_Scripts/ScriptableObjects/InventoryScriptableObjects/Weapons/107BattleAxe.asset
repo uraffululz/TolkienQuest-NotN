@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: BattleAxe
   itemIndex: 107
+  MyWeaponType: 0
+  weaponQuantity: 1
   additionalDamage: 2
   requiresEnemyInChainOrPlateArmor: 0
   MeleeOBAdjustment: 0
   canBeUsedAsMissileAttack: 1
   MissileOBAdjustment: -4
   onlyMissileAttacks: 0
+  autoKillsOrcs: 0

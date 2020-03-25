@@ -21,6 +21,8 @@ public class EncounterScriptable : ScriptableObject {
 
 	public string moveToSpecificTile;
 
+	//public bool canRunAway;
+
 	[Header("Further Encounter Options", order = 0)]
 	public string furtherEncounter1Text;
 	public int furtherEncounter1Index;
@@ -61,7 +63,8 @@ public class EncounterScriptable : ScriptableObject {
 	public bool rangeFailMeansMoveOn;
 	public bool canGetLost;
 	public int randomDirectionChoiceMax;
-
+	public bool hasRunAwayRange;
+	public bool hasSneakAttackRange;
 	public bool rangeFailMeansGameOver;
 
 	[Header("Inventory Adjustment Variables", order = 1)]

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Club
   itemIndex: 110
+  MyWeaponType: 0
   weaponQuantity: 1
   additionalDamage: 2
   requiresEnemyInChainOrPlateArmor: 1

@@ -6,7 +6,9 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "NewMerchantScriptable", menuName = "ScriptableObjects/EncounterMerchantScriptable", order = 0)]
 public class EncounterMerchantScriptable : ScriptableObject {
 
+	[SerializeField] string[] notes;
 	public string[] itemsForSale;
+	public ScriptableObject[] itemScripts;
 	public int[] itemPrices;
 	public enum coinTypes { silver, copper }
 	public coinTypes[] coinType;

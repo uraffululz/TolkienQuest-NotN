@@ -15,8 +15,8 @@ MonoBehaviour:
   encounterIndex: 229
   miscNotes: []
   encounterText:
-  - 'the ferry drifts and turns more tan you would like, but you muscle it to shore
-    north of the Bridge.
+  - 'The ferry drifts and turns more than you would like, but you muscle it to shore
+    North of the Bridge.
 
     <i>You are in space 15C.</i>'
   isCombat: 0
@@ -55,6 +55,14 @@ MonoBehaviour:
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 45
   canRestAtNight: 0
   XPGained: 3

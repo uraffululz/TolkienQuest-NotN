@@ -16,7 +16,7 @@ MonoBehaviour:
   miscNotes:
   - 
   encounterText:
-  - 
+  - Will you show the silver dagger to the man?
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -50,6 +50,8 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}

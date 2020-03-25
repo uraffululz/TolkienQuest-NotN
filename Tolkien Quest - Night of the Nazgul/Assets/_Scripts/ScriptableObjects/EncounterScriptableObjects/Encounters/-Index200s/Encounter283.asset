@@ -15,21 +15,21 @@ MonoBehaviour:
   encounterIndex: 283
   miscNotes: []
   encounterText:
-  - 'The singing draws nearer, one voice leading he others in the fairest of melodies,
+  - 'The singing draws nearer, one voice leading the others in the fairest of melodies,
     yet the words are unknown to you. Then they appear.
 
     Even in daylight, starlight shimmers in the fair hair and gleaming eyes of the
     Elves, tall and lean as string saplings. They grow silent as you boldly approach.'
   - You introduce yourself to them, using Strider's name to enlist their assistance
-    in completing. your mission to warn the Shire. Their leader steps forward, an
-    Elf more than seven feet tall and even more impressive than the others.
+    in completing your mission to warn the Shire. Their leader steps forward, an Elf
+    more than seven feet tall and even more impressive than the others.
   - '"I am Gildor Inglorion of the House of Finrod," he says, oserving you carefully.
-    "We aree exiled in this land for but a short while and will assist you in your
+    "We are exiled in this land for but a short while and will assist you in your
     mission. Strider is known to us. It is not our custom," he continues, "to welcome
-    outsiders, but we will provide foor, loeging and herbs to speed you along your
+    outsiders, but we will provide food, lodging and herbs to speed you along your
     way. Come."
 
-    Gildor turns and leads hiw Elves silently through the woods.'
+    Gildor turns and leads his Elves silently through the woods.'
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
@@ -63,9 +63,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 30
   canRestAtNight: 1
   XPGained: 1

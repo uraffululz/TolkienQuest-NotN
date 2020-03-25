@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c7427b8e8062543b671826d199497d, type: 3}
   m_Name: 446Merchant
   m_EditorClassIdentifier: 
+  notes: []
   itemsForSale:
   - Cider (Qt.)
   - Meal
@@ -22,5 +23,15 @@ MonoBehaviour:
   - Rope
   - Torches (6)
   - Waterskin
+  itemScripts:
+  - {fileID: 11400000, guid: 62486afea628412499a860e0ebb977a5, type: 2}
+  - {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
+  - {fileID: 11400000, guid: 89755c38d94aa9e44802c41ac8bcb2d7, type: 2}
+  - {fileID: 11400000, guid: 983d5cea9858b1f48bbef8eccfd51ff4, type: 2}
+  - {fileID: 11400000, guid: d67637ed21cb24b449d91dd40c028330, type: 2}
+  - {fileID: 11400000, guid: 554461e90d93ae24f84b4cd002fe5b7d, type: 2}
+  - {fileID: 11400000, guid: 59a979f8037cc7249a21d9063aac72b4, type: 2}
+  - {fileID: 11400000, guid: 58a54b0bb62976e4c934195de6d98e62, type: 2}
+  - {fileID: 11400000, guid: d3e7070c20802984fb5248fded317470, type: 2}
   itemPrices: 010000000200000003000000050000000300000014000000280000000200000002000000
   coinType: 010000000100000000000000000000000000000001000000010000000100000001000000

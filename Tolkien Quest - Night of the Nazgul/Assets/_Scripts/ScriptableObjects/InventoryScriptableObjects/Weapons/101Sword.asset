@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sword
   itemIndex: 101
+  MyWeaponType: 0
+  weaponQuantity: 1
   additionalDamage: 1
   requiresEnemyInChainOrPlateArmor: 0
   MeleeOBAdjustment: 0
   canBeUsedAsMissileAttack: 1
   MissileOBAdjustment: -3
   onlyMissileAttacks: 0
+  autoKillsOrcs: 0

@@ -33,6 +33,8 @@ public class ScriptableEncounterReader : MonoBehaviour {
 				break;
 		}
 		DetermineEncounterBGFromLocation(whichTileEncounterVariable, currentEncounterIndex);
+
+		mapSceneManager.GetComponent<MapSceneManager>().CloseLocationUI();
 	}
 
 
@@ -170,8 +172,8 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		////TODO These are for TESTING PURPOSES ONLY
 		//		//Directly assign the Encounter Index, to bring it up "for inspection"
 		Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 385;//222;//158;
-
+		encounterIndex = 222//304//385//336//216//319//204//452//204//385//222//15
+			;
 
 		print("Encounter index: " + encounterIndex);
 
@@ -200,6 +202,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		else if (whichEncounterButtonSelected == 4) {
 			//Unique Rule for Encounters 319 & 267
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.canJumpInRiver) {
+				//Just 267
 				if (MapSceneManager.currentEncounter.myEncounterScriptable.jumpInRiverRequiresRoll) {
 					int jumpRoll = Random.Range(2, 13);
 					jumpRoll += CharacterManager.mySkillGeneralTotal;
@@ -256,6 +259,19 @@ public class ScriptableEncounterReader : MonoBehaviour {
 					furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range1FurtherIndex;
 					print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.start + " - " +
 						MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.end);
+
+						//The Player's attempt to RUN AWAY FAILS
+						if (MapSceneManager.currentEncounter.myEncounterScriptable.hasRunAwayRange) {
+							print("You failed to Run Away!");
+//INITIATE COMBAT AND OPEN CombatBG
+//The Enemy attacks first
+//CombatManager.whoAttacksFirst = enemy;
+
+
+//IF COMBAT HAS ALREADY BEEN INITIATED (i.e. mapScenemanager.currentEncounter.isInCombat == true)
+//Keep the player in the current combat bout (with the current enemy's current stats), and let the enemy attack immediately after the player fails to run away
+
+						}
 				}
 			}
 
@@ -263,13 +279,25 @@ public class ScriptableEncounterReader : MonoBehaviour {
 				MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2 = new RangeInt(MapSceneManager.currentEncounter.myEncounterScriptable.range2Min, MapSceneManager.currentEncounter.myEncounterScriptable.range2Length);
 				if (exploreRoll >= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.start &&
 					exploreRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.end) {
-					rolledWithinRanges = true;
-					furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range2FurtherIndex;
-					print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.start + " - " +
-							MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.end);
+						rolledWithinRanges = true;
+						furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range2FurtherIndex;
+						print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.start + " - " +
+								MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.end);
 
-					//For now this only applies to Encounter 354
-					if (myEncounterScriptable.exploreRangeDeterminesItems) {
+						//The Player's SNEAK ATTACK succeeds, allowing them extra damage for the first attack in the following combat
+						if (MapSceneManager.currentEncounter.myEncounterScriptable.hasSneakAttackRange) {
+//INITIATE COMBAT AND OPEN CombatBG
+//The Player's FIRST ATTACK adds his/her Trickery bonus to their OB stat
+							print("Sneak attack successful");
+							CharacterManager.sneakAttackBonus = CharacterManager.mySkillTrickeryTotal;
+//During their first attack, apply the sneakAttackBonus stat to the Player's various OB stat bonuses
+//(In the CombatManager script) Each round after attacking, set sneakAttackBonus back to 0 if it isn't already
+
+						}
+
+
+						//For now this only applies to Encounter 354
+						if (myEncounterScriptable.exploreRangeDeterminesItems) {
 						InventoryManager.silverCarried += 5;
 						print("You stole 5 silver from the troll. Current Silver: " + InventoryManager.silverCarried);
 					}
@@ -359,12 +387,15 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.canMoveOn) {
 				//print("You can move on");
-				mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.SetActive(true);
+				//mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.SetActive(true);
+				mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.GetComponentInChildren<Text>().text = "Move On";
 
 				if (MapSceneManager.currentEncounter.myEncounterScriptable.moveOnRandomly) {
 					mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
+					mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.GetComponentInChildren<Text>().text = "Move On " + "\n" + "(Random)";
 				}
 
+				//"Lost" movement rules
 				if (MapSceneManager.currentEncounter.myEncounterScriptable.rollHowToMoveOnMax != 0) {
 					int moveRoll = Random.Range(2, 13);
 					moveRoll += CharacterManager.mySkillPerceptionTotal;
@@ -381,15 +412,18 @@ public class ScriptableEncounterReader : MonoBehaviour {
 					}
 				}
 			}
+			else {
+				mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.SetActive(false);
+			}
 
-			//Move the player/currentLocation to a specific tile, as directed by the currentEncounter
+			//Move the player/currentLocation to a SPECIFIC TILE, as directed by the currentEncounter
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.moveToSpecificTile != "") {
 				mapSceneManager.GetComponent<MapSceneManager>().MoveToSpecificLocation(MapSceneManager.currentEncounter.myEncounterScriptable.moveToSpecificTile);
 				print("You should be in space " + MapSceneManager.currentEncounter.myEncounterScriptable.moveToSpecificTile);
 
 				//If the Location Text for the "specific tile" is meant to be read, rather than just moving on
 				if (!MapSceneManager.currentEncounter.myEncounterScriptable.canMoveOn) {
-					//Open the LocationTextBG
+//Open the LocationTextBG
 					mapSceneManager.GetComponent<MapSceneManager>().currentLocationTextIndex = 0;
 					mapSceneManager.GetComponent<MapSceneManager>().UpdateLocationBG();
 				}
@@ -503,8 +537,6 @@ public class ScriptableEncounterReader : MonoBehaviour {
 								}
 
 								itemQuantityTotal += item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity;
-
-								
 							}
 							else {
 								//print("Couldn't use the item. bool itemUsed = " + itemUsed + " || Encounter Uses Item = " + myEncounterScriptable.obtainedItemList.useItem);
@@ -515,7 +547,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 						if (itemFound && myEncounterScriptable.obtainedItemList.checksItemQuantityMax != 0) {
 							if (itemQuantityTotal >= myEncounterScriptable.obtainedItemList.checksItemQuantityMin &&
 								itemQuantityTotal <= myEncounterScriptable.obtainedItemList.checksItemQuantityMax) {
-
+//FINISH THIS
 							}
 						}
 					}
@@ -523,15 +555,15 @@ public class ScriptableEncounterReader : MonoBehaviour {
 					if (itemFound) {
 						if (myEncounterScriptable.obtainedItemList.hasItemMovesToEncounter != 0) {
 							print("Item detected in inventory. Moving on");
-							UpdateEncounter(myEncounterScriptable.obtainedItemList.hasItemMovesToEncounter);
-							return;
+							DelayEncounterUpdate(myEncounterScriptable.obtainedItemList.hasItemMovesToEncounter);
+							//return;
 						}
 					}
 					else {
 						if (myEncounterScriptable.obtainedItemList.lacksItemMovesToEncounter != 0) {
 							print("Item not detected in inventory. Moving on");
-							UpdateEncounter(myEncounterScriptable.obtainedItemList.lacksItemMovesToEncounter);
-							return;
+							DelayEncounterUpdate(myEncounterScriptable.obtainedItemList.lacksItemMovesToEncounter);
+							//return;
 						}
 					}
 					
@@ -544,12 +576,11 @@ public class ScriptableEncounterReader : MonoBehaviour {
 						//Unique rule for encounter 385
 						if (myEncounterScriptable.obtainedItemList.lackingItemMeansPoisoned) {
 							print("Failed to heal your poisoning");
-							UpdateEncounter(357);
-							return;
+							DelayEncounterUpdate(357);
+							//UpdateEncounter(357);
+							//return;
 						}
 					}
-
-					
 				}
 
 				if (myEncounterScriptable.obtainedItemList.gainDaggerIfYouHaveNoWeapon) {
@@ -589,8 +620,6 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			}
 
 			
-
-
 			if (myEncounterScriptable.floatsDownstream) {
 				string downstreamTileIndex = null;
 
@@ -654,9 +683,12 @@ public class ScriptableEncounterReader : MonoBehaviour {
 				}
 
 				if (downstreamTileIndex != null) {
+					//mapSceneManager.GetComponent<MapSceneManager>().mapTiles[downstreamTileIndex].GetComponent<
+					MapSceneManager.currentEncounter.GetComponent<ScriptableEncounterReader>().myEncounterScriptable.moveToSpecificTile = "Moving";
+					//MapSceneManager.currentEncounter.myEncounterScriptable.moveToSpecificTile = "Moving downstream || " + downstreamTileIndex;
 					mapSceneManager.GetComponent<MapSceneManager>().MoveToSpecificLocation(downstreamTileIndex);
-				}
 
+				}
 				else {
 					print("Couldn't find a downstreamTile");
 				}
@@ -703,7 +735,6 @@ public class ScriptableEncounterReader : MonoBehaviour {
 				}
 			}
 
-
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.meetTom) {
 				CharacterManager.metTom = true;
 			}
@@ -717,16 +748,20 @@ public class ScriptableEncounterReader : MonoBehaviour {
 					mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
 				}
 				else {
-					MapSceneManager.currentEncounter.UpdateEncounter(122);
+					MapSceneManager.currentEncounter.DelayEncounterUpdate(122);
+					//MapSceneManager.currentEncounter.UpdateEncounter(122);
 				}
 			}
 			//Unique Encounter Rule on Encounter 304
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.checkIfMetGildor) {
 				if (CharacterManager.metGildor) {
 					mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+					mapSceneManager.GetComponent<MapSceneManager>().CloseEncounterUI();
+					return;
 				}
 				else {
-					MapSceneManager.currentEncounter.UpdateEncounter(283);
+					MapSceneManager.currentEncounter.DelayEncounterUpdate(283);
+					//MapSceneManager.currentEncounter.UpdateEncounter(283);
 				}
 			}
 
@@ -740,10 +775,17 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			}
 
 			mapSceneManager.GetComponent<MapSceneManager>().UpdateEncounterBG();
+			mapSceneManager.GetComponent<MapSceneManager>().OpenEncounterUI();
+
 		}
 		else {
 			Debug.Log("Unable to retrieve encounter " + encounterIndex + " because it doesn't exist.");
 		}
+	}
+
+
+	public void DelayEncounterUpdate(int nextEncounter) {
+		MapSceneManager.currentEncounter.myEncounterScriptable.furtherEncounter1Index = nextEncounter;
 	}
 
 

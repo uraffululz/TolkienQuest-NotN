@@ -68,7 +68,6 @@ public class DragAndDrop : MonoBehaviour {
 				//Debug.Log(result.gameObject.name);
 				if (newResult.gameObject.tag == "DraggableUIParent") {
 					if (newResult.gameObject.transform.childCount == 0) {
-						Debug.Log(newResult.gameObject.name + " || " + inventoryManager2ArmorSlot.name);
 						if (newResult.gameObject == inventoryManager2ArmorSlot) {
 							Debug.Log("Dropped the item into the ARMOR slot");
 
@@ -128,7 +127,7 @@ public class DragAndDrop : MonoBehaviour {
 						if (newResult.gameObject != null &&  originalUIParent.gameObject != null) {
 							if (newResult.gameObject != originalUIParent.gameObject) {
 								if (dragTransform.gameObject.GetComponent<InventoryScriptableReader>() != null && newResult.gameObject.transform.GetChild(0).gameObject.GetComponent<InventoryScriptableReader>() != null) {
-//TODO Be sure to only stack/destroy ITEMS (Not weapons/armor/cloaks)
+
 									if (dragTransform.gameObject.GetComponent<InventoryScriptableReader>().objectScript == newResult.gameObject.transform.GetChild(0).gameObject.GetComponent<InventoryScriptableReader>().objectScript) {
 										//When stacking similar objects from/on the EncounterObtainedItemList
 										if (dragTransform.gameObject.GetComponent<InventoryScriptableReader>().itemScript.isStackable) {

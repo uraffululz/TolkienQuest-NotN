@@ -67,5 +67,7 @@ public class MerchantUIManager : MonoBehaviour {
 		currentMoneyText.text = "Current Money: \n" +
 									"Silver: " + InventoryManager.silverCarried + "\n" +
 									"Copper: " + InventoryManager.copperCarried;
+
+
 	}
 }

@@ -46,6 +46,8 @@ public static class CharacterManager {
 	public static int mySkillMissileOBStatBonus;
 	public static int mySkillMissileOBSpecialBonuses;
 
+	public static int sneakAttackBonus;
+
 	public static int mySkillDBTotal;
 	public static int mySkillDBStatBonus;
 	public static int mySkillDBSpecialBonuses;

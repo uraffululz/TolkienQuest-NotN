@@ -22,7 +22,7 @@ MonoBehaviour:
     <i>You arrive in space 14D.</i>'
   isCombat: 0
   isMerchant: 0
-  canMoveOn: 1
+  canMoveOn: 0
   moveOnRandomly: 0
   rollHowToMoveOnMax: 0
   movesOnTwoSpaces: 0
@@ -56,6 +56,14 @@ MonoBehaviour:
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 30
   canRestAtNight: 1
   XPGained: 8

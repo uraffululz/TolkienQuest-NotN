@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Magic Bow
   itemIndex: 202
+  MyWeaponType: 0
   weaponQuantity: 1
   additionalDamage: 0
   requiresEnemyInChainOrPlateArmor: 0
@@ -21,3 +22,4 @@ MonoBehaviour:
   canBeUsedAsMissileAttack: 0
   MissileOBAdjustment: 1
   onlyMissileAttacks: 1
+  autoKillsOrcs: 0

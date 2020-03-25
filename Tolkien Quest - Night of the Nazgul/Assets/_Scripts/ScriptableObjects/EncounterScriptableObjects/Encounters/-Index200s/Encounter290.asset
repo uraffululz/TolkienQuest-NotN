@@ -16,7 +16,7 @@ MonoBehaviour:
   miscNotes: []
   encounterText:
   - You leap into the swirling, muddy waters just as the blade of the rider whizzes
-    overhead. You have heard that the Undead cannot abide moving water, and you suree
+    overhead. You have heard that the Undead cannot abide moving water, and you sure
     hope that this one can't. The River whirls you and carries you swiftly downstream,
     but you struggle to keep afloat and make your way to the far side.
   isCombat: 0
@@ -55,6 +55,14 @@ MonoBehaviour:
   rangeFailMeansGameOver: 1
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 15
   canRestAtNight: 0
   XPGained: 4

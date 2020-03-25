@@ -19,7 +19,7 @@ MonoBehaviour:
     perked ears; you strain to hear better.
   isCombat: 0
   isMerchant: 0
-  canMoveOn: 1
+  canMoveOn: 0
   moveOnRandomly: 0
   rollHowToMoveOnMax: 0
   movesOnTwoSpaces: 0
@@ -50,9 +50,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 0

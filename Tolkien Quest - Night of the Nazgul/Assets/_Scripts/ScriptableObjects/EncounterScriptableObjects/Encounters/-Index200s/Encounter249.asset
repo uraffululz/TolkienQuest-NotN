@@ -15,7 +15,7 @@ MonoBehaviour:
   encounterIndex: 249
   miscNotes: []
   encounterText:
-  - You come to a clearing in the woods and spy an Orc draggin a heavy cloth sack
+  - You come to a clearing in the woods and spy an Orc dragging a heavy cloth sack
     behind him. He appears to be alone and is unaware of you.
   isCombat: 0
   isMerchant: 0
@@ -50,9 +50,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 1

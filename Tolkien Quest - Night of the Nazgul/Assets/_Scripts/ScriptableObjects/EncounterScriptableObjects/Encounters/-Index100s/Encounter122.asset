@@ -63,9 +63,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 20
   canRestAtNight: 0
   XPGained: 10
@@ -76,7 +86,7 @@ MonoBehaviour:
   curesDisease: 0
   autoGameOver: 0
   autoWin: 0
-  meetTom: 0
+  meetTom: 1
   checkIfMetTom: 0
   meetGildor: 0
   checkIfMetGildor: 0
