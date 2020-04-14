@@ -53,9 +53,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
-  obtainsItems: 0
-  obtainedItemList: {fileID: 0}
+  obtainsItems: 1
+  obtainedItemList: {fileID: 11400000, guid: 3e9796efb3316614ea36d9d36899f601, type: 2}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 10
   canRestAtNight: 1
   XPGained: 2

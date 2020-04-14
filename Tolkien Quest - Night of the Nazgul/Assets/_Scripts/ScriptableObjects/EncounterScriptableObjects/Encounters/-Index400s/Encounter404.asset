@@ -15,8 +15,11 @@ MonoBehaviour:
   encounterIndex: 404
   miscNotes: []
   encounterText:
-  - You turn and run toward the entrance of the cave, the Troll thundering behind
-    you.
+  - 'You grab one necklace and one ring, together worth 5 silver pieces.
+
+
+    You turn and run toward the entrance of the cave, the Troll thundering behind
+    you.'
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -35,12 +38,12 @@ MonoBehaviour:
   exploreHasMultipleRanges: 1
   actionAddsSkill: 4
   howManyRanges: 2
-  range1Min: 3
-  range1Length: 388
-  range1FurtherIndex: 6
-  range2Min: 99
-  range2Length: 395
-  range2FurtherIndex: 0
+  range1Min: 2
+  range1Length: 3
+  range1FurtherIndex: 388
+  range2Min: 6
+  range2Length: 99
+  range2FurtherIndex: 395
   range3Min: 0
   range3Length: 0
   range3FurtherIndex: 0
@@ -50,9 +53,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
-  obtainsItems: 0
-  obtainedItemList: {fileID: 0}
+  obtainsItems: 1
+  obtainedItemList: {fileID: 11400000, guid: 2f15b79bb9bfe4d4fa352560bfe70604, type: 2}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 2
@@ -73,3 +86,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  warnedSettlement: 0

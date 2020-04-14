@@ -6,6 +6,7 @@ using UnityEngine;
 public class MapTileScriptable : ScriptableObject {
 
 	public string locationID;
+	public int settlementIndex;
 
 	[TextArea(3, 10, order = 0)] public string[] locationText;
 

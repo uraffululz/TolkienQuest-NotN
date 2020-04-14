@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encounterIndex: 462
   miscNotes:
-  - 
+  - Second half of encounter 222, used when the player DOES have the Silver Dagger
+    in their inventory
   encounterText:
-  - Will you show the silver dagger to the man?
+  - Will you show the silver dagger to the hobbit?
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0

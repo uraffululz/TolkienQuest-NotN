@@ -9,6 +9,7 @@ public class ScriptableMapTileReader : MonoBehaviour {
 	//[SerializeField] GameObject MerchantUI;
 
 	public string myLocationID;
+	public int mySettlementIndex;
 	public bool allowedToClickMapTile;
 
 	[TextArea(3, 10, order = 0)] public string[] locationText;
@@ -83,6 +84,8 @@ public class ScriptableMapTileReader : MonoBehaviour {
 	void Awake () {
 		if (myTileScriptable != null) {
 			myLocationID = myTileScriptable.locationID;
+			mySettlementIndex = myTileScriptable.settlementIndex;
+
 			locationText = myTileScriptable.locationText;
 			encounterOptionText1 = myTileScriptable.encounterText1;
 			encounterOptionIndex1 = myTileScriptable.encounterIndex1;
@@ -122,7 +125,6 @@ public class ScriptableMapTileReader : MonoBehaviour {
 				randomDirectionChoiceMax = myTileScriptable.randomDirectionRangeMax;
 
 				//rangeFailMeansDie = myTileScriptable.rangeFailMeansGameOver;
-
 			}
 
 			hasCombat = myTileScriptable.combatHere;

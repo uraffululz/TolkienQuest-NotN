@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tile15F
   m_EditorClassIdentifier: 
   locationID: 15F
+  settlementIndex: 7
   locationText:
   - Numerous ponds and hedgerows color the landscape. Surrounded by fertile, marshy
     fields and nestled near the stream called Stockbrook is Stock, chief town of the

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class InventoryManager {
 
-	public static int silverCarried;
+	public static int silverCarried = 100;
 	public static int copperCarried;
 	public static int arrowsCarried;
 

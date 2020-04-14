@@ -3,7 +3,13 @@ guid: fbacf5d8b2f65fd4d9edaa66827e7ffb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mapSceneManager: {instanceID: 0}
+  - merchantScript: {instanceID: 0}
+  - inventoryManager: {instanceID: 0}
+  - currentMoneyText: {instanceID: 0}
+  - itemHostPrefab: {fileID: 3801016423963266585, guid: 8f4439c54597bd040afdd6317f55ec2c,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

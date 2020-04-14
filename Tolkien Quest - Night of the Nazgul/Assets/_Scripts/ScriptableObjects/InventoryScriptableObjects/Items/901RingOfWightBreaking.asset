@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6161c947b66d6e42928b390ac08390d, type: 3}
   m_Name: 901RingOfWightBreaking
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Ring of Wight Breaking
   itemIndex: 0
   itemQuantity: 0
-  isInfinite: 0
+  isInfinite: 1
+  isStackable: 0
   usableOncePerDay: 1
+  usableTwicePerDay: 0
   isMoney: 0
   isAMeal: 0
   isACure: 0
   autoDefeatsWights: 1
+  mySkillIncrease: 0

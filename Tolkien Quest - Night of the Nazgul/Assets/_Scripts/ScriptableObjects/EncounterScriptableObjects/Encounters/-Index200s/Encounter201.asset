@@ -15,9 +15,12 @@ MonoBehaviour:
   encounterIndex: 201
   miscNotes: []
   encounterText:
-  - Whitfurrows is a welcome sight. At the Homey Ale, you find the Shirriff's agent,
+  - 'Whitfurrows is a welcome sight. At the Homey Ale, you find the Shirriff''s agent,
     a friendly Hobbit named Pipewise. There, you talk with the Hobbit, who promises
-    help and gives you food and drink. You have warned Whitfurrows!
+    help and gives you food and drink.
+
+
+    <i>You have warned Whitfurrows!</i>'
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
@@ -51,9 +54,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 60
   canRestAtNight: 1
   XPGained: 20
@@ -74,3 +87,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  warnedSettlement: 9

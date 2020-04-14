@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 0e60bd032175a204ea125ccb01d266d4, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -462,7 +463,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Move On
+  m_Text: Close
 --- !u!222 &21486127
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -577,6 +578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 7dd592389360f0f40a00b0ab8f6b7193, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -813,6 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 6d8a38b267a086b4282371a8082931d7, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -1228,6 +1231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ea665d70c21e0c144b8378dc62b4adaa, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -1379,6 +1383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: afc1186dedef01840b051e1aa0830801, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -1609,6 +1614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 1d9ef4960d9831a47ad79104c7f33aa9, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -1839,6 +1845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 0b3cdfdb65ac1f94c875a0e99f65980e, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -1990,6 +1997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 21c8dcf30c23f314f9e07028b0e025d3, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -2141,6 +2149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c86120189ebc8284ba39b42a17f8cdde, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -2371,6 +2380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 2f117da64e89e80439e256284227660d, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -2781,6 +2791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 2aa33f6b44c7eae468c8314a3a686589, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -3011,6 +3022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 448bf60a811cd5b4a8ab60f0384dbc98, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -3241,6 +3253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 19dae1acada578f459af2df4d1dd8195, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -3392,6 +3405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 3092bc45b98a2b547a358be662eef987, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -3549,6 +3563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 41d88ed96358abc48a3997fc77c96231, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -3700,6 +3715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 7157b1c505bbb2645982eadea1dde1cf, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -3851,6 +3867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9da89427c70c7ad4a94a885d0071f5d5, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -4081,6 +4098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 62d98ca9e3429bf4c8781ae62ab31deb, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -4232,6 +4250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ef876789934de0c41a774ce0e7bbbfbf, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -4462,6 +4481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 1027c3b91613d3743a2ec228c4790b82, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -4619,6 +4639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 1fa8eaf057d2691439ad01f1b00f9ca7, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -4770,6 +4791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 8f13d4c8095de474ca77428594965707, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -4921,6 +4943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: a81d7c1f89a6aca4295148d48a7123f6, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -5010,6 +5033,8 @@ MonoBehaviour:
   - {fileID: 192404000}
   - {fileID: 530795211}
   tileBaseMat: {fileID: 2100000, guid: 4f5e5424737a0ae4b955830ddc5447ec, type: 2}
+  characterSheet: {fileID: 1582144904}
+  characterSheetInventoryParent: {fileID: 79839919}
   locationTextBG: {fileID: 431653012}
   locationIndexText: {fileID: 663616856}
   locationText: {fileID: 338824918}
@@ -5028,6 +5053,7 @@ MonoBehaviour:
   furtherEncounterButton2: {fileID: 1544343668}
   furtherEncounterButton3: {fileID: 1846723241}
   furtherEncounterButton4: {fileID: 1341810387}
+  delayedEncounterButton: {fileID: 1756403281}
   itemListBG: {fileID: 1052846024}
   itemHost: {fileID: 3801016423963266588, guid: 8f4439c54597bd040afdd6317f55ec2c,
     type: 3}
@@ -5534,13 +5560,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b0f07cf1762a7354e9d6f4f063334b33, type: 2}
   - {fileID: 11400000, guid: 93e3d7acb83f3d6478dc83ac97eaf604, type: 2}
   - {fileID: 11400000, guid: dc005fc390e0c9a438b057e09d4630c7, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: cbcebadcaa7723c47a52d345a9d0f4e8, type: 2}
+  - {fileID: 11400000, guid: 632bc52b4a295cb489446e84760873d1, type: 2}
+  - {fileID: 11400000, guid: f9a7901eca2b32848b8e307106505cd3, type: 2}
+  - {fileID: 11400000, guid: 28d9a039fecc84f44915145381fcff61, type: 2}
+  - {fileID: 11400000, guid: fffcdcdd5ce538c4ba533370854818dd, type: 2}
+  - {fileID: 11400000, guid: 007b2abec98555f489e5ef27af9de626, type: 2}
+  - {fileID: 11400000, guid: bbcc4b810b923dc4cb8e9efe76bfaeef, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -5677,6 +5703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ab01222d0f29a17488709d01cb496a3b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -5828,6 +5855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 07ca23e43fda60643a781b766bc9545f, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -6247,6 +6275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 86eae41df7f94a04d89efbb7b77fd8b6, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -6398,6 +6427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 24daf3a098a55d145aff08f931415eba, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -6549,6 +6579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 5fd940a42055ef44f8fdfa61b2628398, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -6700,6 +6731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 6ba23c18f9c632d41b301599fee87b5b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -6851,6 +6883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 11d45b099f133f3469bc85f271ec71f2, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -7002,6 +7035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 59e11e562f9fe1c47955a3efb83c7806, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -7153,6 +7187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 8a05bb416185f6243b5fdb3ffc7af75b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -7383,6 +7418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 81833ea6f798ab644bddcb22daec3f58, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -7613,6 +7649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: f833620ee92ee074c9e96cea7c28ea8f, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -7764,6 +7801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: a79682a4855b06743b48099d267f2613, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -8209,6 +8247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 16b1cd0982d33374da017b267125b6ac, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -8492,6 +8531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: bf29978c2d7dec243a1e09b596017272, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -8649,6 +8689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 3883e984762cd114db83a64f0ec8f479, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -8732,6 +8773,7 @@ RectTransform:
   - {fileID: 1544343669}
   - {fileID: 1846723242}
   - {fileID: 1341810388}
+  - {fileID: 1756403285}
   - {fileID: 510234592}
   - {fileID: 1339785708}
   - {fileID: 875686774}
@@ -8815,8 +8857,10 @@ MonoBehaviour:
   myEncounterScriptable: {fileID: 0}
   mapSceneManager: {fileID: 230702024}
   mapSceneInventoryManager: {fileID: 79839919}
+  itemListInventoryManager: {fileID: 3892543412012229741}
   movesTwoSpaces: 0
   merchantUI: {fileID: 1223552384}
+  delayedEncounterIndex: 0
 --- !u!1 &418400029
 GameObject:
   m_ObjectHideFlags: 0
@@ -8923,6 +8967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 5d478ff1db2e3d94d871ca1d7c057610, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -9074,6 +9119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: a9a1b879acf19a64196622612084819b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -9462,6 +9508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: e75c4dc51a693c44fb5223407274b318, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -9613,6 +9660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 96b76ecf518f8b34a90d36e7c1d60301, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -9764,6 +9812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ab8508153af29a5459f310f8ec6b83ed, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -9994,6 +10043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c0d733d8e1c75404193dccd2e5faa8ea, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -10145,6 +10195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 37772338ac373c04cb62dc735f1cddfc, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -10375,6 +10426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4aa25d253ee1bdd4c8bd343bcc780846, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -10526,6 +10578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 12883a778238b074292e6c9a7269f26d, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -10677,6 +10730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: b5a64d6b7368be642a497fd6874a3bf2, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -10828,6 +10882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4ee87820904bd16419b135a3fe3e66ba, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -10979,6 +11034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 507bbadfaf8474a4fa7d92d9fcd051b1, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -11056,7 +11112,7 @@ RectTransform:
   m_Children:
   - {fileID: 1928140841}
   m_Father: {fileID: 403195864}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11262,6 +11318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 60799b469c1938d45b8d39c0d05e8908, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -11413,6 +11470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4ec7e73235c6bcd439ccb598c872bd64, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -11647,6 +11705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 1fe49b1e0b9691b4eb54bb62108972ba, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -11883,6 +11942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 3b6d92d2040d71a4aad37230b4cef66d, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -12160,6 +12220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 24ed41d96337b664da0bffe3f2035c67, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -12311,6 +12372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: e4d7d9d7a3a90034496ae8bf81fe7071, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -12462,6 +12524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c3cd98a7dd9d7664da30d7d77bb734c4, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -12824,6 +12887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ca426ffdbef6ae046951ad6667cd2b6b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -12975,6 +13039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 09fb1d696427b6a40a8f01d24f490486, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -13126,6 +13191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 352f5d8452c7a904da891d694be2108e, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -13277,6 +13343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 5439723bbc1bd064582faa6a4eacaff5, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -13428,6 +13495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 8e79e9bd19f2dc34eaf5a51311a2322f, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -13676,6 +13744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: fea10faf33a6b4840b8febfeef8e9a60, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -13827,6 +13896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 098869089392d254a9ecd0c3241c39bc, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -13978,6 +14048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 321e3fa1565a98a4994ee85b7c21af67, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -14603,6 +14674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: e073625fb70f23349aaa8ffb512aeaf7, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -14967,6 +15039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: fd4071aa4355a0f4a86d3c52a5c53f49, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -15293,6 +15366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 6d5b02489567d564bab778588ac67b40, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -15444,6 +15518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: f9e0d3aa46ad16f43ac568ab106e9739, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -15489,6 +15564,85 @@ MonoBehaviour:
   downstreamSameSideTile2ID: 
   downstreamOtherSideTile1ID: 
   downstreamOtherSideTile2ID: 
+--- !u!1 &785034270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785034271}
+  - component: {fileID: 785034273}
+  - component: {fileID: 785034272}
+  m_Layer: 5
+  m_Name: DelayedEncounterButtonText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &785034271
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785034270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1756403285}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &785034272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785034270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Continue
+--- !u!222 &785034273
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785034270}
+  m_CullTransparentMesh: 0
 --- !u!1 &788972920
 GameObject:
   m_ObjectHideFlags: 0
@@ -15674,6 +15828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c4ff8f0366595fe49a99a2982fe7bac7, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -15963,6 +16118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: fe35dd7e0e3ce4c4bac2fa82f4549115, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -16188,6 +16344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: cc85077f4df703049ac3bdefe85e235d, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -16265,7 +16422,7 @@ RectTransform:
   m_Children:
   - {fileID: 1133039206}
   m_Father: {fileID: 403195864}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16448,7 +16605,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 230702025}
-        m_MethodName: MoveOn
+        m_MethodName: CloseMerchantUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16603,6 +16760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: cfc69d380e40db4498b7927f40eed9d5, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -16754,6 +16912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: bfffbe16a20d49a48acbdfbaba4dd4c2, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -16911,6 +17070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 10374ec3f731d934cb6ca33e8581e43a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -17119,6 +17279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: bf30e84c01f0a81489350aeec94877c4, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -17270,6 +17431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: d8f523e1077a857478323275a8c028c7, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -17421,6 +17583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 2fbae50be97bf3449a044b4c5b9efc94, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -17502,7 +17665,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403195864}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17707,6 +17870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 2ae5dede7f818d94c86bd7ba9191a40a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -17858,6 +18022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 1228ac7b0037ed14584db3a6a7da84f2, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -18224,6 +18389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 50b142fe30ae5074690c5674218c41bd, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -18549,6 +18715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9079b289e2e0e63448c22ebb8764caef, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -18858,6 +19025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: aa18fb43f183c254e89be598544b65e7, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -19232,6 +19400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c95ab42d8d392454ab033fd56007ed2a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -19383,6 +19552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9f4f2ef3bed3eb74998e2ee83e004cf5, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -19534,6 +19704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4407930353a18994f815de9e47bfcb33, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -19685,6 +19856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 47b80ab1820315f499e8abb79aa0fc29, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -19836,6 +20008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 93cee38f8faf666459a8f3424c2f09cb, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -19987,6 +20160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 2bde08b4732e5254ea1b50335252f2cb, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -20219,6 +20393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c7557d70df229d74785245391672c794, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -20370,6 +20545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 769c2a85760369840bbda1ea4017608d, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -20521,6 +20697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: bdccc1eb8b96d2d45a07d51978c437ef, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -20672,6 +20849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 5b9559d6c157a17409f8c53c3d80a95e, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -20829,6 +21007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: a50d0f213ecb74a45a2abf34475f58f0, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -20980,6 +21159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 7627a63321075ee498f1328029ade137, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -21131,6 +21311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 52c704f2e0ae6314c8b5f8d70741457c, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -21546,6 +21727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 6dfbdbd259148774898f632270908756, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -21776,6 +21958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c19f903da14a6234b841c6d4f543c885, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -22006,6 +22189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ad2d37d204a114744a79b1ec2b6a971f, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -22366,6 +22550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 3e7f67ad68936c840b1dbdaa7811429b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -22517,6 +22702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c84140ed847d8c94c85f1290d811a11d, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -22668,6 +22854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: a1237d549db785a4ca068a71221cf9d1, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -22819,6 +23006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4ec57a3e3c899484e93cb6521af1683f, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -22970,6 +23158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 69514e892e1d1e04b980b093b697f59b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -23206,6 +23395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: b4223eca2953df3419598607562709ba, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -23357,6 +23547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 78705a7107e0bb04b91dc06378f8245c, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -23719,6 +23910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: d6d596cd3764e984cae480f2e92ca366, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -24023,6 +24215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: acbdaa7d8d68c7a468521afddbc1461a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -24174,6 +24367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 3e83b7be75cd8cb4cb8553371716e381, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -24487,6 +24681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbacf5d8b2f65fd4d9edaa66827e7ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapSceneManager: {fileID: 230702024}
+  merchantScript: {fileID: 0}
+  inventoryManager: {fileID: 3892543412012229741}
   itemNameTexts:
   - {fileID: 1362804810}
   - {fileID: 732311069}
@@ -24518,6 +24715,8 @@ MonoBehaviour:
   - {fileID: 942013100}
   - {fileID: 1922730232}
   currentMoneyText: {fileID: 900155689}
+  itemHostPrefab: {fileID: 3801016423963266585, guid: 8f4439c54597bd040afdd6317f55ec2c,
+    type: 3}
 --- !u!1 &1223738441
 GameObject:
   m_ObjectHideFlags: 0
@@ -24624,6 +24823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 5bfd01942793afe41a98be2ca80d30f9, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -24775,6 +24975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: de83f716b74c86f47963257301acf62b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -24926,6 +25127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 64b31cbbbe798a044bc298e402646aee, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -25077,6 +25279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: a450bdc213ae95c409489ec3c24215ef, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -25228,6 +25431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 1baf50e62e9645647bad0ad068c8ece6, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -25592,6 +25796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: dee7264468a2e214c92bd4124dff7d0a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -25743,6 +25948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c39b9b719cded934eacc350ad41bb478, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -25894,6 +26100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 203e1a380c0f42b4c937e227d28ffbd8, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -26176,6 +26383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: fdad0e3a394199449bfea8a1195ea24b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -26327,6 +26535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: cb00bab1ba6586247823caf7e36d0407, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -26478,6 +26687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9b24ae2c14c00784a9a3905cf42f9b69, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -26791,6 +27001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 0ca4aa6e49dbaaf489ce648fefa3689b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -26942,6 +27153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 234ce8f6ebcd23d448d2ef891351b3ef, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -27093,6 +27305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 539abed1a7e342649a111826d9e44346, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -27244,6 +27457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 07deea88e6e7aa944a45679beb8921b0, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -27395,6 +27609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 6d5cdac004a61f74ab2164bf2845ef47, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -27603,6 +27818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 512f2f75410f162439dd80704b7f4f4e, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -27754,6 +27970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: e32bb11414cbe5f4fa9bc633961c291c, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -27905,6 +28122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: cd453126eb48d804dac2802e89a66943, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -28056,6 +28274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 3ee73e470fd5f62408cbcdb57e9c7a8c, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -28131,7 +28350,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403195864}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -28497,6 +28716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 80f51f8c31bae514bb1aa92a2d77900b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -28648,6 +28868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 73c1e3358188fd349ac05dcdf19cb380, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -28880,6 +29101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 523613447c061e94fb77f05dd7e53e68, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -29031,6 +29253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9b0e48986d528b149ae0174b87f20d42, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -29188,6 +29411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 6d53a875f14224c4fbdbc0992771df93, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -29418,6 +29642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 0bbb87e5e41e88d4b813b5c5764f79b7, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -29569,6 +29794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: e1b422b3ab999a248a310b84b31ffe8e, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -29720,6 +29946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 434fade27f325b649b1094a3c7028a79, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -29871,6 +30098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4e99b3fd9f89d9345b5baf4b65027f2a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -30101,6 +30329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: b88f9303fbf208c43a6382d32c012d32, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -30252,6 +30481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 2ba72cc8bbf444844b2b70aa58ff0cee, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -30403,6 +30633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 610dd7d0ecf5d2b49a01272585943a1e, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -30554,6 +30785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4261a2257a7d485409d58ea330f50731, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -30705,6 +30937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 42ae1e9da0ebd2a48aa0e97a515e3edc, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -30965,6 +31198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 160b756aae4d1ef4e93551c40f04ba00, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -31116,6 +31350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 787c87d6bc5ae3449815868c540932ae, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -31405,6 +31640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: d0ee34128566a334b92a7cf1a7493351, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -31956,6 +32192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 1ee14b3143847a849b725854503f9353, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -32107,6 +32344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9f3e16c43f9afcc4ca5cd00a7896c21c, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -32258,6 +32496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: f7ce9de51a4078d469555e024207d9d5, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -32409,6 +32648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 122b9e9c9c14ba7499232369f67e9eb3, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -32454,6 +32694,12 @@ MonoBehaviour:
   downstreamSameSideTile2ID: 
   downstreamOtherSideTile1ID: 
   downstreamOtherSideTile2ID: 
+--- !u!1 &1582144904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5835316516418169863, guid: 708450bd17410dd4bba95a4fce8ffd2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 79839917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1586006678
 GameObject:
   m_ObjectHideFlags: 0
@@ -32560,6 +32806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 8d68d7436a3b68e478144b5615d05047, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -32711,6 +32958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 07212c8e2facbaf439c4a9a740841b94, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -32862,6 +33110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 33fc24f8862a8354e965d22e0ceda994, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -33013,6 +33262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 24d75775072579c42adfa895ad176990, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -33164,6 +33414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 2cb59e53a5171d44da28164faf2133c9, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -33315,6 +33566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: bfdf140702ac63d4891e80224d44bed4, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -33466,6 +33718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 1a9197e5978bf8b49ac0e68f22fd733a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -33617,6 +33870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 05a39d7314098da41b3a6fb94e337cbc, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -33847,6 +34101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: b8a336ff7ac60934eb4ab1a1e969d6be, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -33998,6 +34253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 7eb942f70efca3141b7261f1a1b25faa, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -34149,6 +34405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 47313aa87df022743a2289d1bb8831d2, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -34438,6 +34695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ad392d0131294474f916db237825392c, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -34595,6 +34853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 16ebecb041254e34a9da1717f0cd8170, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -34746,6 +35005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: d575082ed50e94e40977b42260368f5e, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -35057,6 +35317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 1c9ba926fd7dfdd4fb1fa532ef73a27c, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -35208,6 +35469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: d488e0a53ad002c45a374071b5a08098, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -35504,6 +35766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 6653cebedbf151d418207718be043e20, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -35655,6 +35918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 5c66b99b26409f540aa5ea70382f4924, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -35700,6 +35964,138 @@ MonoBehaviour:
   downstreamSameSideTile2ID: 
   downstreamOtherSideTile1ID: 
   downstreamOtherSideTile2ID: 
+--- !u!1 &1756403281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1756403285}
+  - component: {fileID: 1756403284}
+  - component: {fileID: 1756403283}
+  - component: {fileID: 1756403282}
+  m_Layer: 5
+  m_Name: DelayedEncounterButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1756403282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756403281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1756403283}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 403195868}
+        m_MethodName: GoToDelayedEncounter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1756403283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756403281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1756403284
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756403281}
+  m_CullTransparentMesh: 0
+--- !u!224 &1756403285
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756403281}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 785034271}
+  m_Father: {fileID: 403195864}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -300, y: -100}
+  m_SizeDelta: {x: 150, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1767439007
 GameObject:
   m_ObjectHideFlags: 0
@@ -35806,6 +36202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 79d4085fbdef6d84fb55126fa32bf4ca, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -35957,6 +36354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: a6748d54dcf78844ba438b6cda82f3b7, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -36108,6 +36506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: af735183468eebd4e9eecbc66210d64d, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -36259,6 +36658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9f3effced39783744af156f9916b0ae9, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -36489,6 +36889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: fb3bc8932a7af2a4eaa1bec87fe77ff6, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -36640,6 +37041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 70a56ed3788373945b23235922d6bdc3, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -36791,6 +37193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ca667ff8c75055942b81605ca503d63b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -36942,6 +37345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9bffd12b216f44044b2203cdb35c5b5c, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -37172,6 +37576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 2360e35d7fba6d54490d87fc438cc902, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -37323,6 +37728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 0e4d087d34ebdcc4299148dc348d44e2, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -37548,6 +37954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 6e27417df331c974f91d558a8079b769, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -37831,6 +38238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 49e97e4363ed4624fac4c699fce603a3, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -37982,6 +38390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 5682e24c86acd9e4388b1f9247e13fec, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -38133,6 +38542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9f9f939a42c3a8b45a63676c26403370, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -38284,6 +38694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: d3d06b858708e124b9cbe9460b0af642, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -38435,6 +38846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: f29ff3321b7468d4286989306811e680, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -38592,6 +39004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4ef0e255fc458e14a964cafc02188fd6, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -38743,6 +39156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: d7c61995fdd7d1f448c1ba12c8a955e3, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -38894,6 +39308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: bd2ce70a4f8a734438b66e6fdaabe2fd, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -39309,6 +39724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: c9d12515324c3de46bd308d6ba3de98b, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -39539,6 +39955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 80f464ef85a33ed4299fc09cbd8d2dce, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -39690,6 +40107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 100d2a6aab95f1043a70aaaef3a3dfd5, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -39874,6 +40292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 7d3bd24a313b94349ac0c820bdcf1682, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -40025,6 +40444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ab2cb6d51cd77d046b3d5489917e61d2, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -40433,6 +40853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 43f338e987cc7684b86a9379b7eafd68, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -40584,6 +41005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4fd577125dfeb264e8ad29631683ec48, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -40735,6 +41157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 63790c9698c274d4ca460f1344d5af76, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -40886,6 +41309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 12581359c3f50e5489f844a873f1f3f3, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -41116,6 +41540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 4eef784e2625f174082b6d4df671de5a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -41346,6 +41771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 359ccd840881b0a4cbadf4764dae590e, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -41578,6 +42004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: a7d09135a2529c24eb95b39169947abe, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -41729,6 +42156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ceeabffb3f5455a4288fd88c83b701eb, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -41880,6 +42308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 32abecce02d20f64b9b41356cd9f7a8a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -42031,6 +42460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 6222d5120f9a34e49a67a81aa09baf2f, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -42182,6 +42612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 5eb6e1b1ac0a34d409176b1f6e7eafbb, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -42333,6 +42764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 63ffa21dbf6af1c4a9f8db7b947f94f5, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -42484,6 +42916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: cdfd520963f82d24d820bbe255bb4a21, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -42635,6 +43068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: af959a03141608d4eb96fde721dcaf9f, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -42786,6 +43220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 2b86fe29fc7894742ae2ee659f06cbe2, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -43016,6 +43451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9dbd82a9c51b5ae4fae80843490c7289, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -43167,6 +43603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 9670c4ff0c6ad7c4a9246fad58896333, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -43318,6 +43755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: 5522e30a8d974aa4c86b13d002fe39d8, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -43469,6 +43907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: d00d9d9a872759a4f9215696cfe2c7a4, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -43620,6 +44059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: f78a1264ea7259344bc999f340ad1ba2, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -43771,6 +44211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: e3e6a027ccaf4784ab363fb0fae32390, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -44054,6 +44495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: daefd47ac4e51674b9c6a966c8e5ca9c, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -44205,6 +44647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: ff67b9141139db640a53f5956a11c96a, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 
@@ -44356,6 +44799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTileScriptable: {fileID: 11400000, guid: e9c5b2b59a157f748937c603e0cc60e8, type: 2}
   myLocationID: 
+  mySettlementIndex: 0
   allowedToClickMapTile: 0
   locationText: []
   encounterOptionText1: 

@@ -9,6 +9,8 @@ public class EncounterMerchantScriptable : ScriptableObject {
 	[SerializeField] string[] notes;
 	public string[] itemsForSale;
 	public ScriptableObject[] itemScripts;
+	public int[] objectQuantities;
+
 	public int[] itemPrices;
 	public enum coinTypes { silver, copper }
 	public coinTypes[] coinType;

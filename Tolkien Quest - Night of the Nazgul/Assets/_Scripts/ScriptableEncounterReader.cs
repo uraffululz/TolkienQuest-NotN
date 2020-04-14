@@ -9,6 +9,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 	[SerializeField] GameObject mapSceneManager;
 	[SerializeField] GameObject mapSceneInventoryManager;
+	[SerializeField] GameObject itemListInventoryManager;
 
 	public bool movesTwoSpaces;
 
@@ -16,6 +17,9 @@ public class ScriptableEncounterReader : MonoBehaviour {
 	//[SerializeField] Text encounterXPText;
 
 	[SerializeField] GameObject merchantUI;
+
+	public int delayedEncounterIndex = 0;
+
 
 	public void ChooseLocationBGEncounter (int whichTileEncounterVariable) {
 		int currentEncounterIndex = 0;
@@ -170,9 +174,9 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		}
 
 		////TODO These are for TESTING PURPOSES ONLY
-		//		//Directly assign the Encounter Index, to bring it up "for inspection"
-		Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 222//304//385//336//216//319//204//452//204//385//222//15
+		//Directly assign the Encounter Index, to bring it up "for inspection"
+Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
+		encounterIndex = 385//445//128//354//421//466//151//278//110//354//222//385//336//216//319//452//204//158
 			;
 
 		print("Encounter index: " + encounterIndex);
@@ -272,7 +276,13 @@ public class ScriptableEncounterReader : MonoBehaviour {
 //Keep the player in the current combat bout (with the current enemy's current stats), and let the enemy attack immediately after the player fails to run away
 
 						}
-				}
+
+						//For now this only applies to Encounter 354
+						if (myEncounterScriptable.exploreRangeDeterminesItems) {
+							myEncounterScriptable.obtainedItemList.silverEarned = 0;
+							print("You failed to steal from the troll. Current Silver: " + InventoryManager.silverCarried);
+						}
+					}
 			}
 
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.howManyRanges > 1) {
@@ -298,7 +308,8 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 						//For now this only applies to Encounter 354
 						if (myEncounterScriptable.exploreRangeDeterminesItems) {
-						InventoryManager.silverCarried += 5;
+						//InventoryManager.silverCarried += 5;
+						myEncounterScriptable.obtainedItemList.silverEarned = 5;
 						print("You stole 5 silver from the troll. Current Silver: " + InventoryManager.silverCarried);
 					}
 				}
@@ -498,6 +509,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 					else {
 						print("Rolled out of item ranges");
 						if (myEncounterScriptable.obtainedItemList.outOfRangeMovesToEncounter) {
+//TOPROBABLYDO Switch this to DelayEncounter instead
 							UpdateEncounter(myEncounterScriptable.obtainedItemList.encounterIndex);
 						}
 					}
@@ -530,9 +542,17 @@ public class ScriptableEncounterReader : MonoBehaviour {
 								print("Found the item you're looking for in your inventory");
 
 								if (!itemUsed && myEncounterScriptable.obtainedItemList.useItem && !item.GetComponentInChildren<InventoryScriptableReader>().isInfinite) {
-									item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity--;
-									item.GetComponentInChildren<InventoryScriptableReader>().InitializeItem();
-									print ("Used the item. Item Quantity: " + item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
+									item.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity--;
+									//int UsedItemParentIndex = mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents.IndexOf(item);
+									//int itemNewQuantity = item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity;
+									//item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity = itemNewQuantity;
+									//print(item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
+									item.transform.GetChild(0).GetComponent<InventoryScriptableReader>().InitializeItem();
+									mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().LogInventory();
+									print ("Used the " + item.GetComponentInChildren<InventoryScriptableReader>().objectName + ". Item Quantity: " + item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
+									//mapSceneManager.GetComponent<MapSceneManager>().UpdateItemListBG();
+									itemListInventoryManager.GetComponent<MapSceneInventoryManager>().InitializeInventory();
+									//mapSceneManager.GetComponent<MapSceneManager>().RecompileInventoryBG();
 									itemUsed = true;
 								}
 
@@ -567,7 +587,15 @@ public class ScriptableEncounterReader : MonoBehaviour {
 						}
 					}
 					
-					if (!itemUsed) {
+					if (itemUsed) {
+						if (myEncounterScriptable.obtainedItemList.lackingItemMeansPoisoned) {
+							print("You healed the poison");
+							DelayEncounterUpdate(469);
+							//UpdateEncounter(469);
+							//return;
+						}
+					}
+					else {
 						//print(CharacterManager.statusDiseased);
 						if (myEncounterScriptable.obtainedItemList.lackingItemMeansDiseased) {
 							CharacterManager.statusDiseased = true;
@@ -599,8 +627,9 @@ public class ScriptableEncounterReader : MonoBehaviour {
 					}
 				}
 
-				if (obtainedItems) {
+				if (obtainedItems || myEncounterScriptable.obtainedItemList.silverEarned > 0 || myEncounterScriptable.obtainedItemList.copperEarned > 0) {
 					mapSceneManager.GetComponent<MapSceneManager>().UpdateItemListBG(itemsInList, itemQuantitiesList);
+					mapSceneManager.GetComponent<MapSceneManager>().OpenItemListUI();
 				}
 
 				if (myEncounterScriptable.loseWeaponsAndArmor) {
@@ -745,7 +774,8 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			//Unique Encounter Rule on Encounter 128
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.checkIfMetTom) {
 				if (CharacterManager.metTom) {
-					mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+					MapSceneManager.currentEncounter.UpdateEncounter(467);
+					//DelayEncounterUpdate(467);
 				}
 				else {
 					MapSceneManager.currentEncounter.DelayEncounterUpdate(122);
@@ -755,15 +785,87 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			//Unique Encounter Rule on Encounter 304
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.checkIfMetGildor) {
 				if (CharacterManager.metGildor) {
-					mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
-					mapSceneManager.GetComponent<MapSceneManager>().CloseEncounterUI();
-					return;
+					MapSceneManager.currentEncounter.UpdateEncounter(468);
+					//DelayEncounterUpdate(468);
 				}
 				else {
 					MapSceneManager.currentEncounter.DelayEncounterUpdate(283);
 					//MapSceneManager.currentEncounter.UpdateEncounter(283);
 				}
 			}
+
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.isTimeLocked) {
+				if (CharacterManager.daysTaken <= MapSceneManager.currentEncounter.myEncounterScriptable.dayLimit2) {
+					if (CharacterManager.daysTaken <= MapSceneManager.currentEncounter.myEncounterScriptable.dayLimit1) {
+						if (CharacterManager.currentDayTimeTaken <= MapSceneManager.currentEncounter.myEncounterScriptable.timeLimit1) {
+							DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.limit1Index);
+						}
+						else {
+							DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.limit2Index);
+						}
+					}
+					else if (CharacterManager.currentDayTimeTaken <= MapSceneManager.currentEncounter.myEncounterScriptable.timeLimit2) {
+						DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.limit2Index);
+					}
+					else {
+						DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.overTimeIndex);
+					}
+				}
+				else {
+					DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.overTimeIndex);
+				}
+			}
+
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.warnedSettlement != 0) {
+				print("You warned settlement " + MapSceneManager.currentEncounter.myEncounterScriptable.warnedSettlement);
+
+				switch (MapSceneManager.currentEncounter.myEncounterScriptable.warnedSettlement) {
+					case 1: //Bridgefields
+						CharacterManager.warnedBridgefields = true;
+						CharacterManager.warnedBridgefieldsTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+						break;
+					case 2: //Bywater
+						CharacterManager.warnedBywater = true;
+						CharacterManager.warnedBywaterTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+						break;
+					case 3: //Frogmorton
+						CharacterManager.warnedFrogmorton = true;
+						CharacterManager.warnedFrogmortonTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+						break;
+					case 4: //Hobbiton
+						CharacterManager.warnedHobbiton = true;
+						CharacterManager.warnedHobbitonTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+						break;
+					case 5: //Marish
+						CharacterManager.warnedMarish = true;
+						CharacterManager.warnedMarishTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+						break;
+					case 6: //Scary
+						CharacterManager.warnedScary = true;
+						CharacterManager.warnedScaryTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+						break;
+					case 7: //Stock
+						CharacterManager.warnedStock = true;
+						CharacterManager.warnedStockTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+						break;
+					case 8: //Tuckborough
+						CharacterManager.warnedTuckborough = true;
+						CharacterManager.warnedTuckboroughTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+							break;
+					case 9: //Whitfurrows
+						CharacterManager.warnedWhitfurrows = true;
+						CharacterManager.warnedWhitfurrowsTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+						break;
+					case 10: //Woodhall
+						CharacterManager.warnedWoodhall = true;
+						CharacterManager.warnedWoodhallTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
+						break;
+					
+					default: Debug.Log("You warned a settlement, but which one?");
+						break;
+				}
+			}
+			
 
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.autoWin) {
 				mapSceneManager.GetComponent<MapSceneManager>().Win();
@@ -785,7 +887,16 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 
 	public void DelayEncounterUpdate(int nextEncounter) {
-		MapSceneManager.currentEncounter.myEncounterScriptable.furtherEncounter1Index = nextEncounter;
+		//MapSceneManager.currentEncounter.myEncounterScriptable.furtherEncounter1Index = nextEncounter;
+		//mapSceneManager.GetComponent<MapSceneManager>().delayedEncounterButton.GetComponent<Button>().onClick
+		delayedEncounterIndex = nextEncounter;
+	}
+
+	public void GoToDelayedEncounter() {
+		int delayedIndex = delayedEncounterIndex;
+		delayedEncounterIndex = 0;
+		print(delayedIndex);
+		UpdateEncounter(delayedIndex);
 	}
 
 

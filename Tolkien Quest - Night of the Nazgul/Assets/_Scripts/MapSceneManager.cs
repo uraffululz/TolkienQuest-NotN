@@ -21,6 +21,9 @@ public class MapSceneManager : MonoBehaviour {
 	public static ScriptableEncounterReader currentEncounter;
 	public static EncounterScriptable previousEncounterScriptable;
 
+	[SerializeField] GameObject characterSheet;
+	[SerializeField] GameObject characterSheetInventoryParent;
+
 	[SerializeField] GameObject locationTextBG;
 	[SerializeField] GameObject locationIndexText;
 	[SerializeField] Text locationText;
@@ -41,6 +44,7 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject furtherEncounterButton2;
 	[SerializeField] GameObject furtherEncounterButton3;
 	[SerializeField] GameObject furtherEncounterButton4;
+	public GameObject delayedEncounterButton;
 
 	[SerializeField] GameObject itemListBG;
 	//[SerializeField] EncounterObtainedItemList currentItemList;
@@ -75,7 +79,7 @@ public class MapSceneManager : MonoBehaviour {
 	void Start() {
 
 //TODO For testing purposes, update this to whicever tile you need to start at
-		currentLocation = GameObject.Find("15F");
+		currentLocation = GameObject.Find("16C");
 		UpdateLocationBG();
 
 		//currentEncounter.myEncounterScriptable = gameObject.GetComponent<EncounterManager>().encounterTextScriptables[298];
@@ -83,6 +87,10 @@ public class MapSceneManager : MonoBehaviour {
 
 		//ArriveAtLocation(currentLocation);
 		//MoveOn();
+
+		OpenLocationUI();
+		//OpenEncounterUI();
+		//CloseEncounterUI();
 	}
 
 
@@ -92,13 +100,26 @@ public class MapSceneManager : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown(KeyCode.I)) {
-			if (inventoryBG.GetComponent<Animator>().GetBool("openInventory") == false) {
-				OpenItemListUI();
+			if (characterSheet.GetComponent<Animator>().GetBool("openInventory") == false) {
+				OpenCharacterSheet();
 			}
 			else {
-				CloseItemListUI();
+				CloseCharacterSheet();
 			}
 		}
+	}
+
+
+	void OpenCharacterSheet() {
+		characterSheet.GetComponent<Animator>().SetBool("openInventory", true);
+	}
+
+
+	void CloseCharacterSheet() {
+		characterSheet.GetComponent<Animator>().SetBool("openInventory", false);
+		characterSheetInventoryParent.GetComponent<MapSceneInventoryManager>().LogInventory();
+		inventoryParent.GetComponent<MapSceneInventoryManager>().InitializeInventory();
+
 	}
 
 	void ChooseNewLocationTile () {
@@ -162,8 +183,8 @@ public class MapSceneManager : MonoBehaviour {
 		//adjacentTiles.Clear();
 
 		currentLocationTextIndex = 0;
-		UpdateLocationBG();
 		OpenLocationUI();
+		UpdateLocationBG();
 	}
 
 
@@ -188,7 +209,7 @@ public class MapSceneManager : MonoBehaviour {
 			//currentEncounter.movesTwoSpaces = false;
 		}
 
-		if (currentLocationTextIndex == currentLocation.GetComponent<ScriptableMapTileReader>().locationText.Length -1) {
+		if (currentLocationTextIndex >= currentLocation.GetComponent<ScriptableMapTileReader>().locationText.Length -1) {
 			progressLocationTextButton.SetActive(false);
 
 			//If the current location has an ENCOUNTER
@@ -216,6 +237,87 @@ public class MapSceneManager : MonoBehaviour {
 			else {
 				locationEncounterButton3.SetActive(true);
 				locationEncounterButton3.GetComponentInChildren<Text>().text = currentLocation.GetComponent<ScriptableMapTileReader>().encounterOptionText3;
+			}
+
+
+			//print("Current settlement index checked: " + currentLocation.GetComponent<ScriptableMapTileReader>().mySettlementIndex);
+			//If the current tile has a settlement and they have already been warned
+			if (currentLocation.GetComponent<ScriptableMapTileReader>().mySettlementIndex != 0) {
+
+				bool alreadyWarnedSettlement = false;
+				switch (currentLocation.GetComponent<ScriptableMapTileReader>().mySettlementIndex) {
+					case 1: //Bridgefields
+						if (CharacterManager.warnedBridgefields) {
+							print("Already warned Bridgefields");
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					case 2: //Bywater
+						if (CharacterManager.warnedBywater) {
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					case 3: //Frogmorton
+						if (CharacterManager.warnedFrogmorton) {
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					case 4: //Hobbiton
+						if (CharacterManager.warnedHobbiton) {
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					case 5: //Marish
+						if (CharacterManager.warnedMarish) {
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					case 6: //Scary
+						if (CharacterManager.warnedScary) {
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					case 7: //Stock
+						if (CharacterManager.warnedStock) {
+							print ("Already warned Stock");
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					case 8: //Tuckborough
+						if (CharacterManager.warnedTuckborough) {
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					case 9: //Whitfurrows
+						if (CharacterManager.warnedWhitfurrows) {
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					case 10: //Woodhall
+						if (CharacterManager.warnedWoodhall) {
+							alreadyWarnedSettlement = true;
+						}
+						break;
+					default:
+						Debug.Log("What settlement is this supposed to be?");
+						break;
+				}
+
+				if (alreadyWarnedSettlement) {
+					if (currentLocation.GetComponent<ScriptableMapTileReader>().myMerchant != null) {
+						currentEncounter.myEncounterScriptable = GetComponent<EncounterManager>().encounterTextScriptables[464];
+						UpdateEncounterBG();
+						CloseLocationUI();
+						OpenEncounterUI();
+					}
+					else {
+						print("Already warned this settlement, but it doesn't have a merchant");
+						currentEncounter.myEncounterScriptable = GetComponent<EncounterManager>().encounterTextScriptables[465];
+						UpdateEncounterBG();
+						CloseLocationUI();
+						OpenEncounterUI();
+					}
+				}
 			}
 
 			//TOMAYBEDO Move this if-statement to a separate public function, to be used for the OnClick() for any "merchant encounter" buttons
@@ -291,9 +393,9 @@ public class MapSceneManager : MonoBehaviour {
 				progressEncounterTextButton.SetActive(false);
 			}
 
-			if (currentEncounter.myEncounterScriptable.obtainsItems) {
-				OpenItemListUI();
-			}
+			//if (currentEncounter.myEncounterScriptable.obtainsItems) {
+			//	OpenItemListUI();
+			//}
 
 			//If the player is allowed to MOVE ON from the current encounter
 			if (currentEncounter.myEncounterScriptable.canMoveOn) {
@@ -335,6 +437,19 @@ public class MapSceneManager : MonoBehaviour {
 				furtherEncounterButton4.GetComponentInChildren<Text>().text = currentEncounter.myEncounterScriptable.furtherEncounter4Text;
 			}
 
+			//If the current encounter has been delayed
+			if (encounterTextBG.GetComponent<ScriptableEncounterReader>().delayedEncounterIndex != 0) {
+				delayedEncounterButton.SetActive(true);
+
+				furtherEncounterButton1.SetActive(false);
+				furtherEncounterButton2.SetActive(false);
+				furtherEncounterButton3.SetActive(false);
+				furtherEncounterButton4.SetActive(false);
+			}
+			else {
+				delayedEncounterButton.SetActive(false);
+			}
+
 			if (riversideTiles.Contains(currentLocation) && currentEncounter.myEncounterScriptable.canJumpInRiver) {
 				furtherEncounterButton4.SetActive(true);
 				furtherEncounterButton4.GetComponentInChildren<Text>().text = "Jump in the River";
@@ -349,6 +464,8 @@ public class MapSceneManager : MonoBehaviour {
 			furtherEncounterButton2.SetActive(false);
 			furtherEncounterButton3.SetActive(false);
 			furtherEncounterButton4.SetActive(false);
+
+			delayedEncounterButton.SetActive(false);
 
 		}
 
@@ -428,6 +545,8 @@ public class MapSceneManager : MonoBehaviour {
 		InventoryManager.copperCarried += currentItemList.copperEarned;
 		itemListBG.GetComponent<ItemListBGScript>().copperText.text = ("Silver: " + currentItemList.copperEarned.ToString());
 
+		inventoryParent.GetComponent<MapSceneInventoryManager>().pouchParent.text = ("Silver: " + InventoryManager.silverCarried + " | Copper: " + InventoryManager.copperCarried);
+
 		print("Current Silver: " + InventoryManager.silverCarried + "|| " + "Current Copper: " + InventoryManager.copperCarried);
 
 		//OpenItemListUI();
@@ -466,6 +585,23 @@ public class MapSceneManager : MonoBehaviour {
 		inventoryBG.GetComponent<Animator>().SetBool("openInventory", false);
 		itemListBG.GetComponent<Animator>().SetBool("openItemList", false);
 		OpenEncounterUI();
+
+		characterSheetInventoryParent.GetComponent<MapSceneInventoryManager>().InitializeInventory();
+	}
+
+	//public void RecompileInventoryBG() {
+	//	//for (int i = 0; i < inventoryParent.GetComponent<MapSceneInventoryManager>().inventoryParents.Length; i++) {
+	//	//	if (inventoryParent.GetComponent<MapSceneInventoryManager>().inventoryParents[i].transform.childCount > 0) {
+	//	//		Destroy(inventoryParent.GetComponent<MapSceneInventoryManager>().inventoryParents[i].transform.GetChild(0).gameObject);
+	//	//	}
+	//	//}
+
+	//	inventoryParent.GetComponent<MapSceneInventoryManager>().InitializeInventory();
+	//}
+
+
+	public void CloseMerchantUI() {
+		MerchantUI.GetComponent<Animator>().SetBool("SlideIn", false);
 	}
 
 

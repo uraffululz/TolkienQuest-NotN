@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf13db3ec76faca4dbc329163d213ea5, type: 3}
   m_Name: Encounter278ItemList
   m_EditorClassIdentifier: 
+  Notes: []
   silverEarned: 0
   copperEarned: 0
   myItemList: []
@@ -54,7 +55,7 @@ MonoBehaviour:
   NumberOfItemsGained: 0
   useItem: 0
   hasItemMovesToEncounter: 134
-  lacksItemMovesToEncounter: 0
+  lacksItemMovesToEncounter: 463
   lackingItemMeansDiseased: 0
   lackingItemMeansPoisoned: 0
   gainDaggerIfYouHaveNoWeapon: 0

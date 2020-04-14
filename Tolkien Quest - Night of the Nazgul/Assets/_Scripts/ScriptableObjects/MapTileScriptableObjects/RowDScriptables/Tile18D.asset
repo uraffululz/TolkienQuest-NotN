@@ -21,6 +21,8 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
+  encounterText4: 
+  encounterIndex4: 0
   actionAddsSkill: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
@@ -40,7 +42,7 @@ MonoBehaviour:
   canGetLost: 0
   randomDirectionRangeMax: 0
   combatHere: 0
-  merchantHere: 0
+  merchantHere: 1
   myMerchantScriptable: {fileID: 0}
   canMoveOn: 0
   timeTaken: 60
@@ -55,3 +57,13 @@ MonoBehaviour:
   limit2Index: 418
   overTimeIndex: 436
   experience: 0
+  changesPlayerLocation: 0
+  changedLocationID: 
+  previousLocationsConsidered: 0
+  locationsConsidered: []
+  locationBasedEncounter: 0
+  alternateLocationEncounter: 0
+  riverSameSideTile1ID: 
+  riverSameSideTile2ID: 
+  riverOtherSideTile1ID: 
+  riverOtherSideTile2ID: 

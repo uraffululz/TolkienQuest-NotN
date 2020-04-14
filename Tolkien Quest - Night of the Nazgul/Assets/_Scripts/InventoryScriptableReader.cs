@@ -82,7 +82,15 @@ public class InventoryScriptableReader : MonoBehaviour {
 		}
 
 		if (itemQuantity > 0) {
+			//Debug.Log("Item was already initialized, so starting here.");
+			if (itemScript.isInfinite) {
+				gameObject.GetComponent<Text>().text = (itemScript.itemName);
+			}
+			else {
+			//Debug.Log("Item is not infinite. New quantity: " + itemQuantity);
 			gameObject.GetComponent<Text>().text = (itemScript.itemName + " x " + itemQuantity);
+			//print(itemScript.itemName + " x " + itemQuantity);
+			}
 		}
 		else {
 			//Destroy this gameObject

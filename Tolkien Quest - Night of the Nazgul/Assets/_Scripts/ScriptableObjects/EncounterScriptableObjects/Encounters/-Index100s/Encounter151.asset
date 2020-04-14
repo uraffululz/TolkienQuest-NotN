@@ -23,8 +23,8 @@ MonoBehaviour:
   rollHowToMoveOnMax: 0
   movesOnTwoSpaces: 0
   moveToSpecificTile: 
-  furtherEncounter1Text: 
-  furtherEncounter1Index: 0
+  furtherEncounter1Text: Continue
+  furtherEncounter1Index: 411
   furtherEncounter2Text: 
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
@@ -49,9 +49,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 0
@@ -72,3 +82,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 1
+  dayLimit1: 2
+  timeLimit1: 360
+  limit1Index: 186
+  dayLimit2: 3
+  timeLimit2: 80
+  limit2Index: 252
+  overTimeIndex: 411
+  warnedSettlement: 0

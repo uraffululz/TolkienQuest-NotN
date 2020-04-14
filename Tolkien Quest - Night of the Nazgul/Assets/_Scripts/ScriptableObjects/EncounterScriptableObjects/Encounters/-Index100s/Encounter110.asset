@@ -21,7 +21,7 @@ MonoBehaviour:
     broken swords, chain mail, and broken flasks and cups.
   isCombat: 0
   isMerchant: 0
-  canMoveOn: 0
+  canMoveOn: 1
   moveOnRandomly: 0
   rollHowToMoveOnMax: 0
   movesOnTwoSpaces: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
   furtherEncounter3Index: 0
   furtherEncounter4Text: 
   furtherEncounter4Index: 0
-  exploreHasMultipleRanges: 1
+  exploreHasMultipleRanges: 0
   actionAddsSkill: 0
   howManyRanges: 4
   range1Min: 0
@@ -52,9 +52,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 1
   obtainedItemList: {fileID: 11400000, guid: 9afcdff5218b763458f30ab93b82d7df, type: 2}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 20

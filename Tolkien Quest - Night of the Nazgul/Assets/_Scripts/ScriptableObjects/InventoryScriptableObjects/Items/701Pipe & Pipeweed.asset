@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Pipe & Pipeweed
   itemIndex: 701
   itemQuantity: 1
-  isInfinite: 1
+  isInfinite: 0
   isStackable: 1
   usableOncePerDay: 0
   usableTwicePerDay: 0

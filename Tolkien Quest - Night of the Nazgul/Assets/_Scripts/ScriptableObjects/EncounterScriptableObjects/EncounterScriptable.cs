@@ -113,4 +113,17 @@ public class EncounterScriptable : ScriptableObject {
 	public bool hasDownstreamRanges;
 	public bool landsOnOtherRiverSide;
 	public bool lowerValueFloats1Space;
+
+	public bool isTimeLocked;
+	public int dayLimit1;
+	public int timeLimit1;
+	public int limit1Index;
+	public int dayLimit2;
+	public int timeLimit2;
+	public int limit2Index;
+	public int overTimeIndex;
+
+	[Space]
+	public int warnedSettlement;
+	//public bool notesTheTime;
 }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tile16C
   m_EditorClassIdentifier: 
   locationID: 16C
+  settlementIndex: 1
   locationText:
   - You pause to check out the fertile scene before you. The meadows of the Bridgefields
     area warm your heart. Seeing a Hobbit farmer working his fields, you wave to catch
@@ -23,6 +24,8 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
+  encounterText4: 
+  encounterIndex4: 0
   actionAddsSkill: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
@@ -57,3 +60,13 @@ MonoBehaviour:
   limit2Index: 0
   overTimeIndex: 0
   experience: 0
+  changesPlayerLocation: 0
+  changedLocationID: 
+  previousLocationsConsidered: 0
+  locationsConsidered: []
+  locationBasedEncounter: 0
+  alternateLocationEncounter: 0
+  riverSameSideTile1ID: 
+  riverSameSideTile2ID: 
+  riverOtherSideTile1ID: 
+  riverOtherSideTile2ID: 

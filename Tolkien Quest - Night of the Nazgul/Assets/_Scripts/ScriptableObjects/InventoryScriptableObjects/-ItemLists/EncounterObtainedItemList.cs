@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewItemListScriptable", menuName = "ScriptableObjects/EncounterObtainedItemListScriptable", order = 0)]
 public class EncounterObtainedItemList : ScriptableObject {
 
+	[SerializeField] string[] Notes;
+
 	public int silverEarned;
 	public int copperEarned;
 

@@ -17,7 +17,7 @@ MonoBehaviour:
   encounterText:
   - You clench your teeth at the pitiful sight. Before you, in the swirling, brown
     waters, lays Hobbiton. The mill is but a ruin; the buildings by the once-placid,
-    blue stream are mostly submerged. Scatered refuse, all that remains of centuries
+    blue stream are mostly submerged. Scattered refuse, all that remains of centuries
     of industrious work, dots the landscape, floating eastward atop the enraged water.
     What evil has wrought this disaster by twisting the forces of nature?
   - Even The Hill has been scarred. The doors of the smials along its flanks stand
@@ -56,9 +56,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 3
@@ -79,3 +89,11 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0

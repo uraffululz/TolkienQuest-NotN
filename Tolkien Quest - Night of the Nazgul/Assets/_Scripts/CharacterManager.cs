@@ -90,4 +90,26 @@ public static class CharacterManager {
 
 	public static bool metTom;
 	public static bool metGildor;
+
+	public static bool warnedBridgefields;
+	public static string warnedBridgefieldsTime;
+	public static bool warnedBywater;
+	public static string warnedBywaterTime;
+	public static bool warnedFrogmorton;
+	public static string warnedFrogmortonTime;
+	public static bool warnedHobbiton;
+	public static string warnedHobbitonTime;
+	public static bool warnedMarish;
+	public static string warnedMarishTime; 
+	public static bool warnedScary;
+	public static string warnedScaryTime;
+	public static bool warnedStock;
+	public static string warnedStockTime;
+	public static bool warnedTuckborough;
+	public static string warnedTuckboroughTime;
+	public static bool warnedWhitfurrows;
+	public static string warnedWhitfurrowsTime;
+	public static bool warnedWoodhall;
+	public static string warnedWoodhallTime;
+	
 }

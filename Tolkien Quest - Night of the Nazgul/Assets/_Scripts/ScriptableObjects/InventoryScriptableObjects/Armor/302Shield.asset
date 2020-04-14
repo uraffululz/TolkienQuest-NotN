@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Shield
   itemIndex: 302
-  armorQuantity: 0
+  armorQuantity: 1
   noTrickeryPenalty: 0
   mySkillIncrease: 0

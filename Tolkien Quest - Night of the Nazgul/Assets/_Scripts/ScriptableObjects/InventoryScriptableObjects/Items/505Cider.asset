@@ -16,7 +16,7 @@ MonoBehaviour:
   itemIndex: 505
   itemQuantity: 1
   isInfinite: 0
-  isStackable: 0
+  isStackable: 1
   usableOncePerDay: 0
   usableTwicePerDay: 0
   isMoney: 0

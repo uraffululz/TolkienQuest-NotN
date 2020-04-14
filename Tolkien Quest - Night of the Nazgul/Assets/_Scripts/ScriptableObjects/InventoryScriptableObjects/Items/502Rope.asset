@@ -15,8 +15,8 @@ MonoBehaviour:
   itemName: Rope
   itemIndex: 502
   itemQuantity: 1
-  isInfinite: 1
-  isStackable: 0
+  isInfinite: 0
+  isStackable: 1
   usableOncePerDay: 0
   usableTwicePerDay: 0
   isMoney: 0

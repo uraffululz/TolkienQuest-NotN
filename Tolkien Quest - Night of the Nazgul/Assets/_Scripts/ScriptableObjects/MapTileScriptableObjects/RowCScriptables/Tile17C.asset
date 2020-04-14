@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tile17C
   m_EditorClassIdentifier: 
   locationID: 17C
+  settlementIndex: 1
   locationText:
   - The up and down travel through the meadows of the Bridgefields area slows you
     down -- is this the wisest route, you wonder?
@@ -22,6 +23,8 @@ MonoBehaviour:
   encounterIndex2: 413
   encounterText3: 
   encounterIndex3: 0
+  encounterText4: 
+  encounterIndex4: 0
   actionAddsSkill: 0
   exploreHasMultipleRanges: 1
   howManyRanges: 2
@@ -56,3 +59,13 @@ MonoBehaviour:
   limit2Index: 0
   overTimeIndex: 0
   experience: 0
+  changesPlayerLocation: 0
+  changedLocationID: 
+  previousLocationsConsidered: 0
+  locationsConsidered: []
+  locationBasedEncounter: 0
+  alternateLocationEncounter: 0
+  riverSameSideTile1ID: 
+  riverSameSideTile2ID: 
+  riverOtherSideTile1ID: 
+  riverOtherSideTile2ID: 

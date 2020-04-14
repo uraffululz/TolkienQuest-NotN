@@ -17,6 +17,7 @@ MonoBehaviour:
   encounterText:
   - 'Your tale arouses the Hobbit''s ire and he agrees to spread the word.
 
+
     <i>You successfully warn Stock!</i>'
   isCombat: 0
   isMerchant: 0
@@ -84,3 +85,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  warnedSettlement: 7

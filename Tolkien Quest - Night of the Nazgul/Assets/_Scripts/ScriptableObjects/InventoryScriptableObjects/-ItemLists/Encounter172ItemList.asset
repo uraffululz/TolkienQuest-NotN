@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf13db3ec76faca4dbc329163d213ea5, type: 3}
   m_Name: Encounter172ItemList
   m_EditorClassIdentifier: 
+  Notes: []
   silverEarned: 0
   copperEarned: 0
   myItemList: []
@@ -48,12 +49,14 @@ MonoBehaviour:
   outOfRangeMovesToEncounter: 0
   encounterIndex: 0
   itemChecked: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
-  checksItemQuantityMin: 1
+  checksItemQuantityMin: 0
   checksItemQuantityMax: 2
   itemsGainedViaQuantity: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99,
     type: 2}
   NumberOfItemsGained: 4
   useItem: 0
+  hasItemMovesToEncounter: 0
+  lacksItemMovesToEncounter: 0
   lackingItemMeansDiseased: 0
   lackingItemMeansPoisoned: 0
   gainDaggerIfYouHaveNoWeapon: 1
