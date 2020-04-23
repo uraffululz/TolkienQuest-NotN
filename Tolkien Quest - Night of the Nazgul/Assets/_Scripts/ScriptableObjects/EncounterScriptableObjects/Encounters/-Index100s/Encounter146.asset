@@ -15,8 +15,11 @@ MonoBehaviour:
   encounterIndex: 146
   miscNotes: []
   encounterText:
-  - As you turn to leave, a spring-loaded trap sends a dart into your shoulder. You
+  - 'As you turn to leave, a spring-loaded trap sends a dart into your shoulder. You
     wince as you pull it out and bind the wound.
+
+
+    <i>You take a random amount of damage (0 - 12)</i>'
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1
@@ -50,9 +53,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 2
@@ -73,3 +86,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  warnedSettlement: 0

@@ -12,15 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
   m_Name: Encounter469
   m_EditorClassIdentifier: 
-  encounterIndex: 469
+  encounterIndex: 0
   miscNotes:
   - When the player has successfully healed their poison at encounter 385 by possessing
     a Healing Herb
   encounterText:
-  - 'You feel weak and feverish! The snake must have been poisonous!
-
-
-    However, you used a healing herb to successfully neutralize the poison.'
+  - You used a healing herb to successfully neutralize the poison.
   isCombat: 0
   isMerchant: 0
   canMoveOn: 1

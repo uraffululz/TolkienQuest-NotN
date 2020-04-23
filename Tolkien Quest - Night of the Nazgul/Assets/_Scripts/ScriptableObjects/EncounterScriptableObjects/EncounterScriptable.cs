@@ -123,6 +123,8 @@ public class EncounterScriptable : ScriptableObject {
 	public int limit2Index;
 	public int overTimeIndex;
 
+	public int addsBonusToNextExplore;
+
 	[Space]
 	public int warnedSettlement;
 	//public bool notesTheTime;

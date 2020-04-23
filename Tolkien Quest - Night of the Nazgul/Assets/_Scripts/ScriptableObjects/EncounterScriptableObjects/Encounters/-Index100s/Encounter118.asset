@@ -15,13 +15,16 @@ MonoBehaviour:
   encounterIndex: 118
   miscNotes: []
   encounterText:
-  - You awake with a throbbing headache, empty of all memory. You cannot remember
+  - 'You awake with a throbbing headache, empty of all memory. You cannot remember
     who you are, where you are, or what brings you where you are, wherever it is.
     Slowly, you begin regaining your memory as your headache throbs.
+
+
+    <i>You take a random amount of damage (0 - 6)</i>'
   isCombat: 0
   isMerchant: 0
-  canMoveOn: 0
-  moveOnRandomly: 0
+  canMoveOn: 1
+  moveOnRandomly: 1
   rollHowToMoveOnMax: 0
   movesOnTwoSpaces: 0
   moveToSpecificTile: 
@@ -33,7 +36,7 @@ MonoBehaviour:
   furtherEncounter3Index: 0
   furtherEncounter4Text: 
   furtherEncounter4Index: 0
-  exploreHasMultipleRanges: 1
+  exploreHasMultipleRanges: 0
   actionAddsSkill: 0
   howManyRanges: 0
   range1Min: 0
@@ -51,9 +54,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 30
   canRestAtNight: 0
   XPGained: 1
@@ -74,3 +87,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  warnedSettlement: 0

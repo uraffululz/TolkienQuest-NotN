@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class MapSceneInventoryManager : MonoBehaviour {
 
+	[SerializeField] MapSceneManager mapSceneManager;
 	[SerializeField] GameObject itemHost;
+	[SerializeField] GameObject itemListInventoryManager;
 
 	public Text pouchParent;
 	public GameObject[] inventoryParents;
 	//public GameObject[] itemHosts;
 
 	public ScriptableObject[] inventoryScriptables;
+
+	[SerializeField] InventoryItemScriptable healingHerbScript;
+	[SerializeField] GameObject herbParent;
 	
 	
 	void Start() {
@@ -365,5 +370,51 @@ public class MapSceneInventoryManager : MonoBehaviour {
 			InventoryManager.slot11Quantity + ", " +
 			InventoryManager.slot12Quantity);
 */
+	}
+
+
+	public void UseItem (GameObject itemParent) {
+		itemParent.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity--;
+		//int UsedItemParentIndex = mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents.IndexOf(item);
+		//int itemNewQuantity = item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity;
+		//item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity = itemNewQuantity;
+		//print(item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
+		itemParent.transform.GetChild(0).GetComponent<InventoryScriptableReader>().InitializeItem();
+		GetComponent<MapSceneInventoryManager>().LogInventory();
+		print("Used the " + itemParent.GetComponentInChildren<InventoryScriptableReader>().objectName + ". Item Quantity: " + itemParent.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
+		//mapSceneManager.GetComponent<MapSceneManager>().UpdateItemListBG();
+		itemListInventoryManager.GetComponent<MapSceneInventoryManager>().InitializeInventory();
+		//mapSceneManager.GetComponent<MapSceneManager>().RecompileInventoryBG();
+	}
+
+	public bool InventoryHoldsHealingHerb () {
+		bool hasHerb = false;
+
+		foreach (GameObject item in GetComponent<MapSceneInventoryManager>().inventoryParents) {
+			if (item.transform.childCount != 0) {
+				if (item.GetComponentInChildren<InventoryScriptableReader>().objectScript == healingHerbScript) {
+					print("Found you some herb, maaaaaan");
+					hasHerb = true;
+					herbParent = item;
+				}
+			}
+		}
+
+		if (hasHerb) {
+			return true;
+		}
+		else {
+			herbParent = null;
+			return false;
+		}
+	}
+
+	public void UseHealingHerb () {
+		if (herbParent != null) {
+			UseItem(herbParent);
+			CharacterManager.statusDiseased = false;
+			CharacterManager.diseaseTimer = 0;
+			mapSceneManager.diseaseIcon.gameObject.SetActive(false);
+		}
 	}
 }

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Tile6A
   m_EditorClassIdentifier: 
   locationID: 6A
+  settlementIndex: 0
   locationText:
-  - A small stand of woods looms beforee you. You rush on and find a small pond with
+  - A small stand of woods looms before you. You rush on and find a small pond with
     clear water. You bend to sip the water, which is refreshingly cool, and resume
     your trek.
   encounterText1: 
@@ -23,6 +24,8 @@ MonoBehaviour:
   encounterIndex2: 0
   encounterText3: 
   encounterIndex3: 0
+  encounterText4: 
+  encounterIndex4: 0
   actionAddsSkill: 0
   exploreHasMultipleRanges: 0
   howManyRanges: 0
@@ -57,3 +60,13 @@ MonoBehaviour:
   limit2Index: 0
   overTimeIndex: 0
   experience: 0
+  changesPlayerLocation: 0
+  changedLocationID: 
+  previousLocationsConsidered: 0
+  locationsConsidered: []
+  locationBasedEncounter: 0
+  alternateLocationEncounter: 0
+  riverSameSideTile1ID: 
+  riverSameSideTile2ID: 
+  riverOtherSideTile1ID: 
+  riverOtherSideTile2ID: 

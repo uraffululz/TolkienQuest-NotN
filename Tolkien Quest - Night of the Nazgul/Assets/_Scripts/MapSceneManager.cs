@@ -23,6 +23,9 @@ public class MapSceneManager : MonoBehaviour {
 
 	[SerializeField] GameObject characterSheet;
 	[SerializeField] GameObject characterSheetInventoryParent;
+	[SerializeField] GameObject useHerbButton;
+	[SerializeField] Image healthBarImage;
+	public Image diseaseIcon;
 
 	[SerializeField] GameObject locationTextBG;
 	[SerializeField] GameObject locationIndexText;
@@ -80,9 +83,11 @@ public class MapSceneManager : MonoBehaviour {
 
 //TODO For testing purposes, update this to whicever tile you need to start at
 		currentLocation = GameObject.Find("16C");
+		currentEncounter = encounterTextBG.GetComponent<ScriptableEncounterReader>();
+		currentEncounter.myEncounterScriptable = GetComponent<EncounterManager>().encounterTextScriptables[298];
+
 		UpdateLocationBG();
 
-		//currentEncounter.myEncounterScriptable = gameObject.GetComponent<EncounterManager>().encounterTextScriptables[298];
 
 
 		//ArriveAtLocation(currentLocation);
@@ -112,6 +117,12 @@ public class MapSceneManager : MonoBehaviour {
 
 	void OpenCharacterSheet() {
 		characterSheet.GetComponent<Animator>().SetBool("openInventory", true);
+		if (CharacterManager.statusDiseased && characterSheetInventoryParent.GetComponent<MapSceneInventoryManager>().InventoryHoldsHealingHerb()) {
+			useHerbButton.GetComponent<Button>().interactable = true;
+		}
+		else {
+			useHerbButton.GetComponent<Button>().interactable = false;
+		}
 	}
 
 
@@ -140,7 +151,7 @@ public class MapSceneManager : MonoBehaviour {
 
 						if (currentEncounter != null && currentEncounter.movesTwoSpaces) {
 							//print("YOU CAN MOVE TWO FUCKING SPACES!");
-							MoveOn(false);
+							MoveOn(2);
 							currentEncounter.movesTwoSpaces = false;
 						}
 						else {
@@ -201,8 +212,25 @@ public class MapSceneManager : MonoBehaviour {
 	public void UpdateLocationBG () {
 		locationIndexText.GetComponentInChildren<Text>().text = ("Location: " + currentLocation.GetComponent<ScriptableMapTileReader>().myLocationID.ToString());
 		locationText.text = currentLocation.GetComponent<ScriptableMapTileReader>().locationText[currentLocationTextIndex];
+
 		locationTimeText.text = "Time: " + currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken.ToString();
+		CharacterManager.currentDayTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
+		CharacterManager.totalTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
+		print("Time Taken Today: " + CharacterManager.currentDayTimeTaken);
+		if (CharacterManager.statusDiseased) {
+			diseaseIcon.gameObject.SetActive(true);
+			CharacterManager.diseaseTimer += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
+			if (CharacterManager.diseaseTimer >= 60) {
+				//print("DiseaseDamageByDivision should be " + CharacterManager.diseaseTimer / 60);
+				int diseaseDamageByDivision = CharacterManager.diseaseTimer / 60;
+				CharacterManager.diseaseTimer -= diseaseDamageByDivision * 60;
+				AlterDamage(diseaseDamageByDivision);
+				print("You took " + diseaseDamageByDivision + "damage from your disease. Disease Timer: " + CharacterManager.diseaseTimer);
+			}
+		}
+
 		locationXPText.text = "Experience: " + currentLocation.GetComponent<ScriptableMapTileReader>().XPGained.ToString();
+		CharacterManager.totalXP += currentLocation.GetComponent<ScriptableMapTileReader>().XPGained;
 
 		if (currentEncounter != null) {
 			//If movesTwoSpaces wasn't already false (most of the time it will be), do it now
@@ -379,11 +407,47 @@ public class MapSceneManager : MonoBehaviour {
 
 
 	public void UpdateEncounterBG () {
-		encounterIndexText.GetComponentInChildren<Text>().text = ("Encounter: " + currentEncounter.myEncounterScriptable.encounterIndex.ToString());
-		encounterText.text = currentEncounter.myEncounterScriptable.encounterText[currentEncounterTextIndex];
-		encounterTimeText.text = "Time: " + currentEncounter.myEncounterScriptable.timeTaken.ToString();
-		encounterXPText.text = "Experience: " + currentEncounter.myEncounterScriptable.XPGained.ToString();
+		if (currentEncounter.myEncounterScriptable.encounterIndex != 0) {
+			encounterIndexText.GetComponentInChildren<Text>().text = ("Encounter: " + currentEncounter.myEncounterScriptable.encounterIndex.ToString());
+		}
+		else {
+			encounterIndexText.GetComponentInChildren<Text>().text = "";
+		}
 
+		//Display the encounter's DESCRIPTIVE TEXT and DIALOGUE
+		encounterText.text = currentEncounter.myEncounterScriptable.encounterText[currentEncounterTextIndex];
+
+		if (currentEncounter.myEncounterScriptable.timeTaken != 0) {
+			encounterTimeText.text = "Time: " + currentEncounter.myEncounterScriptable.timeTaken.ToString();
+			CharacterManager.currentDayTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
+			CharacterManager.totalTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
+			print("Time Taken Today: " + CharacterManager.currentDayTimeTaken);
+		}
+		else {
+			encounterTimeText.text = "";
+		}
+
+		if (currentEncounter.myEncounterScriptable.XPGained != 0) {
+			encounterXPText.text = "Experience: " + currentEncounter.myEncounterScriptable.XPGained.ToString();
+			CharacterManager.totalXP += currentEncounter.myEncounterScriptable.XPGained;
+		}
+		else {
+			encounterXPText.text = "";
+		}
+
+		if (CharacterManager.statusDiseased) {
+			diseaseIcon.gameObject.SetActive(true);
+			CharacterManager.diseaseTimer += currentEncounter.myEncounterScriptable.timeTaken;
+			if (CharacterManager.diseaseTimer >= 60) {
+				//print("DiseaseDamageByDivision should be " + CharacterManager.diseaseTimer / 60);
+				int diseaseDamageByDivision = CharacterManager.diseaseTimer / 60;
+				CharacterManager.diseaseTimer -= diseaseDamageByDivision * 60;
+				AlterDamage(diseaseDamageByDivision);
+				print("You took " + diseaseDamageByDivision + "damage from your disease. Disease Timer: " + CharacterManager.diseaseTimer);
+			}
+		}
+
+		//If the player is reading the FINAL segment of the current encounter's DESCRIPTIVE TEXT and DIALOGUE
 		if (currentEncounterTextIndex >= currentEncounter.myEncounterScriptable.encounterText.Length - 1) {
 			if (currentEncounter.myEncounterScriptable.moveToSpecificTile != "" && !currentEncounter.myEncounterScriptable.canMoveOn) {
 				progressEncounterTextButton.SetActive(true);
@@ -456,6 +520,7 @@ public class MapSceneManager : MonoBehaviour {
 			}
 		}
 		else {
+			//If the player is still progressing through the current encounter's DESCRIPTIVE TEXT and DIALOGUE
 			progressEncounterTextButton.SetActive(true);
 			moveOnEncounterButton.SetActive(false);
 
@@ -635,7 +700,7 @@ public class MapSceneManager : MonoBehaviour {
 	}
 
 
-	public void MoveOn (bool initiatedByButton) { //Not using this bool at the moment, BTW
+	public void MoveOn (int Location1Encounter2) {
 		CloseEncounterUI();
 		CloseLocationUI();
 
@@ -659,10 +724,21 @@ public class MapSceneManager : MonoBehaviour {
 		if (moveOnInRandomDirection) {
 			GameObject randomTile = adjacentTiles[Random.Range(0, adjacentTiles.Count)];
 			randomTile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = true;
-			randomTile.GetComponent<MeshRenderer>().material.color = Color.red;
+			randomTile.GetComponent<MeshRenderer>().material.color = Color.cyan;
 
-			CharacterManager.currentDayTimeTaken += (currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken * 2);
-			CharacterManager.totalTimeTaken += (currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken * 2);
+			//Moving on in a random direction TAKES ADDITIONAL TIME
+			print("Moving on randomly takes additional time");
+			if (Location1Encounter2 == 1) {
+				CharacterManager.currentDayTimeTaken += (currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken);
+				CharacterManager.totalTimeTaken += (currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken);
+			}
+			else if (Location1Encounter2 == 2) {
+				CharacterManager.currentDayTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
+				CharacterManager.totalTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
+			}
+			else {
+				print("You fucked up");
+			}
 		}
 		//else if (moveOnToSpecificTile) {
 		//	//GameObject.chosenTile = adj
@@ -672,16 +748,7 @@ public class MapSceneManager : MonoBehaviour {
 				tile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = true;
 				tile.GetComponent<MeshRenderer>().material.color = Color.red;
 			}
-
-			CharacterManager.currentDayTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
-			CharacterManager.totalTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
 		}
-
-		CharacterManager.totalXP += currentLocation.GetComponent<ScriptableMapTileReader>().XPGained;
-
-		print("Time Taken Today: " + CharacterManager.currentDayTimeTaken);
-		//print("Total time: " + CharacterManager.totalTimeTaken);
-		//print("Total XP: " + CharacterManager.totalXP);
 
 		moveOnInRandomDirection = false;
 
@@ -717,7 +784,8 @@ public class MapSceneManager : MonoBehaviour {
 		print("You took " + newDamage + " more damage.");
 
 		if (CharacterManager.damageTaken >= CharacterManager.enduranceTotal) {
-			if (MapSceneManager.currentEncounter.myEncounterScriptable.encounterIndex == 357) {
+			CharacterManager.damageTaken = CharacterManager.enduranceTotal;
+			if (currentEncounter.myEncounterScriptable.encounterIndex == 357) {
 				//Proceed to Encounter 337
 				print("The snake's poison killed you");
 				currentEncounter.DelayEncounterUpdate(337);
@@ -727,32 +795,38 @@ public class MapSceneManager : MonoBehaviour {
 				GameOver();
 			}
 		}
+		else if (CharacterManager.damageTaken < 0) {
+			print("You are fully healed");
+			CharacterManager.damageTaken = 0;
+			//print("Damage taken: " + CharacterManager.damageTaken + "/ " + CharacterManager.enduranceTotal);
+		}
 		else {
-			if (MapSceneManager.currentEncounter.myEncounterScriptable.encounterIndex == 357) {
+			if (currentEncounter.myEncounterScriptable.encounterIndex == 357) {
 				int thisRoll = Random.Range(2, 13);
 				if (thisRoll <= 8) {
 					print("Taking 3 more poison damage");
 					print("Current Damage Taken:" + CharacterManager.damageTaken + "/" + CharacterManager.enduranceTotal);
-					currentEncounter.DelayEncounterUpdate(357);
+					currentEncounter.DelayEncounterUpdate(470);
 					//currentEncounter.UpdateEncounter(357);
 				}
 				else {
-					print ("Tom Bombadil saved your ass!");
-					print("Current HP:" + CharacterManager.damageTaken + "/" + CharacterManager.enduranceTotal);
+					//print ("Tom Bombadil saved your ass!");
+					print("Current Damage Taken:" + CharacterManager.damageTaken + "/" + CharacterManager.enduranceTotal);
 					currentEncounter.DelayEncounterUpdate(323);
 					//currentEncounter.UpdateEncounter(323);
 				}
 			}
 		}
-		
-		if (CharacterManager.damageTaken < 0) {
-			print ("You are fully healed");
 
-			CharacterManager.damageTaken = 0;
-			//print("Damage taken: " + CharacterManager.damageTaken + "/ " + CharacterManager.enduranceTotal);
+//TODO Create a "DamageTaken" text on the UI (below the player's health bar) to display on-screen the amount of damage taken. This should clear things up.
 
-		}
+		UpdateHealthBar();
+	}
 
+	public void UpdateHealthBar () {
+		//print((float)(CharacterManager.enduranceTotal - CharacterManager.damageTaken) / CharacterManager.enduranceTotal);
+
+		healthBarImage.fillAmount = (float)(CharacterManager.enduranceTotal - CharacterManager.damageTaken) / CharacterManager.enduranceTotal;
 	}
 
 

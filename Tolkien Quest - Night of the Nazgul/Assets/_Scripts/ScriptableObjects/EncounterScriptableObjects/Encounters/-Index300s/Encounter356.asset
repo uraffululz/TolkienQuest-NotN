@@ -15,8 +15,11 @@ MonoBehaviour:
   encounterIndex: 356
   miscNotes: []
   encounterText:
-  - A fever rises within you; you aree terribly thirsty. You get to your feet. You
+  - 'A fever rises within you; you are terribly thirsty. You get to your feet. You
     have been infected with a disease similar to Rabies.
+
+
+    (You will continue to take damage every hour until you use a healing herb.)'
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -24,8 +27,8 @@ MonoBehaviour:
   rollHowToMoveOnMax: 0
   movesOnTwoSpaces: 0
   moveToSpecificTile: 
-  furtherEncounter1Text: 
-  furtherEncounter1Index: 0
+  furtherEncounter1Text: Continue
+  furtherEncounter1Index: 1
   furtherEncounter2Text: 
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
@@ -50,13 +53,17 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 1
   obtainedItemList: {fileID: 11400000, guid: f4bb66ebe5d79e44aaefba849d712b7f, type: 2}
   exploreRangeDeterminesItems: 0
   loseItems: 0
   loseAllItems: 0
-  checksForSpecificItem: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
   checksItemQuantity: 0
   useSpecificItem: {fileID: 0}
   timeTaken: 30
@@ -79,3 +86,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  warnedSettlement: 0

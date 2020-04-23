@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
   m_Name: Encounter465
   m_EditorClassIdentifier: 
-  encounterIndex: 465
+  encounterIndex: 0
   miscNotes:
   - When the player has already warned a settlement, but the location has no merchant
   encounterText:

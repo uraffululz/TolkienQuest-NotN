@@ -11,12 +11,16 @@ public class ScriptableEncounterReader : MonoBehaviour {
 	[SerializeField] GameObject mapSceneInventoryManager;
 	[SerializeField] GameObject itemListInventoryManager;
 
+	public int bonusToNextExplore = 0;
+
 	public bool movesTwoSpaces;
 
 	//[SerializeField] Text encounterTimeText;
 	//[SerializeField] Text encounterXPText;
 
 	[SerializeField] GameObject merchantUI;
+
+	[SerializeField] InventoryItemScriptable healingHerbScript;
 
 	public int delayedEncounterIndex = 0;
 
@@ -111,17 +115,17 @@ public class ScriptableEncounterReader : MonoBehaviour {
 						if (randomRoll <= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMax) {
 							print("You are lost. Moving on in a random direction");
 							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
-							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(1);
 						}
 						else {
 							print("Moving on in the direction of your choice");
 							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
-							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(1);
 						}
 					}
 					else {
 						mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
-						mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+						mapSceneManager.GetComponent<MapSceneManager>().MoveOn(1);
 
 					}
 				}
@@ -176,7 +180,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		////TODO These are for TESTING PURPOSES ONLY
 		//Directly assign the Encounter Index, to bring it up "for inspection"
 Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 385//445//128//354//421//466//151//278//110//354//222//385//336//216//319//452//204//158
+		encounterIndex = 164//268//165//146//118//361//356//364//385//445//128//354//421//466//151//278//110//354//222//336//216//319//452//204//158
 			;
 
 		print("Encounter index: " + encounterIndex);
@@ -235,152 +239,161 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 	void DetermineEncounterBGFromEncounter (int furtherEncounterButton, int furtherEncounterIndex) {
 		if (MapSceneManager.currentEncounter.myEncounterScriptable != null) {
 			if (furtherEncounterButton == 1 && MapSceneManager.currentEncounter.myEncounterScriptable.exploreHasMultipleRanges) {
-			int exploreRoll = Random.Range(2, 13);
-			bool rolledWithinRanges = false;
+				int exploreRoll = Random.Range(2, 13);
+				bool rolledWithinRanges = false;
 
-			if (MapSceneManager.currentEncounter.myEncounterScriptable.actionAddsSkill == EncounterScriptable.actionSkill.General) {
-				exploreRoll += CharacterManager.mySkillGeneralTotal;
-				print("Adding General skill bonus");
-			}
-			else if (MapSceneManager.currentEncounter.myEncounterScriptable.actionAddsSkill == EncounterScriptable.actionSkill.Trickery) {
-				exploreRoll += CharacterManager.mySkillTrickeryTotal;
-				print("Adding Trickery skill bonus");
-			}
-			else if (MapSceneManager.currentEncounter.myEncounterScriptable.actionAddsSkill == EncounterScriptable.actionSkill.Perception) {
-				exploreRoll += CharacterManager.mySkillPerceptionTotal;
-				print("Adding Perception skill bonus");
-			}
-//TODO Finish this list, adding the other relevant skill totals
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.actionAddsSkill == EncounterScriptable.actionSkill.General) {
+					exploreRoll += CharacterManager.mySkillGeneralTotal;
+					print("Adding General skill bonus");
+				}
+				else if (MapSceneManager.currentEncounter.myEncounterScriptable.actionAddsSkill == EncounterScriptable.actionSkill.Trickery) {
+					exploreRoll += CharacterManager.mySkillTrickeryTotal;
+					print("Adding Trickery skill bonus");
+				}
+				else if (MapSceneManager.currentEncounter.myEncounterScriptable.actionAddsSkill == EncounterScriptable.actionSkill.Perception) {
+					exploreRoll += CharacterManager.mySkillPerceptionTotal;
+					print("Adding Perception skill bonus");
+				}
+	//TODO Finish this list, adding the other relevant skill totals
 
-			print("Explore roll: " + exploreRoll);
+				print("Explore roll: " + exploreRoll);
 
-			if (MapSceneManager.currentEncounter.myEncounterScriptable.howManyRanges > 0) {
-				MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1 = new RangeInt(MapSceneManager.currentEncounter.myEncounterScriptable.range1Min, MapSceneManager.currentEncounter.myEncounterScriptable.range1Length);
-
-				if (exploreRoll >= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.start &&
-					exploreRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.end) {
-					rolledWithinRanges = true;
-					furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range1FurtherIndex;
-					print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.start + " - " +
-						MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.end);
-
-						//The Player's attempt to RUN AWAY FAILS
-						if (MapSceneManager.currentEncounter.myEncounterScriptable.hasRunAwayRange) {
-							print("You failed to Run Away!");
-//INITIATE COMBAT AND OPEN CombatBG
-//The Enemy attacks first
-//CombatManager.whoAttacksFirst = enemy;
+				if (bonusToNextExplore != 0) {
+					exploreRoll += bonusToNextExplore;
+					print("Added bonus. New Explore Roll: " + exploreRoll);
+				}
+				bonusToNextExplore = 0;
 
 
-//IF COMBAT HAS ALREADY BEEN INITIATED (i.e. mapScenemanager.currentEncounter.isInCombat == true)
-//Keep the player in the current combat bout (with the current enemy's current stats), and let the enemy attack immediately after the player fails to run away
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.howManyRanges > 0) {
+					MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1 = new RangeInt(MapSceneManager.currentEncounter.myEncounterScriptable.range1Min, MapSceneManager.currentEncounter.myEncounterScriptable.range1Length);
 
-						}
-
-						//For now this only applies to Encounter 354
-						if (myEncounterScriptable.exploreRangeDeterminesItems) {
-							myEncounterScriptable.obtainedItemList.silverEarned = 0;
-							print("You failed to steal from the troll. Current Silver: " + InventoryManager.silverCarried);
-						}
-					}
-			}
-
-			if (MapSceneManager.currentEncounter.myEncounterScriptable.howManyRanges > 1) {
-				MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2 = new RangeInt(MapSceneManager.currentEncounter.myEncounterScriptable.range2Min, MapSceneManager.currentEncounter.myEncounterScriptable.range2Length);
-				if (exploreRoll >= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.start &&
-					exploreRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.end) {
+					if (exploreRoll >= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.start &&
+						exploreRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.end) {
 						rolledWithinRanges = true;
-						furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range2FurtherIndex;
-						print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.start + " - " +
-								MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.end);
+						furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range1FurtherIndex;
+						print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.start + " - " +
+							MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange1.end);
 
-						//The Player's SNEAK ATTACK succeeds, allowing them extra damage for the first attack in the following combat
-						if (MapSceneManager.currentEncounter.myEncounterScriptable.hasSneakAttackRange) {
-//INITIATE COMBAT AND OPEN CombatBG
-//The Player's FIRST ATTACK adds his/her Trickery bonus to their OB stat
-							print("Sneak attack successful");
-							CharacterManager.sneakAttackBonus = CharacterManager.mySkillTrickeryTotal;
-//During their first attack, apply the sneakAttackBonus stat to the Player's various OB stat bonuses
-//(In the CombatManager script) Each round after attacking, set sneakAttackBonus back to 0 if it isn't already
+							//The Player's attempt to RUN AWAY FAILS
+							if (MapSceneManager.currentEncounter.myEncounterScriptable.hasRunAwayRange) {
+								print("You failed to Run Away!");
+	//INITIATE COMBAT AND OPEN CombatBG
+	//The Enemy attacks first
+	//CombatManager.whoAttacksFirst = enemy;
 
+
+	//IF COMBAT HAS ALREADY BEEN INITIATED (i.e. mapScenemanager.currentEncounter.isInCombat == true)
+	//Keep the player in the current combat bout (with the current enemy's current stats), and let the enemy attack immediately after the player fails to run away
+
+							}
+
+							//For now this only applies to Encounter 354
+							if (myEncounterScriptable.exploreRangeDeterminesItems) {
+								myEncounterScriptable.obtainedItemList.silverEarned = 0;
+								print("You failed to steal from the troll. Current Silver: " + InventoryManager.silverCarried);
+							}
 						}
+				}
+
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.howManyRanges > 1) {
+					MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2 = new RangeInt(MapSceneManager.currentEncounter.myEncounterScriptable.range2Min, MapSceneManager.currentEncounter.myEncounterScriptable.range2Length);
+					if (exploreRoll >= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.start &&
+						exploreRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.end) {
+							rolledWithinRanges = true;
+							furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range2FurtherIndex;
+							print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.start + " - " +
+									MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.end);
+
+							//The Player's SNEAK ATTACK succeeds, allowing them extra damage for the first attack in the following combat
+							if (MapSceneManager.currentEncounter.myEncounterScriptable.hasSneakAttackRange) {
+	//INITIATE COMBAT AND OPEN CombatBG
+	//The Player's FIRST ATTACK adds his/her Trickery bonus to their OB stat
+								print("Sneak attack successful");
+								CharacterManager.sneakAttackBonus = CharacterManager.mySkillTrickeryTotal;
+	//During their first attack, apply the sneakAttackBonus stat to the Player's various OB stat bonuses
+	//(In the CombatManager script) Each round after attacking, set sneakAttackBonus back to 0 if it isn't already
+
+							}
 
 
-						//For now this only applies to Encounter 354
-						if (myEncounterScriptable.exploreRangeDeterminesItems) {
-						//InventoryManager.silverCarried += 5;
-						myEncounterScriptable.obtainedItemList.silverEarned = 5;
-						print("You stole 5 silver from the troll. Current Silver: " + InventoryManager.silverCarried);
+							//For now this only applies to Encounter 354
+							if (myEncounterScriptable.exploreRangeDeterminesItems) {
+							//InventoryManager.silverCarried += 5;
+							myEncounterScriptable.obtainedItemList.silverEarned = 5;
+							print("You stole 5 silver from the troll. Current Silver: " + InventoryManager.silverCarried);
+						}
 					}
 				}
-			}
 
-			if (MapSceneManager.currentEncounter.myEncounterScriptable.howManyRanges > 2) {
-				MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3 = new RangeInt(MapSceneManager.currentEncounter.myEncounterScriptable.range3Min, MapSceneManager.currentEncounter.myEncounterScriptable.range3Length);
-				if (exploreRoll >= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3.start &&
-					exploreRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3.end) {
-					rolledWithinRanges = true;
-					furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range3FurtherIndex;
-					print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3.start + " - " +
-							MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3.end);
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.howManyRanges > 2) {
+					MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3 = new RangeInt(MapSceneManager.currentEncounter.myEncounterScriptable.range3Min, MapSceneManager.currentEncounter.myEncounterScriptable.range3Length);
+					if (exploreRoll >= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3.start &&
+						exploreRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3.end) {
+						rolledWithinRanges = true;
+						furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range3FurtherIndex;
+						print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3.start + " - " +
+								MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange3.end);
+					}
 				}
-			}
 
-			if (MapSceneManager.currentEncounter.myEncounterScriptable.howManyRanges > 3) {
-				MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4 = new RangeInt(MapSceneManager.currentEncounter.myEncounterScriptable.range4Min, MapSceneManager.currentEncounter.myEncounterScriptable.range4Length);
-				if (exploreRoll >= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4.start &&
-					exploreRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4.end) {
-					rolledWithinRanges = true;
-					furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range4FurtherIndex;
-					print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4.start + " - " +
-							MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4.end);
+				if (MapSceneManager.currentEncounter.myEncounterScriptable.howManyRanges > 3) {
+					MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4 = new RangeInt(MapSceneManager.currentEncounter.myEncounterScriptable.range4Min, MapSceneManager.currentEncounter.myEncounterScriptable.range4Length);
+					if (exploreRoll >= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4.start &&
+						exploreRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4.end) {
+						rolledWithinRanges = true;
+						furtherEncounterIndex = MapSceneManager.currentEncounter.myEncounterScriptable.range4FurtherIndex;
+						print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4.start + " - " +
+								MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange4.end);
+					}
 				}
-			}
 
-			//TOMMAYBEDO Display the currently-rolled encounter's description (e.g. "Roll 2-5: Move on", etc.)
+				//TOMMAYBEDO Display the currently-rolled encounter's description (e.g. "Roll 2-5: Move on", etc.)
 
-			if (rolledWithinRanges == false) {
-				//If the number chosen doesn't belong to any of the other "Ranges"
-				if (MapSceneManager.currentEncounter.myEncounterScriptable.rangeFailMeansMoveOn) {
-					//If the player is meant to move on when rolling out of range
-					print("Failed to roll within exploration ranges. Moving on");
-					if (MapSceneManager.currentEncounter.myEncounterScriptable.canGetLost) {
-						//	//If the player is then meant to move in a random direction
-						int randomRoll = Random.Range(2, 13);
-						randomRoll += CharacterManager.mySkillGeneralTotal;
+				if (rolledWithinRanges == false) {
+					//If the number chosen doesn't belong to any of the other "Ranges"
+					if (MapSceneManager.currentEncounter.myEncounterScriptable.rangeFailMeansMoveOn) {
+						//If the player is meant to move on when rolling out of range
+						print("Failed to roll within exploration ranges. Moving on");
+						if (MapSceneManager.currentEncounter.myEncounterScriptable.canGetLost) {
+							//	//If the player is then meant to move in a random direction
+							int randomRoll = Random.Range(2, 13);
+							randomRoll += CharacterManager.mySkillGeneralTotal;
 
-						print("Lost Chance Roll: " + randomRoll);
+							print("Lost Chance Roll: " + randomRoll);
 
-						if (/*randomRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMin &&*/
-							randomRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.randomDirectionChoiceMax) {
-							print("You are lost. Moving on in a random direction");
-							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
-							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+							if (/*randomRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMin &&*/
+								randomRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.randomDirectionChoiceMax) {
+								print("You are lost. Moving on in a random direction");
+								mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = true;
+								mapSceneManager.GetComponent<MapSceneManager>().MoveOn(2);
+							}
+							else {
+								print("Moving on in the direction of your choice");
+								mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
+								mapSceneManager.GetComponent<MapSceneManager>().MoveOn(2);
+							}
 						}
 						else {
-							print("Moving on in the direction of your choice");
 							mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
-							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+							mapSceneManager.GetComponent<MapSceneManager>().MoveOn(2);
 						}
 					}
-					else {
-						mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
-						mapSceneManager.GetComponent<MapSceneManager>().MoveOn(false);
+
+					if (MapSceneManager.currentEncounter.myEncounterScriptable.rangeFailMeansGameOver) {
+						print("Failed to roll within exploration ranges. You are dead");
+
+						mapSceneManager.GetComponent<MapSceneManager>().GameOver();
+
+	//TOMAYBEDO Have unique text for each encounter that leads to automatic death (357, which leads to 337), 364, the one where you drown, etc.)
 					}
 				}
-
-				if (MapSceneManager.currentEncounter.myEncounterScriptable.rangeFailMeansGameOver) {
-					print("Failed to roll within exploration ranges. You are dead");
-
-					mapSceneManager.GetComponent<MapSceneManager>().GameOver();
-				}
 			}
-		}
 		
 		
-		MapSceneManager.currentEncounter.movesTwoSpaces = MapSceneManager.currentEncounter.myEncounterScriptable.movesOnTwoSpaces;
+			MapSceneManager.currentEncounter.movesTwoSpaces = MapSceneManager.currentEncounter.myEncounterScriptable.movesOnTwoSpaces;
 
-		UpdateEncounter(furtherEncounterIndex);
+			UpdateEncounter(furtherEncounterIndex);
 		}
 	}
 
@@ -542,17 +555,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 								print("Found the item you're looking for in your inventory");
 
 								if (!itemUsed && myEncounterScriptable.obtainedItemList.useItem && !item.GetComponentInChildren<InventoryScriptableReader>().isInfinite) {
-									item.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity--;
-									//int UsedItemParentIndex = mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents.IndexOf(item);
-									//int itemNewQuantity = item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity;
-									//item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity = itemNewQuantity;
-									//print(item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
-									item.transform.GetChild(0).GetComponent<InventoryScriptableReader>().InitializeItem();
-									mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().LogInventory();
-									print ("Used the " + item.GetComponentInChildren<InventoryScriptableReader>().objectName + ". Item Quantity: " + item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
-									//mapSceneManager.GetComponent<MapSceneManager>().UpdateItemListBG();
-									itemListInventoryManager.GetComponent<MapSceneInventoryManager>().InitializeInventory();
-									//mapSceneManager.GetComponent<MapSceneManager>().RecompileInventoryBG();
+									mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().UseItem(item);
 									itemUsed = true;
 								}
 
@@ -594,11 +597,16 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 							//UpdateEncounter(469);
 							//return;
 						}
+
+						if (myEncounterScriptable.obtainedItemList.lackingItemMeansDiseased) {
+							print("You immediately used a healing herb to cure disease");
+							DelayEncounterUpdate(471);
+						}
 					}
 					else {
-						//print(CharacterManager.statusDiseased);
 						if (myEncounterScriptable.obtainedItemList.lackingItemMeansDiseased) {
 							CharacterManager.statusDiseased = true;
+							DelayEncounterUpdate(472);
 						}
 
 						//Unique rule for encounter 385
@@ -734,7 +742,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				else if (myEncounterScriptable.hasDamageRanges) {
 					//Only applies to Encounter 118
 					int damageRangeRoll = Random.Range(2, 13);
-					print(damageRangeRoll);
+					print("Damage range roll: " + damageRangeRoll);
 
 					if (damageRangeRoll <= 4) {
 						mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(6);
@@ -745,23 +753,17 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				}
 				else if (myEncounterScriptable.deals50PercentDamage) {
 					CharacterManager.damageTaken = CharacterManager.enduranceTotal / 2;
+					mapSceneManager.GetComponent<MapSceneManager>().UpdateHealthBar();
 				}
 				else {
 					mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(MapSceneManager.currentEncounter.myEncounterScriptable.damageAlteredAmount);
 				}
 			}
 
-			if (CharacterManager.statusDiseased) {
-				if (MapSceneManager.currentEncounter.myEncounterScriptable.curesDisease) {
-					CharacterManager.statusDiseased = false;
-					CharacterManager.diseaseTimer = 0;
-				}
-				else {
-					CharacterManager.diseaseTimer += myEncounterScriptable.timeTaken;
-					if (CharacterManager.diseaseTimer >= 60) {
-						mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(1);
-					}
-				}
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.curesDisease) {
+				CharacterManager.statusDiseased = false;
+				CharacterManager.diseaseTimer = 0;
+				mapSceneManager.GetComponent<MapSceneManager>().diseaseIcon.gameObject.SetActive(false);
 			}
 
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.meetTom) {
@@ -865,6 +867,12 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 						break;
 				}
 			}
+
+
+			if (MapSceneManager.currentEncounter.myEncounterScriptable.addsBonusToNextExplore != 0) {
+				bonusToNextExplore = MapSceneManager.currentEncounter.myEncounterScriptable.addsBonusToNextExplore;
+				print("Adding bonus to next explore roll: " + bonusToNextExplore);
+			}
 			
 
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.autoWin) {
@@ -892,6 +900,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 		delayedEncounterIndex = nextEncounter;
 	}
 
+
 	public void GoToDelayedEncounter() {
 		int delayedIndex = delayedEncounterIndex;
 		delayedEncounterIndex = 0;
@@ -904,4 +913,5 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 		merchantUI.GetComponent<Animator>().SetBool("SlideIn", true);
 
 	}
+	
 }

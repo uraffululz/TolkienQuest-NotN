@@ -20,7 +20,9 @@ MonoBehaviour:
 
     15'' below the floor, you think: What a fool I am! The walls of the pit are smooth;
     it is impossible to climb out without a rope. You curse your own stupidity and
-    call for help, but no one comes. I could rot here, you thnk.'
+    call for help, but no one comes. I could rot here, you think.
+
+    <i>You take a random amount of damage (0 - 12)</i>'
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -43,7 +45,7 @@ MonoBehaviour:
   range1Length: 4
   range1FurtherIndex: 126
   range2Min: 7
-  range2Length: 5
+  range2Length: 99
   range2FurtherIndex: 127
   range3Min: 0
   range3Length: 0
@@ -54,9 +56,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 90
   canRestAtNight: 0
   XPGained: 1
@@ -77,3 +89,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  warnedSettlement: 0

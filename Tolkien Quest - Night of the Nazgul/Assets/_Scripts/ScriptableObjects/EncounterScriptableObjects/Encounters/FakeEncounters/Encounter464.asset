@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
   m_Name: Encounter464
   m_EditorClassIdentifier: 
-  encounterIndex: 464
+  encounterIndex: 0
   miscNotes:
   - When the player has already warned the settlement on the current map tile, just
     let them purchase items from a merchant or move on.

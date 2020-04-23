@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a663adf216f29ce49a97037d4e4bcfe2, type: 3}
   m_Name: Encounter463
   m_EditorClassIdentifier: 
-  encounterIndex: 463
+  encounterIndex: 0
   miscNotes:
   - Second half of encounter 278, used when the Player DOES NOT have the Silver Dagger
   encounterText:
@@ -83,3 +83,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  warnedSettlement: 0

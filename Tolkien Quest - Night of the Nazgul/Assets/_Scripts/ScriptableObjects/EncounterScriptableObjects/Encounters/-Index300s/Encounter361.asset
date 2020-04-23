@@ -22,9 +22,8 @@ MonoBehaviour:
     he produces a bottle of what appears to be wine and asks you to stand, if you
     can.
 
-    <i>Change your damage taken to equal one half of yourEndurance (round down).
 
-'
+    <i>Change your "damage taken" to equal one half of your Endurance (round down).</i>'
   isCombat: 0
   isMerchant: 0
   canMoveOn: 0
@@ -58,13 +57,23 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 60
   canRestAtNight: 0
   XPGained: 5
-  damageAlteredAmount: 0
+  damageAlteredAmount: 1
   dealsRandomDirectDamage: 0
   hasDamageRanges: 0
   deals50PercentDamage: 1
@@ -81,3 +90,12 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  warnedSettlement: 0
