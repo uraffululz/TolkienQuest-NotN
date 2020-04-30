@@ -15,7 +15,7 @@ MonoBehaviour:
   encounterIndex: 264
   miscNotes: []
   encounterText:
-  - You awake freezing, without yoyur weapons or equipment. The rider must have tossed
+  - You awake freezing, without your weapons or equipment. The rider must have tossed
     you into the River to drown. Exhausted, wet and defeated, <i>you stand on the
     same side of the water from which you started, one space downstream. You have
     lost all your equipment.</i>
@@ -52,17 +52,18 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  emptiesInventory: 1
+  logsEmptiedInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
   exploreRangeDeterminesItems: 0
-  loseItems: 1
-  loseAllItems: 1
-  loseWeaponsAndArmor: 1
-  keepSilverDagger: {fileID: 0}
   checksForSpecificItem: {fileID: 0}
   checksItemQuantity: 0
-  useSpecificItem: {fileID: 0}
   timeTaken: 90
   canRestAtNight: 0
   XPGained: 5
@@ -71,6 +72,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -83,3 +85,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 1
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

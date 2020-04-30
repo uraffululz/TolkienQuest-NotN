@@ -12,6 +12,7 @@ public class EncounterObtainedItemList : ScriptableObject {
 
 	[Space]
 	public ScriptableObject[] myItemList;
+	//public int[] myItemQuantities;
 
 	public ScriptableObject myItem1;
 	public int myItem1Quantity;
@@ -25,29 +26,52 @@ public class EncounterObtainedItemList : ScriptableObject {
 	public bool hasItemRanges;
 	public enum addSkillToRange {None, Trickery};
 	public addSkillToRange addedSkill;
+
+	[Space]
+
 	//range variables
+	[Header("Range 1 Attributes", order = 0)]
 	public int itemRange1Min; public int itemRange1Max;
 	public bool range1MultipleItems;
 	public ScriptableObject[] range1Items;
 	public int[] range1ItemQuantities;
+	public bool range1RecoversMoneyPouch;
+	public bool range1RecoversDagger;
+
 	[Space]
+	[Header("Range 2 Attributes", order = 0)]
 	public int itemRange2Min; public int itemRange2Max;
 	public bool range2MultipleItems;
 	public ScriptableObject[] range2Items;
 	public int[] range2ItemQuantities;
+	public bool range2RecoversMoneyPouch;
+	public bool range2RecoversDagger;
+	public bool range2RecoversRandomWeapon;
+	public int obtainsArrowsInRange2;
+
 	[Space]
+	[Header("Range 3 Attributes", order = 0)]
 	public int itemRange3Min; public int itemRange3Max;
 	public bool range3MultipleItems;
 	public ScriptableObject[] range3Items;
 	public int[] range3ItemQuantities;
+	//public bool range3RecoversMoneyPouch;
+	//public bool range3RecoversDagger;
+
+
 	[Space]
+	[Header("Range 4 Attributes", order = 0)]
 	public int itemRange4Min; public int itemRange4Max;
 	public bool range4MultipleItems;
 	public ScriptableObject[] range4Items;
 	public int[] range4ItemQuantities;
+
 	[Space]
+	[Header("Out of Range Attributes", order = 0)]
 	public bool outOfRangeMovesToEncounter;
-	public int encounterIndex;
+	public int outOfRangeEncounterIndex;
+	public bool outOfRangeRecoversAllEquipment;
+	public bool outOfRangeRecoversMoneyPouch;
 
 	[Space]
 
@@ -60,18 +84,24 @@ public class EncounterObtainedItemList : ScriptableObject {
 
 	//public bool checksForSpecificItem;
 	public ScriptableObject itemChecked;
+	public bool quantityCheckIncludesZero;
 	public int checksItemQuantityMin;
 	public int checksItemQuantityMax;
 	public ScriptableObject itemsGainedViaQuantity;
 	public int NumberOfItemsGained;
+
+	[Space]
+
 	public bool useItem;
 	public int hasItemMovesToEncounter;
 	public int lacksItemMovesToEncounter;
-	public bool lackingItemMeansDiseased;
-	public bool lackingItemMeansPoisoned;
+	//public bool lackingItemMeansDiseased;
+	//public bool lackingItemMeansPoisoned;
 
 	[Space]
 
 	public bool gainDaggerIfYouHaveNoWeapon;
 	public InventoryWeaponScriptable dagger;
+	public InventoryWeaponScriptable silverDagger;
+
 }

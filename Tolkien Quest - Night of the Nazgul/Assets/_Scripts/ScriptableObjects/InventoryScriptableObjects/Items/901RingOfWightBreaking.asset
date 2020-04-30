@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6161c947b66d6e42928b390ac08390d, type: 3}
   m_Name: 901RingOfWightBreaking
   m_EditorClassIdentifier: 
+  notes:
+  - '"Disperses" a Wight for 1 day. Usable once per day. (110)'
   itemName: Ring of Wight Breaking
   itemIndex: 0
   itemQuantity: 0

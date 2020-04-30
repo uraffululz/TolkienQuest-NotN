@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f219d3784a176d74194965f0d2cbbd7d, type: 3}
   m_Name: 400MagicChainmail
   m_EditorClassIdentifier: 
+  notes:
+  - No penalty to Trickery. (120)
   itemName: Magic Chainmail
   itemIndex: 400
   armorQuantity: 1

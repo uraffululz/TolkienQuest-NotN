@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf13db3ec76faca4dbc329163d213ea5, type: 3}
   m_Name: Encounter158ItemList
   m_EditorClassIdentifier: 
-  silverEarned: 10
-  copperEarned: 3
+  Notes: []
+  silverEarned: 0
+  copperEarned: 0
   myItemList:
   - {fileID: 11400000, guid: 89755c38d94aa9e44802c41ac8bcb2d7, type: 2}
   - {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
@@ -26,6 +27,7 @@ MonoBehaviour:
   myItem4: {fileID: 0}
   myItem4Quantity: 0
   hasItemRanges: 0
+  addedSkill: 0
   itemRange1Min: 0
   itemRange1Max: 0
   range1MultipleItems: 0
@@ -36,6 +38,7 @@ MonoBehaviour:
   range2MultipleItems: 0
   range2Items: []
   range2ItemQuantities: 
+  obtainsArrowsInRange2: 0
   itemRange3Min: 0
   itemRange3Max: 0
   range3MultipleItems: 0
@@ -49,10 +52,14 @@ MonoBehaviour:
   outOfRangeMovesToEncounter: 0
   encounterIndex: 0
   itemChecked: {fileID: 0}
+  quantityCheckIncludesZero: 0
   checksItemQuantityMin: 0
   checksItemQuantityMax: 0
   itemsGainedViaQuantity: {fileID: 0}
+  NumberOfItemsGained: 0
   useItem: 0
+  hasItemMovesToEncounter: 0
+  lacksItemMovesToEncounter: 0
   lackingItemMeansDiseased: 0
   lackingItemMeansPoisoned: 0
   gainDaggerIfYouHaveNoWeapon: 0

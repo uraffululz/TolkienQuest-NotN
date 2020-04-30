@@ -13,6 +13,8 @@ public class ItemListBGScript : MonoBehaviour {
 	public Image position3Parent;
 	public Image position4Parent;
 	public Image position5Parent;
+	public Image position6Parent;
+
 	public Image[] positionParentList;
 
 	public Button itemListDoneButton;

@@ -15,17 +15,17 @@ MonoBehaviour:
   encounterIndex: 265
   miscNotes: []
   encounterText:
-  - Back at the table, you eat heartily, telling Tom and Goldberry of your acventures
-    thus far. They seem inpressed and interested, showing no surprise at anything
+  - Back at the table, you eat heartily, telling Tom and Goldberry of your adventures
+    thus far. They seem impressed and interested, showing no surprise at anything
     you have to say. After the meal, you decline their offer to stay longer. <i>All
     of your damage taken, disease or any other problems are magically cured.</i>
   - '"I must hurry on," you explain. "Time is working against me and for my enemies."
 
-    Goldberry leaves for a moment and returns carrying one of teh items you saw in
-    the wother room: the small, simple bowl.
+    Goldberry leaves for a moment and returns carrying one of the items you saw in
+    the other room: the small, simple bowl.
 
-    "This is for your," she says, her merry eyes dancing. She seems amused by your
-    indecision. "You will never to hungry if you carry this bowl, for it provides
+    "This is for you," she says, her merry eyes dancing. She seems amused by your
+    indecision. "You will never go hungry if you carry this bowl, for it provides
     one meal a day, every day," she explains.'
   isCombat: 0
   isMerchant: 0
@@ -60,9 +60,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
   obtainsItems: 1
   obtainedItemList: {fileID: 11400000, guid: 9e1d0802c5e9c1d42aef5ad01753a513, type: 2}
+  exploreRangeDeterminesItems: 0
+  loseItems: 0
+  loseAllItems: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
+  useSpecificItem: {fileID: 0}
   timeTaken: 0
   canRestAtNight: 0
   XPGained: 2
@@ -71,6 +81,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 1
+  hasFreeMeal: 1
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -83,3 +94,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

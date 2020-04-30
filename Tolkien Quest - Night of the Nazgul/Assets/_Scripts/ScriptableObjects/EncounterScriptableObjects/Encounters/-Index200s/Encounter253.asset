@@ -50,15 +50,19 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  emptiesInventory: 1
+  logsEmptiedInventory: 1
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 1
   obtainedItemList: {fileID: 11400000, guid: 707329c9c6411b548aef572ee59d29c9, type: 2}
   exploreRangeDeterminesItems: 0
-  loseItems: 0
-  loseAllItems: 0
-  checksForSpecificItem: 0
-  checksItemQuantity: 0
-  useSpecificItem: {fileID: 0}
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
   timeTaken: 134
   canRestAtNight: 0
   XPGained: 4
@@ -67,6 +71,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -79,3 +84,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

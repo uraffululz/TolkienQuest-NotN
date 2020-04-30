@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf13db3ec76faca4dbc329163d213ea5, type: 3}
   m_Name: Encounter251ItemList
   m_EditorClassIdentifier: 
+  Notes: []
   silverEarned: 5
   copperEarned: 0
   myItemList:
-  - {fileID: 11400000, guid: 340cc6413913be745b20e81b9a1eeeaf, type: 2}
+  - {fileID: 11400000, guid: d9eca124610d8d5469df858ba646946c, type: 2}
   - {fileID: 11400000, guid: ee52262212410a542964dca3eaac43d5, type: 2}
-  myItem1: {fileID: 11400000, guid: 340cc6413913be745b20e81b9a1eeeaf, type: 2}
+  myItem1: {fileID: 11400000, guid: d9eca124610d8d5469df858ba646946c, type: 2}
   myItem1Quantity: 1
   myItem2: {fileID: 11400000, guid: ee52262212410a542964dca3eaac43d5, type: 2}
   myItem2Quantity: 1
@@ -37,6 +38,8 @@ MonoBehaviour:
   range2MultipleItems: 0
   range2Items: []
   range2ItemQuantities: 
+  obtainsArrowsInRange2: 0
+  range2RecoversRandomWeapon: 0
   itemRange3Min: 0
   itemRange3Max: 0
   range3MultipleItems: 0
@@ -48,12 +51,17 @@ MonoBehaviour:
   range4Items: []
   range4ItemQuantities: 
   outOfRangeMovesToEncounter: 0
-  encounterIndex: 0
+  outOfRangeEncounterIndex: 0
+  outOfRangeRecoversAllEquipment: 0
   itemChecked: {fileID: 0}
+  quantityCheckIncludesZero: 0
   checksItemQuantityMin: 0
   checksItemQuantityMax: 0
   itemsGainedViaQuantity: {fileID: 0}
+  NumberOfItemsGained: 0
   useItem: 0
+  hasItemMovesToEncounter: 0
+  lacksItemMovesToEncounter: 0
   lackingItemMeansDiseased: 0
   lackingItemMeansPoisoned: 0
   gainDaggerIfYouHaveNoWeapon: 0

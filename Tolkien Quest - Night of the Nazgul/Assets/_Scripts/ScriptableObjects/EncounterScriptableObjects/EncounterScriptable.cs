@@ -68,20 +68,26 @@ public class EncounterScriptable : ScriptableObject {
 	public bool rangeFailMeansGameOver;
 
 	[Header("Inventory Adjustment Variables", order = 1)]
+	public bool emptiesInventory;
+	public bool logsEmptiedInventory;
+	public bool loseWeaponsAndArmor;
+	public InventoryWeaponScriptable keepSilverDagger;
+	//public bool loseAllMoney; This is already part of all the encounters that "Empty Inventory" anyway
+
+	[Space]
+
 	public bool obtainsItems;
 	public EncounterObtainedItemList obtainedItemList;
 	//public EncounterObtainedItemList alternateItemList;
 	public bool exploreRangeDeterminesItems;
 
-	public bool loseItems;
-	public bool loseAllItems;
-	public bool loseWeaponsAndArmor;
-	public InventoryWeaponScriptable keepSilverDagger;
-
-	public ScriptableObject checksForSpecificItem;
-	public bool checksItemQuantity;
-	public InventoryItemScriptable useSpecificItem;
-
+	//public ScriptableObject checksForSpecificItem;
+	//public bool checksItemQuantity;
+	public InventoryItemScriptable mealScript;
+	public float loseMeals;
+	public int costsCopper;
+	//public InventoryItemScriptable useSpecificItem;
+	
 
 
 	[Header("Misc. Variables", order = 1)]
@@ -97,6 +103,7 @@ public class EncounterScriptable : ScriptableObject {
 	public bool hasDamageRanges;
 	public bool deals50PercentDamage;
 	public bool curesDisease;
+	public bool hasFreeMeal;
 	[Space]
 	public bool autoGameOver;
 	public bool autoWin;

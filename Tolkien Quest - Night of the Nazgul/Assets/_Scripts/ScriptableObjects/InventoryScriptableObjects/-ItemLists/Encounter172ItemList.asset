@@ -36,6 +36,7 @@ MonoBehaviour:
   range2MultipleItems: 0
   range2Items: []
   range2ItemQuantities: 
+  obtainsArrowsInRange2: 0
   itemRange3Min: 0
   itemRange3Max: 0
   range3MultipleItems: 0
@@ -49,6 +50,7 @@ MonoBehaviour:
   outOfRangeMovesToEncounter: 0
   encounterIndex: 0
   itemChecked: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
+  quantityCheckIncludesZero: 1
   checksItemQuantityMin: 0
   checksItemQuantityMax: 2
   itemsGainedViaQuantity: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99,

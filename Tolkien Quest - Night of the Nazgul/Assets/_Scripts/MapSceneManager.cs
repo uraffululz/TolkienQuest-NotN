@@ -49,6 +49,9 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject furtherEncounterButton4;
 	public GameObject delayedEncounterButton;
 
+	public bool disableMoveOnButton;
+	public bool disableDelayedEncounterButton;
+
 	[SerializeField] GameObject itemListBG;
 	//[SerializeField] EncounterObtainedItemList currentItemList;
 	[SerializeField] Text itemHost;
@@ -88,7 +91,7 @@ public class MapSceneManager : MonoBehaviour {
 
 		UpdateLocationBG();
 
-
+		disableDelayedEncounterButton = true;
 
 		//ArriveAtLocation(currentLocation);
 		//MoveOn();
@@ -112,10 +115,15 @@ public class MapSceneManager : MonoBehaviour {
 				CloseCharacterSheet();
 			}
 		}
+
+
+		if (!disableDelayedEncounterButton) {
+			print("Delayed encounter button is active");
+		}
 	}
 
 
-	void OpenCharacterSheet() {
+	public void OpenCharacterSheet() {
 		characterSheet.GetComponent<Animator>().SetBool("openInventory", true);
 		if (CharacterManager.statusDiseased && characterSheetInventoryParent.GetComponent<MapSceneInventoryManager>().InventoryHoldsHealingHerb()) {
 			useHerbButton.GetComponent<Button>().interactable = true;
@@ -126,12 +134,12 @@ public class MapSceneManager : MonoBehaviour {
 	}
 
 
-	void CloseCharacterSheet() {
+	public void CloseCharacterSheet() {
 		characterSheet.GetComponent<Animator>().SetBool("openInventory", false);
 		characterSheetInventoryParent.GetComponent<MapSceneInventoryManager>().LogInventory();
 		inventoryParent.GetComponent<MapSceneInventoryManager>().InitializeInventory();
-
 	}
+
 
 	void ChooseNewLocationTile () {
 		//Raycast to select a new currentLocation GameObject/player.position/Player LineRenderer trail
@@ -421,7 +429,7 @@ public class MapSceneManager : MonoBehaviour {
 			encounterTimeText.text = "Time: " + currentEncounter.myEncounterScriptable.timeTaken.ToString();
 			CharacterManager.currentDayTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
 			CharacterManager.totalTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
-			print("Time Taken Today: " + CharacterManager.currentDayTimeTaken);
+			//print("Time Taken Today: " + CharacterManager.currentDayTimeTaken);
 		}
 		else {
 			encounterTimeText.text = "";
@@ -463,7 +471,13 @@ public class MapSceneManager : MonoBehaviour {
 
 			//If the player is allowed to MOVE ON from the current encounter
 			if (currentEncounter.myEncounterScriptable.canMoveOn) {
-				moveOnEncounterButton.SetActive(true);
+				if (!disableMoveOnButton) {
+					moveOnEncounterButton.SetActive(true);
+				}
+				else {
+					moveOnEncounterButton.SetActive(false);
+					disableMoveOnButton = false;
+				}
 			}
 
 			//If the current location has an ENCOUNTER
@@ -502,8 +516,11 @@ public class MapSceneManager : MonoBehaviour {
 			}
 
 			//If the current encounter has been delayed
-			if (encounterTextBG.GetComponent<ScriptableEncounterReader>().delayedEncounterIndex != 0) {
+			if (encounterTextBG.GetComponent<ScriptableEncounterReader>().delayedEncounterIndex != 0 || !disableDelayedEncounterButton) {
+				print("The Delayed Encounter Button is active, which means the Further Buttons aren't. Delayed Index: " +
+					encounterTextBG.GetComponent<ScriptableEncounterReader>().delayedEncounterIndex + " Disabling Delayed button: " + disableDelayedEncounterButton);
 				delayedEncounterButton.SetActive(true);
+				disableDelayedEncounterButton = true;
 
 				furtherEncounterButton1.SetActive(false);
 				furtherEncounterButton2.SetActive(false);
@@ -511,7 +528,14 @@ public class MapSceneManager : MonoBehaviour {
 				furtherEncounterButton4.SetActive(false);
 			}
 			else {
+				//Debug.Log("Delayed Encounter Button should be disabled");
 				delayedEncounterButton.SetActive(false);
+				disableDelayedEncounterButton = true;
+
+				//furtherEncounterButton1.SetActive(true);
+				//furtherEncounterButton2.SetActive(true);
+				//furtherEncounterButton3.SetActive(true);
+				//furtherEncounterButton4.SetActive(true);
 			}
 
 			if (riversideTiles.Contains(currentLocation) && currentEncounter.myEncounterScriptable.canJumpInRiver) {
@@ -540,9 +564,15 @@ public class MapSceneManager : MonoBehaviour {
 
 
 	public void UpdateItemListBG(List<ScriptableObject> myListedItems, List<int> myListedItemQuantities) {
+		//characterSheetInventoryParent.GetComponent<MapSceneInventoryManager>().LogInventory();
+		//inventoryParent.GetComponent<MapSceneInventoryManager>().InitializeInventory();
+
 		EncounterObtainedItemList currentItemList = currentEncounter.myEncounterScriptable.obtainedItemList;
 
 		int additionalSilverEarned = 0;
+
+		//print(myListedItems.Count);
+		//print(myListedItemQuantities.Count);
 
 		for (int i = 0; i < myListedItems.Count; i++) {
 			
@@ -608,11 +638,11 @@ public class MapSceneManager : MonoBehaviour {
 		InventoryManager.silverCarried += (currentItemList.silverEarned + additionalSilverEarned);
 		itemListBG.GetComponent<ItemListBGScript>().silverText.text = ("Silver: " + (currentItemList.silverEarned + additionalSilverEarned).ToString());
 		InventoryManager.copperCarried += currentItemList.copperEarned;
-		itemListBG.GetComponent<ItemListBGScript>().copperText.text = ("Silver: " + currentItemList.copperEarned.ToString());
+		itemListBG.GetComponent<ItemListBGScript>().copperText.text = ("Copper: " + currentItemList.copperEarned.ToString());
 
 		inventoryParent.GetComponent<MapSceneInventoryManager>().pouchParent.text = ("Silver: " + InventoryManager.silverCarried + " | Copper: " + InventoryManager.copperCarried);
 
-		print("Current Silver: " + InventoryManager.silverCarried + "|| " + "Current Copper: " + InventoryManager.copperCarried);
+		//print("Current Silver: " + InventoryManager.silverCarried + "|| " + "Current Copper: " + InventoryManager.copperCarried);
 
 		//OpenItemListUI();
 	}
@@ -643,6 +673,8 @@ public class MapSceneManager : MonoBehaviour {
 		itemListBG.GetComponent<Animator>().SetBool("openItemList", true);
 		CloseLocationUI();
 		CloseEncounterUI();
+
+		//inventoryParent.GetComponent<MapSceneInventoryManager>().InitializeInventory();
 	}
 
 
@@ -683,7 +715,7 @@ public class MapSceneManager : MonoBehaviour {
 				CloseEncounterUI();
 
 				//Open LocationBG
-				//locationTextBG.GetComponent<Animator>().SetBool("SlideTopUIOpen", true);
+				locationTextBG.GetComponent<Animator>().SetBool("SlideTopUIOpen", true);
 
 				if (currentEncounter.myEncounterScriptable.floatsDownstream) {
 					Debug.Log("Resetting 'downstream floating' encounter");
@@ -788,7 +820,7 @@ public class MapSceneManager : MonoBehaviour {
 			if (currentEncounter.myEncounterScriptable.encounterIndex == 357) {
 				//Proceed to Encounter 337
 				print("The snake's poison killed you");
-				currentEncounter.DelayEncounterUpdate(337);
+				currentEncounter.DelayEncounterUpdate(337, false);
 				//currentEncounter.UpdateEncounter(337);
 			}
 			else {
@@ -806,13 +838,13 @@ public class MapSceneManager : MonoBehaviour {
 				if (thisRoll <= 8) {
 					print("Taking 3 more poison damage");
 					print("Current Damage Taken:" + CharacterManager.damageTaken + "/" + CharacterManager.enduranceTotal);
-					currentEncounter.DelayEncounterUpdate(470);
+					currentEncounter.DelayEncounterUpdate(470, false);
 					//currentEncounter.UpdateEncounter(357);
 				}
 				else {
 					//print ("Tom Bombadil saved your ass!");
 					print("Current Damage Taken:" + CharacterManager.damageTaken + "/" + CharacterManager.enduranceTotal);
-					currentEncounter.DelayEncounterUpdate(323);
+					currentEncounter.DelayEncounterUpdate(323, false);
 					//currentEncounter.UpdateEncounter(323);
 				}
 			}

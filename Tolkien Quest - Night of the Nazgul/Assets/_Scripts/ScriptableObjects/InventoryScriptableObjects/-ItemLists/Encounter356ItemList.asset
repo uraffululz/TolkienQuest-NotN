@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf13db3ec76faca4dbc329163d213ea5, type: 3}
   m_Name: Encounter356ItemList
   m_EditorClassIdentifier: 
-  Notes: []
+  Notes:
+  - Checks for Healing Herb to cure disease
   silverEarned: 0
   copperEarned: 0
   myItemList: []
@@ -36,6 +37,8 @@ MonoBehaviour:
   range2MultipleItems: 0
   range2Items: []
   range2ItemQuantities: 
+  obtainsArrowsInRange2: 0
+  range2RecoversRandomWeapon: 0
   itemRange3Min: 0
   itemRange3Max: 0
   range3MultipleItems: 0
@@ -47,16 +50,16 @@ MonoBehaviour:
   range4Items: []
   range4ItemQuantities: 
   outOfRangeMovesToEncounter: 0
-  encounterIndex: 0
+  outOfRangeEncounterIndex: 0
+  outOfRangeRecoversAllEquipment: 0
   itemChecked: {fileID: 11400000, guid: 8fe2e7d91fea15543a25fe508ddf4d7a, type: 2}
+  quantityCheckIncludesZero: 0
   checksItemQuantityMin: 0
   checksItemQuantityMax: 0
   itemsGainedViaQuantity: {fileID: 0}
   NumberOfItemsGained: 0
   useItem: 1
-  hasItemMovesToEncounter: 0
-  lacksItemMovesToEncounter: 0
-  lackingItemMeansDiseased: 1
-  lackingItemMeansPoisoned: 0
+  hasItemMovesToEncounter: 471
+  lacksItemMovesToEncounter: 472
   gainDaggerIfYouHaveNoWeapon: 0
   dagger: {fileID: 0}

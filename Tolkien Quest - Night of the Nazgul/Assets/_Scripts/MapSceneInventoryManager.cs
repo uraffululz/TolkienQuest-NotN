@@ -12,22 +12,38 @@ public class MapSceneInventoryManager : MonoBehaviour {
 	public Text pouchParent;
 	public GameObject[] inventoryParents;
 	//public GameObject[] itemHosts;
+	public List<ScriptableObject> savedInventoryScripts;
+	public List<int> savedInventoryQuantities;
+	public int savedSilver;
+	public int savedCopper;
 
 	public ScriptableObject[] inventoryScriptables;
 
+	[Space]
+
+	[SerializeField] InventoryWeaponScriptable silverDagger;
+	[SerializeField] InventoryWeaponScriptable dagger;
+
+	[Space]
+
 	[SerializeField] InventoryItemScriptable healingHerbScript;
 	[SerializeField] GameObject herbParent;
+
+	[Space]
+
+	[SerializeField] Text charSheetArrowText;
+
+	[Space]
+
+	[SerializeField] bool trackingInitialization;
 	
 	
 	void Start() {
-		//inventoryParents = new List<GameObject>(16);
-		//LogInventory();
 		InitializeInventory();
 	}
 
 
 	public void InitializeInventory () {
-		//itemHosts = new GameObject[15] {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
 		inventoryScriptables = new ScriptableObject[15] {InventoryManager.cloakWornScriptable, InventoryManager.armorWornScriptable, InventoryManager.daggerWornScriptable,
 			InventoryManager.slot1Scriptable, InventoryManager.slot2Scriptable, InventoryManager.slot3Scriptable, InventoryManager.slot4Scriptable, InventoryManager.slot5Scriptable,
 			InventoryManager.slot6Scriptable, InventoryManager.slot7Scriptable, InventoryManager.slot8Scriptable, InventoryManager.slot9Scriptable, InventoryManager.slot10Scriptable,
@@ -40,52 +56,8 @@ public class MapSceneInventoryManager : MonoBehaviour {
 
 					newItemHost.GetComponent<InventoryScriptableReader>().objectScript = inventoryScriptables[i];
 					//newItemHost.GetComponent<InventoryScriptableReader>().itemQuantity = ;
-
 					newItemHost.GetComponent<Text>().text = newItemHost.GetComponent<InventoryScriptableReader>().objectScript.name;
-
-					//itemHosts[i] = newItemHost;
-
 					newItemHost.GetComponent<InventoryScriptableReader>().SetMyObjectType();
-
-					//GameObject objectInInventory = inventoryParents[i];
-					//if (objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().myObjectType == InventoryScriptableReader.objectType.item) {
-					//	switch (i) {
-					//		case 0:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.cloakQuantity; break;
-					//		case 1:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.armorQuantity; break;
-					//		case 2:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.daggerQuantity; break;
-					//		case 3:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot1Quantity; break;
-					//		case 4:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot2Quantity; break;
-					//		case 5:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot3Quantity; break;
-					//		case 6:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot4Quantity; break;
-					//		case 7:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot5Quantity; break;
-					//		case 8:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot6Quantity; break;
-					//		case 9:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot7Quantity; break;
-					//		case 10:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot8Quantity; break;
-					//		case 11:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot9Quantity; break;
-					//		case 12:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot10Quantity; break;
-					//		case 13:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot11Quantity; break;
-					//		case 14:
-					//			objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = InventoryManager.slot12Quantity; break;
-					//		default:
-					//			print("Something fucked up here.");
-					//			break;
-					//	}
-
-					//objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().InitializeItem();
 
 					GameObject objectInInventory = inventoryParents[i];
 					if (objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().myObjectType == InventoryScriptableReader.objectType.item) {
@@ -260,7 +232,6 @@ public class MapSceneInventoryManager : MonoBehaviour {
 						}
 
 						objectInInventory.transform.GetChild(0).GetComponent<InventoryScriptableReader>().InitializeItem();
-
 					}
 				}
 			}
@@ -272,6 +243,11 @@ public class MapSceneInventoryManager : MonoBehaviour {
 		}
 
 		pouchParent.text = ("Silver: " + InventoryManager.silverCarried + " | Copper: " + InventoryManager.copperCarried);
+		charSheetArrowText.text = ("Arrows: " + InventoryManager.arrowsCarried.ToString());
+
+		if (trackingInitialization) {
+			print("Inventory should be initialized");
+		}
 	}
 
 
@@ -333,6 +309,57 @@ public class MapSceneInventoryManager : MonoBehaviour {
 			}
 			else {
 				inventoryScriptables[i] = null;
+
+				switch (i) {
+					case 0:
+						InventoryManager.cloakQuantity = 0;
+						break;
+					case 1:
+						InventoryManager.armorQuantity = 0;
+						break;
+					case 2:
+						InventoryManager.daggerQuantity = 0;
+						break;
+					case 3:
+						InventoryManager.slot1Quantity = 0;
+						break;
+					case 4:
+						InventoryManager.slot2Quantity = 0;
+						break;
+					case 5:
+						InventoryManager.slot3Quantity = 0;
+						break;
+					case 6:
+						InventoryManager.slot4Quantity = 0;
+						break;
+					case 7:
+						InventoryManager.slot5Quantity = 0;
+						break;
+					case 8:
+						InventoryManager.slot6Quantity = 0;
+						break;
+					case 9:
+						InventoryManager.slot7Quantity = 0;
+						break;
+					case 10:
+						InventoryManager.slot8Quantity = 0;
+						break;
+					case 11:
+						InventoryManager.slot9Quantity = 0;
+						break;
+					case 12:
+						InventoryManager.slot10Quantity = 0;
+						break;
+					case 13:
+						InventoryManager.slot11Quantity = 0;
+						break;
+					case 14:
+						InventoryManager.slot12Quantity = 0;
+						break;
+					default:
+						print("Something fucked up here.");
+						break;
+				}
 			}
 		}
 
@@ -352,24 +379,161 @@ public class MapSceneInventoryManager : MonoBehaviour {
 		InventoryManager.slot11Scriptable = inventoryScriptables[13];
 		InventoryManager.slot12Scriptable = inventoryScriptables[14];
 
-		InitializeInventory();
+				print("Item Quantities: " + InventoryManager.cloakQuantity + ", " +
+				InventoryManager.armorQuantity + ", " +
+				InventoryManager.daggerQuantity + ", " +
+				InventoryManager.slot1Quantity + ", " +
+				InventoryManager.slot2Quantity + ", " +
+				InventoryManager.slot3Quantity + ", " +
+				InventoryManager.slot4Quantity + ", " +
+				InventoryManager.slot5Quantity + ", " +
+				InventoryManager.slot6Quantity + ", " +
+				InventoryManager.slot7Quantity + ", " +
+				InventoryManager.slot8Quantity + ", " +
+				InventoryManager.slot9Quantity + ", " +
+				InventoryManager.slot10Quantity + ", " +
+				InventoryManager.slot11Quantity + ", " +
+				InventoryManager.slot12Quantity);
 
-/*		print("Item Quantities: " + InventoryManager.cloakQuantity + ", " +
-			InventoryManager.armorQuantity + ", " +
-			InventoryManager.daggerQuantity + ", " +
-			InventoryManager.slot1Quantity + ", " +
-			InventoryManager.slot2Quantity + ", " +
-			InventoryManager.slot3Quantity + ", " +
-			InventoryManager.slot4Quantity + ", " +
-			InventoryManager.slot5Quantity + ", " +
-			InventoryManager.slot6Quantity + ", " +
-			InventoryManager.slot7Quantity + ", " +
-			InventoryManager.slot8Quantity + ", " +
-			InventoryManager.slot9Quantity + ", " +
-			InventoryManager.slot10Quantity + ", " +
-			InventoryManager.slot11Quantity + ", " +
-			InventoryManager.slot12Quantity);
-*/
+		InitializeInventory();
+	}
+
+
+	public void EmptyInventory() {
+		foreach (GameObject itemParent in inventoryParents) {
+			if (itemParent.transform.childCount != 0) {
+				Destroy(itemParent.transform.GetChild(0).gameObject);
+			}
+		}
+
+//TOMAYBEDO Wipe out LOCAL script and quantity variables in MapSceneInventoryManager
+//Then, if necessary, maybe the ones in InventoryManager
+
+		inventoryScriptables = new ScriptableObject[15] {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
+
+		
+	}
+
+
+	public void SaveInventory() {
+		savedInventoryScripts = new List<ScriptableObject>();
+		savedInventoryQuantities = new List<int>();
+
+		for (int i = 0; i < inventoryParents.Length; i++) {
+			if (inventoryParents[i].transform.childCount != 0) {
+				savedInventoryScripts.Add(inventoryParents[i].transform.GetChild(0).GetComponent<InventoryScriptableReader>().objectScript);
+				savedInventoryQuantities.Add(inventoryParents[i].transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity);
+			}
+		}
+
+		savedSilver = InventoryManager.silverCarried;
+		savedCopper = InventoryManager.copperCarried;
+	}
+
+
+	public void RecoverSavedInventory(bool recoverAll, bool recoverPouch, bool recoverDagger, bool recoversRandomWeapon) {
+//TOMAYBEDO Should I check (at least for the PARTIAL recoveries) to make sure the correct quantity of ALL ITEMS were possessed (meals/herbs/etc) as well as weapons?
+//So it doesn't return more items than the player originally had.
+
+		List<ScriptableObject> recoveryScriptList = new List<ScriptableObject>();
+		List<int> recoveryQuantitiesList = new List<int>();
+
+		if (recoverAll) {
+//TODO Currently this only allows the player to have 12 items in their inventory before things (probably) get fucky (because of the cloak/armor/dagger slots).
+//Is that a problem?
+			for (int i = 0; i < savedInventoryScripts.Count; i++) {
+				recoveryScriptList.Add(savedInventoryScripts[i]);
+				recoveryQuantitiesList.Add(savedInventoryQuantities[i]);
+			}
+		}
+
+		if (recoverPouch) {
+			InventoryManager.silverCarried = savedSilver;
+			InventoryManager.copperCarried = savedCopper;
+		}
+
+
+		if (recoverDagger) {
+			bool foundSilverDagger = false;
+			bool foundDagger = false;
+
+			//Search through the player's saved inventory for their SILVER DAGGER. If it can't be found, look for a REGULAR DAGGER. If not that, then give them nothing
+			for (int i = 0; i < savedInventoryScripts.Count; i++) {
+				if (savedInventoryScripts[i] == silverDagger) {
+					recoveryScriptList.Add(savedInventoryScripts[i]);
+					recoveryQuantitiesList.Add(savedInventoryQuantities[i]);
+
+					savedInventoryScripts.RemoveAt(i);
+					savedInventoryQuantities.RemoveAt(i);
+
+					foundSilverDagger = true;
+					break;
+				}
+			}
+
+			if (!foundSilverDagger) {
+				for (int i = 0; i < savedInventoryScripts.Count; i++) {
+					if (savedInventoryScripts[i] == dagger) {
+						recoveryScriptList.Add(savedInventoryScripts[i]);
+						recoveryQuantitiesList.Add(1);
+
+						savedInventoryScripts.RemoveAt(i);
+						savedInventoryQuantities.RemoveAt(i);
+
+						foundDagger = true;
+						break;
+					}
+				}
+			}
+
+			if (foundSilverDagger) {
+				print("You found the SILVER DAGGER from your previous inventory");
+			}
+			else if (foundDagger) {
+				print("You found a DAGGER from your previous inventory");
+			}
+			else {
+				print("You had NO DAGGERS in your previous inventory");
+			}
+		}
+
+		if (recoversRandomWeapon) {
+			print("You recovered a RANDOM WEAPON from your PREVIOUS INVENTORY");
+			//Search through the player's saved inventory for any weapon OTHER THAN A DAGGER. If not that, then...?
+			List<ScriptableObject> randomWeaponScriptList = new List<ScriptableObject>();
+
+			for (int i = 0; i < savedInventoryScripts.Count; i++) {
+				if (savedInventoryScripts[i].GetType() == typeof(InventoryWeaponScriptable)) {
+					randomWeaponScriptList.Add(savedInventoryScripts[i]);
+				}
+			}
+
+			int randomWeaponChosen = Random.Range(0, randomWeaponScriptList.Count);
+
+			recoveryScriptList.Add(randomWeaponScriptList[randomWeaponChosen]);
+			recoveryQuantitiesList.Add(1);
+		}
+
+		//Wait to respawn newItemHosts until the list has been fully compiled HERE
+		for (int i = 0; i < recoveryScriptList.Count; i++) {
+			GameObject newItemHost = Instantiate(itemHost, inventoryParents[3 + i].transform.position, Quaternion.identity, inventoryParents[3 + i].transform);
+
+			newItemHost.GetComponent<InventoryScriptableReader>().objectScript = recoveryScriptList[i];
+			newItemHost.GetComponent<InventoryScriptableReader>().itemQuantity = recoveryQuantitiesList[i];
+
+			newItemHost.GetComponent<Text>().text = newItemHost.GetComponent<InventoryScriptableReader>().objectScript.name + " x " +
+				newItemHost.GetComponent<InventoryScriptableReader>().itemQuantity.ToString();
+
+			newItemHost.GetComponent<InventoryScriptableReader>().SetMyObjectType();
+		}
+
+		LogInventory();
+		itemListInventoryManager.GetComponent<MapSceneInventoryManager>().InitializeInventory();
+
+		//print("Your inventory has been partially/fully recovered and logged");
+
+		//mapSceneManager.OpenCharacterSheet();
+		//mapSceneManager.CloseCharacterSheet();
 	}
 
 
@@ -380,7 +544,7 @@ public class MapSceneInventoryManager : MonoBehaviour {
 		//item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity = itemNewQuantity;
 		//print(item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
 		itemParent.transform.GetChild(0).GetComponent<InventoryScriptableReader>().InitializeItem();
-		GetComponent<MapSceneInventoryManager>().LogInventory();
+		/*GetComponent<MapSceneInventoryManager>().*/LogInventory();
 		print("Used the " + itemParent.GetComponentInChildren<InventoryScriptableReader>().objectName + ". Item Quantity: " + itemParent.GetComponentInChildren<InventoryScriptableReader>().itemQuantity);
 		//mapSceneManager.GetComponent<MapSceneManager>().UpdateItemListBG();
 		itemListInventoryManager.GetComponent<MapSceneInventoryManager>().InitializeInventory();

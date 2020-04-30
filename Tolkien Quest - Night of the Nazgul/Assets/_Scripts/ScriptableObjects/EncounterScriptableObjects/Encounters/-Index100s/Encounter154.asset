@@ -17,7 +17,7 @@ MonoBehaviour:
   encounterText:
   - You awaken groggy and sore. Sitting up, you see that all of your possessions are
     gone and that you have been dragged into the woods east of the Ferry landing.
-    By luck, you find two of your meals underr a shrub and further familiar-looking
+    By luck, you find two of your meals under a shrub and further familiar-looking
     silver dagger. Dazed, you resolve to hurry as best you can to complete your mission
     in time.
   isCombat: 0
@@ -53,17 +53,18 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  emptiesInventory: 1
+  logsEmptiedInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 1
   obtainedItemList: {fileID: 11400000, guid: c8b671fb7a3890a4cbba84dcc3cb50bb, type: 2}
   exploreRangeDeterminesItems: 0
-  loseItems: 0
-  loseAllItems: 0
-  loseWeaponsAndArmor: 0
-  keepSilverDagger: {fileID: 0}
-  checksForSpecificItem: 0
+  checksForSpecificItem: {fileID: 0}
   checksItemQuantity: 0
-  useSpecificItem: {fileID: 0}
   timeTaken: 90
   canRestAtNight: 0
   XPGained: 4
@@ -72,6 +73,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -84,3 +86,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

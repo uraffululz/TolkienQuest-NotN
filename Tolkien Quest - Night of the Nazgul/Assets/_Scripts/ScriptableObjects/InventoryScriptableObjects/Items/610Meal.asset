@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6161c947b66d6e42928b390ac08390d, type: 3}
   m_Name: 610Meal
   m_EditorClassIdentifier: 
+  notes: []
   itemName: Meal
   itemIndex: 610
   itemQuantity: 7

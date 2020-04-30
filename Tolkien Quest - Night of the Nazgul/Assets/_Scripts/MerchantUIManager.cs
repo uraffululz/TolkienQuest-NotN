@@ -148,7 +148,7 @@ public class MerchantUIManager : MonoBehaviour {
 	}
 
 
-	void SpendPlayerMoney(EncounterMerchantScriptable.coinTypes coin, int price) {
+	public static void SpendPlayerMoney(EncounterMerchantScriptable.coinTypes coin, int price) {
 		if (coin == EncounterMerchantScriptable.coinTypes.silver) {
 			if (InventoryManager.silverCarried >= price) {
 				InventoryManager.silverCarried -= price;

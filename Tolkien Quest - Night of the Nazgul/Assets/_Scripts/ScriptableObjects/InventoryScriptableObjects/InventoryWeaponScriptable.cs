@@ -4,7 +4,10 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewWeaponScriptable", menuName = "ScriptableObjects/InventoryScriptables/InventoryWeaponScriptable", order = 0)]
 public class InventoryWeaponScriptable : ScriptableObject {
-  
+
+	[TextArea(2, 5, order = 0)]
+	public string[] notes;
+
 	public string itemName;
 
 	public int itemIndex;
@@ -35,5 +38,7 @@ public class InventoryWeaponScriptable : ScriptableObject {
 	[Space]
 
 	public bool autoKillsOrcs;
+
+	public int obtainsArrows;
 	
 }

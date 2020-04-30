@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42239b76c4aa2af418d9e5729056d603, type: 3}
   m_Name: 202MagicBow
   m_EditorClassIdentifier: 
+  notes:
+  - Additional +1 to MissileOB (110)
   itemName: Magic Bow
   itemIndex: 202
   MyWeaponType: 0
@@ -23,3 +25,4 @@ MonoBehaviour:
   MissileOBAdjustment: 1
   onlyMissileAttacks: 1
   autoKillsOrcs: 0
+  obtainsArrows: 0

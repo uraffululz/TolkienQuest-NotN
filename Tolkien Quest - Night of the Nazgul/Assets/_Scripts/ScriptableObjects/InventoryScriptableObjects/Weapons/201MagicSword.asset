@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42239b76c4aa2af418d9e5729056d603, type: 3}
   m_Name: 201MagicSword
   m_EditorClassIdentifier: 
+  notes:
+  - Additional +1 to MeleeOB (110)
   itemName: Magic Sword
   itemIndex: 201
   MyWeaponType: 0
@@ -23,3 +25,4 @@ MonoBehaviour:
   MissileOBAdjustment: 0
   onlyMissileAttacks: 0
   autoKillsOrcs: 0
+  obtainsArrows: 0

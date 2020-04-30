@@ -211,6 +211,85 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Use Healing Herb
+--- !u!1 &122377565735178339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7382515850360020990}
+  - component: {fileID: 3345886795533269942}
+  - component: {fileID: 5430331153629202003}
+  m_Layer: 5
+  m_Name: ArrowsCarriedText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7382515850360020990
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122377565735178339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5835316516239493845}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 257.1, y: -126.48}
+  m_SizeDelta: {x: 556.2, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3345886795533269942
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122377565735178339}
+  m_CullTransparentMesh: 0
+--- !u!114 &5430331153629202003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122377565735178339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 32
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Arrows:'
 --- !u!1 &5835316514532567882
 GameObject:
   m_ObjectHideFlags: 0
@@ -4323,6 +4402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139bac050c2199a48a9b575f678a5657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapSceneManager: {fileID: 0}
   itemHost: {fileID: 3801016423963266585, guid: 8f4439c54597bd040afdd6317f55ec2c,
     type: 3}
   itemListInventoryManager: {fileID: 0}
@@ -4346,6 +4426,7 @@ MonoBehaviour:
   inventoryScriptables: []
   healingHerbScript: {fileID: 11400000, guid: 8fe2e7d91fea15543a25fe508ddf4d7a, type: 2}
   herbParent: {fileID: 0}
+  charSheetArrowText: {fileID: 5430331153629202003}
 --- !u!1 &5835316516128495078
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,6 +4902,7 @@ RectTransform:
   - {fileID: 5835316515514647792}
   - {fileID: 5835316516128495079}
   - {fileID: 5835316515816084140}
+  - {fileID: 7382515850360020990}
   m_Father: {fileID: 5835316516118320729}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

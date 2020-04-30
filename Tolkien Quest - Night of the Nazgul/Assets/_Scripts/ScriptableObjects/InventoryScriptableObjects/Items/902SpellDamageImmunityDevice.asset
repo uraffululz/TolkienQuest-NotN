@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6161c947b66d6e42928b390ac08390d, type: 3}
   m_Name: 902SpellDamageImmunityDevice
   m_EditorClassIdentifier: 
+  notes:
+  - Cast 2 spells per day without taking damage (120)
   itemName: Spell Damage Immunity Device
   itemIndex: 902
   itemQuantity: 1
   isInfinite: 0
+  isStackable: 0
   usableOncePerDay: 0
   usableTwicePerDay: 1
   isMoney: 0

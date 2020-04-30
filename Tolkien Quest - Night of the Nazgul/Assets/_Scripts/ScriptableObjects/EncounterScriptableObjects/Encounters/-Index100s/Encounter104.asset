@@ -17,7 +17,7 @@ MonoBehaviour:
   encounterText:
   - A crashing through the brush behind you sends a jolt of fear through your body.
     You turn to face a large, snarling black bear rearing on his hind legs. He falls
-    to all fours and rushes toward you, snarling and frothing at the mouth. YOu draw
+    to all fours and rushes toward you, snarling and frothing at the mouth. You draw
     a weapon and stand your ground.
   isCombat: 1
   isMerchant: 0
@@ -52,9 +52,18 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  emptiesInventory: 0
+  logsEmptiedInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  checksForSpecificItem: {fileID: 0}
+  checksItemQuantity: 0
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 2
@@ -63,6 +72,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -75,3 +85,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

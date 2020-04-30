@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6161c947b66d6e42928b390ac08390d, type: 3}
   m_Name: 903BootsOfGrace
   m_EditorClassIdentifier: 
+  notes:
+  - Increase your General bonus by +1 when worn (120)
   itemName: Boots of Grace
   itemIndex: 903
   itemQuantity: 1
   isInfinite: 1
+  isStackable: 0
   usableOncePerDay: 0
   usableTwicePerDay: 0
   isMoney: 0

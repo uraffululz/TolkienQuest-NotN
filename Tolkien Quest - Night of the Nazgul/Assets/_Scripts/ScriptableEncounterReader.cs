@@ -15,12 +15,15 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 	public bool movesTwoSpaces;
 
+	public bool onlyMovesToDelayedEncounter = false;
+
 	//[SerializeField] Text encounterTimeText;
 	//[SerializeField] Text encounterXPText;
 
 	[SerializeField] GameObject merchantUI;
 
 	[SerializeField] InventoryItemScriptable healingHerbScript;
+	[SerializeField] InventoryWeaponScriptable arrowScript;
 
 	public int delayedEncounterIndex = 0;
 
@@ -180,10 +183,10 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		////TODO These are for TESTING PURPOSES ONLY
 		//Directly assign the Encounter Index, to bring it up "for inspection"
 Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 164//268//165//146//118//361//356//364//385//445//128//354//421//466//151//278//110//354//222//336//216//319//452//204//158
+		encounterIndex = 253//207//219//316//154//263//172//356//355//278//176//222//298//164//268//165//146//118//361//364//385//445//128//354//421//466//151//110//354//222//336//216//319//452//204//158
 			;
 
-		print("Encounter index: " + encounterIndex);
+		//print("Encounter index: " + encounterIndex);
 
 		UpdateEncounter(encounterIndex);
 
@@ -397,6 +400,10 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 		}
 	}
 
+	//public void OverrideEncounterButton(InputField input) {
+	//	UpdateEncounter(input.int);
+	//}
+
 
 	public void UpdateEncounter (int encounterIndex) {
 		//THIS is the place to test variables on the EncounterScriptable
@@ -458,15 +465,95 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 //TODO Be sure to close the EncounterBG (and any other UI which might be in the way)
 			}
 
+			if (myEncounterScriptable.emptiesInventory) {//If a certain encounter EMPTIES THE PLAYER'S INVENTORY
+				if (myEncounterScriptable.logsEmptiedInventory) {//If some or all of the inventory can be RECOVERED LATER
+					mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().SaveInventory();
+					//itemListInventoryManager.GetComponent<MapSceneInventoryManager>().SaveInventory(); 
+					
+					print("Your inventory has been saved for recovery");
+				}
+
+				mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().EmptyInventory();
+				itemListInventoryManager.GetComponent<MapSceneInventoryManager>().EmptyInventory();
+
+				InventoryManager.cloakWornScriptable = null;
+				InventoryManager.armorWornScriptable = null;
+				InventoryManager.daggerWornScriptable = null;
+				InventoryManager.slot1Scriptable = null;
+				InventoryManager.slot2Scriptable = null;
+				InventoryManager.slot3Scriptable = null;
+				InventoryManager.slot4Scriptable = null;
+				InventoryManager.slot5Scriptable = null;
+				InventoryManager.slot6Scriptable = null;
+				InventoryManager.slot7Scriptable = null;
+				InventoryManager.slot8Scriptable = null;
+				InventoryManager.slot9Scriptable = null;
+				InventoryManager.slot10Scriptable = null;
+				InventoryManager.slot11Scriptable = null;
+				InventoryManager.slot12Scriptable = null;
+
+				InventoryManager.cloakQuantity = 0;
+				InventoryManager.armorQuantity = 0;
+				InventoryManager.daggerQuantity = 0;
+				InventoryManager.slot1Quantity = 0;
+				InventoryManager.slot2Quantity = 0;
+				InventoryManager.slot3Quantity = 0;
+				InventoryManager.slot4Quantity = 0;
+				InventoryManager.slot5Quantity = 0;
+				InventoryManager.slot6Quantity = 0;
+				InventoryManager.slot7Quantity = 0;
+				InventoryManager.slot8Quantity = 0;
+				InventoryManager.slot9Quantity = 0;
+				InventoryManager.slot10Quantity = 0;
+				InventoryManager.slot11Quantity = 0;
+				InventoryManager.slot12Quantity = 0;
+
+				InventoryManager.arrowsCarried = 0;
+				InventoryManager.silverCarried = 0;
+				InventoryManager.copperCarried = 0;
+
+				//print("Your inventory has been emptied");
+
+				//if (!myEncounterScriptable.logsEmptiedInventory) {
+					mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().LogInventory();
+					itemListInventoryManager.GetComponent<MapSceneInventoryManager>().InitializeInventory();
+				//}
+			}
+
+			if (myEncounterScriptable.loseWeaponsAndArmor) {
+				foreach (GameObject itemParent in mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents) {
+					if (itemParent.transform.childCount != 0) {
+						if (itemParent.GetComponentInChildren<InventoryScriptableReader>().objectScript != myEncounterScriptable.keepSilverDagger) {
+							if (itemParent.GetComponentInChildren<InventoryScriptableReader>().myObjectType == InventoryScriptableReader.objectType.weapon ||
+								itemParent.GetComponentInChildren<InventoryScriptableReader>().myObjectType == InventoryScriptableReader.objectType.armor) {
+								Destroy(itemParent.transform.GetChild(0).gameObject);
+							}
+						}
+					}
+				}
+			}
+
 			if (myEncounterScriptable.obtainsItems) {
 				bool obtainedItems = false;
+				int earnedSilver = 0;
+				int earnedCopper = 0;
+				
+				//bool recoversInventory = false;
+				bool recoversAll = false;
+				bool recoversPouch = false;
+				bool recoversDagger = false;
+				bool recoversRandomWeapon = false;
+
 				List<ScriptableObject> itemsInList = new List<ScriptableObject>();
 				List<int> itemQuantitiesList = new List<int>();
 
-				//TODO Implement Ranges for obtaining random items.
 				if (myEncounterScriptable.obtainedItemList.hasItemRanges) {
 					int ObtainedObjectRoll = Random.Range(2, 13);
 
+//ObtainedObjectRoll = 10;
+					//print("Overriding Obtained object roll: " + ObtainedObjectRoll);
+
+					//If the Obtained Item Roll is within the FIRST RANGE
 					if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange1Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange1Max) {
 						if (myEncounterScriptable.obtainedItemList.range1MultipleItems) {
 							for (int i = 0; i < myEncounterScriptable.obtainedItemList.range1Items.Length; i++) {
@@ -479,7 +566,19 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem1Quantity);
 						}
 						obtainedItems = true;
+
+						if (myEncounterScriptable.obtainedItemList.range1RecoversMoneyPouch) {
+							recoversPouch = true;
+						}
+
+						if (myEncounterScriptable.obtainedItemList.range1RecoversDagger) {
+							recoversDagger = true;
+						}
+
+						mapSceneManager.GetComponent<MapSceneManager>().disableMoveOnButton = false;
+						mapSceneManager.GetComponent<MapSceneManager>().disableDelayedEncounterButton = true;
 					}
+					//If the Obtained Item Roll is within the SECOND RANGE
 					else if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange2Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange2Max) {
 						if (myEncounterScriptable.obtainedItemList.range2MultipleItems) {
 							for (int i = 0; i < myEncounterScriptable.obtainedItemList.range2Items.Length; i++) {
@@ -490,9 +589,29 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 						else {
 							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[1]);
 							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem2Quantity);
+							if (myEncounterScriptable.obtainedItemList.obtainsArrowsInRange2 != 0) {
+								InventoryManager.arrowsCarried += myEncounterScriptable.obtainedItemList.obtainsArrowsInRange2;
+								print("Arrows carried: " + InventoryManager.arrowsCarried);
+							}
 						}
 						obtainedItems = true;
+
+						if (myEncounterScriptable.obtainedItemList.range2RecoversMoneyPouch) {
+							recoversPouch = true;
+						}
+
+						if (myEncounterScriptable.obtainedItemList.range2RecoversDagger) {
+							recoversDagger = true;
+						}
+
+						if (myEncounterScriptable.obtainedItemList.range2RecoversRandomWeapon) {
+							recoversRandomWeapon = true;
+						}
+
+						mapSceneManager.GetComponent<MapSceneManager>().disableMoveOnButton = false;
+						mapSceneManager.GetComponent<MapSceneManager>().disableDelayedEncounterButton = true;
 					}
+					//If the Obtained Item Roll is within the THIRD RANGE
 					else if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange3Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange3Max) {
 						if (myEncounterScriptable.obtainedItemList.range3MultipleItems) {
 							for (int i = 0; i < myEncounterScriptable.obtainedItemList.range3Items.Length; i++) {
@@ -505,7 +624,19 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem3Quantity);
 						}
 						obtainedItems = true;
+
+						//if (myEncounterScriptable.obtainedItemList.range3RecoversMoneyPouch) {
+						//	recoversPouch = true;
+						//}
+
+						//if (myEncounterScriptable.obtainedItemList.range3RecoversDagger) {
+						//	recoversDagger = true;
+						//}
+
+						mapSceneManager.GetComponent<MapSceneManager>().disableMoveOnButton = false;
+						mapSceneManager.GetComponent<MapSceneManager>().disableDelayedEncounterButton = true;
 					}
+					//If the Obtained Item Roll is within the FOURTH RANGE
 					else if (ObtainedObjectRoll >= myEncounterScriptable.obtainedItemList.itemRange4Min && ObtainedObjectRoll <= myEncounterScriptable.obtainedItemList.itemRange4Max) {
 						if (myEncounterScriptable.obtainedItemList.range4MultipleItems) {
 							for (int i = 0; i < myEncounterScriptable.obtainedItemList.range4Items.Length; i++) {
@@ -518,12 +649,28 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem4Quantity);
 						}
 						obtainedItems = true;
+						mapSceneManager.GetComponent<MapSceneManager>().disableMoveOnButton = false;
+						mapSceneManager.GetComponent<MapSceneManager>().disableDelayedEncounterButton = true;
 					}
+					//If the Obtained Item Roll is OUT OF RANGE
 					else {
 						print("Rolled out of item ranges");
 						if (myEncounterScriptable.obtainedItemList.outOfRangeMovesToEncounter) {
+//TOMAYBEDOHERE Clear itemsInList and itemQuantitiesList
 //TOPROBABLYDO Switch this to DelayEncounter instead
-							UpdateEncounter(myEncounterScriptable.obtainedItemList.encounterIndex);
+							DelayEncounterUpdate(myEncounterScriptable.obtainedItemList.outOfRangeEncounterIndex, true);
+							mapSceneManager.GetComponent<MapSceneManager>().disableMoveOnButton = true;
+							//mapSceneManager.GetComponent<MapSceneManager>().disableDelayedEncounterButton = false;
+
+							//onlyMovesToDelayedEncounter = true;
+						}
+
+						if (myEncounterScriptable.obtainedItemList.outOfRangeRecoversMoneyPouch) {
+							recoversPouch = true;
+						}
+
+						if (myEncounterScriptable.obtainedItemList.outOfRangeRecoversAllEquipment) {
+							recoversAll = true;
 						}
 					}
 				}
@@ -534,11 +681,20 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 							obtainedItems = true;
 						}
 					}
-//TODO Make an array for these quantities, just like with "myEncounterScriptable.obtainedItemList.myItemList[i]", because this MIGHT NOT WORK
-					itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem1Quantity);
-					itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem2Quantity);
-					itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem3Quantity);
-					itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem4Quantity);
+					//TODO Make an array for these quantities, just like with "myEncounterScriptable.obtainedItemList.myItemList[i]", because this MIGHT NOT WORK
+					if (myEncounterScriptable.obtainedItemList.myItem1Quantity != 0) {
+						itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem1Quantity);
+					}
+					if (myEncounterScriptable.obtainedItemList.myItem2Quantity != 0) {
+						itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem2Quantity);
+					}
+					if (myEncounterScriptable.obtainedItemList.myItem3Quantity != 0) {
+						itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem3Quantity);
+					}
+					if (myEncounterScriptable.obtainedItemList.myItem4Quantity != 0) {
+						itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem4Quantity);
+					}
+
 
 				}
 
@@ -557,6 +713,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 								if (!itemUsed && myEncounterScriptable.obtainedItemList.useItem && !item.GetComponentInChildren<InventoryScriptableReader>().isInfinite) {
 									mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().UseItem(item);
 									itemUsed = true;
+									print("Used the " + item.GetComponentInChildren<InventoryScriptableReader>().objectName);
 								}
 
 								itemQuantityTotal += item.GetComponentInChildren<InventoryScriptableReader>().itemQuantity;
@@ -565,58 +722,66 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 								//print("Couldn't use the item. bool itemUsed = " + itemUsed + " || Encounter Uses Item = " + myEncounterScriptable.obtainedItemList.useItem);
 							}
 						}
+					}
 
-						//Check the quantity
-						if (itemFound && myEncounterScriptable.obtainedItemList.checksItemQuantityMax != 0) {
-							if (itemQuantityTotal >= myEncounterScriptable.obtainedItemList.checksItemQuantityMin &&
-								itemQuantityTotal <= myEncounterScriptable.obtainedItemList.checksItemQuantityMax) {
-//FINISH THIS
-							}
+					//Check the quantity
+					if (!itemFound && myEncounterScriptable.obtainedItemList.quantityCheckIncludesZero || itemFound && myEncounterScriptable.obtainedItemList.checksItemQuantityMax != 0) {
+						if (itemQuantityTotal >= myEncounterScriptable.obtainedItemList.checksItemQuantityMin &&
+							itemQuantityTotal <= myEncounterScriptable.obtainedItemList.checksItemQuantityMax) {
+							//FINISH THIS
+							itemsInList.Add(myEncounterScriptable.obtainedItemList.itemsGainedViaQuantity);
+							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.NumberOfItemsGained);
+
+							print("Adding item to ObtainedItemList based on quantity");
+
+							obtainedItems = true;
 						}
 					}
 
 					if (itemFound) {
 						if (myEncounterScriptable.obtainedItemList.hasItemMovesToEncounter != 0) {
 							print("Item detected in inventory. Moving on");
-							DelayEncounterUpdate(myEncounterScriptable.obtainedItemList.hasItemMovesToEncounter);
+							DelayEncounterUpdate(myEncounterScriptable.obtainedItemList.hasItemMovesToEncounter, false);
 							//return;
 						}
 					}
 					else {
 						if (myEncounterScriptable.obtainedItemList.lacksItemMovesToEncounter != 0) {
 							print("Item not detected in inventory. Moving on");
-							DelayEncounterUpdate(myEncounterScriptable.obtainedItemList.lacksItemMovesToEncounter);
+							DelayEncounterUpdate(myEncounterScriptable.obtainedItemList.lacksItemMovesToEncounter, false);
+							//mapSceneManager.GetComponent<MapSceneManager>().disableDelayedEncounterButton = true;
+
 							//return;
 						}
 					}
 					
-					if (itemUsed) {
-						if (myEncounterScriptable.obtainedItemList.lackingItemMeansPoisoned) {
-							print("You healed the poison");
-							DelayEncounterUpdate(469);
-							//UpdateEncounter(469);
-							//return;
-						}
+					//if (itemUsed) {
+					//	//if (myEncounterScriptable.obtainedItemList.lackingItemMeansPoisoned) {
+					//	//	print("You healed the poison");
+					//	//	//DelayEncounterUpdate(469, false);
+					//	//	//UpdateEncounter(469);
+					//	//	//return;
+					//	//}
 
-						if (myEncounterScriptable.obtainedItemList.lackingItemMeansDiseased) {
-							print("You immediately used a healing herb to cure disease");
-							DelayEncounterUpdate(471);
-						}
-					}
-					else {
-						if (myEncounterScriptable.obtainedItemList.lackingItemMeansDiseased) {
-							CharacterManager.statusDiseased = true;
-							DelayEncounterUpdate(472);
-						}
+					//	if (myEncounterScriptable.obtainedItemList.lackingItemMeansDiseased) {
+					//		print("You immediately used a healing herb to cure disease");
+					//		DelayEncounterUpdate(471, false);
+					//	}
+					//}
+					//else {
+					//	if (myEncounterScriptable.obtainedItemList.lackingItemMeansDiseased) {
+					//		CharacterManager.statusDiseased = true;
+					//		DelayEncounterUpdate(472, false);
+					//	}
 
-						//Unique rule for encounter 385
-						if (myEncounterScriptable.obtainedItemList.lackingItemMeansPoisoned) {
-							print("Failed to heal your poisoning");
-							DelayEncounterUpdate(357);
-							//UpdateEncounter(357);
-							//return;
-						}
-					}
+					//	////Unique rule for encounter 385
+					//	//if (myEncounterScriptable.obtainedItemList.lackingItemMeansPoisoned) {
+					//	//	print("Failed to heal your poisoning");
+					//	//	//DelayEncounterUpdate(357, false);
+					//	//	//UpdateEncounter(357);
+					//	//	//return;
+					//	//}
+					//}
 				}
 
 				if (myEncounterScriptable.obtainedItemList.gainDaggerIfYouHaveNoWeapon) {
@@ -631,29 +796,56 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 
 					if (!hasWeapon) {
 						itemsInList.Add(myEncounterScriptable.obtainedItemList.dagger);
+						itemQuantitiesList.Add(1);
 						obtainedItems = true;
 					}
 				}
 
-				if (obtainedItems || myEncounterScriptable.obtainedItemList.silverEarned > 0 || myEncounterScriptable.obtainedItemList.copperEarned > 0) {
+				if (recoversAll || recoversPouch || recoversDagger || recoversRandomWeapon) {
+					if (recoversAll) {
+						print("ALL EQUIPMENT should be recovered");
+					}
+					if (recoversPouch) {
+						print("ALL MONEY should be recovered");
+					}
+					if (recoversDagger) {
+						print("A DAGGER should be recovered");
+					}
+					if (recoversRandomWeapon) {
+						print("A RANDOM WEAPON should be recovered");
+					}
+
+					mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().RecoverSavedInventory(recoversAll, recoversPouch, recoversDagger, recoversRandomWeapon);
+					//itemListInventoryManager.GetComponent<MapSceneInventoryManager>().RecoverSavedInventory(recoversAll, recoversPouch, recoversDagger, recoversRandomWeapon);
+
+					//itemListInventoryManager.GetComponent<MapSceneInventoryManager>().InitializeInventory();
+				}
+
+				earnedSilver += myEncounterScriptable.obtainedItemList.silverEarned;
+				earnedCopper += myEncounterScriptable.obtainedItemList.copperEarned;
+
+				if (obtainedItems || earnedSilver > 0 || earnedCopper > 0) {
 					mapSceneManager.GetComponent<MapSceneManager>().UpdateItemListBG(itemsInList, itemQuantitiesList);
 					mapSceneManager.GetComponent<MapSceneManager>().OpenItemListUI();
 				}
+			}
 
-				if (myEncounterScriptable.loseWeaponsAndArmor) {
-					foreach (GameObject itemParent in mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents) {
-						if (itemParent.transform.childCount != 0) {
-							if (itemParent.GetComponentInChildren<InventoryScriptableReader>().objectScript != myEncounterScriptable.keepSilverDagger) {
-								if (itemParent.GetComponentInChildren<InventoryScriptableReader>().myObjectType == InventoryScriptableReader.objectType.weapon ||
-									itemParent.GetComponentInChildren<InventoryScriptableReader>().myObjectType == InventoryScriptableReader.objectType.armor) {
-									Destroy(itemParent.transform.GetChild(0));
-									//Alternately, just DISABLE the object rather than DESTROYING it
-									//itemParent.transform.GetChild(0).gameObject.SetActive(false);
-								}
-							}
+			if (myEncounterScriptable.mealScript != null) {
+				foreach (GameObject itemParent in mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents) {
+					if (itemParent.transform.childCount != 0) {
+						if (itemParent.transform.GetChild(0).GetComponent<InventoryScriptableReader>().objectScript == myEncounterScriptable.mealScript) {
+							itemParent.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = (int)(itemParent.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity * myEncounterScriptable.loseMeals);
 						}
 					}
 				}
+
+				mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().LogInventory();
+			}
+
+			if (myEncounterScriptable.costsCopper != 0) {
+//TODO What if the player doesn't have enough money?
+				MerchantUIManager.SpendPlayerMoney(EncounterMerchantScriptable.coinTypes.copper, myEncounterScriptable.costsCopper);
+				mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().LogInventory();
 			}
 
 			
@@ -780,7 +972,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 					//DelayEncounterUpdate(467);
 				}
 				else {
-					MapSceneManager.currentEncounter.DelayEncounterUpdate(122);
+					MapSceneManager.currentEncounter.DelayEncounterUpdate(122, false);
 					//MapSceneManager.currentEncounter.UpdateEncounter(122);
 				}
 			}
@@ -791,7 +983,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 					//DelayEncounterUpdate(468);
 				}
 				else {
-					MapSceneManager.currentEncounter.DelayEncounterUpdate(283);
+					MapSceneManager.currentEncounter.DelayEncounterUpdate(283, false);
 					//MapSceneManager.currentEncounter.UpdateEncounter(283);
 				}
 			}
@@ -800,21 +992,21 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				if (CharacterManager.daysTaken <= MapSceneManager.currentEncounter.myEncounterScriptable.dayLimit2) {
 					if (CharacterManager.daysTaken <= MapSceneManager.currentEncounter.myEncounterScriptable.dayLimit1) {
 						if (CharacterManager.currentDayTimeTaken <= MapSceneManager.currentEncounter.myEncounterScriptable.timeLimit1) {
-							DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.limit1Index);
+							DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.limit1Index, false);
 						}
 						else {
-							DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.limit2Index);
+							DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.limit2Index, false);
 						}
 					}
 					else if (CharacterManager.currentDayTimeTaken <= MapSceneManager.currentEncounter.myEncounterScriptable.timeLimit2) {
-						DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.limit2Index);
+						DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.limit2Index, false);
 					}
 					else {
-						DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.overTimeIndex);
+						DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.overTimeIndex, false);
 					}
 				}
 				else {
-					DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.overTimeIndex);
+					DelayEncounterUpdate(MapSceneManager.currentEncounter.myEncounterScriptable.overTimeIndex, false);
 				}
 			}
 
@@ -874,7 +1066,6 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				print("Adding bonus to next explore roll: " + bonusToNextExplore);
 			}
 			
-
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.autoWin) {
 				mapSceneManager.GetComponent<MapSceneManager>().Win();
 			}
@@ -883,6 +1074,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				mapSceneManager.GetComponent<MapSceneManager>().GameOver();
 
 			}
+
 
 			mapSceneManager.GetComponent<MapSceneManager>().UpdateEncounterBG();
 			mapSceneManager.GetComponent<MapSceneManager>().OpenEncounterUI();
@@ -894,17 +1086,20 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 	}
 
 
-	public void DelayEncounterUpdate(int nextEncounter) {
+	public void DelayEncounterUpdate(int nextEncounter, bool disableDelayedButton) {
 		//MapSceneManager.currentEncounter.myEncounterScriptable.furtherEncounter1Index = nextEncounter;
 		//mapSceneManager.GetComponent<MapSceneManager>().delayedEncounterButton.GetComponent<Button>().onClick
 		delayedEncounterIndex = nextEncounter;
+		print("Delayed encounter: " + delayedEncounterIndex);
+		mapSceneManager.GetComponent<MapSceneManager>().disableDelayedEncounterButton = disableDelayedButton;
+
 	}
 
 
 	public void GoToDelayedEncounter() {
 		int delayedIndex = delayedEncounterIndex;
 		delayedEncounterIndex = 0;
-		print(delayedIndex);
+		//mapSceneManager.GetComponent<MapSceneManager>().disableDelayedEncounterButton = true;
 		UpdateEncounter(delayedIndex);
 	}
 

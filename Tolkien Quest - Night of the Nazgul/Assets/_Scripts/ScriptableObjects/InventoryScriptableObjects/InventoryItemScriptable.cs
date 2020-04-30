@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewItemScriptable", menuName = "ScriptableObjects/InventoryScriptables/InventoryItemScriptable", order = 0)]
 public class InventoryItemScriptable : ScriptableObject {
     
+	[TextArea (2, 5, order = 0)]
+	public string[] notes;
+
 	public string itemName;
 
 	public int itemIndex;
