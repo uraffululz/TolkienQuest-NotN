@@ -37,6 +37,9 @@ public class EncounterObtainedItemList : ScriptableObject {
 	public int[] range1ItemQuantities;
 	public bool range1RecoversMoneyPouch;
 	public bool range1RecoversDagger;
+	//public bool range1ConfirmsObject;
+	public InventoryItemScriptable range1ObjectToConfirm;
+	public int range1ConfirmQuantity;
 
 	[Space]
 	[Header("Range 2 Attributes", order = 0)]
@@ -47,6 +50,9 @@ public class EncounterObtainedItemList : ScriptableObject {
 	public bool range2RecoversMoneyPouch;
 	public bool range2RecoversDagger;
 	public bool range2RecoversRandomWeapon;
+	//public bool range2ConfirmsObject;
+	public InventoryItemScriptable range2ObjectToConfirm;
+	public int range2ConfirmQuantity;
 	public int obtainsArrowsInRange2;
 
 	[Space]

@@ -68,8 +68,9 @@ public class EncounterScriptable : ScriptableObject {
 	public bool rangeFailMeansGameOver;
 
 	[Header("Inventory Adjustment Variables", order = 1)]
+	public bool recoversFullInventory;
 	public bool emptiesInventory;
-	public bool logsEmptiedInventory;
+	//public bool logsEmptiedInventory;
 	public bool loseWeaponsAndArmor;
 	public InventoryWeaponScriptable keepSilverDagger;
 	//public bool loseAllMoney; This is already part of all the encounters that "Empty Inventory" anyway

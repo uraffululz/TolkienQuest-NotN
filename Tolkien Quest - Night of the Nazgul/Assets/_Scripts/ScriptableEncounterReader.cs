@@ -183,7 +183,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		////TODO These are for TESTING PURPOSES ONLY
 		//Directly assign the Encounter Index, to bring it up "for inspection"
 Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 253//207//219//316//154//263//172//356//355//278//176//222//298//164//268//165//146//118//361//364//385//445//128//354//421//466//151//110//354//222//336//216//319//452//204//158
+		encounterIndex = 362//253//207//219//316//154//263//172//356//355//278//176//222//298//164//268//165//146//118//361//364//385//445//128//354//421//466//151//110//354//222//336//216//319//452//204//158
 			;
 
 		//print("Encounter index: " + encounterIndex);
@@ -259,6 +259,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				}
 	//TODO Finish this list, adding the other relevant skill totals
 
+exploreRoll = 10;
 				print("Explore roll: " + exploreRoll);
 
 				if (bonusToNextExplore != 0) {
@@ -465,13 +466,15 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 //TODO Be sure to close the EncounterBG (and any other UI which might be in the way)
 			}
 
+			if (myEncounterScriptable.recoversFullInventory) {
+				mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().RecoverSavedInventory(true, true, false, false, null, 0);
+			}
+
 			if (myEncounterScriptable.emptiesInventory) {//If a certain encounter EMPTIES THE PLAYER'S INVENTORY
-				if (myEncounterScriptable.logsEmptiedInventory) {//If some or all of the inventory can be RECOVERED LATER
-					mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().SaveInventory();
-					//itemListInventoryManager.GetComponent<MapSceneInventoryManager>().SaveInventory(); 
-					
-					print("Your inventory has been saved for recovery");
-				}
+				//if (myEncounterScriptable.logsEmptiedInventory) {//If some or all of the inventory can be RECOVERED LATER
+				//	mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().SaveInventory();
+				//	//itemListInventoryManager.GetComponent<MapSceneInventoryManager>().SaveInventory(); 
+				//}
 
 				mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().EmptyInventory();
 				itemListInventoryManager.GetComponent<MapSceneInventoryManager>().EmptyInventory();
@@ -543,6 +546,8 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				bool recoversPouch = false;
 				bool recoversDagger = false;
 				bool recoversRandomWeapon = false;
+				InventoryItemScriptable recoversConfirmedObject = null;
+				int confirmQuantity = 0;
 
 				List<ScriptableObject> itemsInList = new List<ScriptableObject>();
 				List<int> itemQuantitiesList = new List<int>();
@@ -560,12 +565,15 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 								itemsInList.Add(myEncounterScriptable.obtainedItemList.range1Items[i]);
 								itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.range1ItemQuantities[i]);
 							}
+							obtainedItems = true;
 						}
 						else {
-							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[0]);
-							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem1Quantity);
+							if (myEncounterScriptable.obtainedItemList.myItemList.Length > 0 && myEncounterScriptable.obtainedItemList.myItemList[0] != null) {
+								itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[0]);
+								itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem1Quantity);
+								obtainedItems = true;
+							}
 						}
-						obtainedItems = true;
 
 						if (myEncounterScriptable.obtainedItemList.range1RecoversMoneyPouch) {
 							recoversPouch = true;
@@ -573,6 +581,11 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 
 						if (myEncounterScriptable.obtainedItemList.range1RecoversDagger) {
 							recoversDagger = true;
+						}
+
+						if (myEncounterScriptable.obtainedItemList.range1ObjectToConfirm != null) {
+							recoversConfirmedObject = myEncounterScriptable.obtainedItemList.range1ObjectToConfirm;
+							confirmQuantity = myEncounterScriptable.obtainedItemList.range1ConfirmQuantity;
 						}
 
 						mapSceneManager.GetComponent<MapSceneManager>().disableMoveOnButton = false;
@@ -585,16 +598,19 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 								itemsInList.Add(myEncounterScriptable.obtainedItemList.range2Items[i]);
 								itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.range2ItemQuantities[i]);
 							}
+							obtainedItems = true;
 						}
 						else {
-							itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[1]);
-							itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem2Quantity);
-							if (myEncounterScriptable.obtainedItemList.obtainsArrowsInRange2 != 0) {
-								InventoryManager.arrowsCarried += myEncounterScriptable.obtainedItemList.obtainsArrowsInRange2;
-								print("Arrows carried: " + InventoryManager.arrowsCarried);
+							if (myEncounterScriptable.obtainedItemList.myItemList.Length > 0 && myEncounterScriptable.obtainedItemList.myItemList[1] != null) {
+								itemsInList.Add(myEncounterScriptable.obtainedItemList.myItemList[1]);
+								itemQuantitiesList.Add(myEncounterScriptable.obtainedItemList.myItem2Quantity);
+								if (myEncounterScriptable.obtainedItemList.obtainsArrowsInRange2 != 0) {
+									InventoryManager.arrowsCarried += myEncounterScriptable.obtainedItemList.obtainsArrowsInRange2;
+									print("Arrows carried: " + InventoryManager.arrowsCarried);
+								}
+								obtainedItems = true;
 							}
-						}
-						obtainedItems = true;
+													}
 
 						if (myEncounterScriptable.obtainedItemList.range2RecoversMoneyPouch) {
 							recoversPouch = true;
@@ -606,6 +622,11 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 
 						if (myEncounterScriptable.obtainedItemList.range2RecoversRandomWeapon) {
 							recoversRandomWeapon = true;
+						}
+
+						if (myEncounterScriptable.obtainedItemList.range2ObjectToConfirm != null) {
+							recoversConfirmedObject = myEncounterScriptable.obtainedItemList.range2ObjectToConfirm;
+							confirmQuantity = myEncounterScriptable.obtainedItemList.range2ConfirmQuantity;
 						}
 
 						mapSceneManager.GetComponent<MapSceneManager>().disableMoveOnButton = false;
@@ -801,7 +822,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 					}
 				}
 
-				if (recoversAll || recoversPouch || recoversDagger || recoversRandomWeapon) {
+				if (recoversAll || recoversPouch || recoversDagger || recoversRandomWeapon || recoversConfirmedObject != null) {
 					if (recoversAll) {
 						print("ALL EQUIPMENT should be recovered");
 					}
@@ -814,8 +835,11 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 					if (recoversRandomWeapon) {
 						print("A RANDOM WEAPON should be recovered");
 					}
+					if (recoversConfirmedObject != null) {
+						print(confirmQuantity + " " + recoversConfirmedObject.name + " should be recovered");
+					}
 
-					mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().RecoverSavedInventory(recoversAll, recoversPouch, recoversDagger, recoversRandomWeapon);
+					mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().RecoverSavedInventory(recoversAll, recoversPouch, recoversDagger, recoversRandomWeapon, recoversConfirmedObject, confirmQuantity);
 					//itemListInventoryManager.GetComponent<MapSceneInventoryManager>().RecoverSavedInventory(recoversAll, recoversPouch, recoversDagger, recoversRandomWeapon);
 
 					//itemListInventoryManager.GetComponent<MapSceneInventoryManager>().InitializeInventory();

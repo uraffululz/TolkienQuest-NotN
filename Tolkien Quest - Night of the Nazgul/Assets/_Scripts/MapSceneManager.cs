@@ -77,10 +77,12 @@ public class MapSceneManager : MonoBehaviour {
 
 	[SerializeField] GameObject LoseUIBG;
 
+
 	void Awake () {
 		mapTiles = GameObject.FindGameObjectsWithTag("MapTile");
 		adjacentTiles = new List<GameObject>();
 	}
+
 
 	void Start() {
 
@@ -204,6 +206,10 @@ public class MapSceneManager : MonoBehaviour {
 		currentLocationTextIndex = 0;
 		OpenLocationUI();
 		UpdateLocationBG();
+		
+		foreach (GameObject tile in mapTiles) {
+			tile.GetComponent<MeshRenderer>().enabled = false;
+		}
 	}
 
 
@@ -584,42 +590,8 @@ public class MapSceneManager : MonoBehaviour {
 			newItemHost.GetComponent<InventoryScriptableReader>().SetMyObjectType();
 
 			if (myListedItems[i].GetType() == typeof(InventoryItemScriptable)) {
-				//print("This object is an ITEM");
-				//currentItemTypeItem = currentItemList.myItemList[i] as InventoryItemScriptable;
-
-				//currentItemTypeItem = currentItemList.myItem1;
-				//currentItemList.myItem1.Equals(typeof(InventoryItemScriptable));
-
-				/* override object.Equals
-
-					public override bool Equals (object obj) {
-						//       
-						// See the full list of guidelines at
-						//   http://go.microsoft.com/fwlink/?LinkID=85237  
-						// and also the guidance for operator== at
-						//   http://go.microsoft.com/fwlink/?LinkId=85238
-						//
-
-						if (obj == null || GetType() != obj.GetType()) {
-							return false;
-						}
-
-						// TODO: write your implementation of Equals() here
-						throw new System.NotImplementedException();
-						return base.Equals(obj);
-					}
-
-					// override object.GetHashCode
-					public override int GetHashCode () {
-						// TODO: write your implementation of GetHashCode() here
-						throw new System.NotImplementedException();
-						return base.GetHashCode();
-					}
-				*/
-				//newItemHost.text = newItemHost.GetComponent<InventoryScriptableReader>().itemScript.itemName;
-
 				if (newItemHost.GetComponent<InventoryScriptableReader>().itemScript.isMoney) {
-					additionalSilverEarned = newItemHost.GetComponent<InventoryScriptableReader>().itemScript.itemQuantity;
+					additionalSilverEarned += newItemHost.GetComponent<InventoryScriptableReader>().itemScript.itemQuantity;
 					Destroy(newItemHost);
 				}
 			}
@@ -686,16 +658,6 @@ public class MapSceneManager : MonoBehaviour {
 		characterSheetInventoryParent.GetComponent<MapSceneInventoryManager>().InitializeInventory();
 	}
 
-	//public void RecompileInventoryBG() {
-	//	//for (int i = 0; i < inventoryParent.GetComponent<MapSceneInventoryManager>().inventoryParents.Length; i++) {
-	//	//	if (inventoryParent.GetComponent<MapSceneInventoryManager>().inventoryParents[i].transform.childCount > 0) {
-	//	//		Destroy(inventoryParent.GetComponent<MapSceneInventoryManager>().inventoryParents[i].transform.GetChild(0).gameObject);
-	//	//	}
-	//	//}
-
-	//	inventoryParent.GetComponent<MapSceneInventoryManager>().InitializeInventory();
-	//}
-
 
 	public void CloseMerchantUI() {
 		MerchantUI.GetComponent<Animator>().SetBool("SlideIn", false);
@@ -707,6 +669,7 @@ public class MapSceneManager : MonoBehaviour {
 		//locationTextBG.GetComponentInChildren<Text>().text = currentLocation.GetComponent<ScriptableMapTileReader>().locationText[currentLocationTextIndex];
 		UpdateLocationBG();
 	}
+
 
 	public void ProgressThroughEncounterText () {
 		if (currentEncounterTextIndex >= currentEncounter.myEncounterScriptable.encounterText.Length -1) {
@@ -741,14 +704,14 @@ public class MapSceneManager : MonoBehaviour {
 		//}
 
 		foreach (GameObject mapTile in mapTiles) {
-			/*KEEP THIS*/ //adjacentTiles.Clear();
-			/*KEEP if (currentLocation.GetComponent<Collider>().bounds.Intersects(mapTile.GetComponent<Collider>().bounds)) {*/
+			//KEEP THIS adjacentTiles.Clear();
+			//KEEP if (currentLocation.GetComponent<Collider>().bounds.Intersects(mapTile.GetComponent<Collider>().bounds)) {
 				adjacentTiles.Add(mapTile);
-			/*KEEP}*/
-			/*KEEP else {*/
+			//KEEP}
+			//KEEP else {
 				mapTile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = false;
 				mapTile.GetComponent<MeshRenderer>().material = tileBaseMat;
-			/*KEEP}*/
+			//KEEP}
 		}
 
 		//print(adjacentTiles.Count);
@@ -757,6 +720,7 @@ public class MapSceneManager : MonoBehaviour {
 			GameObject randomTile = adjacentTiles[Random.Range(0, adjacentTiles.Count)];
 			randomTile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = true;
 			randomTile.GetComponent<MeshRenderer>().material.color = Color.cyan;
+			randomTile.GetComponent<MeshRenderer>().enabled = true;
 
 			//Moving on in a random direction TAKES ADDITIONAL TIME
 			print("Moving on randomly takes additional time");
@@ -779,6 +743,7 @@ public class MapSceneManager : MonoBehaviour {
 			foreach (GameObject tile in adjacentTiles) {
 				tile.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = true;
 				tile.GetComponent<MeshRenderer>().material.color = Color.red;
+				tile.GetComponent<MeshRenderer>().enabled = true;
 			}
 		}
 
@@ -792,6 +757,7 @@ public class MapSceneManager : MonoBehaviour {
 
 		currentLocation.GetComponent<ScriptableMapTileReader>().allowedToClickMapTile = false;
 		currentLocation.GetComponent<MeshRenderer>().material = tileBaseMat;
+		currentLocation.GetComponent<MeshRenderer>().enabled = false;
 	}
 
 
@@ -854,6 +820,7 @@ public class MapSceneManager : MonoBehaviour {
 
 		UpdateHealthBar();
 	}
+
 
 	public void UpdateHealthBar () {
 		//print((float)(CharacterManager.enduranceTotal - CharacterManager.damageTaken) / CharacterManager.enduranceTotal);

@@ -55,16 +55,17 @@ MonoBehaviour:
   hasRunAwayRange: 0
   hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  recoversFullInventory: 1
+  emptiesInventory: 0
+  logsEmptiedInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 1
   obtainedItemList: {fileID: 11400000, guid: 9db318188b275264fa812707bd7c0011, type: 2}
   exploreRangeDeterminesItems: 0
-  loseItems: 0
-  loseAllItems: 0
-  loseWeaponsAndArmor: 0
-  keepSilverDagger: {fileID: 0}
-  checksForSpecificItem: {fileID: 0}
-  checksItemQuantity: 0
-  useSpecificItem: {fileID: 0}
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
   timeTaken: 15
   canRestAtNight: 1
   XPGained: 30

@@ -400,22 +400,8 @@ public class MapSceneInventoryManager : MonoBehaviour {
 
 
 	public void EmptyInventory() {
-		foreach (GameObject itemParent in inventoryParents) {
-			if (itemParent.transform.childCount != 0) {
-				Destroy(itemParent.transform.GetChild(0).gameObject);
-			}
-		}
-
-//TOMAYBEDO Wipe out LOCAL script and quantity variables in MapSceneInventoryManager
-//Then, if necessary, maybe the ones in InventoryManager
-
-		inventoryScriptables = new ScriptableObject[15] {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
-
-		
-	}
-
-
-	public void SaveInventory() {
+		//Saving Inventory
+		print("Saving inventory for recovery");
 		savedInventoryScripts = new List<ScriptableObject>();
 		savedInventoryQuantities = new List<int>();
 
@@ -428,13 +414,37 @@ public class MapSceneInventoryManager : MonoBehaviour {
 
 		savedSilver = InventoryManager.silverCarried;
 		savedCopper = InventoryManager.copperCarried;
+
+		//Emptying Inventory
+		foreach (GameObject itemParent in inventoryParents) {
+			if (itemParent.transform.childCount != 0) {
+				Destroy(itemParent.transform.GetChild(0).gameObject);
+			}
+		}
+
+		inventoryScriptables = new ScriptableObject[15] {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
 	}
 
 
-	public void RecoverSavedInventory(bool recoverAll, bool recoverPouch, bool recoverDagger, bool recoversRandomWeapon) {
-//TOMAYBEDO Should I check (at least for the PARTIAL recoveries) to make sure the correct quantity of ALL ITEMS were possessed (meals/herbs/etc) as well as weapons?
-//So it doesn't return more items than the player originally had.
+//Incorporated into EmptyInventory()
+	//public void SaveInventory() {
+	//	print("Saving inventory for recovery");
+	//	savedInventoryScripts = new List<ScriptableObject>();
+	//	savedInventoryQuantities = new List<int>();
 
+	//	for (int i = 0; i < inventoryParents.Length; i++) {
+	//		if (inventoryParents[i].transform.childCount != 0) {
+	//			savedInventoryScripts.Add(inventoryParents[i].transform.GetChild(0).GetComponent<InventoryScriptableReader>().objectScript);
+	//			savedInventoryQuantities.Add(inventoryParents[i].transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity);
+	//		}
+	//	}
+
+	//	savedSilver = InventoryManager.silverCarried;
+	//	savedCopper = InventoryManager.copperCarried;
+	//}
+
+
+	public void RecoverSavedInventory(bool recoverAll, bool recoverPouch, bool recoverDagger, bool recoversRandomWeapon, InventoryItemScriptable confirmsItemInInventory, int quantityToConfirm) {
 		List<ScriptableObject> recoveryScriptList = new List<ScriptableObject>();
 		List<int> recoveryQuantitiesList = new List<int>();
 
@@ -498,8 +508,8 @@ public class MapSceneInventoryManager : MonoBehaviour {
 		}
 
 		if (recoversRandomWeapon) {
+			//Search through the player's saved inventory for any weapon OTHER THAN A DAGGER.
 			print("You recovered a RANDOM WEAPON from your PREVIOUS INVENTORY");
-			//Search through the player's saved inventory for any weapon OTHER THAN A DAGGER. If not that, then...?
 			List<ScriptableObject> randomWeaponScriptList = new List<ScriptableObject>();
 
 			for (int i = 0; i < savedInventoryScripts.Count; i++) {
@@ -508,10 +518,47 @@ public class MapSceneInventoryManager : MonoBehaviour {
 				}
 			}
 
-			int randomWeaponChosen = Random.Range(0, randomWeaponScriptList.Count);
+			if (randomWeaponScriptList.Count > 0) {
+				int randomWeaponChosen = Random.Range(0, randomWeaponScriptList.Count);
 
-			recoveryScriptList.Add(randomWeaponScriptList[randomWeaponChosen]);
-			recoveryQuantitiesList.Add(1);
+				recoveryScriptList.Add(randomWeaponScriptList[randomWeaponChosen]);
+				recoveryQuantitiesList.Add(1);
+			}
+			else {
+				print("NO RANDOM WEAPONS saved in previous inventory");
+			}
+		}
+
+		if (confirmsItemInInventory != null) {
+
+			int objectsTotal = 0;
+
+			for (int i = 0; i < savedInventoryScripts.Count; i++) {
+				if (savedInventoryScripts[i] as InventoryItemScriptable == confirmsItemInInventory) {
+					InventoryItemScriptable itemConfirmed = savedInventoryScripts[i] as InventoryItemScriptable;
+					itemConfirmed.itemQuantity = savedInventoryQuantities[i];
+					objectsTotal = itemConfirmed.itemQuantity;
+
+					print("Object quantity: " + itemConfirmed.itemQuantity);
+					print("Object total: " + objectsTotal);
+				}
+			}
+
+			if (objectsTotal == 0) {
+				print("Didn't find object to recover in inventory");
+			}
+			else if (objectsTotal >= quantityToConfirm) {
+				recoveryScriptList.Add(confirmsItemInInventory);
+				recoveryQuantitiesList.Add(quantityToConfirm);
+
+				print("You recovered " + quantityToConfirm + " " + confirmsItemInInventory);
+			}
+			else {
+				recoveryScriptList.Add(confirmsItemInInventory);
+				recoveryQuantitiesList.Add(objectsTotal);
+
+				print("Couldn't recover " + quantityToConfirm + " " + confirmsItemInInventory + ". Can only recover " + objectsTotal);
+			}
 		}
 
 		//Wait to respawn newItemHosts until the list has been fully compiled HERE
@@ -529,11 +576,8 @@ public class MapSceneInventoryManager : MonoBehaviour {
 
 		LogInventory();
 		itemListInventoryManager.GetComponent<MapSceneInventoryManager>().InitializeInventory();
-
 		//print("Your inventory has been partially/fully recovered and logged");
-
-		//mapSceneManager.OpenCharacterSheet();
-		//mapSceneManager.CloseCharacterSheet();
+		mapSceneManager.OpenCharacterSheet();
 	}
 
 

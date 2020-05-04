@@ -28,23 +28,25 @@ MonoBehaviour:
   addedSkill: 0
   itemRange1Min: 2
   itemRange1Max: 4
-  range1MultipleItems: 1
-  range1Items:
-  - {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
-  - {fileID: 11400000, guid: 89755c38d94aa9e44802c41ac8bcb2d7, type: 2}
-  range1ItemQuantities: 0200000001000000
+  range1MultipleItems: 0
+  range1Items: []
+  range1ItemQuantities: 
   range1RecoversMoneyPouch: 1
   range1RecoversDagger: 1
+  range1ObjectToConfirm: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99,
+    type: 2}
+  range1ConfirmQuantity: 2
   itemRange2Min: 5
   itemRange2Max: 8
-  range2MultipleItems: 1
-  range2Items:
-  - {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
-  - {fileID: 11400000, guid: 89755c38d94aa9e44802c41ac8bcb2d7, type: 2}
-  range2ItemQuantities: 0300000001000000
+  range2MultipleItems: 0
+  range2Items: []
+  range2ItemQuantities: 
   range2RecoversMoneyPouch: 1
   range2RecoversDagger: 1
   range2RecoversRandomWeapon: 1
+  range2ObjectToConfirm: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99,
+    type: 2}
+  range2ConfirmQuantity: 3
   obtainsArrowsInRange2: 0
   itemRange3Min: 0
   itemRange3Max: 0
