@@ -19,7 +19,6 @@ MonoBehaviour:
     You turn to face a large, snarling black bear rearing on his hind legs. He falls
     to all fours and rushes toward you, snarling and frothing at the mouth. You draw
     a weapon and stand your ground.
-  isCombat: 1
   isMerchant: 0
   canMoveOn: 0
   moveOnRandomly: 0
@@ -55,15 +54,17 @@ MonoBehaviour:
   hasRunAwayRange: 0
   hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  recoversFullInventory: 0
   emptiesInventory: 0
-  logsEmptiedInventory: 0
   loseWeaponsAndArmor: 0
   keepSilverDagger: {fileID: 0}
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
   exploreRangeDeterminesItems: 0
-  checksForSpecificItem: {fileID: 0}
-  checksItemQuantity: 0
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
+  combatScript: {fileID: 11400000, guid: 4423dc83ad7aadb4b96b95d497f87ce9, type: 2}
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 2

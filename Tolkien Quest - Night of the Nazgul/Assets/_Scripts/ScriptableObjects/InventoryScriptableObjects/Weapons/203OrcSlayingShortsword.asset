@@ -16,7 +16,7 @@ MonoBehaviour:
   - If you damage an Orc, he is automatically killed. (120)
   itemName: Magic Shortsword of Orc-Slaying
   itemIndex: 203
-  MyWeaponType: 0
+  MyWeaponType: 14
   weaponQuantity: 1
   additionalDamage: 1
   requiresEnemyInChainOrPlateArmor: 0

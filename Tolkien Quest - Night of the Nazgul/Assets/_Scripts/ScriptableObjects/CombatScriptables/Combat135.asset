@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
+  m_Name: Combat135
+  m_EditorClassIdentifier: 
+  enemyTypes: 06000000
+  enemyNames:
+  - 
+  enemyOB: 00000000
+  enemyDB: 00000000
+  enemyEP: 00000000
+  hasRandomEnemy: 1
+  enemy1RangeMax: 4
+  enemy2RangeMax: 8
+  enemy3RangeMax: 11
+  outOfEnemyRangeEncounter: 120
+  randomEnemyTypes: 060000000600000006000000
+  randomEnemyNames:
+  - Wight
+  - Wight
+  - Wight
+  randomEnemyOB: 040000000300000002000000
+  randomEnemyDB: 000000000100000001000000
+  randomEnemyEP: 26000000210000001d000000
+  playerSurprised: 0
+  firstAttackBonus: 0
+  penaltyToRun: 0
+  winMovesOn: 0
+  winEncounter: 120
+  loseMovesOn: 0
+  loseEncounter: 141

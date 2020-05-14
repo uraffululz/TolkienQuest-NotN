@@ -25,6 +25,7 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject characterSheetInventoryParent;
 	[SerializeField] GameObject useHerbButton;
 	[SerializeField] Image healthBarImage;
+	[SerializeField] Text healthBarEPText;
 	public Image diseaseIcon;
 
 	[SerializeField] GameObject locationTextBG;
@@ -66,12 +67,14 @@ public class MapSceneManager : MonoBehaviour {
 
 	[SerializeField] GameObject progressLocationTextButton;
 	[SerializeField] GameObject progressEncounterTextButton;
-	[SerializeField] GameObject openMerchantUIButton;
+	//[SerializeField] GameObject openMerchantUIButton;
 	[SerializeField] GameObject restButton;
 	[SerializeField] GameObject moveOnButton;
 	public GameObject moveOnEncounterButton;
 	public bool moveOnInRandomDirection;
 	public bool moveOnToSpecificTile;
+
+	[SerializeField] GameObject CombatUIBG;
 
 	[SerializeField] GameObject WinUIBG;
 
@@ -92,6 +95,8 @@ public class MapSceneManager : MonoBehaviour {
 		currentEncounter.myEncounterScriptable = GetComponent<EncounterManager>().encounterTextScriptables[298];
 
 		UpdateLocationBG();
+
+		healthBarEPText.text = "EP: " + (CharacterManager.enduranceTotal - CharacterManager.damageTaken) + " / " + CharacterManager.enduranceTotal;
 
 		disableDelayedEncounterButton = true;
 
@@ -238,7 +243,7 @@ public class MapSceneManager : MonoBehaviour {
 				//print("DiseaseDamageByDivision should be " + CharacterManager.diseaseTimer / 60);
 				int diseaseDamageByDivision = CharacterManager.diseaseTimer / 60;
 				CharacterManager.diseaseTimer -= diseaseDamageByDivision * 60;
-				AlterDamage(diseaseDamageByDivision);
+				AlterDamage(diseaseDamageByDivision, false);
 				print("You took " + diseaseDamageByDivision + "damage from your disease. Disease Timer: " + CharacterManager.diseaseTimer);
 			}
 		}
@@ -280,13 +285,11 @@ public class MapSceneManager : MonoBehaviour {
 				locationEncounterButton3.SetActive(true);
 				locationEncounterButton3.GetComponentInChildren<Text>().text = currentLocation.GetComponent<ScriptableMapTileReader>().encounterOptionText3;
 			}
-
-
-			//print("Current settlement index checked: " + currentLocation.GetComponent<ScriptableMapTileReader>().mySettlementIndex);
+			
 			//If the current tile has a settlement and they have already been warned
 			if (currentLocation.GetComponent<ScriptableMapTileReader>().mySettlementIndex != 0) {
-
 				bool alreadyWarnedSettlement = false;
+
 				switch (currentLocation.GetComponent<ScriptableMapTileReader>().mySettlementIndex) {
 					case 1: //Bridgefields
 						if (CharacterManager.warnedBridgefields) {
@@ -456,7 +459,7 @@ public class MapSceneManager : MonoBehaviour {
 				//print("DiseaseDamageByDivision should be " + CharacterManager.diseaseTimer / 60);
 				int diseaseDamageByDivision = CharacterManager.diseaseTimer / 60;
 				CharacterManager.diseaseTimer -= diseaseDamageByDivision * 60;
-				AlterDamage(diseaseDamageByDivision);
+				AlterDamage(diseaseDamageByDivision, false);
 				print("You took " + diseaseDamageByDivision + "damage from your disease. Disease Timer: " + CharacterManager.diseaseTimer);
 			}
 		}
@@ -566,6 +569,22 @@ public class MapSceneManager : MonoBehaviour {
 
 		CloseLocationUI();
 		//OpenEncounterUI();
+	}
+
+
+	public void OpenCombatBG(CombatScriptable currentCombatScript) {
+		CombatUIBG.SetActive(true);
+		CombatUIBG.GetComponent<Animator>().SetBool("UISlideIn", true);
+		CloseLocationUI();
+		CloseEncounterUI();
+
+		CombatUIBG.GetComponent<CombatManager>().StartCombat(currentCombatScript);
+	}
+
+
+	public void CloseCombatBG() {
+		CombatUIBG.GetComponent<Animator>().SetBool("UISlideIn", false);
+
 	}
 
 
@@ -777,7 +796,7 @@ public class MapSceneManager : MonoBehaviour {
 	}
 
 
-	public void AlterDamage(int newDamage) {
+	public void AlterDamage(int newDamage, bool damageDealtByCombat) {
 		CharacterManager.damageTaken += newDamage;
 		print("You took " + newDamage + " more damage.");
 
@@ -790,7 +809,13 @@ public class MapSceneManager : MonoBehaviour {
 				//currentEncounter.UpdateEncounter(337);
 			}
 			else {
-				GameOver();
+				if (damageDealtByCombat) {
+					CharacterManager.damageTaken = (CharacterManager.enduranceTotal - 1);
+					CombatUIBG.GetComponent<CombatManager>().EnableCombatLoseUI();
+				}
+				else {
+					GameOver();
+				}
 			}
 		}
 		else if (CharacterManager.damageTaken < 0) {
@@ -826,6 +851,7 @@ public class MapSceneManager : MonoBehaviour {
 		//print((float)(CharacterManager.enduranceTotal - CharacterManager.damageTaken) / CharacterManager.enduranceTotal);
 
 		healthBarImage.fillAmount = (float)(CharacterManager.enduranceTotal - CharacterManager.damageTaken) / CharacterManager.enduranceTotal;
+		healthBarEPText.text = "EP: " + (CharacterManager.enduranceTotal - CharacterManager.damageTaken) + " / " +  CharacterManager.enduranceTotal;
 	}
 
 
@@ -840,6 +866,13 @@ public class MapSceneManager : MonoBehaviour {
 
 
 	public void GameOver () {
+		CloseLocationUI();
+		CloseEncounterUI();
+		CloseCharacterSheet();
+		CloseCombatBG();
+		CloseItemListUI();
+		CloseMerchantUI();
+
 		LoseUIBG.GetComponent<Animator>().SetBool("SlideBottomUIOpen", true);
 //TODO Close all other "UI backgrounds" (except maybe for the one that led here)
 //Display what fault the player made to lead them here ("You failed to..."/"You were defeated by..."/etc.)

@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f219d3784a176d74194965f0d2cbbd7d, type: 3}
   m_Name: 301LightChainmail
   m_EditorClassIdentifier: 
+  notes: []
   itemName: Light Chainmail
   itemIndex: 301
   armorQuantity: 1
+  DBonus: 2
+  penaltyToTrickery: -2
+  penaltyToRunning: -2
+  penaltyToMagical: -2
   noTrickeryPenalty: 0
   mySkillIncrease: 0

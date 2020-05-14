@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
+  m_Name: Combat129
+  m_EditorClassIdentifier: 
+  enemyTypes: 06000000
+  enemyNames:
+  - Wight
+  enemyOB: 02000000
+  enemyDB: 02000000
+  enemyEP: 22000000
+  hasRandomEnemy: 1
+  enemy1RangeMax: 3
+  enemy2RangeMax: 7
+  enemy3RangeMax: 11
+  outOfEnemyRangeEncounter: 110
+  outOfEnemyRangeDescription: Before you can prepare for combat, the Wight flees.
+    You may pass without conflict
+  randomEnemyTypes: 060000000600000006000000
+  randomEnemyNames:
+  - Wight
+  - Wight
+  - Wight
+  randomEnemyOB: 030000000200000001000000
+  randomEnemyDB: 010000000200000003000000
+  randomEnemyEP: 2a0000002200000017000000
+  playerSurprised: 0
+  firstAttackBonus: 0
+  penaltyToRun: 0
+  runGoesToEncounter: 0
+  winMovesOn: 0
+  winEncounter: 110
+  loseMovesOn: 0
+  loseEncounter: 141

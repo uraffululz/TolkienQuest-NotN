@@ -6,7 +6,7 @@ public static class CharacterManager {
 	//TOMAYBEDO Change this class into a SINGLETON? What's the difference?
 	//Name
 	public static bool nameSet;
-	public static string myName;
+	public static string myName = "Luthario";
 
 	//TODO Make this an enum (not possible as a static), or something else?
 	//Race
@@ -111,5 +111,8 @@ public static class CharacterManager {
 	public static string warnedWhitfurrowsTime;
 	public static bool warnedWoodhall;
 	public static string warnedWoodhallTime;
-	
+
+	//Additional Endgame Stats
+	public static int settlementsWarned;
+	public static int enemiesDefeated;
 }

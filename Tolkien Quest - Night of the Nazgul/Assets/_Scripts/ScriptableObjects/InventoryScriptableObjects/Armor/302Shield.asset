@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f219d3784a176d74194965f0d2cbbd7d, type: 3}
   m_Name: 302Shield
   m_EditorClassIdentifier: 
+  notes: []
   itemName: Shield
   itemIndex: 302
   armorQuantity: 1
+  DBonus: 1
+  penaltyToTrickery: 0
+  penaltyToRunning: 0
+  penaltyToMagical: -1
   noTrickeryPenalty: 0
   mySkillIncrease: 0

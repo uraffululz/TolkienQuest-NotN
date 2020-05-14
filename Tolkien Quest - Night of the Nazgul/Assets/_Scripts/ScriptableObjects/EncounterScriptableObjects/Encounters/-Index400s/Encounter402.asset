@@ -23,7 +23,6 @@ MonoBehaviour:
 
 
     <i>You are surprised by the attack.</i>'
-  isCombat: 0
   isMerchant: 0
   canMoveOn: 0
   moveOnRandomly: 0
@@ -31,7 +30,7 @@ MonoBehaviour:
   movesOnTwoSpaces: 0
   moveToSpecificTile: 
   furtherEncounter1Text: Fight the Men
-  furtherEncounter1Index: 272
+  furtherEncounter1Index: 480
   furtherEncounter2Text: 
   furtherEncounter2Index: 0
   furtherEncounter3Text: 
@@ -59,16 +58,17 @@ MonoBehaviour:
   hasRunAwayRange: 0
   hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  recoversFullInventory: 0
+  emptiesInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
   exploreRangeDeterminesItems: 0
-  loseItems: 0
-  loseAllItems: 0
-  loseWeaponsAndArmor: 0
-  keepSilverDagger: {fileID: 0}
-  checksForSpecificItem: {fileID: 0}
-  checksItemQuantity: 0
-  useSpecificItem: {fileID: 0}
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
+  combatScript: {fileID: 0}
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 1
@@ -77,6 +77,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -97,4 +98,5 @@ MonoBehaviour:
   timeLimit2: 0
   limit2Index: 0
   overTimeIndex: 0
+  addsBonusToNextExplore: 0
   warnedSettlement: 0

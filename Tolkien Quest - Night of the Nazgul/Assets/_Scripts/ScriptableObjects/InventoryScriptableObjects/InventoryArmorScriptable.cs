@@ -18,6 +18,16 @@ public class InventoryArmorScriptable : ScriptableObject {
 
 	[Space]
 
+	public int DBonus;
+
+	[Space]
+
+	public int penaltyToTrickery;
+	public int penaltyToRunning;
+	public int penaltyToMagical;
+
+	[Space]
+
 	public bool noTrickeryPenalty;
 	public enum skillIncrease {None, General, Trickery };
 	public skillIncrease mySkillIncrease;

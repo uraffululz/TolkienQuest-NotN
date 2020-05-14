@@ -183,7 +183,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		////TODO These are for TESTING PURPOSES ONLY
 		//Directly assign the Encounter Index, to bring it up "for inspection"
 Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 362//253//207//219//316//154//263//172//356//355//278//176//222//298//164//268//165//146//118//361//364//385//445//128//354//421//466//151//110//354//222//336//216//319//452//204//158
+		encounterIndex = 133//104//328//384//387//129//362//253//207//219//316//154//263//172//356//355//278//176//222//298//164//268//165//146//118//361//364//385//445//128//354//421//466//151//110//354//222//336//216//319//452//204//158
 			;
 
 		//print("Encounter index: " + encounterIndex);
@@ -947,13 +947,17 @@ exploreRoll = 10;
 				}
 			}
 
+			if (myEncounterScriptable.combatScript != null) {
+				mapSceneManager.GetComponent<MapSceneManager>().OpenCombatBG(myEncounterScriptable.combatScript);
+			}
+
 			if (myEncounterScriptable.isMerchant) {
 				OpenMerchantUI();
 			}
 
 			if (myEncounterScriptable.damageAlteredAmount != 0) {
 				if (myEncounterScriptable.dealsRandomDirectDamage) {
-					mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(Random.Range(2, 13));
+					mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(Random.Range(2, 13), false);
 				}
 				else if (myEncounterScriptable.hasDamageRanges) {
 					//Only applies to Encounter 118
@@ -961,10 +965,10 @@ exploreRoll = 10;
 					print("Damage range roll: " + damageRangeRoll);
 
 					if (damageRangeRoll <= 4) {
-						mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(6);
+						mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(6, false);
 					}
 					else if (damageRangeRoll >= 5 && damageRangeRoll <= 7) {
-						mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(3);
+						mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(3, false);
 					}
 				}
 				else if (myEncounterScriptable.deals50PercentDamage) {
@@ -972,7 +976,7 @@ exploreRoll = 10;
 					mapSceneManager.GetComponent<MapSceneManager>().UpdateHealthBar();
 				}
 				else {
-					mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(MapSceneManager.currentEncounter.myEncounterScriptable.damageAlteredAmount);
+					mapSceneManager.GetComponent<MapSceneManager>().AlterDamage(MapSceneManager.currentEncounter.myEncounterScriptable.damageAlteredAmount, false);
 				}
 			}
 
@@ -1039,6 +1043,7 @@ exploreRoll = 10;
 
 				switch (MapSceneManager.currentEncounter.myEncounterScriptable.warnedSettlement) {
 					case 1: //Bridgefields
+						
 						CharacterManager.warnedBridgefields = true;
 						CharacterManager.warnedBridgefieldsTime = CharacterManager.daysTaken + " days, " + CharacterManager.currentDayTimeTaken + " minutes";
 						break;

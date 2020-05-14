@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42239b76c4aa2af418d9e5729056d603, type: 3}
   m_Name: 104Spear
   m_EditorClassIdentifier: 
+  notes: []
   itemName: Spear
   itemIndex: 104
-  MyWeaponType: 0
+  MyWeaponType: 7
   weaponQuantity: 1
   additionalDamage: 0
   requiresEnemyInChainOrPlateArmor: 0
@@ -23,3 +24,4 @@ MonoBehaviour:
   MissileOBAdjustment: -1
   onlyMissileAttacks: 0
   autoKillsOrcs: 0
+  obtainsArrows: 0

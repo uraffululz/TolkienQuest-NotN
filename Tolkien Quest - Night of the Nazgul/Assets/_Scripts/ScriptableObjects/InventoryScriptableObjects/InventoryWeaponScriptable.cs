@@ -13,7 +13,7 @@ public class InventoryWeaponScriptable : ScriptableObject {
 	public int itemIndex;
 
 //MAYBE Add each individual weapon to this list, which may make determining the player's combat attacks/choices easier in the future
-	public enum weaponTypes {Default, BareHanded, BattleAxe, Bow, Club, Dagger, Mace, Spear, Sword, WarHammer};
+	public enum weaponTypes {Default, BareHanded, BattleAxe, Bow, Club, Dagger, Mace, Spear, Staff, Sword, TwoHandedSword, WarHammer, MagicSword, MagicBow, OrcSlayingSword};
 	public weaponTypes MyWeaponType;
 
 	[Space]

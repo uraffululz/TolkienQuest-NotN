@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f219d3784a176d74194965f0d2cbbd7d, type: 3}
+  m_Name: 303PlateArmor
+  m_EditorClassIdentifier: 
+  notes:
+  - Obtained where?
+  itemName: Plate Armor
+  itemIndex: 303
+  armorQuantity: 1
+  DBonus: 3
+  penaltyToTrickery: -3
+  penaltyToRunning: -3
+  penaltyToMagical: -3
+  noTrickeryPenalty: 0
+  mySkillIncrease: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   - Additional +1 to MeleeOB (110)
   itemName: Magic Sword
   itemIndex: 201
-  MyWeaponType: 0
+  MyWeaponType: 12
   weaponQuantity: 1
   additionalDamage: 0
   requiresEnemyInChainOrPlateArmor: 0

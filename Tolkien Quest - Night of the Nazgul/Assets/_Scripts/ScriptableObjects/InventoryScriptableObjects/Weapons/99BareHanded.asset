@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42239b76c4aa2af418d9e5729056d603, type: 3}
   m_Name: 99BareHanded
   m_EditorClassIdentifier: 
+  notes: []
   itemName: Bare-Handed
   itemIndex: 99
-  MyWeaponType: 0
+  MyWeaponType: 1
   weaponQuantity: 1
   additionalDamage: -3
   requiresEnemyInChainOrPlateArmor: 0
@@ -23,3 +24,4 @@ MonoBehaviour:
   MissileOBAdjustment: 0
   onlyMissileAttacks: 0
   autoKillsOrcs: 0
+  obtainsArrows: 0

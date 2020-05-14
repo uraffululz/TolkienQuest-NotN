@@ -16,7 +16,6 @@ MonoBehaviour:
   miscNotes: []
   encounterText:
   - You draw a weapon and strike at the coiled serpent.
-  isCombat: 1
   isMerchant: 0
   canMoveOn: 0
   moveOnRandomly: 0
@@ -49,9 +48,20 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  recoversFullInventory: 0
+  emptiesInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
+  combatScript: {fileID: 11400000, guid: 0c4eb0ad789c7554ab5479a71d380040, type: 2}
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 0
@@ -60,6 +70,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -72,3 +83,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

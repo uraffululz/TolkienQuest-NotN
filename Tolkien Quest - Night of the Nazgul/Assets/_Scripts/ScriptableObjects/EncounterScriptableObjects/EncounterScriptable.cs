@@ -11,7 +11,7 @@ public class EncounterScriptable : ScriptableObject {
 
 	[TextArea(4, 10, order = 0)] public string[] encounterText;
 
-	public bool isCombat;
+	//public bool isCombat;
 	public bool isMerchant;
 	public bool canMoveOn;
 	public bool moveOnRandomly;
@@ -88,7 +88,10 @@ public class EncounterScriptable : ScriptableObject {
 	public float loseMeals;
 	public int costsCopper;
 	//public InventoryItemScriptable useSpecificItem;
-	
+
+	[Space]
+	[Header("Combat")]
+	public CombatScriptable combatScript;
 
 
 	[Header("Misc. Variables", order = 1)]

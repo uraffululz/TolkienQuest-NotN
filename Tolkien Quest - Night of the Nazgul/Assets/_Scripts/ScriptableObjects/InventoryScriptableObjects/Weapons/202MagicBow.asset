@@ -16,7 +16,7 @@ MonoBehaviour:
   - Additional +1 to MissileOB (110)
   itemName: Magic Bow
   itemIndex: 202
-  MyWeaponType: 0
+  MyWeaponType: 13
   weaponQuantity: 1
   additionalDamage: 0
   requiresEnemyInChainOrPlateArmor: 0

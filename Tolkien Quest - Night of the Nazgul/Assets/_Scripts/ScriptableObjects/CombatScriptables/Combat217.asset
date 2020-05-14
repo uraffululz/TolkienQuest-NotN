@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
+  m_Name: Combat217
+  m_EditorClassIdentifier: 
+  enemyTypes: 02000000
+  enemyNames:
+  - Monk
+  enemyOB: 01000000
+  enemyDB: 01000000
+  enemyEP: 1f000000
+  hasRandomEnemy: 0
+  enemy1RangeMax: 0
+  enemy2RangeMax: 0
+  enemy3RangeMax: 0
+  outOfEnemyRangeEncounter: 0
+  randomEnemyTypes: 
+  randomEnemyNames: []
+  randomEnemyOB: 
+  randomEnemyDB: 
+  randomEnemyEP: 
+  playerSurprised: 0
+  firstAttackBonus: 0
+  penaltyToRun: 0
+  winMovesOn: 0
+  winEncounter: 243
+  loseMovesOn: 0
+  loseEncounter: 118

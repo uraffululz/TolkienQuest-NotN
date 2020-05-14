@@ -32,10 +32,6 @@ public class MapSceneInventoryManager : MonoBehaviour {
 	[Space]
 
 	[SerializeField] Text charSheetArrowText;
-
-	[Space]
-
-	[SerializeField] bool trackingInitialization;
 	
 	
 	void Start() {
@@ -244,10 +240,6 @@ public class MapSceneInventoryManager : MonoBehaviour {
 
 		pouchParent.text = ("Silver: " + InventoryManager.silverCarried + " | Copper: " + InventoryManager.copperCarried);
 		charSheetArrowText.text = ("Arrows: " + InventoryManager.arrowsCarried.ToString());
-
-		if (trackingInitialization) {
-			print("Inventory should be initialized");
-		}
 	}
 
 
@@ -379,21 +371,21 @@ public class MapSceneInventoryManager : MonoBehaviour {
 		InventoryManager.slot11Scriptable = inventoryScriptables[13];
 		InventoryManager.slot12Scriptable = inventoryScriptables[14];
 
-				print("Item Quantities: " + InventoryManager.cloakQuantity + ", " +
-				InventoryManager.armorQuantity + ", " +
-				InventoryManager.daggerQuantity + ", " +
-				InventoryManager.slot1Quantity + ", " +
-				InventoryManager.slot2Quantity + ", " +
-				InventoryManager.slot3Quantity + ", " +
-				InventoryManager.slot4Quantity + ", " +
-				InventoryManager.slot5Quantity + ", " +
-				InventoryManager.slot6Quantity + ", " +
-				InventoryManager.slot7Quantity + ", " +
-				InventoryManager.slot8Quantity + ", " +
-				InventoryManager.slot9Quantity + ", " +
-				InventoryManager.slot10Quantity + ", " +
-				InventoryManager.slot11Quantity + ", " +
-				InventoryManager.slot12Quantity);
+				//print("Item Quantities: " + InventoryManager.cloakQuantity + ", " +
+				//InventoryManager.armorQuantity + ", " +
+				//InventoryManager.daggerQuantity + ", " +
+				//InventoryManager.slot1Quantity + ", " +
+				//InventoryManager.slot2Quantity + ", " +
+				//InventoryManager.slot3Quantity + ", " +
+				//InventoryManager.slot4Quantity + ", " +
+				//InventoryManager.slot5Quantity + ", " +
+				//InventoryManager.slot6Quantity + ", " +
+				//InventoryManager.slot7Quantity + ", " +
+				//InventoryManager.slot8Quantity + ", " +
+				//InventoryManager.slot9Quantity + ", " +
+				//InventoryManager.slot10Quantity + ", " +
+				//InventoryManager.slot11Quantity + ", " +
+				//InventoryManager.slot12Quantity);
 
 		InitializeInventory();
 	}
