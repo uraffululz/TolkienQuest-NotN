@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
   m_Name: Combat480
   m_EditorClassIdentifier: 
+  notes:
+  - A copy of Encounter 272, but this one comes from Encounter 402, wherein the player
+    is surprised at the beginning of combat. Other than that, they should be the same.
+  enemyCount: 2
   enemyTypes: 0200000002000000
   enemyNames:
   - Highwayman
@@ -23,6 +27,7 @@ MonoBehaviour:
   enemy1RangeMax: 0
   enemy2RangeMax: 0
   enemy3RangeMax: 0
+  enemy4RangeMax: 0
   outOfEnemyRangeDescription: 
   randomEnemyTypes: 
   randomEnemyNames: []
@@ -31,8 +36,11 @@ MonoBehaviour:
   randomEnemyEP: 
   playerSurprised: 1
   firstAttackBonus: 0
+  playerCannotSneakAttack: 0
   mustDefeatFirstEnemyToRun: 0
   penaltyToRun: -2
   runGoesToEncounter: 0
+  canPlayDead: 0
   winEncounter: 182
   loseEncounter: 188
+  altLoseEncounter: 0

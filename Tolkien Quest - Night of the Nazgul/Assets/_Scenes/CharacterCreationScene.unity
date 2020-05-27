@@ -5463,7 +5463,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneManager: {fileID: 1931801603}
   inventoryManager1: {fileID: 0}
+  inventoryManager1ArmorSlot: {fileID: 0}
+  inventoryManager1CloakSlot: {fileID: 0}
+  inventoryManager1DaggerSlot: {fileID: 0}
   inventoryManager2: {fileID: 0}
+  inventoryManager2ArmorSlot: {fileID: 0}
+  inventoryManager2CloakSlot: {fileID: 0}
+  inventoryManager2DaggerSlot: {fileID: 0}
+  itemListBG: {fileID: 0}
 --- !u!1 &629936006
 GameObject:
   m_ObjectHideFlags: 0

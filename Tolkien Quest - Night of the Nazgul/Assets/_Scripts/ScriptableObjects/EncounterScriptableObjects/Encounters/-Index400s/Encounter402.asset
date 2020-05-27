@@ -23,6 +23,14 @@ MonoBehaviour:
 
 
     <i>You are surprised by the attack.</i>'
+  encounterTextWhole: 'You try to talk the two highwaymen out of robbing you.
+
+    "Look, let''s be friends," you say
+
+    They rush you, weapons drawn.
+
+
+    <i>You are surprised by the attack.</i>'
   isMerchant: 0
   canMoveOn: 0
   moveOnRandomly: 0
@@ -68,7 +76,17 @@ MonoBehaviour:
   mealScript: {fileID: 0}
   loseMeals: 0
   costsCopper: 0
+  opensActionBG: 0
+  enemyUnaware: 0
+  canRunAwayPast: 0
+  runAwayPastEncounter: 0
+  fightEncounter: 0
+  skipFightToEncounter: 0
   combatScript: {fileID: 0}
+  canSneakAttackEncounter: 0
+  lastCombatDamageGoesToEncounter: 0
+  canCastClairvoyance: 0
+  canCastItemAnalysis: 0
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 1

@@ -23,6 +23,8 @@ public class InventoryScriptableReader : MonoBehaviour {
 	public bool isAMeal;
 	public bool isACure;
 
+	public bool fromTakeOneList;
+
 
 	//WEAPON Variables
 

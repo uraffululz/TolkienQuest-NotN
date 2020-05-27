@@ -18,6 +18,9 @@ MonoBehaviour:
   - 'The hermit raises a hand to warn you, his eyes glowing.
 
     "I will brook no attack, young fool!" he cries.'
+  encounterTextWhole: 'The hermit raises a hand to warn you, his eyes glowing.
+
+    "I will brook no attack, young fool!" he cries.'
   isMerchant: 0
   canMoveOn: 0
   moveOnRandomly: 0
@@ -63,7 +66,17 @@ MonoBehaviour:
   mealScript: {fileID: 0}
   loseMeals: 0
   costsCopper: 0
+  opensActionBG: 0
+  enemyUnaware: 0
+  canRunAwayPast: 0
+  runAwayPastEncounter: 0
+  fightEncounter: 0
+  skipFightToEncounter: 0
   combatScript: {fileID: 11400000, guid: 1de20d7aa1201144e8f4253a83a941b8, type: 2}
+  canSneakAttackEncounter: 0
+  lastCombatDamageGoesToEncounter: 0
+  canCastClairvoyance: 0
+  canCastItemAnalysis: 0
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 0

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
   m_Name: Combat129
   m_EditorClassIdentifier: 
+  notes: []
+  enemyCount: 1
   enemyTypes: 06000000
   enemyNames:
   - Wight
@@ -22,7 +24,7 @@ MonoBehaviour:
   enemy1RangeMax: 3
   enemy2RangeMax: 7
   enemy3RangeMax: 11
-  outOfEnemyRangeEncounter: 110
+  enemy4RangeMax: 0
   outOfEnemyRangeDescription: Before you can prepare for combat, the Wight flees.
     You may pass without conflict
   randomEnemyTypes: 060000000600000006000000
@@ -35,9 +37,11 @@ MonoBehaviour:
   randomEnemyEP: 2a0000002200000017000000
   playerSurprised: 0
   firstAttackBonus: 0
+  playerCannotSneakAttack: 0
+  mustDefeatFirstEnemyToRun: 0
   penaltyToRun: 0
   runGoesToEncounter: 0
-  winMovesOn: 0
+  canPlayDead: 0
   winEncounter: 110
-  loseMovesOn: 0
   loseEncounter: 141
+  altLoseEncounter: 0

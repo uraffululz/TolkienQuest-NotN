@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
   m_Name: Combat148
   m_EditorClassIdentifier: 
+  notes:
+  - When coming from Encounter 133, the Player IS SURPRISED (See Combat481 for alternate).
+  enemyCount: 1
   enemyTypes: 02000000
   enemyNames:
   - Man
@@ -22,6 +25,7 @@ MonoBehaviour:
   enemy1RangeMax: 0
   enemy2RangeMax: 0
   enemy3RangeMax: 0
+  enemy4RangeMax: 0
   outOfEnemyRangeDescription: 
   randomEnemyTypes: 
   randomEnemyNames: []
@@ -30,8 +34,11 @@ MonoBehaviour:
   randomEnemyEP: 
   playerSurprised: 1
   firstAttackBonus: 0
+  playerCannotSneakAttack: 0
   mustDefeatFirstEnemyToRun: 0
   penaltyToRun: 0
   runGoesToEncounter: 0
+  canPlayDead: 0
   winEncounter: 125
   loseEncounter: 296
+  altLoseEncounter: 0

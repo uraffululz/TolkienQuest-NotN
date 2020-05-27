@@ -80,6 +80,8 @@ public class ScriptableMapTileReader : MonoBehaviour {
 	public string downstreamOtherSideTile1ID;
 	public string downstreamOtherSideTile2ID;
 
+	public bool enemyHereIsDead;
+
 
 	void Awake () {
 		if (myTileScriptable != null) {

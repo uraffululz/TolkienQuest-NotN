@@ -15,30 +15,40 @@ MonoBehaviour:
   encounterIndex: 336
   miscNotes: []
   encounterText:
-  - 'You tiptoe into the dark cave and peek around a turn in the passageway to see
+  - You tiptoe into the dark cave and peek around a turn in the passageway to see
     a Troll -- nine feet tall, wide as a house, a greenish brown creature with peeling,
     steely scales covering his skin -- trying on variously gleaming bracelets, apparently
-    "humming" to himself. Lying near you is a pile of arms -- shortswords, clubs,
-    daggers; halfway between you and the Troll lies a pile of shiny booty, including
-    jewels, necklaces, rings and earrings.
+    "humming" to himself.
+  - 'Lying near you is a pile of arms -- shortswords, clubs, daggers; halfway between
+    you and the Troll lies a pile of shiny booty, including jewels, necklaces, rings
+    and earrings.
 
     You can guess only too well where their rightful owners must be now!'
-  isCombat: 0
+  encounterTextWhole: 'You tiptoe into the dark cave and peek around a turn in the
+    passageway to see a Troll -- nine feet tall, wide as a house, a greenish brown
+    creature with peeling, steely scales covering his skin -- trying on variously
+    gleaming bracelets, apparently "humming" to himself.
+
+    Lying near you is a pile of arms -- shortswords, clubs, daggers; halfway between
+    you and the Troll lies a pile of shiny booty, including jewels, necklaces, rings
+    and earrings.
+
+    You can guess only too well where their rightful owners must be now!'
   isMerchant: 0
   canMoveOn: 1
   moveOnRandomly: 0
   rollHowToMoveOnMax: 0
   movesOnTwoSpaces: 0
   moveToSpecificTile: 
-  furtherEncounter1Text: Sneak Attack
-  furtherEncounter1Index: 1
+  furtherEncounter1Text: 
+  furtherEncounter1Index: 0
   furtherEncounter2Text: Steal A Weapon
   furtherEncounter2Index: 347
   furtherEncounter3Text: Steal Jewelry
   furtherEncounter3Index: 354
   furtherEncounter4Text: 
   furtherEncounter4Index: 0
-  exploreHasMultipleRanges: 1
+  exploreHasMultipleRanges: 0
   actionAddsSkill: 2
   howManyRanges: 2
   range1Min: 2
@@ -57,18 +67,29 @@ MonoBehaviour:
   canGetLost: 0
   randomDirectionChoiceMax: 0
   hasRunAwayRange: 0
-  hasSneakAttackRange: 1
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  recoversFullInventory: 0
+  emptiesInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
   exploreRangeDeterminesItems: 0
-  loseItems: 0
-  loseAllItems: 0
-  loseWeaponsAndArmor: 0
-  keepSilverDagger: {fileID: 0}
-  checksForSpecificItem: {fileID: 0}
-  checksItemQuantity: 0
-  useSpecificItem: {fileID: 0}
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
+  opensActionBG: 1
+  enemyUnaware: 1
+  enemyAwareAndHostile: 0
+  runAwayPastEncounter: 0
+  fightEncounter: 388
+  skipFightToEncounter: 381
+  combatScript: {fileID: 0}
+  canSneakAttackEncounter: 388
+  lastCombatDamageGoesToEncounter: 0
+  canCastClairvoyance: 0
+  canCastItemAnalysis: 0
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 2
@@ -77,6 +98,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -89,3 +111,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

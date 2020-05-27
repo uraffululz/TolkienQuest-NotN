@@ -8,8 +8,10 @@ public class ScriptableEncounterReader : MonoBehaviour {
 	public EncounterScriptable myEncounterScriptable;
 
 	[SerializeField] GameObject mapSceneManager;
+	[SerializeField] MapSceneCharacterSheetManager mSCSM;
 	[SerializeField] GameObject mapSceneInventoryManager;
 	[SerializeField] GameObject itemListInventoryManager;
+	[SerializeField] Text overallActionText;
 
 	public int bonusToNextExplore = 0;
 
@@ -22,8 +24,8 @@ public class ScriptableEncounterReader : MonoBehaviour {
 
 	[SerializeField] GameObject merchantUI;
 
-	[SerializeField] InventoryItemScriptable healingHerbScript;
-	[SerializeField] InventoryWeaponScriptable arrowScript;
+	//[SerializeField] InventoryItemScriptable healingHerbScript;
+	//[SerializeField] InventoryWeaponScriptable arrowScript;
 
 	public int delayedEncounterIndex = 0;
 
@@ -58,10 +60,25 @@ public class ScriptableEncounterReader : MonoBehaviour {
 			if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.General) {
 				exploreRoll += CharacterManager.mySkillGeneralTotal;
 				print("Adding General skill bonus");
+
+				if (CharacterManager.balanceSpellActive) {
+					CharacterManager.mySkillGeneralSpecialBonuses -= 2;
+					CharacterManager.balanceSpellActive = false;
+
+					mSCSM.UpdateGeneralSkillTexts();
+				}
 			}
 			else if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.Trickery) {
 				exploreRoll += CharacterManager.mySkillTrickeryTotal;
 				print("Adding Trickery skill bonus");
+
+				if (CharacterManager.camoSpellActive) {
+					overallActionText.text += "\nYour Camouflage spell adds +2 to your attempt!";
+					CharacterManager.mySkillTrickerySpecialBonuses -= 2;
+					CharacterManager.camoSpellActive = false;
+
+					mSCSM.UpdateTrickerySkillTexts();
+				}
 			}
 			else if (MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().addSkillToAction == MapTileScriptable.actionSkill.Perception) {
 				exploreRoll += CharacterManager.mySkillPerceptionTotal;
@@ -114,6 +131,13 @@ public class ScriptableEncounterReader : MonoBehaviour {
 						//If the player is then meant to move in a random direction
 						int randomRoll = Random.Range(2, 13);
 						randomRoll += CharacterManager.mySkillGeneralTotal;
+
+						if (CharacterManager.balanceSpellActive) {
+							CharacterManager.mySkillGeneralSpecialBonuses -= 2;
+							CharacterManager.balanceSpellActive = false;
+
+							mSCSM.UpdateGeneralSkillTexts();
+						}
 
 						if (randomRoll <= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMax) {
 							print("You are lost. Moving on in a random direction");
@@ -183,7 +207,7 @@ public class ScriptableEncounterReader : MonoBehaviour {
 		////TODO These are for TESTING PURPOSES ONLY
 		//Directly assign the Encounter Index, to bring it up "for inspection"
 Debug.Log("<b>In case you were wondering, you're directly assigning the Encounter Index right here!</b>");
-		encounterIndex = 133//104//328//384//387//129//362//253//207//219//316//154//263//172//356//355//278//176//222//298//164//268//165//146//118//361//364//385//445//128//354//421//466//151//110//354//222//336//216//319//452//204//158
+		encounterIndex = 336//136//210//164//272//380//401//329//303//236//133//180//197//104//328//384//387//129//362//253//207//219//316//154//263//172//356//355//278//176//222//298//164//268//165//146//118//361//364//385//445//128//354//421//466//151//110//354//222//336//216//319//452//204//158
 			;
 
 		//print("Encounter index: " + encounterIndex);
@@ -217,7 +241,14 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				if (MapSceneManager.currentEncounter.myEncounterScriptable.jumpInRiverRequiresRoll) {
 					int jumpRoll = Random.Range(2, 13);
 					jumpRoll += CharacterManager.mySkillGeneralTotal;
-					print("JumpRoll: " + jumpRoll);
+					//print("JumpRoll: " + jumpRoll);
+
+					if (CharacterManager.balanceSpellActive) {
+						CharacterManager.mySkillGeneralSpecialBonuses -= 2;
+						CharacterManager.balanceSpellActive = false;
+
+						mSCSM.UpdateGeneralSkillTexts();
+					}
 
 					if (jumpRoll >= 9) {
 						currentEncounterIndex = 290;
@@ -248,10 +279,25 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				if (MapSceneManager.currentEncounter.myEncounterScriptable.actionAddsSkill == EncounterScriptable.actionSkill.General) {
 					exploreRoll += CharacterManager.mySkillGeneralTotal;
 					print("Adding General skill bonus");
+
+					if (CharacterManager.balanceSpellActive) {
+						CharacterManager.mySkillGeneralSpecialBonuses -= 2;
+						CharacterManager.balanceSpellActive = false;
+
+						mSCSM.UpdateGeneralSkillTexts();
+					}
 				}
 				else if (MapSceneManager.currentEncounter.myEncounterScriptable.actionAddsSkill == EncounterScriptable.actionSkill.Trickery) {
 					exploreRoll += CharacterManager.mySkillTrickeryTotal;
 					print("Adding Trickery skill bonus");
+
+					if (CharacterManager.camoSpellActive) {
+						overallActionText.text += "\nYour Camouflage spell adds +2 to your attempt!";
+						CharacterManager.mySkillTrickerySpecialBonuses -= 2;
+						CharacterManager.camoSpellActive = false;
+
+						mSCSM.UpdateTrickerySkillTexts();
+					}
 				}
 				else if (MapSceneManager.currentEncounter.myEncounterScriptable.actionAddsSkill == EncounterScriptable.actionSkill.Perception) {
 					exploreRoll += CharacterManager.mySkillPerceptionTotal;
@@ -259,7 +305,7 @@ Debug.Log("<b>In case you were wondering, you're directly assigning the Encounte
 				}
 	//TODO Finish this list, adding the other relevant skill totals
 
-exploreRoll = 10;
+//exploreRoll = 10;
 				print("Explore roll: " + exploreRoll);
 
 				if (bonusToNextExplore != 0) {
@@ -309,17 +355,25 @@ exploreRoll = 10;
 							print("You rolled between" + MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.start + " - " +
 									MapSceneManager.currentEncounter.myEncounterScriptable.exploreRange2.end);
 
+
+//TODO Not sure if this is necessary here, and I'm DAMN SURE it doesn't work
 							//The Player's SNEAK ATTACK succeeds, allowing them extra damage for the first attack in the following combat
 							if (MapSceneManager.currentEncounter.myEncounterScriptable.hasSneakAttackRange) {
 	//INITIATE COMBAT AND OPEN CombatBG
 	//The Player's FIRST ATTACK adds his/her Trickery bonus to their OB stat
 								print("Sneak attack successful");
-								CharacterManager.sneakAttackBonus = CharacterManager.mySkillTrickeryTotal;
-	//During their first attack, apply the sneakAttackBonus stat to the Player's various OB stat bonuses
-	//(In the CombatManager script) Each round after attacking, set sneakAttackBonus back to 0 if it isn't already
+								CombatManager.sneakAttackSuccessful = true;
+								//CharacterManager.sneakAttackBonus = CharacterManager.mySkillTrickeryTotal;
 
+								if (CharacterManager.camoSpellActive) {
+								overallActionText.text += "\nYour Camouflage spell adds +2 to your attempt!";
+								CharacterManager.mySkillTrickerySpecialBonuses -= 2;
+									CharacterManager.camoSpellActive = false;
+
+									mSCSM.UpdateTrickerySkillTexts();
+								}
 							}
-
+//
 
 							//For now this only applies to Encounter 354
 							if (myEncounterScriptable.exploreRangeDeterminesItems) {
@@ -363,8 +417,14 @@ exploreRoll = 10;
 							//	//If the player is then meant to move in a random direction
 							int randomRoll = Random.Range(2, 13);
 							randomRoll += CharacterManager.mySkillGeneralTotal;
-
 							print("Lost Chance Roll: " + randomRoll);
+
+							if (CharacterManager.balanceSpellActive) {
+								CharacterManager.mySkillGeneralSpecialBonuses -= 2;
+								CharacterManager.balanceSpellActive = false;
+
+								mSCSM.UpdateGeneralSkillTexts();
+							}
 
 							if (/*randomRoll >= MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().randomDirectionChoiceMin &&*/
 								randomRoll <= MapSceneManager.currentEncounter.myEncounterScriptable.randomDirectionChoiceMax) {
@@ -447,6 +507,10 @@ exploreRoll = 10;
 			else {
 				mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.SetActive(false);
 			}
+
+			//if (myEncounterScriptable.opensActionBG) {
+			//	mapSceneManager.GetComponent<MapSceneManager>().EnableActionBG();
+			//}
 
 			//Move the player/currentLocation to a SPECIFIC TILE, as directed by the currentEncounter
 			if (MapSceneManager.currentEncounter.myEncounterScriptable.moveToSpecificTile != "") {
@@ -858,6 +922,7 @@ exploreRoll = 10;
 				foreach (GameObject itemParent in mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().inventoryParents) {
 					if (itemParent.transform.childCount != 0) {
 						if (itemParent.transform.GetChild(0).GetComponent<InventoryScriptableReader>().objectScript == myEncounterScriptable.mealScript) {
+							//The player loses (or in the case of this calculation, KEEPS) a percentage of their meals
 							itemParent.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity = (int)(itemParent.transform.GetChild(0).GetComponent<InventoryScriptableReader>().itemQuantity * myEncounterScriptable.loseMeals);
 						}
 					}
@@ -871,7 +936,6 @@ exploreRoll = 10;
 				MerchantUIManager.SpendPlayerMoney(EncounterMerchantScriptable.coinTypes.copper, myEncounterScriptable.costsCopper);
 				mapSceneInventoryManager.GetComponent<MapSceneInventoryManager>().LogInventory();
 			}
-
 			
 			if (myEncounterScriptable.floatsDownstream) {
 				string downstreamTileIndex = null;
@@ -948,7 +1012,33 @@ exploreRoll = 10;
 			}
 
 			if (myEncounterScriptable.combatScript != null) {
-				mapSceneManager.GetComponent<MapSceneManager>().OpenCombatBG(myEncounterScriptable.combatScript);
+				if (!MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().enemyHereIsDead) {
+					mapSceneManager.GetComponent<MapSceneManager>().OpenCombatBG(myEncounterScriptable.combatScript);
+				}
+				else {
+//TODO Adjust variables for when the current location's combat is already completed
+//The player should not be able to fight, or choose some/all other "further" options
+//They should, likely, just Move On
+					mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.SetActive(true);
+				}
+			}
+
+			if (myEncounterScriptable.lastCombatDamageGoesToEncounter != 0) {
+				if (CombatManager.playerDamagedInLastCombat) {
+					//Go to the "damaged" encounter
+					DelayEncounterUpdate(myEncounterScriptable.lastCombatDamageGoesToEncounter, false);
+					CombatManager.playerDamagedInLastCombat = false;
+				}
+				else {
+					//mapSceneManager.GetComponent<MapSceneManager>().encounterText.text += "\n ...Seeing nothing, you decide to move on.";
+
+					//Move On (NOT RANDOMLY)
+					mapSceneManager.GetComponent<MapSceneManager>().moveOnInRandomDirection = false;
+					mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.GetComponentInChildren<Text>().text = "Move On";
+					mapSceneManager.GetComponent<MapSceneManager>().moveOnEncounterButton.SetActive(true);
+					//mapSceneManager.GetComponent<MapSceneManager>().MoveOn(2);
+
+				}
 			}
 
 			if (myEncounterScriptable.isMerchant) {

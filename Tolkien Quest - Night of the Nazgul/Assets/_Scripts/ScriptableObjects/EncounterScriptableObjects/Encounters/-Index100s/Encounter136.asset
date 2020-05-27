@@ -16,9 +16,11 @@ MonoBehaviour:
   miscNotes: []
   encounterText:
   - Your reading is interrupted by a cough at the door, behind you. You spin to face
-    a small, lean man with a tangled grey bear to his waist. He wears skins and carries
+    a small, lean man with a tangled grey beard to his waist. He wears skins and carries
     a wooden bowl brimming with berries.
-  isCombat: 0
+  encounterTextWhole: Your reading is interrupted by a cough at the door, behind you.
+    You spin to face a small, lean man with a tangled grey beard to his waist. He
+    wears skins and carries a wooden bowl brimming with berries.
   isMerchant: 0
   canMoveOn: 0
   moveOnRandomly: 0
@@ -51,9 +53,29 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  recoversFullInventory: 0
+  emptiesInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
+  opensActionBG: 0
+  enemyUnaware: 0
+  runAwayPastEncounter: 145
+  fightEncounter: 260
+  skipFightToEncounter: 0
+  combatScript: {fileID: 0}
+  canSneakAttackEncounter: 0
+  lastCombatDamageGoesToEncounter: 0
+  canCastClairvoyance: 1
+  canCastItemAnalysis: 0
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 0
@@ -62,6 +84,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -74,3 +97,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

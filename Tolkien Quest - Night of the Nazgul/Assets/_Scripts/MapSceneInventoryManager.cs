@@ -246,6 +246,7 @@ public class MapSceneInventoryManager : MonoBehaviour {
 	public void LogInventory() {
 		for (int i = 0; i < inventoryParents.Length; i++) {
 			if (inventoryParents[i].transform.childCount != 0) {
+				inventoryParents[i].transform.GetChild(0).GetComponent<InventoryScriptableReader>().fromTakeOneList = false;
 				inventoryScriptables[i] = inventoryParents[i].GetComponentInChildren<InventoryScriptableReader>().objectScript;
 
 				switch (i) {

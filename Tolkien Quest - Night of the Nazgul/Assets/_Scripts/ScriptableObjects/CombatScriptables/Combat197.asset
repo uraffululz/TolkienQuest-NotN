@@ -12,31 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
   m_Name: Combat197
   m_EditorClassIdentifier: 
-  enemy1Type: 0
-  enemy1Name: 
-  enemy1OB: 0
-  enemy1DB: 0
-  enemy1EP: 0
-  enemy2Type: 0
-  enemy2Name: 
-  enemy2OB: 0
-  enemy2DB: 0
-  enemy2EP: 0
-  enemy3Type: 0
-  enemy3Name: 
-  enemy3OB: 0
-  enemy3DB: 0
-  enemy3EP: 0
-  enemy4Type: 0
-  enemy4Name: 
-  enemy4OB: 0
-  enemy4DB: 0
-  enemy4EP: 0
-  hasRandomEnemy: 0
-  enemy1RangeMax: 0
-  enemy2RangeMax: 0
-  enemy3RangeMax: 0
-  outOfEnemyRangeEncounter: 0
+  notes: []
+  enemyCount: 1
+  enemyTypes: 04000000
+  enemyNames:
+  - Orc
+  enemyOB: 00000000
+  enemyDB: ffffffff
+  enemyEP: 14000000
+  hasRandomEnemy: 1
+  enemy1RangeMax: 3
+  enemy2RangeMax: 5
+  enemy3RangeMax: 9
+  enemy4RangeMax: 11
+  outOfEnemyRangeDescription: The Orc trips and falls, knocking himself out on a rock.
   randomEnemyTypes: 04000000040000000400000004000000
   randomEnemyNames:
   - Orc
@@ -48,8 +37,11 @@ MonoBehaviour:
   randomEnemyEP: 1c000000190000001300000014000000
   playerSurprised: 0
   firstAttackBonus: 0
+  playerCannotSneakAttack: 0
+  mustDefeatFirstEnemyToRun: 0
   penaltyToRun: 0
-  winMovesOn: 0
+  runGoesToEncounter: 0
+  canPlayDead: 0
   winEncounter: 176
-  loseMovesOn: 0
-  loseEncounter: 0
+  loseEncounter: 223
+  altLoseEncounter: 239

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Encounter142
   m_EditorClassIdentifier: 
   encounterIndex: 142
-  miscNotes: []
+  miscNotes:
+  - The Player eats a free meal here, automatically. Be sure to mention/implement
+    that.
   encounterText:
   - '"I''m sorry!" you blurt out. "You scared me. I should not be here."
 
@@ -28,7 +30,21 @@ MonoBehaviour:
     "I regret that my feet are my only means of transport. Now go!"
 
     You leave the hut, waving to the smiling hermit.'
-  isCombat: 0
+  encounterTextWhole: '"I''m sorry!" you blurt out. "You scared me. I should not be
+    here."
+
+    The hermit nods, smiling. "I accept your apology. Sit and rest now. Tell me who
+    you are."
+
+    You spin the tale of your quest to the man, who listens intently and urges you
+    to show more caution.
+
+    "Here," he says, handing you berries to eat. He then gives you three more berries
+    to take; each is one full meal.
+
+    "I regret that my feet are my only means of transport. Now go!"
+
+    You leave the hut, waving to the smiling hermit.'
   isMerchant: 0
   canMoveOn: 1
   moveOnRandomly: 0
@@ -61,9 +77,29 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  recoversFullInventory: 0
+  emptiesInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 1
   obtainedItemList: {fileID: 11400000, guid: 95e0d63235764064ebee84749b51bac8, type: 2}
+  exploreRangeDeterminesItems: 0
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
+  opensActionBG: 0
+  enemyUnaware: 0
+  runAwayPastEncounter: 0
+  fightEncounter: 0
+  skipFightToEncounter: 0
+  combatScript: {fileID: 0}
+  canSneakAttackEncounter: 0
+  lastCombatDamageGoesToEncounter: 0
+  canCastClairvoyance: 0
+  canCastItemAnalysis: 0
   timeTaken: 60
   canRestAtNight: 0
   XPGained: 2
@@ -72,6 +108,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -84,3 +121,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

@@ -25,8 +25,13 @@ public static class CharacterManager {
 	public static int myStatAgilityBonus;
 	public static int myStatIntelligenceBonus;
 
-	public static int enduranceTotal = 10;
+	public static int enduranceTotal = 20;
 	public static int damageTaken;
+
+	public static bool ateMealToday;
+	
+	public static int healIncrementTime = 60;
+	public static int currentHealTimeElapsed = 0;
 
 	public static bool statusDiseased;
 	public static int diseaseTimer;
@@ -46,7 +51,7 @@ public static class CharacterManager {
 	public static int mySkillMissileOBStatBonus;
 	public static int mySkillMissileOBSpecialBonuses;
 
-	public static int sneakAttackBonus;
+	//public static int sneakAttackBonus;
 
 	public static int mySkillDBTotal;
 	public static int mySkillDBStatBonus;
@@ -78,8 +83,13 @@ public static class CharacterManager {
 
 	//Spell Slot Variables
 	public static bool allSpellsSet;
-
 	public static string[] assignedSpells = new string[7] {"","","","","","",""};
+	public static SpellScriptable[] spellScriptables = new SpellScriptable[7] {null, null, null, null, null, null, null};
+
+	public static bool balanceSpellActive;
+	public static bool camoSpellActive;
+	public static bool healSpellActiveAtRest;
+	public static bool speedSpellActive;
 
 	public static int totalTimeTaken;
 	public static int currentDayTimeTaken;
@@ -115,4 +125,8 @@ public static class CharacterManager {
 	//Additional Endgame Stats
 	public static int settlementsWarned;
 	public static int enemiesDefeated;
+
+
+
+
 }

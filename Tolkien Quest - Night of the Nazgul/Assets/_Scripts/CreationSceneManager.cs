@@ -36,7 +36,7 @@ public class CreationSceneManager : MonoBehaviour {
 
 	public void OpenNewUIWindow (GameObject newUIWindow) {
 		//Animate the relevant UI window to slide OPEN
-		newUIWindow.GetComponent<Animator>().SetBool("slideTopUIOpen", true);
+		newUIWindow.GetComponent<Animator>().SetBool("SlideTopUIToCenter", true);
 
 		setNameButton.interactable = false;
 		setStatsButton.interactable = false;
@@ -49,7 +49,7 @@ public class CreationSceneManager : MonoBehaviour {
 
 	public void CloseNewUIWindow (GameObject newUIWindow) {
 		//Animate the relevant UI window to slide CLOSED
-		newUIWindow.GetComponent<Animator>().SetBool("slideTopUIOpen", false);
+		newUIWindow.GetComponent<Animator>().SetBool("SlideTopUIToCenter", false);
 
 		setNameButton.interactable = true;
 		setStatsButton.interactable = true;
@@ -101,6 +101,12 @@ public class CreationSceneManager : MonoBehaviour {
 
 	public void ConfirmCharacterComplete () {
 		//When the playerr clicks the "Continue" button to move on to the main game
+		for (int i = 0; i < GetComponent<CreationSpellManager>().spellSlots.Length; i++) {
+			if (GetComponent<CreationSpellManager>().spellSlots[i].GetComponent<ScriptableSpellReader>().mySpellScriptable != null) {
+				CharacterManager.spellScriptables[i] = GetComponent<CreationSpellManager>().spellSlots[i].GetComponent<ScriptableSpellReader>().mySpellScriptable;
+			}
+		}
+
 		Debug.Log("Character creation complete. Continuing to the game's Prologue");
 
 		SceneManager.LoadScene("PrologueScene");

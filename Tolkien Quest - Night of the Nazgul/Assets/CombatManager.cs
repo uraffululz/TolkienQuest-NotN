@@ -10,13 +10,34 @@ public class CombatManager : MonoBehaviour {
 	[Space]
 
 	[SerializeField] int combatRound;
-	public bool sneakAttackSuccessful;
-	public int bonusToFirstAttack;
-	public bool playerSurprised;
+	public static bool sneakAttackSuccessful;
+	//public int bonusToFirstAttack;
+	public static bool playerSurprised;
+	public static bool playerDamagedInLastCombat = true;
 
 	[Space]
 
-	[SerializeField] int activeEnemy;
+	public static bool shieldSpellActive = false;
+	public static bool strengthSpellActive = false;
+	public static bool charmedAnimal = false;
+	[SerializeField] string charmedAnimalName;
+	[SerializeField] int charmedAnimalOB;
+	[SerializeField] int charmedAnimalDB;
+	[SerializeField] int charmedAnimalEPTotal;
+	[SerializeField] int charmedAnimalEPCurrent;
+	[SerializeField] GameObject charmedAnimalUIParent;
+	[SerializeField] Text charmedAnimalNameText;
+	[SerializeField] Text charmedAnimalOBText;
+	[SerializeField] Text charmedAnimalDBText;
+	[SerializeField] Image charmedAnimalEPBar;
+	[SerializeField] Text charmedAnimalEPText;
+	[SerializeField] GameObject confirmUseCharmedAnimalUI;
+	//[SerializeField] GameObject animalAttackButton;
+
+	[Space]
+
+	public int activeEnemy;
+	bool enemyTargetingCharmedAnimal;
 	//GameObject activeEnemyParent;
 	//Text activeEnemyNameText;
 	//Image activeEnemyEPBar;
@@ -29,15 +50,21 @@ public class CombatManager : MonoBehaviour {
 	[Space]
 
 	[SerializeField] MapSceneManager mapSceneManager;
+	[SerializeField] MapSceneCharacterSheetManager mSCSM;
 	[SerializeField] MapSceneInventoryManager mapSceneInventoryManager;
+	//[SerializeField] GameObject combatUI;
 	[SerializeField] GameObject encounterBG;
+	[SerializeField] GameObject encounterSpellBG;
 
 	[Space]
 
 	//UI Stuff
 	[SerializeField] GameObject playerAttackButton;
+	[SerializeField] GameObject playerSpellButton;
 	[SerializeField] GameObject playerRunButton;
+	[SerializeField] GameObject playDeadButton;
 	[SerializeField] GameObject weaponChoiceUI;
+	[SerializeField] GameObject spellChoiceUI;
 	[SerializeField] Text combatActionText;
 	//Weapon Choice Buttons
 	[SerializeField] GameObject weaponChoiceButtonMagicSword;
@@ -54,6 +81,18 @@ public class CombatManager : MonoBehaviour {
 	[SerializeField] GameObject weaponChoiceButtonTwoHandedSword;
 	[SerializeField] GameObject weaponChoiceButtonBow;
 	[SerializeField] GameObject weaponChoiceButtonBareHanded;
+
+	[Space]
+
+	[SerializeField] GameObject charmAnimalButton;
+	[SerializeField] GameObject fireBoltButton;
+	[SerializeField] GameObject shieldButton;
+	[SerializeField] GameObject strengthButton;
+	[SerializeField] SpellScriptable charmAnimalScript;
+	[SerializeField] SpellScriptable fireBoltScript;
+	[SerializeField] SpellScriptable shieldScript;
+	[SerializeField] SpellScriptable strengthScript;
+
 	//Win-Lose UI
 	[SerializeField] GameObject combatWinUI;
 	[SerializeField] GameObject outOfRangeWinText;
@@ -62,7 +101,8 @@ public class CombatManager : MonoBehaviour {
 
 	[Space]
 
-	[Header("Enemy Stat Arrays")]
+	[Header("Enemy Stat & UI Arrays")]
+	public CombatScriptable.enemyType[] enemyTypes;
 	[SerializeField] GameObject[] enemyParents;
 	[SerializeField] Text[] enemyNameTexts;
 	[SerializeField] Image[] enemyEPBars;
@@ -91,14 +131,53 @@ public class CombatManager : MonoBehaviour {
 
 
 	public void StartCombat(CombatScriptable combatScript) {
+		encounterSpellBG.SetActive(false);
+
 		currentCombat = combatScript;
 		combatRound = 1;
+		shieldSpellActive = false;
+		strengthSpellActive = false;
+
+		//if (charmedAnimal) {
+		//	SetCharmedAnimal();
+		//}
+		//else {
+		//	charmedAnimalUIParent.SetActive(false);
+		//}
+		////charmedAnimal = false;
+
+		playerDamagedInLastCombat = false;
 
 		combatActionText.text += ("\n" + "<color=#008000ff>Beginning Combat Encounter</color>");
 		outOfRangeWinText.SetActive(false);
 
+		if (currentCombat.playerCannotSneakAttack) {
+			sneakAttackSuccessful = false;
+		}
+
+		if (sneakAttackSuccessful) {
+			//On the Combat Action Text, display whether the player gets their sneak attack bonus
+			combatActionText.text += "\n<color=#0000ffff>Your successful sneak attack provides a +" + CharacterManager.mySkillTrickeryTotal + " bonus to hit with your first attack.</color>";
+		}
+
+		if (currentCombat.firstAttackBonus != 0) {
+			//On the Combat Action Text, display whether the encounter provides a bonus to the player's first attack
+			combatActionText.text += "\n<color=#0000ffff>This encounter provides a +" + currentCombat.firstAttackBonus + " bonus to hit with your first attack.</color>";
+		}
+
+		if (currentCombat.penaltyToRun != 0) {
+			combatActionText.text += "\n<color=#ff0000ff>This encounter suffers a -" + currentCombat.penaltyToRun + " penalty to any attempts to run.</color>";
+		}
+
 		if (currentCombat.playerSurprised) {
 			playerSurprised = true;
+		}
+
+		if (currentCombat.canPlayDead) {
+			playDeadButton.SetActive(true);
+		}
+		else {
+			playDeadButton.SetActive(false);
 		}
 
 		for (int i = 0; i < enemiesDefeated.Length; i++) {
@@ -111,6 +190,7 @@ public class CombatManager : MonoBehaviour {
 
 			if (randomEnemyRoll <= currentCombat.enemy1RangeMax) {
 				currentCombat.enemyTypes[0] = currentCombat.randomEnemyTypes[0];
+				enemyTypes[1] = currentCombat.randomEnemyTypes[0];
 				currentCombat.enemyNames[0] = currentCombat.randomEnemyNames[0];
 				enemyNameTexts[1].text = currentCombat.enemyNames[0];
 				currentCombat.enemyOB[0] = currentCombat.randomEnemyOB[0];
@@ -125,6 +205,7 @@ public class CombatManager : MonoBehaviour {
 			}
 			else if (randomEnemyRoll > currentCombat.enemy1RangeMax && randomEnemyRoll <= currentCombat.enemy2RangeMax) {
 				currentCombat.enemyTypes[0] = currentCombat.randomEnemyTypes[1];
+				enemyTypes[1] = currentCombat.randomEnemyTypes[1];
 				currentCombat.enemyNames[0] = currentCombat.randomEnemyNames[1]; 
 				enemyNameTexts[1].text = currentCombat.enemyNames[0];
 				currentCombat.enemyOB[0] = currentCombat.randomEnemyOB[1];
@@ -139,6 +220,7 @@ public class CombatManager : MonoBehaviour {
 			}
 			else if (randomEnemyRoll > currentCombat.enemy2RangeMax && randomEnemyRoll <= currentCombat.enemy3RangeMax) {
 				currentCombat.enemyTypes[0] = currentCombat.randomEnemyTypes[2];
+				enemyTypes[1] = currentCombat.randomEnemyTypes[2];
 				currentCombat.enemyNames[0] = currentCombat.randomEnemyNames[2];
 				enemyNameTexts[1].text = currentCombat.enemyNames[0];
 				currentCombat.enemyOB[0] = currentCombat.randomEnemyOB[2];
@@ -151,15 +233,29 @@ public class CombatManager : MonoBehaviour {
 				enemyOBTexts[1].text = "OB: " + currentCombat.enemyOB[0].ToString();
 				enemyDBTexts[1].text = "DB: " + currentCombat.enemyDB[0].ToString();
 			}
+			else if (currentCombat.enemy4RangeMax != 0 && randomEnemyRoll > currentCombat.enemy3RangeMax && randomEnemyRoll <= currentCombat.enemy4RangeMax) {
+				currentCombat.enemyTypes[0] = currentCombat.randomEnemyTypes[3];
+				enemyTypes[1] = currentCombat.randomEnemyTypes[3];
+				currentCombat.enemyNames[0] = currentCombat.randomEnemyNames[3];
+				enemyNameTexts[1].text = currentCombat.enemyNames[0];
+				currentCombat.enemyOB[0] = currentCombat.randomEnemyOB[3];
+				currentCombat.enemyDB[0] = currentCombat.randomEnemyDB[3];
+				currentCombat.enemyEP[0] = currentCombat.randomEnemyEP[3];
+				enemiesEPMax[1] = currentCombat.enemyEP[0];
+				enemiesEPRemaining[1] = enemiesEPMax[1];
+				enemyEPBars[1].fillAmount = 1;
+				enemyEPTexts[1].text = "EP: " + enemiesEPRemaining[1] + " / " + enemiesEPMax[1];
+				enemyOBTexts[1].text = "OB: " + currentCombat.enemyOB[0].ToString();
+				enemyDBTexts[1].text = "DB: " + currentCombat.enemyDB[0].ToString();
+			}
 			else {
 				//Open the CombatWinUI and proceed to the combat's "Out of range encounter", which is really always just the "Win encounter" anyway
-				EnableCombatWinUI();
-				outOfRangeWinText.SetActive(true);
-				outOfRangeWinText.GetComponent<Text>().text = currentCombat.outOfEnemyRangeDescription;
+				OutsmartEnemy(currentCombat.outOfEnemyRangeDescription);
+				
 			}
 		}
 		else {
-			currentCombat.enemyTypes[0] = currentCombat.enemyTypes[0];
+			enemyTypes[1] = currentCombat.enemyTypes[0];
 			enemyNameTexts[1].text = currentCombat.enemyNames[0];
 			enemiesEPMax[1] = currentCombat.enemyEP[0];
 			enemiesEPRemaining[1] = enemiesEPMax[1];
@@ -171,6 +267,7 @@ public class CombatManager : MonoBehaviour {
 		
 
 		if (currentCombat.enemyTypes.Length > 1 && currentCombat.enemyTypes[1] != CombatScriptable.enemyType.None) {
+			enemyTypes[2] = currentCombat.enemyTypes[1];
 			enemyParents[2].SetActive(true);
 			enemyNameTexts[2].text = currentCombat.enemyNames[1];
 			enemiesEPMax[2] = currentCombat.enemyEP[1];
@@ -188,6 +285,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 2 && currentCombat.enemyTypes[2] != CombatScriptable.enemyType.None) {
+			enemyTypes[3] = currentCombat.enemyTypes[2];
 			enemyParents[3].SetActive(true);
 			enemyNameTexts[3].text = currentCombat.enemyNames[2];
 			enemiesEPMax[3] = currentCombat.enemyEP[2];
@@ -205,6 +303,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 3 && currentCombat.enemyTypes[3] != CombatScriptable.enemyType.None) {
+			enemyTypes[4] = currentCombat.enemyTypes[3];
 			enemyParents[4].SetActive(true);
 			enemyNameTexts[4].text = currentCombat.enemyNames[3];
 			enemiesEPMax[4] = currentCombat.enemyEP[3];
@@ -222,6 +321,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 4 && currentCombat.enemyTypes[4] != CombatScriptable.enemyType.None) {
+			enemyTypes[5] = currentCombat.enemyTypes[4];
 			enemyParents[5].SetActive(true);
 			enemyNameTexts[5].text = currentCombat.enemyNames[4];
 			enemiesEPMax[5] = currentCombat.enemyEP[4];
@@ -239,6 +339,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 5 && currentCombat.enemyTypes[5] != CombatScriptable.enemyType.None) {
+			enemyTypes[6] = currentCombat.enemyTypes[5];
 			enemyParents[6].SetActive(true);
 			enemyNameTexts[6].text = currentCombat.enemyNames[5];
 			enemiesEPMax[6] = currentCombat.enemyEP[5];
@@ -256,6 +357,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 6 && currentCombat.enemyTypes[6] != CombatScriptable.enemyType.None) {
+			enemyTypes[7] = currentCombat.enemyTypes[6];
 			enemyParents[7].SetActive(true);
 			enemyNameTexts[7].text = currentCombat.enemyNames[6];
 			enemiesEPMax[7] = currentCombat.enemyEP[6];
@@ -273,6 +375,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 7 && currentCombat.enemyTypes[7] != CombatScriptable.enemyType.None) {
+			enemyTypes[8] = currentCombat.enemyTypes[7];
 			enemyParents[8].SetActive(true);
 			enemyNameTexts[8].text = currentCombat.enemyNames[7];
 			enemiesEPMax[8] = currentCombat.enemyEP[7];
@@ -290,6 +393,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 8 && currentCombat.enemyTypes[8] != CombatScriptable.enemyType.None) {
+			enemyTypes[9] = currentCombat.enemyTypes[8];
 			enemyParents[9].SetActive(true);
 			enemyNameTexts[9].text = currentCombat.enemyNames[8];
 			enemiesEPMax[9] = currentCombat.enemyEP[8];
@@ -307,6 +411,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 9 && currentCombat.enemyTypes[9] != CombatScriptable.enemyType.None) {
+			enemyTypes[10] = currentCombat.enemyTypes[9];
 			enemyParents[10].SetActive(true);
 			enemyNameTexts[10].text = currentCombat.enemyNames[9];
 			enemiesEPMax[10] = currentCombat.enemyEP[9];
@@ -324,6 +429,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 10 && currentCombat.enemyTypes[10] != CombatScriptable.enemyType.None) {
+			enemyTypes[11] = currentCombat.enemyTypes[10];
 			enemyParents[11].SetActive(true);
 			enemyNameTexts[11].text = currentCombat.enemyNames[10];
 			enemiesEPMax[11] = currentCombat.enemyEP[10];
@@ -341,6 +447,7 @@ public class CombatManager : MonoBehaviour {
 		}
 
 		if (currentCombat.enemyTypes.Length > 11 && currentCombat.enemyTypes[11] != CombatScriptable.enemyType.None) {
+			enemyTypes[12] = currentCombat.enemyTypes[11];
 			enemyParents[12].SetActive(true);
 			enemyNameTexts[12].text = currentCombat.enemyNames[11];
 			enemiesEPMax[12] = currentCombat.enemyEP[11];
@@ -362,12 +469,35 @@ public class CombatManager : MonoBehaviour {
 		SetNewActiveEnemy();
 		
 		InitializeWeaponChoiceUI();
+		InitializeSpellChoiceUI();
+
+		//print(charmedAnimal);
+		if (charmedAnimal) {
+			confirmUseCharmedAnimalUI.SetActive(true);
+		}
+		else {
+			DetermineFirstAttacker();
+		}
+	}
+
+
+	public void SetCharmedAnimal() {
+		//confirmUseCharmedAnimalUI.SetActive(false);
+		enemyTargetingCharmedAnimal = true;
+
+		charmedAnimalUIParent.SetActive(true);
+		charmedAnimalNameText.text = charmedAnimalName;
+		charmedAnimalEPBar.fillAmount = 1;
+		charmedAnimalEPText.text = "EP: " + charmedAnimalEPCurrent + " / " + charmedAnimalEPTotal;
+		charmedAnimalOBText.text = "OB: " + charmedAnimalOB.ToString();
+		charmedAnimalDBText.text = "DB: " + charmedAnimalDB.ToString();
 
 		DetermineFirstAttacker();
 	}
 
 
 	void SetNewActiveEnemy() {
+		enemyTypes[0] = enemyTypes[activeEnemy];
 		enemyNameTexts[0].text = enemyNameTexts[activeEnemy].text;
 		enemiesEPMax[0] = enemiesEPMax[activeEnemy];
 		enemiesEPRemaining[0] = enemiesEPMax[0];
@@ -380,7 +510,19 @@ public class CombatManager : MonoBehaviour {
 	}
 
 
-	void DetermineFirstAttacker() {
+	public void OutsmartEnemy(string outsmartedDescription) {
+		combatActionText.text += "\nYou outsmarted the enemy! There is no need to fight!";
+		EnableCombatWinUI();
+		outOfRangeWinText.SetActive(true);
+		outOfRangeWinText.GetComponent<Text>().text = outsmartedDescription;
+	}
+
+
+	public void DetermineFirstAttacker() {
+		confirmUseCharmedAnimalUI.SetActive(false);
+		gameObject.SetActive(true);
+		gameObject.GetComponent<Animator>().SetBool("UISlideIn", true);
+
 		if (!playerSurprised) {
 			StartPlayerTurn();
 		}
@@ -392,15 +534,15 @@ public class CombatManager : MonoBehaviour {
 
 
 	void StartPlayerTurn() {
+		//Deactivate the buttons for the Shield and Strength spells, as they can only be cast in the first round of combat
+		if (combatRound > 1) {
+			shieldButton.SetActive(false);
+			strengthButton.SetActive(false);
+		}
+
 		//Enable Player Combat UI, including possible actions and relevant weapon listings/buttons
 		combatActionText.text += "\n" + "Starting " + CharacterManager.myName + "'s Turn";
 		EnablePlayerTurnUI();
-	}
-
-
-	public void PlayerPrepareAttack() {
-		//Bring up WeaponChoice UI
-		EnableWeaponChoiceUI();
 	}
 
 
@@ -417,11 +559,18 @@ public class CombatManager : MonoBehaviour {
 
 			}
 			else if (sneakAttackSuccessful) {
-				//Add the player's Trickery bonus to their OB calculation
-				playerTotalOB += CharacterManager.mySkillTrickeryTotal;
+				if (!currentCombat.playerCannotSneakAttack) {
+					//Add the player's Trickery bonus to their OB calculation
+					playerTotalOB += CharacterManager.mySkillTrickeryTotal;
 
-//TOMAYBEDO Text component on CombatUI to display whether the player gets this bonus?
+					//Just checking if this is still active, as it should be disabled by now. It DOESN'T add to the player's Trickery bonus in this case.
+					if (CharacterManager.camoSpellActive) {
+						CharacterManager.mySkillTrickerySpecialBonuses -= 2;
+						CharacterManager.camoSpellActive = false;
 
+						mSCSM.UpdateTrickerySkillTexts();
+					}
+				}
 			}
 		}
 
@@ -445,33 +594,39 @@ public class CombatManager : MonoBehaviour {
 
 //TODO Make sure only ONE enemy is being damaged/killed
 		if (enemyKilled) {
-			DamageEnemy(0, false, true);
+			DamageEnemy(CharacterManager.myName, 0, false, true);
 		}
 		else if (enemyUnconscious) {
-			DamageEnemy(0, true, false);
+			DamageEnemy(CharacterManager.myName, 0, true, false);
 		}
 		else {
+			if (weaponUsedToAttack.MyWeaponType != InventoryWeaponScriptable.weaponTypes.Bow && weaponUsedToAttack.MyWeaponType != InventoryWeaponScriptable.weaponTypes.MagicBow) {
+				if (strengthSpellActive) {
+					print("Your Strength spell doubled your melee damage");
+					playerAttackDamage *= 2;
+				}
+			}
 			if (playerAttackDamage < 0) {
 				playerAttackDamage = 0;
 			}
 
-			DamageEnemy(playerAttackDamage, false, false);
+			DamageEnemy(CharacterManager.myName, playerAttackDamage, false, false);
 		}
-
-		EndPlayerTurn();
 	}
 
 
-	void DamageEnemy(int damageDealt, bool enemyKO, bool enemyKilled) {
+	public void DamageEnemy(string attackerName, int damageDealt, bool enemyKO, bool enemyKilled) {
 		if (damageDealt >= 0) {
 			enemiesEPRemaining[0] -= damageDealt;
-			print("Dealt " + damageDealt + " damage to the enemy");
-			combatActionText.text += "\n" + CharacterManager.myName + " dealt <color=#ff0000ff>" + damageDealt + "</color> damage to the " + enemyNameTexts[0].text;
+			//print("Dealt " + damageDealt + " damage to the enemy");
+			combatActionText.text += "\n" + attackerName + " dealt <color=#ff0000ff>" + damageDealt + "</color> damage to the " + enemyNameTexts[0].text;
 		}
 		//else {
 		//	print("Dealt " + damageDealt + " damage to the enemy");
 		//	combatActionText.text += "\n" + CharacterManager.myName + " dealt <color=#ff0000ff>0</color> damage to the " + enemyNameTexts[0].text;
 		//}
+
+//enemyKilled = true;
 
 		//If the enemy is defeated
 		if (enemiesEPRemaining[0] <= 0 || enemyKO || enemyKilled) {
@@ -481,10 +636,29 @@ public class CombatManager : MonoBehaviour {
 			enemyDefeatedOverlays[activeEnemy].gameObject.SetActive(true);
 
 			if (enemyKO) {
-				combatActionText.text += "\nEnemy auto-KO'd";
+				if (!charmedAnimalUIParent.activeInHierarchy && charmedAnimal) {
+					combatActionText.text += "\nEnemy animal charmed";
+
+					charmedAnimalName = "Your " + enemyNameTexts[0].text;
+					charmedAnimalOB = currentCombat.enemyOB[activeEnemy - 1];
+					charmedAnimalOBText.text = charmedAnimalOB.ToString();
+					charmedAnimalDB = currentCombat.enemyDB[activeEnemy - 1];
+					charmedAnimalDBText.text = charmedAnimalDB.ToString();
+					charmedAnimalEPTotal = currentCombat.enemyEP[activeEnemy - 1];
+					charmedAnimalEPCurrent = charmedAnimalEPTotal;
+					charmedAnimalEPBar.fillAmount = 1;
+					charmedAnimalEPText.text = "EP: " + charmedAnimalEPCurrent.ToString() + " / " + charmedAnimalEPTotal.ToString();
+				}
+				else {
+					combatActionText.text += "\nEnemy auto-KO'd";
+				}
 			}
 			else if (enemyKilled) {
 				combatActionText.text += "\nEnemy auto-killed";
+				MapSceneManager.currentLocation.GetComponent<ScriptableMapTileReader>().enemyHereIsDead = true;
+//TODO Make sure ALL of the enemies are dead before activating this bool.
+//Until then, just set an int (probably also assigned to the MapTilesScriptableReader) equal to the number of enemies still alive, and subtract from it with each enemy killed. When it hits 0, enemyHereIsDead is set to true.
+//Meanwhile, if the player returns, they continue to fight the enemies that are still alive (which I'll need to calculate by subracting that int from the "original total number of enemies"
 			}
 			else {
 				combatActionText.text += "\nEnemy defeated";
@@ -504,18 +678,29 @@ public class CombatManager : MonoBehaviour {
 			enemyEPBars[0].fillAmount = (float)enemiesEPRemaining[0] / enemiesEPMax[0];
 			enemyEPTexts[0].text = "EP: " + enemiesEPRemaining[0] + " / " + enemiesEPMax[0];
 		}
+
+		EndPlayerTurn();
 	}
 
 
 	public void PlayerRunAway() {
+//TODO Does the Enemy attack BEFORE the Player gets their chance to run away? Does it matter?
 		if (!currentCombat.mustDefeatFirstEnemyToRun || currentCombat.mustDefeatFirstEnemyToRun && enemiesDefeated[1] == true) {
 			int runRoll = Random.Range(2, 13);
-			runRoll += CharacterManager.mySkillRunningTotal;
+			//Include the Player's Running skill, as well as the currentCombat's "penaltyToRun" variable in the calculation
 
-			//Include the currentCombat's "penaltyToRun" variable in the calculation
-			if (currentCombat.penaltyToRun != 0) {
-				runRoll += currentCombat.penaltyToRun;
+			runRoll += CharacterManager.mySkillRunningTotal + currentCombat.penaltyToRun;
+
+			if (CharacterManager.speedSpellActive) {
+				runRoll += 2;
+				CharacterManager.speedSpellActive = false;
+				CharacterManager.mySkillRunningSpecialBonuses -= 2;
+				mSCSM.UpdateRunningSkillTexts();
 			}
+
+			//if (currentCombat.penaltyToRun != 0) {
+			//	runRoll += currentCombat.penaltyToRun;
+			//}
 
 			//Include any worn armor's "penalty to running" in the calculation
 			if (mapSceneInventoryManager.inventoryParents[1].transform.childCount > 0) {
@@ -527,13 +712,15 @@ public class CombatManager : MonoBehaviour {
 				EnableCombatRunUI();
 			}
 			else {
-				//TODO You MUST FIGHT YOUR OPPONENT, and are SURPRISED
-
+				//The player fails to run away
+//TODO You MUST FIGHT YOUR OPPONENT, and are SURPRISED
+				combatActionText.text += "\n<color=#ff0000ff>You failed to run away.</color>";
+				EndPlayerTurn();
 			}
 		}
 		else {
 			//Display a Text object telling the player that they cannot run away until they defeat the first enemy in this encounter
-			combatActionText.text += "\n<color=#0000ffff>You must defeat the first enemy before you can run from this encounter</color>";
+			combatActionText.text += "\n<color=#ff0000ff>You must defeat the first enemy before you can run from this encounter</color>";
 		}
 		
 	}
@@ -551,11 +738,21 @@ public class CombatManager : MonoBehaviour {
 			//DisableCombatRunUI();
 			mapSceneManager.GetComponent<MapSceneManager>().MoveOn(2);
 		}
+
+		playerSurprised = false;
 	}
 
 
-	void EndPlayerTurn() {
+	public void PlayDead() {
+		//Special rule for Encounter 180
+		encounterBG.GetComponent<ScriptableEncounterReader>().UpdateEncounter(207);
+		mapSceneManager.CloseCombatBG();
+	}
+
+
+	public void EndPlayerTurn() {
 		DisableWeaponChoiceUI();
+		DisableSpellChoiceUI();
 		DisablePlayerTurnUI();
 
 		bool combatComplete = true;
@@ -581,13 +778,92 @@ public class CombatManager : MonoBehaviour {
 	}
 
 
-	void StartEnemyTurn() {
-		combatActionText.text += "\n" + "Starting enemy turn";
-		EnemyAttack();
+	public void AnimalAttackEnemy() {
+		int animalAttackDamage = 0;
+		bool enemyKOd = false;
+		bool enemyKilled = false;
+
+		animalAttackDamage = CalculateOBvsDB(charmedAnimalOB, currentCombat.enemyDB[activeEnemy - 1], ref enemyKOd, ref enemyKilled);
+
+		//TODO Make sure only ONE enemy is being damaged/killed
+		if (enemyKilled) {
+			DamageEnemy(charmedAnimalName, 0, false, true);
+		}
+		else if (enemyKOd) {
+			DamageEnemy(charmedAnimalName, 0, true, false);
+		}
+		else {
+			if (animalAttackDamage < 0) {
+				animalAttackDamage = 0;
+			}
+
+			DamageEnemy(charmedAnimalName, animalAttackDamage, false, false);
+		}
 	}
 
 
-	void EnemyAttack() {
+	void StartEnemyTurn() {
+		combatActionText.text += "\n" + "Starting enemy turn";
+		if (enemyTargetingCharmedAnimal) {
+			EnemyAttackAnimal();
+		}
+		else {
+			EnemyAttackPlayer();
+		}
+	}
+
+
+	void EnemyAttackAnimal() {
+		//The Enemy attacks the player's charmed animal
+		int enemyAttackDamage = 0;
+		bool animalUnconscious = false;
+		bool animalKilled = false;
+
+		enemyAttackDamage = CalculateOBvsDB(currentCombat.enemyOB[activeEnemy - 1], charmedAnimalDB, ref animalUnconscious, ref animalKilled);
+
+		if (animalKilled) {
+			//print("Charmed animal was killed");
+			combatActionText.text += "\n" + charmedAnimalName + " was killed.";
+
+			charmedAnimal = false;
+			charmedAnimalUIParent.SetActive(false);
+			enemyTargetingCharmedAnimal = false;
+		}
+		else if (animalUnconscious) {
+			//print("Charmed animal knocked unconscious");
+			combatActionText.text += "\n" + charmedAnimalName + " was knocked unconscious.";
+
+			charmedAnimal = false;
+			charmedAnimalUIParent.SetActive(false);
+			enemyTargetingCharmedAnimal = false;
+		}
+		else {
+			if (enemyAttackDamage > 0) {
+				charmedAnimalEPCurrent -= enemyAttackDamage;
+				combatActionText.text += "\n" + enemyNameTexts[0].text + " dealt <color=#ff0000ff>" + enemyAttackDamage + "</color> damage to " + charmedAnimalName;
+
+				if (charmedAnimalEPCurrent > 0) {
+					charmedAnimalEPBar.fillAmount = (float)charmedAnimalEPCurrent / charmedAnimalEPTotal;
+					charmedAnimalEPText.text = "EP: " + charmedAnimalEPCurrent.ToString() + " / " + charmedAnimalEPTotal.ToString();
+				}
+				else {
+					combatActionText.text += "\n" + charmedAnimalName + " was defeated. You'll have to finish this fight yourself!";
+
+					charmedAnimal = false;
+					charmedAnimalUIParent.SetActive(false);
+					enemyTargetingCharmedAnimal = false;
+				}
+			}
+			else {
+				combatActionText.text += "\n" + enemyNameTexts[0].text + " dealt <color=#ff0000ff>0</color> damage to " + charmedAnimalName;
+			}
+		}
+
+		EndEnemyTurn();
+	}
+
+
+	void EnemyAttackPlayer() {
 		int enemyAttackDamage = 0;
 		bool playerUnconscious = false;
 		bool playerKilled = false;
@@ -597,6 +873,10 @@ public class CombatManager : MonoBehaviour {
 		//Determine if the player has any armor in the Armor Slot of the inventory, and add that bonus to their DB
 		if (mapSceneInventoryManager.inventoryParents[1].transform.childCount > 0) {
 			playerDB += mapSceneInventoryManager.inventoryParents[1].transform.GetChild(0).gameObject.GetComponent<InventoryScriptableReader>().armorScript.DBonus;
+		}
+
+		if (shieldSpellActive) {
+			playerDB += 2;
 		}
 
 		enemyAttackDamage = CalculateOBvsDB(currentCombat.enemyOB[activeEnemy - 1], playerDB, ref playerUnconscious, ref playerKilled);
@@ -609,10 +889,14 @@ public class CombatManager : MonoBehaviour {
 		else if (playerUnconscious) {
 			//print("Player knocked unconscious");
 			EnableCombatLoseUI();
+
+			//playerDamagedInLastCombat = true;
 		}
 		else {
 			mapSceneManager.AlterDamage(enemyAttackDamage, true);
 			combatActionText.text += "\n" + enemyNameTexts[0].text + " dealt <color=#ff0000ff>" + enemyAttackDamage + "</color> damage to " + CharacterManager.myName;
+
+			playerDamagedInLastCombat = true;
 		}
 
 		EndEnemyTurn();
@@ -655,7 +939,7 @@ public class CombatManager : MonoBehaviour {
 					defenderUnconscious = true;
 					break;
 				default:
-					print("Error with enemy attack roll");
+					print("Enemy did 0 damage here");
 					break;
 			}
 		}
@@ -958,48 +1242,26 @@ public class CombatManager : MonoBehaviour {
 	}
 
 
-	public void WinCombat () {
-		if (currentCombat.winEncounter != 0) {
-			encounterBG.GetComponent<ScriptableEncounterReader>().UpdateEncounter(currentCombat.winEncounter);
-			combatWinUI.SetActive(false);
-			combatLoseUI.SetActive(false);
-		}
-
-		combatRound = 0;
-		sneakAttackSuccessful = false;
-		bonusToFirstAttack = 0;
-		playerSurprised = false;
-
-		mapSceneManager.CloseCombatBG();
-	}
-
-
-	public void LoseCombat() {
-		if (currentCombat.loseEncounter != 0) {
-			encounterBG.GetComponent<ScriptableEncounterReader>().UpdateEncounter(currentCombat.loseEncounter);
-			combatWinUI.SetActive(false);
-			combatLoseUI.SetActive(false);
-		}
-
-		combatRound = 0;
-		sneakAttackSuccessful = false;
-		bonusToFirstAttack = 0;
-		playerSurprised = false;
-
-		mapSceneManager.CloseCombatBG();
-	}
-
-
 	void EnablePlayerTurnUI() {
 		//print("Enabling player turn UI");
-		playerAttackButton.SetActive(true);
+
+		if (charmedAnimalUIParent.activeInHierarchy) {
+			//animalAttackButton.SetActive(true);
+			playerAttackButton.SetActive(false);
+			playerSpellButton.SetActive(false);
+		}
+		else {
+			//animalAttackButton.SetActive(false);
+			playerAttackButton.SetActive(true);
+			playerSpellButton.SetActive(true);
+		}
 		playerRunButton.SetActive(true);
 	}
 
 
 	void DisablePlayerTurnUI() {
 		playerAttackButton.SetActive(false);
-
+		playerSpellButton.SetActive(false);
 		playerRunButton.SetActive(false);
 	}
 
@@ -1081,8 +1343,9 @@ public class CombatManager : MonoBehaviour {
 	}
 
 
-	void EnableWeaponChoiceUI() {
+	public void EnableWeaponChoiceUI() {
 		playerAttackButton.SetActive(false);
+		playerSpellButton.SetActive(false);
 		playerRunButton.SetActive(false);
 		weaponChoiceUI.SetActive(true);
 	}
@@ -1090,28 +1353,151 @@ public class CombatManager : MonoBehaviour {
 
 	public void DisableWeaponChoiceUI() {
 		playerAttackButton.SetActive(true);
+		playerSpellButton.SetActive(true);
 		playerRunButton.SetActive(true);
 		weaponChoiceUI.SetActive(false);
 	}
 
 
+	void InitializeSpellChoiceUI() {
+		charmAnimalButton.SetActive(false);
+		fireBoltButton.SetActive(false);
+		shieldButton.SetActive(false);
+		strengthButton.SetActive(false);
+
+		for (int i = 0; i < CharacterManager.spellScriptables.Length; i++) {
+			if (CharacterManager.spellScriptables[i] != null) {
+				if (CharacterManager.spellScriptables[i] == charmAnimalScript) {
+					charmAnimalButton.SetActive(true);
+				}
+				else if (CharacterManager.spellScriptables[i] == fireBoltScript) {
+					fireBoltButton.SetActive(true);
+				}
+				else if (CharacterManager.spellScriptables[i] == shieldScript) {
+					shieldButton.SetActive(true);
+				}
+				else if (CharacterManager.spellScriptables[i] == strengthScript) {
+					strengthButton.SetActive(true);
+				}
+			}
+charmAnimalButton.SetActive(true);
+		}
+	}
+
+
+	public void EnableSpellChoiceUI() {
+		playerAttackButton.SetActive(false);
+		playerSpellButton.SetActive(false);
+		playerRunButton.SetActive(false);
+		spellChoiceUI.SetActive(true);
+	}
+
+
+	public void DisableSpellChoiceUI() {
+		playerAttackButton.SetActive(true);
+		playerSpellButton.SetActive(true);
+		playerRunButton.SetActive(true);
+		spellChoiceUI.SetActive(false);
+	}
+	
+
 	void EnableCombatWinUI() {
+		mapSceneManager.CloseEncounterUI();
+
 		combatWinUI.SetActive(true);
 		gameObject.SetActive(false);
 
-		combatActionText.text = "";
+		//combatActionText.text = "";
 	}
 
-	
+
+	public void WinCombat () {
+		if (currentCombat != null) {
+			if (currentCombat.winEncounter != 0) {
+				encounterBG.GetComponent<ScriptableEncounterReader>().UpdateEncounter(currentCombat.winEncounter);
+				combatWinUI.SetActive(false);
+				combatLoseUI.SetActive(false);
+			}
+		}
+		else {
+			encounterBG.GetComponent<ScriptableEncounterReader>().UpdateEncounter(MapSceneManager.currentEncounter.myEncounterScriptable.skipFightToEncounter);
+			combatWinUI.SetActive(false);
+			combatLoseUI.SetActive(false);
+		}
+
+		combatRound = 0;
+		sneakAttackSuccessful = false;
+		//bonusToFirstAttack = 0;
+		playerSurprised = false;
+		//shieldSpellActive = false;
+		//strengthSpellActive = false;
+
+		//print(charmedAnimalUIParent.activeSelf);
+		if (charmedAnimalUIParent.activeSelf) {
+			charmedAnimal = false;
+			combatActionText.text += "\nAfter the fight, your Charmed Animal flees!";
+		}
+		//print(charmedAnimal);
+		charmedAnimalUIParent.SetActive(false);
+		enemyTargetingCharmedAnimal = false;
+
+		mapSceneManager.CloseCombatBG();
+	}
+
+
 	public void EnableCombatLoseUI() {
+		mapSceneManager.CloseEncounterUI();
+
 		combatLoseUI.SetActive(true);
 		gameObject.SetActive(false);
 
-		combatActionText.text = "";
+		//combatActionText.text = "";
+	}
+
+
+	public void LoseCombat () {
+		int defeatRandomEncounter = 0;
+		if (currentCombat.altLoseEncounter != 0) {
+			defeatRandomEncounter = Random.Range(2, 13);
+
+			if (defeatRandomEncounter <= 6) {
+				defeatRandomEncounter = currentCombat.loseEncounter;
+			}
+			else {
+				defeatRandomEncounter = currentCombat.altLoseEncounter;
+			}
+		}
+		else {
+			defeatRandomEncounter = currentCombat.loseEncounter;
+		}
+
+		encounterBG.GetComponent<ScriptableEncounterReader>().UpdateEncounter(defeatRandomEncounter);
+		combatWinUI.SetActive(false);
+		combatLoseUI.SetActive(false);
+
+		combatRound = 0;
+		sneakAttackSuccessful = false;
+		//bonusToFirstAttack = 0;
+		playerSurprised = false;
+		//shieldSpellActive = false;
+		//strengthSpellActive = false;
+
+		//print(charmedAnimalUIParent.activeSelf);
+		if (charmedAnimalUIParent.activeSelf) {
+			charmedAnimal = false;
+			combatActionText.text += "\nAfter the fight, your Charmed Animal flees!";
+		}
+		//print(charmedAnimal);
+		charmedAnimalUIParent.SetActive(false);
+		enemyTargetingCharmedAnimal = false;
+
+		mapSceneManager.CloseCombatBG();
 	}
 
 
 	void EnableCombatRunUI() {
+		mapSceneManager.CloseEncounterUI();
+
 		combatRunUI.SetActive(true);
 	}
 

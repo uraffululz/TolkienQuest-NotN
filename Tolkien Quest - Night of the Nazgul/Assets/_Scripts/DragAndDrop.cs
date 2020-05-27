@@ -17,6 +17,8 @@ public class DragAndDrop : MonoBehaviour {
 	[SerializeField] GameObject inventoryManager2CloakSlot;
 	[SerializeField] GameObject inventoryManager2DaggerSlot;
 
+	[SerializeField] GameObject itemListBG;
+
 	GraphicRaycaster myGRaycaster;
 	PointerEventData myPointerEventData;
 	EventSystem myEventSystem;
@@ -85,56 +87,48 @@ public class DragAndDrop : MonoBehaviour {
 			//Debug.Log(result.gameObject.name);
 			if (newResult.gameObject.tag == "DraggableUIParent") {
 				if (newResult.gameObject.transform.childCount == 0) {
-					if (newResult.gameObject == inventoryManager2ArmorSlot || newResult.gameObject == inventoryManager1ArmorSlot) {
-						Debug.Log("Dropped the item into the ARMOR slot");
+					if (sceneManager.name == "MapSceneManager") {
+						if (itemListBG.GetComponent<ItemListBGScript>().canOnlyTakeOneItem) {
+							bool placedInInventory = true;
+							bool alreadyTookOne = false;
 
-						if (dragTransform.GetComponent<InventoryScriptableReader>().armorScript == null) {
-							print("Object put here is NOT ARMOR");
-							dragTransform.position = dragTransform.parent.position;
-						}
-						else {
-							print("Object put here is ARMOR");
+							for (int i = 0; i < itemListBG.GetComponent<ItemListBGScript>().positionParentList.Length; i++) {
+								if (newResult.gameObject == itemListBG.GetComponent<ItemListBGScript>().positionParentList[i].gameObject) {
+									//print("Item placed outside of inventory");
+									placedInInventory = false;
+									break;
+								}
+							}
 
-							newUIParent = newResult.gameObject;
-							dragTransform.SetParent(newUIParent.transform);
-							dragTransform.position = dragTransform.parent.position;
-						}
-					}
-					else if (newResult.gameObject == inventoryManager2CloakSlot || newResult.gameObject == inventoryManager1CloakSlot) {
-						print("I don't even think there ARE ANY cloaks in this game.");
-						dragTransform.position = dragTransform.parent.position;
-					}
-					//If the new parent is the "Dagger" slot on the MapSceneInventoryManager or ItemListInventoryManager
-					else if (newResult.gameObject == inventoryManager2DaggerSlot || newResult.gameObject == inventoryManager1DaggerSlot) {
-						Debug.Log("Dropped the item into the DAGGER slot");
+							if (placedInInventory) {
+								for (int i = 0; i < inventoryManager2.GetComponent<MapSceneInventoryManager>().inventoryParents.Length; i++) {
+									if (inventoryManager2.GetComponent<MapSceneInventoryManager>().inventoryParents[i].transform.childCount != 0) {
+										if (inventoryManager2.GetComponent<MapSceneInventoryManager>().inventoryParents[i].transform.GetChild(0).GetComponent<InventoryScriptableReader>().fromTakeOneList) {
+											alreadyTookOne = true;
+										}
+									}
+								}
 
-						if (dragTransform.GetComponent<InventoryScriptableReader>().weaponScript != null) {
-							print("Dropped a WEAPON in this slot");
-
-							if (dragTransform.GetComponent<InventoryScriptableReader>().weaponScript.MyWeaponType != InventoryWeaponScriptable.weaponTypes.Dagger) {
-								print("Weapon put here is NOT a dagger");
-
-								dragTransform.position = dragTransform.parent.position;
+								if (!alreadyTookOne) {
+									DropItem(newResult);
+								}
+								else {
+									print("You already took one!");
+									dragTransform.position = dragTransform.parent.position;
+								}
 							}
 							else {
-								print("Weapon put here is a dagger");
-
-								newUIParent = newResult.gameObject;
-								dragTransform.SetParent(newUIParent.transform);
-								dragTransform.position = dragTransform.parent.position;
+								DropItem(newResult);
 							}
 						}
 						else {
-							print("Object put here is not a dagger");
+							DropItem(newResult);
 						}
 					}
 					else {
-						newUIParent = newResult.gameObject;
-						dragTransform.SetParent(newUIParent.transform);
-						dragTransform.position = dragTransform.parent.position;
-
-						//originalUIParent = newUIParent;
+						DropItem(newResult);
 					}
+					
 				}
 				else {
 					//SWAP OR STACK ITEMS
@@ -143,7 +137,7 @@ public class DragAndDrop : MonoBehaviour {
 						if (newResult.gameObject != originalUIParent.gameObject) {
 							if (dragTransform.gameObject.GetComponent<InventoryScriptableReader>() != null && newResult.gameObject.transform.GetChild(0).gameObject.GetComponent<InventoryScriptableReader>() != null) {
 								//STACK SIMILAR ITEMS
-								if (dragTransform.gameObject.GetComponent<InventoryScriptableReader>().objectScript == newResult.gameObject.transform.GetChild(0).gameObject.GetComponent<InventoryScriptableReader>().objectScript) {
+								if (dragTransform.gameObject.GetComponent<InventoryScriptableReader>().objectScript == newResult.gameObject.transform.GetChild(0).gameObject.GetComponent<InventoryScriptableReader>().objectScript && !itemListBG.GetComponent<ItemListBGScript>().canOnlyTakeOneItem) {
 									if (dragTransform.gameObject.GetComponent<InventoryScriptableReader>().itemScript != null && dragTransform.gameObject.GetComponent<InventoryScriptableReader>().itemScript.isStackable) {
 										newResult.gameObject.transform.GetChild(0).gameObject.GetComponent<InventoryScriptableReader>().itemQuantity += dragTransform.gameObject.GetComponent<InventoryScriptableReader>().itemQuantity;
 										//Display itemHost Item text and item quantity
@@ -226,6 +220,59 @@ public class DragAndDrop : MonoBehaviour {
 					}
 				}
 			}
+		}
+	}
+
+	void DropItem(RaycastResult result) {
+		if (result.gameObject == inventoryManager2ArmorSlot || result.gameObject == inventoryManager1ArmorSlot) {
+			Debug.Log("Dropped the item into the ARMOR slot");
+
+			if (dragTransform.GetComponent<InventoryScriptableReader>().armorScript == null) {
+				print("Object put here is NOT ARMOR");
+				dragTransform.position = dragTransform.parent.position;
+			}
+			else {
+				print("Object put here is ARMOR");
+
+				newUIParent = result.gameObject;
+				dragTransform.SetParent(newUIParent.transform);
+				dragTransform.position = dragTransform.parent.position;
+			}
+		}
+		else if (result.gameObject == inventoryManager2CloakSlot || result.gameObject == inventoryManager1CloakSlot) {
+			print("I don't even think there ARE ANY cloaks in this game.");
+			dragTransform.position = dragTransform.parent.position;
+		}
+		//If the new parent is the "Dagger" slot on the MapSceneInventoryManager or ItemListInventoryManager
+		else if (result.gameObject == inventoryManager2DaggerSlot || result.gameObject == inventoryManager1DaggerSlot) {
+			Debug.Log("Dropped the item into the DAGGER slot");
+
+			if (dragTransform.GetComponent<InventoryScriptableReader>().weaponScript != null) {
+				print("Dropped a WEAPON in this slot");
+
+				if (dragTransform.GetComponent<InventoryScriptableReader>().weaponScript.MyWeaponType != InventoryWeaponScriptable.weaponTypes.Dagger) {
+					print("Weapon put here is NOT a dagger");
+
+					dragTransform.position = dragTransform.parent.position;
+				}
+				else {
+					print("Weapon put here is a dagger");
+
+					newUIParent = result.gameObject;
+					dragTransform.SetParent(newUIParent.transform);
+					dragTransform.position = dragTransform.parent.position;
+				}
+			}
+			else {
+				print("Object put here is not a dagger");
+			}
+		}
+		else {
+			newUIParent = result.gameObject;
+			dragTransform.SetParent(newUIParent.transform);
+			dragTransform.position = dragTransform.parent.position;
+
+			//originalUIParent = newUIParent;
 		}
 	}
 

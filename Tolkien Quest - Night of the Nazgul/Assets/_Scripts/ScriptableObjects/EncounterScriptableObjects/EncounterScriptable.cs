@@ -10,6 +10,7 @@ public class EncounterScriptable : ScriptableObject {
 	[TextArea(4, 10, order = 0)] public string[] miscNotes;
 
 	[TextArea(4, 10, order = 0)] public string[] encounterText;
+	[TextArea(4, 20, order = 0)] public string encounterTextWhole; //Compile all encounterText segments into a whole.
 
 	//public bool isCombat;
 	public bool isMerchant;
@@ -90,8 +91,23 @@ public class EncounterScriptable : ScriptableObject {
 	//public InventoryItemScriptable useSpecificItem;
 
 	[Space]
+
+	public bool opensActionBG;
+	public bool enemyUnaware; //For use of the SNEAK ATTACK, SNEAK AWAY, and STEAL & TAKE actions
+	public bool enemyAwareAndHostile;
+	//public bool canRunAwayPast;
+	public int runAwayPastEncounter;
+	public int fightEncounter;
+	public int skipFightToEncounter;
+
 	[Header("Combat")]
 	public CombatScriptable combatScript;
+	public int canSneakAttackEncounter;
+	public int lastCombatDamageGoesToEncounter;
+
+	[Header("Spells")]
+	public bool canCastClairvoyance;
+	public bool canCastItemAnalysis;
 
 
 	[Header("Misc. Variables", order = 1)]

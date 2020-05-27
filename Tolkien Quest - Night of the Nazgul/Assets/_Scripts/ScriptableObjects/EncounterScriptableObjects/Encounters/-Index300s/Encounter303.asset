@@ -15,11 +15,13 @@ MonoBehaviour:
   encounterIndex: 303
   miscNotes: []
   encounterText:
-  - You have defeated one of the mightiest of all Elves, Gildor. Hail the great warrior!
+  - 'You have defeated one of the mightiest of all Elves, Gildor. Hail the great warrior!
     It seems almost impossible, but you will be the stuff of song and legend, like
-    other slayers of famous beings. You gather Gildor's sword and strut through the
-    woods (P.S. Check your math -- what you have accomplished is nearly impossible!)
-  isCombat: 0
+    other slayers of famous beings. You gather Gildor''s sword and strut through the
+    woods.
+
+
+    (P.S. Check your math -- what you have accomplished is nearly impossible!)'
   isMerchant: 0
   canMoveOn: 1
   moveOnRandomly: 0
@@ -52,9 +54,20 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
-  obtainsItems: 0
-  obtainedItemList: {fileID: 0}
+  recoversFullInventory: 0
+  emptiesInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
+  obtainsItems: 1
+  obtainedItemList: {fileID: 11400000, guid: a5a509d09e9bf5f4495ed17335135067, type: 2}
+  exploreRangeDeterminesItems: 0
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
+  combatScript: {fileID: 0}
   timeTaken: 0
   canRestAtNight: 0
   XPGained: 50
@@ -63,6 +76,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -75,3 +89,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

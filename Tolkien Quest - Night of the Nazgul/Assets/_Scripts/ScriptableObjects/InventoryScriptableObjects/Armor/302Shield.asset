@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f219d3784a176d74194965f0d2cbbd7d, type: 3}
   m_Name: 302Shield
   m_EditorClassIdentifier: 
-  notes: []
+  notes:
+  - Cannot cast the Shield spell while wearing this item
   itemName: Shield
   itemIndex: 302
   armorQuantity: 1

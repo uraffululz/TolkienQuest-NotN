@@ -17,7 +17,6 @@ MonoBehaviour:
   encounterText:
   - Some squirrels dart off into the trees; the bloody bodies of the dead rabid squirrels
     saddens you.
-  isCombat: 0
   isMerchant: 0
   canMoveOn: 0
   moveOnRandomly: 0
@@ -50,9 +49,21 @@ MonoBehaviour:
   rangeFailMeansMoveOn: 0
   canGetLost: 0
   randomDirectionChoiceMax: 0
+  hasRunAwayRange: 0
+  hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  recoversFullInventory: 0
+  emptiesInventory: 0
+  loseWeaponsAndArmor: 0
+  keepSilverDagger: {fileID: 0}
   obtainsItems: 0
   obtainedItemList: {fileID: 0}
+  exploreRangeDeterminesItems: 0
+  mealScript: {fileID: 0}
+  loseMeals: 0
+  costsCopper: 0
+  combatScript: {fileID: 0}
+  lastCombatDamageGoesToEncounter: 356
   timeTaken: 10
   canRestAtNight: 0
   XPGained: 6
@@ -61,6 +72,7 @@ MonoBehaviour:
   hasDamageRanges: 0
   deals50PercentDamage: 0
   curesDisease: 0
+  hasFreeMeal: 0
   autoGameOver: 0
   autoWin: 0
   meetTom: 0
@@ -73,3 +85,13 @@ MonoBehaviour:
   hasDownstreamRanges: 0
   landsOnOtherRiverSide: 0
   lowerValueFloats1Space: 0
+  isTimeLocked: 0
+  dayLimit1: 0
+  timeLimit1: 0
+  limit1Index: 0
+  dayLimit2: 0
+  timeLimit2: 0
+  limit2Index: 0
+  overTimeIndex: 0
+  addsBonusToNextExplore: 0
+  warnedSettlement: 0

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
   m_Name: Combat387
   m_EditorClassIdentifier: 
+  notes: []
+  enemyCount: 12
   enemyTypes: 010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   enemyNames:
   - Squirrel
@@ -33,6 +35,7 @@ MonoBehaviour:
   enemy1RangeMax: 0
   enemy2RangeMax: 0
   enemy3RangeMax: 0
+  enemy4RangeMax: 0
   outOfEnemyRangeDescription: 
   randomEnemyTypes: 
   randomEnemyNames: []
@@ -41,8 +44,11 @@ MonoBehaviour:
   randomEnemyEP: 
   playerSurprised: 0
   firstAttackBonus: 0
+  playerCannotSneakAttack: 0
   mustDefeatFirstEnemyToRun: 0
   penaltyToRun: 0
   runGoesToEncounter: 401
+  canPlayDead: 0
   winEncounter: 380
   loseEncounter: 371
+  altLoseEncounter: 0

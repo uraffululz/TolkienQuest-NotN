@@ -17,6 +17,8 @@ MonoBehaviour:
   encounterText:
   - The Troll is within reach of you! As he grabs for you, you draw your weapon and
     slash at him.
+  encounterTextWhole: The Troll is within reach of you! As he grabs for you, you draw
+    your weapon and slash at him.
   isMerchant: 0
   canMoveOn: 0
   moveOnRandomly: 0
@@ -62,7 +64,17 @@ MonoBehaviour:
   mealScript: {fileID: 0}
   loseMeals: 0
   costsCopper: 0
+  opensActionBG: 0
+  enemyUnaware: 0
+  enemyAwareAndHostile: 0
+  runAwayPastEncounter: 0
+  fightEncounter: 0
+  skipFightToEncounter: 0
   combatScript: {fileID: 11400000, guid: 3132d5eec6a27574c8c30650f1e57434, type: 2}
+  canSneakAttackEncounter: 0
+  lastCombatDamageGoesToEncounter: 0
+  canCastClairvoyance: 0
+  canCastItemAnalysis: 0
   timeTaken: 5
   canRestAtNight: 0
   XPGained: 1

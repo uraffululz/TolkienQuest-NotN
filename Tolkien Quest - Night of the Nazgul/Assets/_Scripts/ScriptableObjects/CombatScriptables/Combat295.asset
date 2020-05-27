@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
   m_Name: Combat295
   m_EditorClassIdentifier: 
+  notes: []
+  enemyCount: 1
   enemyTypes: 03000000
   enemyNames:
   - Nazgul
@@ -22,6 +24,7 @@ MonoBehaviour:
   enemy1RangeMax: 0
   enemy2RangeMax: 0
   enemy3RangeMax: 0
+  enemy4RangeMax: 0
   outOfEnemyRangeDescription: 
   randomEnemyTypes: 
   randomEnemyNames: []
@@ -30,8 +33,11 @@ MonoBehaviour:
   randomEnemyEP: 
   playerSurprised: 0
   firstAttackBonus: 0
+  playerCannotSneakAttack: 0
   mustDefeatFirstEnemyToRun: 0
   penaltyToRun: 0
   runGoesToEncounter: 290
+  canPlayDead: 0
   winEncounter: 257
   loseEncounter: 300
+  altLoseEncounter: 0

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634709d64be66c0438dbb8466577ed96, type: 3}
   m_Name: Combat156
   m_EditorClassIdentifier: 
+  notes: []
+  enemyCount: 2
   enemyTypes: 0200000002000000
   enemyNames:
   - Man
@@ -23,7 +25,8 @@ MonoBehaviour:
   enemy1RangeMax: 0
   enemy2RangeMax: 0
   enemy3RangeMax: 0
-  outOfEnemyRangeEncounter: 0
+  enemy4RangeMax: 0
+  outOfEnemyRangeDescription: 
   randomEnemyTypes: 
   randomEnemyNames: []
   randomEnemyOB: 
@@ -31,8 +34,11 @@ MonoBehaviour:
   randomEnemyEP: 
   playerSurprised: 0
   firstAttackBonus: 0
+  playerCannotSneakAttack: 0
+  mustDefeatFirstEnemyToRun: 0
   penaltyToRun: 0
-  winMovesOn: 0
+  runGoesToEncounter: 0
+  canPlayDead: 0
   winEncounter: 237
-  loseMovesOn: 0
   loseEncounter: 178
+  altLoseEncounter: 0

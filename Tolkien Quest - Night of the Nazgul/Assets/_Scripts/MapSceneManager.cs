@@ -7,6 +7,11 @@ public class MapSceneManager : MonoBehaviour {
 
 	public GameObject player;
 
+	//[SerializeField] MapSceneCharacterSheetManager mSCSM;
+	[SerializeField] ActionManager actionManager;
+	[SerializeField] MapSceneInventoryManager mapSceneInventoryManager;
+	[SerializeField] Text overallActionText;
+
 	//public bool prologueComplete;
 
 	public GameObject[] mapTiles;
@@ -23,7 +28,9 @@ public class MapSceneManager : MonoBehaviour {
 
 	[SerializeField] GameObject characterSheet;
 	[SerializeField] GameObject characterSheetInventoryParent;
-	[SerializeField] GameObject useHerbButton;
+	[SerializeField] Button useHerbButton;
+	[SerializeField] Button eatMealButton;
+	[SerializeField] Button spellSustainSelfButton;
 	[SerializeField] Image healthBarImage;
 	[SerializeField] Text healthBarEPText;
 	public Image diseaseIcon;
@@ -40,7 +47,7 @@ public class MapSceneManager : MonoBehaviour {
 
 	public GameObject encounterTextBG;
 	[SerializeField] GameObject encounterIndexText;
-	[SerializeField] Text encounterText;
+	public Text encounterText;
 	[SerializeField] Text encounterTimeText;
 	[SerializeField] Text encounterXPText;
 	int currentEncounterTextIndex;
@@ -48,6 +55,7 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject furtherEncounterButton2;
 	[SerializeField] GameObject furtherEncounterButton3;
 	[SerializeField] GameObject furtherEncounterButton4;
+	//[SerializeField] GameObject sneakAttackButton;
 	public GameObject delayedEncounterButton;
 
 	public bool disableMoveOnButton;
@@ -68,13 +76,21 @@ public class MapSceneManager : MonoBehaviour {
 	[SerializeField] GameObject progressLocationTextButton;
 	[SerializeField] GameObject progressEncounterTextButton;
 	//[SerializeField] GameObject openMerchantUIButton;
-	[SerializeField] GameObject restButton;
 	[SerializeField] GameObject moveOnButton;
 	public GameObject moveOnEncounterButton;
 	public bool moveOnInRandomDirection;
 	public bool moveOnToSpecificTile;
 
+	[SerializeField] GameObject restUI;
+	[SerializeField] GameObject restButton;
+	[SerializeField] GameObject restEatMealButton;
+	[SerializeField] InventoryItemScriptable mealScript;
+	[SerializeField] GameObject restHealButton;
+
+
 	[SerializeField] GameObject CombatUIBG;
+
+	[SerializeField] GameObject additionalActionBG;
 
 	[SerializeField] GameObject WinUIBG;
 
@@ -133,10 +149,24 @@ public class MapSceneManager : MonoBehaviour {
 	public void OpenCharacterSheet() {
 		characterSheet.GetComponent<Animator>().SetBool("openInventory", true);
 		if (CharacterManager.statusDiseased && characterSheetInventoryParent.GetComponent<MapSceneInventoryManager>().InventoryHoldsHealingHerb()) {
-			useHerbButton.GetComponent<Button>().interactable = true;
+			useHerbButton.interactable = true;
 		}
 		else {
-			useHerbButton.GetComponent<Button>().interactable = false;
+			useHerbButton.interactable = false;
+		}
+
+		if (!CharacterManager.ateMealToday) {
+			eatMealButton.interactable = true;
+
+			for (int s = 0; s < CharacterManager.spellScriptables.Length; s++) {
+				if (CharacterManager.spellScriptables[s] != null && CharacterManager.spellScriptables[s].spellIndex == 13) { //If the player knows the Sustain Self spell
+					spellSustainSelfButton.interactable = true;
+				}
+			}
+		}
+		else {
+			eatMealButton.interactable = false;
+			spellSustainSelfButton.interactable = false;
 		}
 	}
 
@@ -208,6 +238,13 @@ public class MapSceneManager : MonoBehaviour {
 		currentLocation = newLocationTile;
 		//adjacentTiles.Clear();
 
+		if (CharacterManager.balanceSpellActive) {
+			CharacterManager.mySkillGeneralSpecialBonuses -= 2;
+			CharacterManager.balanceSpellActive = false;
+
+			characterSheet.GetComponent<MapSceneCharacterSheetManager>().UpdateGeneralSkillTexts();
+		}
+
 		currentLocationTextIndex = 0;
 		OpenLocationUI();
 		UpdateLocationBG();
@@ -235,7 +272,23 @@ public class MapSceneManager : MonoBehaviour {
 		locationTimeText.text = "Time: " + currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken.ToString();
 		CharacterManager.currentDayTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
 		CharacterManager.totalTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
+		characterSheet.GetComponent<MapSceneCharacterSheetManager>().UpdateTimeText();
 		print("Time Taken Today: " + CharacterManager.currentDayTimeTaken);
+
+		CharacterManager.currentHealTimeElapsed += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
+		print("Current Heal Time: " + CharacterManager.currentHealTimeElapsed + " / " + CharacterManager.healIncrementTime);
+		if (CharacterManager.currentHealTimeElapsed >= CharacterManager.healIncrementTime) {
+			//int timesHealed = CharacterManager.currentHealTimeElapsed / 
+			AlterDamage(-3, false);
+			CharacterManager.currentHealTimeElapsed -= CharacterManager.healIncrementTime;
+			if (CharacterManager.currentHealTimeElapsed < 0) {
+				CharacterManager.currentHealTimeElapsed = 0;
+			}
+			CharacterManager.healIncrementTime = 60;
+
+			overallActionText.text += "\nYou healed 3 endurance points over time.";
+		}
+
 		if (CharacterManager.statusDiseased) {
 			diseaseIcon.gameObject.SetActive(true);
 			CharacterManager.diseaseTimer += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
@@ -250,6 +303,7 @@ public class MapSceneManager : MonoBehaviour {
 
 		locationXPText.text = "Experience: " + currentLocation.GetComponent<ScriptableMapTileReader>().XPGained.ToString();
 		CharacterManager.totalXP += currentLocation.GetComponent<ScriptableMapTileReader>().XPGained;
+		characterSheet.GetComponent<MapSceneCharacterSheetManager>().UpdateXPText();
 
 		if (currentEncounter != null) {
 			//If movesTwoSpaces wasn't already false (most of the time it will be), do it now
@@ -392,15 +446,15 @@ public class MapSceneManager : MonoBehaviour {
 				locationEncounterButton2.SetActive(false);
 				locationEncounterButton3.SetActive(false);
 				
-				restButton.SetActive(true);
+				EnableRestUI();
 				moveOnButton.SetActive(false);
 			}
 			else if (currentLocation.GetComponent<ScriptableMapTileReader>().myTileScriptable.canMoveOn) {
-				restButton.SetActive(false);
+				restUI.SetActive(false);
 				moveOnButton.SetActive(true);
 			}
 			else {
-				restButton.SetActive(false);
+				restUI.SetActive(false);
 				moveOnButton.SetActive(false);
 			}
 
@@ -410,16 +464,18 @@ public class MapSceneManager : MonoBehaviour {
 			progressLocationTextButton.SetActive(true);
 			moveOnButton.SetActive(false);
 		}
+
+		CloseEncounterUI();
 	}
 
 
 	public void OpenEncounterUI() {
-		encounterTextBG.GetComponent<Animator>().SetBool("SlideBottomUIOpen", true);
+		encounterTextBG.GetComponent<Animator>().SetBool("SlideTopUIOpen", true);
 	}
 
 
 	public void CloseEncounterUI() {
-		encounterTextBG.GetComponent<Animator>().SetBool("SlideBottomUIOpen", false);
+		encounterTextBG.GetComponent<Animator>().SetBool("SlideTopUIOpen", false);
 	}
 
 
@@ -438,7 +494,21 @@ public class MapSceneManager : MonoBehaviour {
 			encounterTimeText.text = "Time: " + currentEncounter.myEncounterScriptable.timeTaken.ToString();
 			CharacterManager.currentDayTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
 			CharacterManager.totalTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
+			characterSheet.GetComponent<MapSceneCharacterSheetManager>().UpdateTimeText();
 			//print("Time Taken Today: " + CharacterManager.currentDayTimeTaken);
+
+			CharacterManager.currentHealTimeElapsed += currentEncounter.myEncounterScriptable.timeTaken;
+			print("Current Heal Time: " + CharacterManager.currentHealTimeElapsed + " / " + CharacterManager.healIncrementTime);
+			if (CharacterManager.currentHealTimeElapsed >= CharacterManager.healIncrementTime) {
+				AlterDamage(-3, false);
+				CharacterManager.currentHealTimeElapsed -= CharacterManager.healIncrementTime;
+				if (CharacterManager.currentHealTimeElapsed < 0) {
+					CharacterManager.currentHealTimeElapsed = 0;
+				}
+				CharacterManager.healIncrementTime = 60;
+
+				overallActionText.text += "\nYou healed 3 endurance points over time.";
+			}
 		}
 		else {
 			encounterTimeText.text = "";
@@ -447,6 +517,7 @@ public class MapSceneManager : MonoBehaviour {
 		if (currentEncounter.myEncounterScriptable.XPGained != 0) {
 			encounterXPText.text = "Experience: " + currentEncounter.myEncounterScriptable.XPGained.ToString();
 			CharacterManager.totalXP += currentEncounter.myEncounterScriptable.XPGained;
+			characterSheet.GetComponent<MapSceneCharacterSheetManager>().UpdateXPText();
 		}
 		else {
 			encounterXPText.text = "";
@@ -524,6 +595,10 @@ public class MapSceneManager : MonoBehaviour {
 				furtherEncounterButton4.GetComponentInChildren<Text>().text = currentEncounter.myEncounterScriptable.furtherEncounter4Text;
 			}
 
+			if (currentEncounter.myEncounterScriptable.opensActionBG) {
+				EnableActionBG();
+			}
+
 			//If the current encounter has been delayed
 			if (encounterTextBG.GetComponent<ScriptableEncounterReader>().delayedEncounterIndex != 0 || !disableDelayedEncounterButton) {
 				print("The Delayed Encounter Button is active, which means the Further Buttons aren't. Delayed Index: " +
@@ -551,6 +626,8 @@ public class MapSceneManager : MonoBehaviour {
 				furtherEncounterButton4.SetActive(true);
 				furtherEncounterButton4.GetComponentInChildren<Text>().text = "Jump in the River";
 			}
+
+
 		}
 		else {
 			//If the player is still progressing through the current encounter's DESCRIPTIVE TEXT and DIALOGUE
@@ -573,8 +650,6 @@ public class MapSceneManager : MonoBehaviour {
 
 
 	public void OpenCombatBG(CombatScriptable currentCombatScript) {
-		CombatUIBG.SetActive(true);
-		CombatUIBG.GetComponent<Animator>().SetBool("UISlideIn", true);
 		CloseLocationUI();
 		CloseEncounterUI();
 
@@ -584,7 +659,17 @@ public class MapSceneManager : MonoBehaviour {
 
 	public void CloseCombatBG() {
 		CombatUIBG.GetComponent<Animator>().SetBool("UISlideIn", false);
+	}
 
+
+	public void EnableActionBG() {
+		additionalActionBG.SetActive(true);
+		additionalActionBG.GetComponent<ActionManager>().InitializeActionBG();
+	}
+
+
+	public void DisableActionBG() {
+		additionalActionBG.SetActive(false);
 	}
 
 
@@ -607,6 +692,10 @@ public class MapSceneManager : MonoBehaviour {
 			newItemHost.GetComponent<InventoryScriptableReader>().objectScript = myListedItems[i];
 			newItemHost.GetComponent<InventoryScriptableReader>().itemQuantity = myListedItemQuantities[i];
 			newItemHost.GetComponent<InventoryScriptableReader>().SetMyObjectType();
+
+			if (itemListBG.GetComponent<ItemListBGScript>().canOnlyTakeOneItem) {
+				newItemHost.GetComponent<InventoryScriptableReader>().fromTakeOneList = true;
+			}
 
 			if (myListedItems[i].GetType() == typeof(InventoryItemScriptable)) {
 				if (newItemHost.GetComponent<InventoryScriptableReader>().itemScript.isMoney) {
@@ -672,6 +761,7 @@ public class MapSceneManager : MonoBehaviour {
 	public void CloseItemListUI () {
 		inventoryBG.GetComponent<Animator>().SetBool("openInventory", false);
 		itemListBG.GetComponent<Animator>().SetBool("openItemList", false);
+		itemListBG.GetComponent<ItemListBGScript>().canOnlyTakeOneItem = false;
 		OpenEncounterUI();
 
 		characterSheetInventoryParent.GetComponent<MapSceneInventoryManager>().InitializeInventory();
@@ -744,12 +834,14 @@ public class MapSceneManager : MonoBehaviour {
 			//Moving on in a random direction TAKES ADDITIONAL TIME
 			print("Moving on randomly takes additional time");
 			if (Location1Encounter2 == 1) {
-				CharacterManager.currentDayTimeTaken += (currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken);
-				CharacterManager.totalTimeTaken += (currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken);
+				CharacterManager.currentDayTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
+				CharacterManager.totalTimeTaken += currentLocation.GetComponent<ScriptableMapTileReader>().timeTaken;
+				characterSheet.GetComponent<MapSceneCharacterSheetManager>().UpdateTimeText();
 			}
 			else if (Location1Encounter2 == 2) {
 				CharacterManager.currentDayTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
 				CharacterManager.totalTimeTaken += currentEncounter.myEncounterScriptable.timeTaken;
+				characterSheet.GetComponent<MapSceneCharacterSheetManager>().UpdateTimeText();
 			}
 			else {
 				print("You fucked up");
@@ -780,18 +872,65 @@ public class MapSceneManager : MonoBehaviour {
 	}
 
 
+	public void EatMeal () {
+		CharacterManager.ateMealToday = true;
+		overallActionText.text += "\nYou ate a meal. You will not go hungry today!";
+	}
+
+
+	void EnableRestUI() {
+		restUI.SetActive(true);
+		locationTextBG.GetComponent<Animator>().SetBool("SlideTopUIOpen", false);
+		encounterTextBG.GetComponent<Animator>().SetBool("SlideTopUIOpen", false);
+
+		//If the player hasn't eaten today, and has any meals in their inventory, allow them to eat one
+		if (!CharacterManager.ateMealToday) {
+			for (int m = 0; m < mapSceneInventoryManager.inventoryScriptables.Length; m++) {
+				if (mapSceneInventoryManager.inventoryScriptables[m] != null && mapSceneInventoryManager.inventoryScriptables[m] == mealScript) {
+					restEatMealButton.SetActive(true);
+				}
+				else {
+					restEatMealButton.SetActive(false);
+				}
+			}
+		}
+		
+
+		for (int i = 0; i < CharacterManager.spellScriptables.Length; i++) {
+			if (CharacterManager.spellScriptables[i] != null && CharacterManager.spellScriptables[i].spellIndex == 7) { //If the player knows the Heal spell
+				restHealButton.SetActive(true);
+			}
+			else {
+				restHealButton.SetActive(false);
+			}
+		}
+
+	}
+
 
 	public void Rest() {
 		//Adjust ongoing "Total Time" variables in CharacterManager
 		CharacterManager.daysTaken++;
 		CharacterManager.currentDayTimeTaken = 0;
 
+		characterSheet.GetComponent<MapSceneCharacterSheetManager>().UpdateTimeText();
+
 		//If the player has a "meal", they must eat it to regain health while resting
 		//If not, they heal nothing and take 5 damage
+		if (!CharacterManager.ateMealToday) {
+			AlterDamage(5, false);
+			overallActionText.text += "\nYou took <color=#ff0000ff>5</color> damage from starvation.";
+		}
 
-		restButton.SetActive(false);
+		if (CharacterManager.healSpellActiveAtRest) {
+			AlterDamage(-99, false);
+		}
+
+		restUI.SetActive(false);
 		moveOnButton.SetActive(true);
 
+		CharacterManager.ateMealToday = false;
+		
 		UpdateLocationBG();
 	}
 
@@ -804,7 +943,7 @@ public class MapSceneManager : MonoBehaviour {
 			CharacterManager.damageTaken = CharacterManager.enduranceTotal;
 			if (currentEncounter.myEncounterScriptable.encounterIndex == 357) {
 				//Proceed to Encounter 337
-				print("The snake's poison killed you");
+				overallActionText.text += "\nThe snake's poison killed you";
 				currentEncounter.DelayEncounterUpdate(337, false);
 				//currentEncounter.UpdateEncounter(337);
 			}
@@ -819,7 +958,7 @@ public class MapSceneManager : MonoBehaviour {
 			}
 		}
 		else if (CharacterManager.damageTaken < 0) {
-			print("You are fully healed");
+			overallActionText.text += "\nYou are fully healed";
 			CharacterManager.damageTaken = 0;
 			//print("Damage taken: " + CharacterManager.damageTaken + "/ " + CharacterManager.enduranceTotal);
 		}
@@ -844,6 +983,7 @@ public class MapSceneManager : MonoBehaviour {
 //TODO Create a "DamageTaken" text on the UI (below the player's health bar) to display on-screen the amount of damage taken. This should clear things up.
 
 		UpdateHealthBar();
+		characterSheet.GetComponent<MapSceneCharacterSheetManager>().UpdateDamageText();
 	}
 
 

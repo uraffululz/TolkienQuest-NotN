@@ -19,8 +19,7 @@ MonoBehaviour:
     slurping down all of your food and then the sound of the bear moving off.
 
 
-    You have suvived by playing dead.'
-  isCombat: 0
+    You have survived by playing dead.'
   isMerchant: 0
   canMoveOn: 1
   moveOnRandomly: 0
@@ -56,8 +55,8 @@ MonoBehaviour:
   hasRunAwayRange: 0
   hasSneakAttackRange: 0
   rangeFailMeansGameOver: 0
+  recoversFullInventory: 0
   emptiesInventory: 0
-  logsEmptiedInventory: 0
   loseWeaponsAndArmor: 0
   keepSilverDagger: {fileID: 0}
   obtainsItems: 0
@@ -66,6 +65,7 @@ MonoBehaviour:
   mealScript: {fileID: 11400000, guid: 2a7e40d9aeab8e2499905d18daf1bb99, type: 2}
   loseMeals: 0
   costsCopper: 0
+  combatScript: {fileID: 0}
   timeTaken: 15
   canRestAtNight: 0
   XPGained: 3

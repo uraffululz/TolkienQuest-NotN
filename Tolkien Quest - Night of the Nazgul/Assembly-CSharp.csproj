@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\ActionManager.cs" />
     <Compile Include="Assets\_Scripts\CharacterManager.cs" />
     <Compile Include="Assets\_Scripts\CreationRaceManager.cs" />
     <Compile Include="Assets\_Scripts\CreationSceneManager.cs" />
@@ -92,6 +93,8 @@
     <Compile Include="Assets\_Scripts\ScriptableObjects\SpellScriptableObjects\ScriptableSpellReader.cs" />
     <Compile Include="Assets\_Scripts\ScriptableObjects\SpellScriptableObjects\SpellScriptable.cs" />
     <Compile Include="Assets\CombatManager.cs" />
+    <Compile Include="Assets\MapSceneCharacterSheetManager.cs" />
+    <Compile Include="Assets\SpellCastingManager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Master/Documents/Git Repositories/Unity Projects/TolkienQuest-NotN/Tolkien Quest - Night of the Nazgul/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

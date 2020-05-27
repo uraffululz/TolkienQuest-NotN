@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class ItemListBGScript : MonoBehaviour {
 
 	[SerializeField] GameObject itemListInventoryParent;
+
+	public bool canOnlyTakeOneItem;
    
 	public Text silverText;
 	public Text copperText;
@@ -31,7 +33,7 @@ public class ItemListBGScript : MonoBehaviour {
 	}
 
 
-	//TOMAYBEDO Move this method to the MapSceneInventoryManager
+//TOMAYBEDO Move this method to the MapSceneInventoryManager
 	void FindNewBackpackParentSlot (GameObject inventoryManager, GameObject movedItemHost) {
 		GameObject foundNewBackpackParent = null;
 		bool foundEmptySlot = false;
